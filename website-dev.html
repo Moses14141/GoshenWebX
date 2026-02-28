@@ -4,13 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Get in touch with Goshen Web X — premium web development studio in Quebec. Free quote, strategy call, or just say hello. We're ready when you are." />
-  <title>Goshen Web X | Contact Us</title>
+  <meta name="description" content="Premium custom website development in Quebec. Lightning-fast, conversion-focused websites built for ambitious small businesses and entrepreneurs." />
+  <title>Goshen Web X | Custom Website Development</title>
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Tailwind Config -->
+  <!-- Tailwind Config - same as all other pages -->
   <script>
     tailwind.config = {
       content: [],
@@ -40,11 +40,11 @@
 
 <body class="bg-dark text-white font-body overflow-x-hidden">
 
-  <!-- HEADER (consistent with all pages) -->
+  <!-- HEADER (updated – 100% consistent bilingual English pattern) -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-lg border-b border-white/10">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
       <div class="flex items-center justify-between h-20">
-        <a href="/" class="flex items-center gap-3">
+        <a href="index.html" class="flex items-center gap-3">
           <img src="/images/2.png" alt="Goshen Web X" class="h-14 w-auto" />
           <div class="font-heading text-3xl font-semibold tracking-tighter">GOSHEN <span class="text-accent">WEB X</span></div>
         </a>
@@ -72,13 +72,12 @@
           <a href="/blog.html" class="hover:text-accent transition-colors">Blog</a>
         </nav>
 
-        <!-- Language Switcher + CTA (desktop) -->
+        <!-- Language Switcher + CTA (desktop) – EN active -->
         <div class="hidden lg:flex items-center gap-6">
-          <!-- Translation Button (French) - perfectly styled, no layout shift -->
           <div class="flex items-center text-sm font-medium">
-            <a href="website-dev.html" class="hover:text-accent transition-colors px-2">EN</a>
+            <a href="/website-dev.html" class="text-accent hover:text-white transition-colors px-2 font-semibold">EN</a>
             <span class="text-white/40 mx-1">/</span>
-            <a href="website-dev-fr.html" class="text-accent hover:text-white transition-colors px-2 font-semibold">FR</a>
+            <a href="/website-dev-fr.html" class="hover:text-accent transition-colors px-2">FR</a>
           </div>
 
           <a href="/contact.html" class="flex items-center gap-3 bg-accent hover:bg-white text-black font-semibold px-8 py-3.5 rounded-3xl transition-all">
@@ -97,7 +96,7 @@
   <!-- Backdrop -->
   <div id="backdrop" class="hidden fixed inset-0 bg-black/80 z-[9998]"></div>
 
-  <!-- Right Slide-In Drawer (no logo/brand name inside) -->
+  <!-- Right Slide-In Drawer (standardized) -->
   <div id="side-menu" class="fixed top-0 bottom-0 right-0 w-80 bg-dark shadow-2xl translate-x-full transition-transform duration-300 z-[9999] overflow-y-auto">
     <div class="p-6">
       <button id="close-menu" class="float-right text-4xl text-white/70 hover:text-white">
@@ -125,131 +124,125 @@
         <a href="/contact.html" class="py-5 border-b border-white/10">Contact</a>
         <a href="/blog.html" class="py-5 border-b border-white/10">Blog</a>
 
-        <!-- Translation Button (French) in mobile menu - clean & consistent -->
+        <!-- Language Switcher in mobile drawer -->
         <div class="pt-8 border-t border-white/10">
           <div class="flex items-center gap-3 text-xl font-medium">
-            <a href="website-dev.html" class="hover:text-accent transition-colors">EN</a>
+            <a href="/website-dev.html" class="text-accent hover:text-white transition-colors font-semibold">EN</a>
             <span class="text-white/40">/</span>
-            <a href="custom-web-dev-fr.html" class="text-accent hover:text-white transition-colors font-semibold">FR</a>
+            <a href="/website-dev-fr.html" class="hover:text-accent transition-colors">FR</a>
           </div>
         </div>
       </nav>
     </div>
   </div>
 
-  <!-- HERO (your fun style kept) -->
+  <!-- HERO (unchanged) -->
   <section class="min-h-screen relative flex items-center bg-black pt-20">
     <div class="absolute inset-0 bg-[url('https://picsum.photos/id/1015/1920/1080')] bg-cover bg-center"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-black via-black/95 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent"></div>
     
     <div class="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-12">
-      <div class="max-w-2xl">
-        <h1 class="text-6xl md:text-7xl font-heading font-bold tracking-tighter leading-none mb-6">
-          Knock knock!<br>
-          <span class="text-accent">Who's there?</span>
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full text-sm mb-6">
+          <span class="w-3 h-3 bg-accent rounded-full animate-pulse"></span>
+          CUSTOM WEBSITE DEVELOPMENT • QUEBEC
+        </div>
+        
+        <h1 class="text-5xl md:text-7xl font-heading font-bold tracking-tighter leading-none mb-8">
+          Websites that don’t just look good.<br>
+          <span class="text-accent">They dominate.</span>
         </h1>
-        <p class="text-2xl text-gray-300 mb-10">
-          Your premium web partner in Quebec.<br>
-          No joke — we deliver stunning, high-performance websites that actually grow your business.
+        
+        <p class="text-xl text-gray-300 mb-10">
+          Bespoke, lightning-fast, conversion-obsessed websites built exclusively for ambitious small businesses and entrepreneurs.
         </p>
-        <a href="#form" class="inline-block bg-accent hover:bg-white text-black font-semibold px-12 py-6 rounded-3xl text-xl transition-all">
-          Let's Start Your Project →
-        </a>
+        
+        <div class="flex flex-wrap gap-4">
+          <a href="#contact" class="bg-accent hover:bg-white text-black font-semibold px-10 py-5 rounded-3xl flex items-center gap-3 transition-all text-lg">
+            Start Your Project →
+          </a>
+          <a href="#process" class="border border-white/50 hover:border-white font-medium px-10 py-5 rounded-3xl transition-all text-lg">
+            See Our Process
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- MAIN CONTACT SECTION (your creative layout kept) -->
+  <!-- PROCESS (unchanged) -->
+  <section id="process" class="py-24 bg-dark-100">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+      <div class="text-center mb-16">
+        <span class="uppercase text-accent tracking-widest text-sm">4 Weeks to Launch</span>
+        <h2 class="text-5xl font-heading font-bold tracking-tighter mt-4">Our Proven Process</h2>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="bg-dark-200 rounded-3xl p-8 hover:-translate-y-2 transition-all">
+          <div class="text-6xl font-bold text-accent/20 mb-4">01</div>
+          <h3 class="text-2xl font-semibold mb-3">Discovery & Strategy</h3>
+          <p class="text-gray-400">Deep dive into your goals, audience, competitors, and brand voice.</p>
+        </div>
+        <div class="bg-dark-200 rounded-3xl p-8 hover:-translate-y-2 transition-all">
+          <div class="text-6xl font-bold text-accent/20 mb-4">02</div>
+          <h3 class="text-2xl font-semibold mb-3">Wireframes & Design</h3>
+          <p class="text-gray-400">Pixel-perfect designs and interactive prototypes approved by you.</p>
+        </div>
+        <div class="bg-dark-200 rounded-3xl p-8 hover:-translate-y-2 transition-all">
+          <div class="text-6xl font-bold text-accent/20 mb-4">03</div>
+          <h3 class="text-2xl font-semibold mb-3">Development & Testing</h3>
+          <p class="text-gray-400">Clean code, mobile-first, 100% responsive, and rigorously tested.</p>
+        </div>
+        <div class="bg-dark-200 rounded-3xl p-8 hover:-translate-y-2 transition-all">
+          <div class="text-6xl font-bold text-accent/20 mb-4">04</div>
+          <h3 class="text-2xl font-semibold mb-3">Launch & Support</h3>
+          <p class="text-gray-400">Go-live with training + 90 days of free priority support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES (unchanged) -->
   <section class="py-24 bg-dark">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
-      <div class="grid lg:grid-cols-2 gap-16">
-        
-        <!-- LEFT COLUMN: Info + Map + Reviews -->
-        <div>
-          <h2 class="text-5xl font-heading font-bold tracking-tighter mb-10">Get in touch</h2>
-          
-          <div class="space-y-12">
-            <!-- Address -->
-            <div>
-              <p class="uppercase text-accent text-sm tracking-widest mb-2">Remote Services – Based in,</p>
-              <p class="text-2xl font-medium">Quebec, Canada</p>
-              <p class="text-gray-400 mt-1">Available for virtual meetings worldwide</p>
-            </div>
+      <div class="text-center mb-16">
+        <h2 class="text-5xl font-heading font-bold tracking-tighter">Every website includes</h2>
+      </div>
 
-            <!-- Contact Info -->
-            <div class="grid grid-cols-1 gap-8">
-              <div>
-                <p class="uppercase text-accent text-sm tracking-widest mb-2">Email</p>
-                <a href="mailto:info@goshenwebx.io" class="text-2xl hover:text-accent transition-colors">info@goshenwebx.io</a>
-              </div>
-              <div>
-                <p class="uppercase text-accent text-sm tracking-widest mb-2">Phone</p>
-                <a href="tel:+15811234567" class="text-2xl hover:text-accent transition-colors">+1 (581) 123-4567</a>
-              </div>
-            </div>
-
-            <!-- Google Map -->
-            <div class="rounded-3xl overflow-hidden border border-white/10">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113000.000!2d-71.5!3d46.8!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ba4c0b0b0b0b0b0%3A0x0!2sQuebec+City%2C+QC%2C+Canada!5e0!3m2!1sen!2sca!4v1700000000000" 
-                      width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-
-            <!-- Reviews -->
-            <div>
-              <div class="flex items-center gap-3 mb-4">
-                <div class="flex text-accent text-3xl">
-                  ★★★★☆
-                </div>
-                <div>
-                  <span class="text-4xl font-bold">4.8</span>
-                  <span class="text-gray-400 ml-2">/ 5</span>
-                </div>
-              </div>
-              <p class="text-gray-300">"Best web team we've ever worked with. Fast, professional, and results-driven."</p>
-              <p class="text-sm text-gray-400 mt-2">- Marc D., Quebec Tech Startup</p>
-            </div>
-          </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-dark-200 rounded-3xl p-10 text-center">
+          <i class="fas fa-bolt text-6xl text-accent mb-6"></i>
+          <h3 class="text-3xl font-semibold mb-4">Blazing Fast</h3>
+          <p class="text-gray-400">98+ Lighthouse scores guaranteed. Loads in under 1.5 seconds.</p>
         </div>
-
-        <!-- RIGHT COLUMN: Contact Form -->
-        <div id="form" class="bg-dark-200 rounded-3xl p-10">
-          <h3 class="text-3xl font-semibold mb-8">Send us a message</h3>
-          
-          <form id="contactForm" class="space-y-6">
-            <div class="grid md:grid-cols-2 gap-6">
-              <input type="text" name="name" placeholder="Your Name" required 
-                     class="bg-dark border border-white/20 focus:border-accent rounded-2xl px-6 py-4 w-full outline-none">
-              <input type="email" name="email" placeholder="Email Address" required 
-                     class="bg-dark border border-white/20 focus:border-accent rounded-2xl px-6 py-4 w-full outline-none">
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-6">
-              <input type="tel" name="phone" placeholder="Phone Number" 
-                     class="bg-dark border border-white/20 focus:border-accent rounded-2xl px-6 py-4 w-full outline-none">
-              <input type="text" name="budget" placeholder="Project Budget (optional)" 
-                     class="bg-dark border border-white/20 focus:border-accent rounded-2xl px-6 py-4 w-full outline-none">
-            </div>
-            
-            <textarea name="message" placeholder="Tell us about your project..." rows="6" required
-                      class="bg-dark border border-white/20 focus:border-accent rounded-3xl px-6 py-4 w-full outline-none resize-y"></textarea>
-            
-            <button type="submit" 
-                    class="w-full bg-accent hover:bg-white text-black font-semibold py-5 rounded-3xl text-lg transition-all">
-              Send Message
-            </button>
-          </form>
+        <div class="bg-dark-200 rounded-3xl p-10 text-center">
+          <i class="fas fa-mobile-alt text-6xl text-accent mb-6"></i>
+          <h3 class="text-3xl font-semibold mb-4">Perfectly Responsive</h3>
+          <p class="text-gray-400">Stunning on every device — phone, tablet, desktop, 4K.</p>
+        </div>
+        <div class="bg-dark-200 rounded-3xl p-10 text-center">
+          <i class="fas fa-search text-6xl text-accent mb-6"></i>
+          <h3 class="text-3xl font-semibold mb-4">SEO Ready</h3>
+          <p class="text-gray-400">Schema, clean URLs, meta tags — ranked from day one.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FLOATING WHATSAPP BUTTON (kept) -->
-  <a href="https://wa.me/14185738680" target="_blank"
-   class="fixed bottom-8 right-8 w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-2xl transition-all z-50">
-  <i class="fab fa-whatsapp text-4xl text-white"></i>
-</a>
+  <!-- CONTACT CTA (unchanged) -->
+  <section id="contact" class="py-24 bg-dark-100">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 text-center">
+      <h2 class="text-5xl font-heading font-bold tracking-tighter mb-6">Ready to get a website that actually works?</h2>
+      <p class="text-xl text-gray-300 max-w-xl mx-auto mb-12">Book your free 30-minute strategy call. No pressure — just real advice.</p>
+      
+      <a href="mailto:info@goshenwebx.io" 
+         class="inline-block bg-accent hover:bg-white text-black font-semibold px-14 py-6 rounded-3xl text-xl transition-all">
+        Get Your Free Quote Now
+      </a>
+    </div>
+  </section>
 
-  <!-- FOOTER (exact match to index) -->
+  <!-- FOOTER – exact match -->
   <footer class="bg-black border-t border-white/10 py-20">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
       <div class="grid md:grid-cols-12 gap-12">
@@ -264,9 +257,9 @@
         <div class="md:col-span-2">
           <p class="font-medium text-accent mb-6">Company</p>
           <ul class="space-y-3 text-sm">
-            <li><a href="/" class="hover:text-white">Home</a></li>
-            <li><a href="/website-dev.html" class="hover:text-white">Services</a></li>
-            <li><a href="/portfolio.html" class="hover:text-white">Portfolio</a></li>
+            <li><a href="index.html" class="hover:text-white">Home</a></li>
+            <li><a href="/about.html" class="hover:text-white">About Us</a></li>
+            <li><a href="/blog.html" class="hover:text-white">Blog</a></li>
           </ul>
         </div>
 
@@ -296,13 +289,13 @@
         <p>© 2026 Goshen Web X. All Rights Reserved.</p>
         <p class="flex gap-6">
           <a href="/privacy-policy.html" class="hover:text-white">Privacy</a>
-          <a href="/terms.html" class="hover:text-white">Terms</a>
+          <a href="/terms.html" class="hover:text-white">Terms of Service</a>
         </p>
       </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Scripts – standardized -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     const hamburger = document.getElementById('hamburger');
