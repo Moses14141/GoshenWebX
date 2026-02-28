@@ -47,20 +47,18 @@
 
 <body class="bg-dark text-white font-body overflow-x-hidden">
 
-  <!-- HEADER - EXACT MATCH TO YOUR CURRENT SITE -->
+  <!-- HEADER (100% consistent with all English pages – EN active) -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-lg border-b border-white/10">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
       <div class="flex items-center justify-between h-20">
-        <a href="/" class="flex items-center gap-3">
+        <a href="index.html" class="flex items-center gap-3">
           <img src="/images/2.png" alt="Goshen Web X" class="h-14 w-auto" />
-          <div class="font-heading text-3xl font-semibold tracking-tighter">
-            GOSHEN <span class="text-accent">WEB X</span>
-          </div>
+          <div class="font-heading text-3xl font-semibold tracking-tighter">GOSHEN <span class="text-accent">WEB X</span></div>
         </a>
 
         <!-- Desktop Nav -->
         <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
-          <a href="/" class="hover:text-accent transition-colors">Home</a>
+          <a href="index.html" class="hover:text-accent transition-colors">Home</a>
           <div class="group relative">
             <button class="flex items-center gap-1 hover:text-accent transition-colors">
               Our Services
@@ -81,9 +79,18 @@
           <a href="/blog.html" class="hover:text-accent transition-colors">Blog</a>
         </nav>
 
-        <a href="/contact.html" class="hidden lg:flex items-center gap-3 bg-accent hover:bg-white text-black font-semibold px-8 py-3.5 rounded-3xl transition-all">
-          Request a Free Quote <i class="fas fa-arrow-right"></i>
-        </a>
+        <!-- Language Switcher + CTA (desktop) – EN active -->
+        <div class="hidden lg:flex items-center gap-6">
+          <div class="flex items-center text-sm font-medium">
+            <a href="/website-dev.html" class="text-accent hover:text-white transition-colors px-2 font-semibold">EN</a>
+            <span class="text-white/40 mx-1">/</span>
+            <a href="/website-dev-fr.html" class="hover:text-accent transition-colors px-2">FR</a>
+          </div>
+
+          <a href="/contact.html" class="flex items-center gap-3 bg-accent hover:bg-white text-black font-semibold px-8 py-3.5 rounded-3xl transition-all">
+            Request a Free Quote <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
 
         <!-- Hamburger -->
         <button id="hamburger" class="lg:hidden text-4xl p-4 -mr-3 focus:outline-none active:scale-90 transition-transform">
@@ -91,35 +98,52 @@
         </button>
       </div>
     </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden lg:hidden fixed inset-0 bg-dark z-[60] pt-20 px-6 overflow-y-auto">
-      <nav class="flex flex-col text-2xl font-medium text-center">
-        <a href="/" class="py-6 border-b border-white/10">Home</a>
-        <div class="border-b border-white/10">
-          <input type="checkbox" id="services-toggle" class="peer hidden">
-          <label for="services-toggle" class="cursor-pointer w-full py-6 flex items-center justify-center gap-3 hover:text-accent active:bg-white/10 transition-all">
-            Our Services
-            <i class="fas fa-chevron-down text-2xl peer-checked:rotate-180 transition-transform duration-300"></i>
-          </label>
-          <div class="hidden peer-checked:block px-4 pb-6">
-            <div class="bg-dark-200/70 rounded-2xl overflow-hidden">
-              <a href="/website-dev.html" class="block py-5 px-6 border-b border-white/10 hover:bg-white/5 text-xl">Website Development</a>
-              <a href="/web-optimisation.html" class="block py-5 px-6 border-b border-white/10 hover:bg-white/5 text-xl">Web Optimisation and SEO</a>
-              <a href="/portfolio.html" class="block py-5 px-6 hover:bg-white/5 text-xl">Portfolio Websites</a>
-            </div>
-          </div>
-        </div>
-        <a href="/about.html" class="py-6 border-b border-white/10">About Us</a>
-        <a href="/portfolio.html" class="py-6 border-b border-white/10">Portfolio</a>
-        <a href="/pricing_guide.html" class="py-6 border-b border-white/10">Pricing</a>
-        <a href="/contact.html" class="py-6 border-b border-white/10">Contact</a>
-        <a href="/blog.html" class="py-6 border-b border-white/10">Blog</a>
-      </nav>
-    </div>
   </header>
 
-  <!-- DRAMATIC HERO -->
+  <!-- Backdrop -->
+  <div id="backdrop" class="hidden fixed inset-0 bg-black/80 z-[9998]"></div>
+
+  <!-- Right Slide-In Drawer -->
+  <div id="side-menu" class="fixed top-0 bottom-0 right-0 w-80 bg-dark shadow-2xl translate-x-full transition-transform duration-300 z-[9999] overflow-y-auto">
+    <div class="p-6">
+      <button id="close-menu" class="float-right text-4xl text-white/70 hover:text-white">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <nav class="flex flex-col text-2xl font-medium mt-12">
+        <a href="index.html" class="py-5 border-b border-white/10">Home</a>
+
+        <div class="border-b border-white/10">
+          <button onclick="toggleServicesDrawer()" class="w-full py-5 flex items-center justify-between hover:text-accent">
+            Our Services
+            <i id="drawer-chevron" class="fas fa-chevron-down transition-transform duration-300"></i>
+          </button>
+          <div id="drawer-services-submenu" class="hidden pl-6 pt-2 pb-6">
+            <a href="/website-dev.html" class="block py-4 text-xl hover:text-accent">Website Development</a>
+            <a href="/web-optimisation.html" class="block py-4 text-xl hover:text-accent">Web Optimisation and SEO</a>
+            <a href="/portfolio.html" class="block py-4 text-xl hover:text-accent">Portfolio Websites</a>
+          </div>
+        </div>
+
+        <a href="/about.html" class="py-5 border-b border-white/10">About Us</a>
+        <a href="/portfolio.html" class="py-5 border-b border-white/10">Portfolio</a>
+        <a href="/pricing_guide.html" class="py-5 border-b border-white/10">Pricing</a>
+        <a href="/contact.html" class="py-5 border-b border-white/10">Contact</a>
+        <a href="/blog.html" class="py-5 border-b border-white/10">Blog</a>
+
+        <!-- Language Switcher in mobile drawer -->
+        <div class="pt-8 border-t border-white/10">
+          <div class="flex items-center gap-3 text-xl font-medium">
+            <a href="/website-dev.html" class="text-accent hover:text-white transition-colors font-semibold">EN</a>
+            <span class="text-white/40">/</span>
+            <a href="/website-dev-fr.html" class="hover:text-accent transition-colors">FR</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO (unchanged) -->
   <section class="relative h-[90vh] flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0 bg-[url('https://picsum.photos/id/1015/2000/1200')] bg-cover bg-center"></div>
     <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/80 to-black"></div>
@@ -146,7 +170,7 @@
     </div>
   </section>
 
-  <!-- PROCESS -->
+  <!-- PROCESS (unchanged) -->
   <section id="process" class="py-24 bg-dark-100">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
       <div class="text-center mb-16">
@@ -179,7 +203,7 @@
     </div>
   </section>
 
-  <!-- FEATURES -->
+  <!-- FEATURES (unchanged) -->
   <section class="py-24 bg-dark">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
@@ -236,7 +260,7 @@
     </div>
   </section>
 
-  <!-- PORTFOLIO TEASER - MASONRY BRICK WALL -->
+  <!-- PORTFOLIO TEASER - MASONRY BRICK WALL (unchanged) -->
   <section class="py-24 bg-dark-100">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
       <div class="flex justify-between items-end mb-12">
@@ -275,7 +299,7 @@
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
+  <!-- TESTIMONIALS (unchanged) -->
   <section class="py-24 bg-dark">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 text-center">
       <h2 class="text-5xl font-heading font-bold tracking-tighter mb-12">What our clients say</h2>
@@ -297,7 +321,7 @@
     </div>
   </section>
 
-  <!-- CONTACT CTA -->
+  <!-- CONTACT CTA (unchanged) -->
   <section id="contact" class="py-24 bg-dark-100">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 text-center">
       <h2 class="text-5xl font-heading font-bold tracking-tighter mb-6">Ready for a website that actually works for you?</h2>
@@ -309,13 +333,11 @@
     </div>
   </section>
 
-
-  <!-- FLOATING WHATSAPP BUTTON (kept) -->
+  <!-- FLOATING WHATSAPP BUTTON -->
   <a href="https://wa.me/14185738680" target="_blank"
    class="fixed bottom-8 right-8 w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-2xl transition-all z-50">
   <i class="fab fa-whatsapp text-4xl text-white"></i>
 </a>
-
 
   <!-- FOOTER - EXACT MATCH -->
   <footer class="bg-black border-t border-white/10 py-20">
@@ -333,7 +355,7 @@
           <p class="font-medium text-accent mb-6">Company</p>
           <ul class="space-y-3 text-sm">
             <li><a href="/" class="hover:text-white">Home</a></li>
-            <li><a href="/service.html" class="hover:text-white">Services</a></li>
+            <li><a href="/website-dev.html" class="hover:text-white">Services</a></li>
             <li><a href="/portfolio.html" class="hover:text-white">Portfolio</a></li>
             <li><a href="/about.html" class="hover:text-white">About Us</a></li>
           </ul>
@@ -371,27 +393,35 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Scripts (standardized to match all English pages) -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const hamburger = document.getElementById('hamburger');
-      const mobileMenu = document.getElementById('mobile-menu');
-      const icon = hamburger.querySelector('i');
+    const hamburger = document.getElementById('hamburger');
+    const sideMenu = document.getElementById('side-menu');
+    const backdrop = document.getElementById('backdrop');
+    const closeBtn = document.getElementById('close-menu');
 
-      hamburger.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-        if (mobileMenu.classList.contains('hidden')) {
-          icon.classList.remove('fa-xmark');
-          icon.classList.add('fa-bars');
-        } else {
-          icon.classList.remove('fa-bars');
-          icon.classList.add('fa-xmark');
-        }
-      });
-
-      AOS.init({ duration: 1000, once: true });
+    hamburger.addEventListener('click', () => {
+      sideMenu.classList.remove('translate-x-full');
+      backdrop.classList.remove('hidden');
     });
+
+    function closeMenu() {
+      sideMenu.classList.add('translate-x-full');
+      backdrop.classList.add('hidden');
+    }
+
+    closeBtn.addEventListener('click', closeMenu);
+    backdrop.addEventListener('click', closeMenu);
+
+    window.toggleServicesDrawer = function () {
+      const submenu = document.getElementById('drawer-services-submenu');
+      const chevron = document.getElementById('drawer-chevron');
+      submenu.classList.toggle('hidden');
+      chevron.classList.toggle('rotate-180');
+    };
+
+    AOS.init({ duration: 1000, once: true });
   </script>
 </body>
 </html>

@@ -60,20 +60,18 @@
 
 <body class="bg-dark text-white font-body overflow-x-hidden">
 
-  <!-- HEADER - EXACT MATCH TO YOUR LATEST PAGES -->
+  <!-- HEADER (updated to 100% consistent bilingual English pattern – EN active) -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-lg border-b border-white/10">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
       <div class="flex items-center justify-between h-20">
-        <a href="/" class="flex items-center gap-3">
+        <a href="index.html" class="flex items-center gap-3">
           <img src="/images/2.png" alt="Goshen Web X" class="h-14 w-auto" />
-          <div class="font-heading text-3xl font-semibold tracking-tighter">
-            GOSHEN <span class="text-accent">WEB X</span>
-          </div>
+          <div class="font-heading text-3xl font-semibold tracking-tighter">GOSHEN <span class="text-accent">WEB X</span></div>
         </a>
 
         <!-- Desktop Nav -->
         <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
-          <a href="/" class="hover:text-accent transition-colors">Home</a>
+          <a href="index.html" class="hover:text-accent transition-colors">Home</a>
           <div class="group relative">
             <button class="flex items-center gap-1 hover:text-accent transition-colors">
               Our Services
@@ -94,9 +92,18 @@
           <a href="/blog.html" class="hover:text-accent transition-colors">Blog</a>
         </nav>
 
-        <a href="/contact.html" class="hidden lg:flex items-center gap-3 bg-accent hover:bg-white text-black font-semibold px-8 py-3.5 rounded-3xl transition-all">
-          Request a Free Quote <i class="fas fa-arrow-right"></i>
-        </a>
+        <!-- Language Switcher + CTA (desktop) – EN active -->
+        <div class="hidden lg:flex items-center gap-6">
+          <div class="flex items-center text-sm font-medium">
+            <a href="/portfolio.html" class="text-accent hover:text-white transition-colors px-2 font-semibold">EN</a>
+            <span class="text-white/40 mx-1">/</span>
+            <a href="/portfolio-fr.html" class="hover:text-accent transition-colors px-2">FR</a>
+          </div>
+
+          <a href="/contact.html" class="flex items-center gap-3 bg-accent hover:bg-white text-black font-semibold px-8 py-3.5 rounded-3xl transition-all">
+            Request a Free Quote <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
 
         <!-- Hamburger -->
         <button id="hamburger" class="lg:hidden text-4xl p-4 -mr-3 focus:outline-none active:scale-90 transition-transform">
@@ -109,7 +116,7 @@
   <!-- Backdrop -->
   <div id="backdrop" class="hidden fixed inset-0 bg-black/80 z-[9998]"></div>
 
-  <!-- Right Slide-In Drawer (consistent with Contact & Optimisation pages) -->
+  <!-- Right Slide-In Drawer -->
   <div id="side-menu" class="fixed top-0 bottom-0 right-0 w-80 bg-dark shadow-2xl translate-x-full transition-transform duration-300 z-[9999] overflow-y-auto">
     <div class="p-6">
       <button id="close-menu" class="float-right text-4xl text-white/70 hover:text-white">
@@ -117,7 +124,7 @@
       </button>
 
       <nav class="flex flex-col text-2xl font-medium mt-12">
-        <a href="/" class="py-5 border-b border-white/10">Home</a>
+        <a href="index.html" class="py-5 border-b border-white/10">Home</a>
 
         <div class="border-b border-white/10">
           <button onclick="toggleServicesDrawer()" class="w-full py-5 flex items-center justify-between hover:text-accent">
@@ -136,11 +143,20 @@
         <a href="/pricing_guide.html" class="py-5 border-b border-white/10">Pricing</a>
         <a href="/contact.html" class="py-5 border-b border-white/10">Contact</a>
         <a href="/blog.html" class="py-5 border-b border-white/10">Blog</a>
+
+        <!-- Language Switcher in mobile drawer -->
+        <div class="pt-8 border-t border-white/10">
+          <div class="flex items-center gap-3 text-xl font-medium">
+            <a href="/portfolio.html" class="text-accent hover:text-white transition-colors font-semibold">EN</a>
+            <span class="text-white/40">/</span>
+            <a href="/portfolio-fr.html" class="hover:text-accent transition-colors">FR</a>
+          </div>
+        </div>
       </nav>
     </div>
   </div>
 
-  <!-- DRAMATIC HERO -->
+  <!-- DRAMATIC HERO (unchanged) -->
   <section class="relative h-[90vh] flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0 bg-[url('https://picsum.photos/id/1015/2000/1200')] bg-cover bg-center"></div>
     <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/80 to-black"></div>
@@ -159,7 +175,7 @@
     </div>
   </section>
 
-  <!-- PORTFOLIO MASONRY BRICK WALL -->
+  <!-- PORTFOLIO MASONRY BRICK WALL (unchanged) -->
   <section class="py-24 bg-dark-100">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
       <div class="text-center mb-16">
@@ -237,15 +253,13 @@
     </div>
   </section>
 
-
-  <!-- FLOATING WHATSAPP BUTTON (kept) -->
+  <!-- FLOATING WHATSAPP BUTTON -->
   <a href="https://wa.me/14185738680" target="_blank"
    class="fixed bottom-8 right-8 w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-2xl transition-all z-50">
   <i class="fab fa-whatsapp text-4xl text-white"></i>
 </a>
 
-
-  <!-- FOOTER - EXACT MATCH -->
+  <!-- FOOTER (exact match to index) -->
   <footer class="bg-black border-t border-white/10 py-20">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
       <div class="grid md:grid-cols-12 gap-12">
@@ -260,7 +274,7 @@
         <div class="md:col-span-2">
           <p class="font-medium text-accent mb-6">Company</p>
           <ul class="space-y-3 text-sm">
-            <li><a href="/" class="hover:text-white">Home</a></li>
+            <li><a href="index.html" class="hover:text-white">Home</a></li>
             <li><a href="/website-dev.html" class="hover:text-white">Services</a></li>
             <li><a href="/portfolio.html" class="hover:text-white">Portfolio</a></li>
             <li><a href="/about.html" class="hover:text-white">About Us</a></li>

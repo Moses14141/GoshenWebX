@@ -85,11 +85,11 @@
 
 <body class="bg-dark text-white font-body overflow-x-hidden">
 
-  <!-- HEADER (consistent with index + all pages) -->
+  <!-- HEADER (updated to 100% consistent bilingual pattern – EN active) -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-lg border-b border-white/10">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
       <div class="flex items-center justify-between h-20">
-        <a href="/" class="flex items-center gap-3">
+        <a href="index.html" class="flex items-center gap-3">
           <img src="/images/2.png" alt="Goshen Web X" class="h-14 w-auto" />
           <div class="font-heading text-3xl font-semibold tracking-tighter">GOSHEN <span class="text-accent">WEB X</span></div>
         </a>
@@ -117,9 +117,18 @@
           <a href="/blog.html" class="hover:text-accent transition-colors">Blog</a>
         </nav>
 
-        <a href="/contact.html" class="hidden lg:flex items-center gap-3 bg-accent hover:bg-white text-black font-semibold px-8 py-3.5 rounded-3xl transition-all">
-          Request a Free Quote <i class="fas fa-arrow-right"></i>
-        </a>
+        <!-- Language Switcher + CTA (desktop) – EN active -->
+        <div class="hidden lg:flex items-center gap-6">
+          <div class="flex items-center text-sm font-medium">
+            <a href="/privacy-policy.html" class="text-accent hover:text-white transition-colors px-2 font-semibold">EN</a>
+            <span class="text-white/40 mx-1">/</span>
+            <a href="/privacy-policy-fr.html" class="hover:text-accent transition-colors px-2">FR</a>
+          </div>
+
+          <a href="/contact.html" class="flex items-center gap-3 bg-accent hover:bg-white text-black font-semibold px-8 py-3.5 rounded-3xl transition-all">
+            Request a Free Quote <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
 
         <!-- Hamburger -->
         <button id="hamburger" class="lg:hidden text-4xl p-4 -mr-3 focus:outline-none active:scale-90 transition-transform">
@@ -132,7 +141,7 @@
   <!-- Backdrop -->
   <div id="backdrop" class="hidden fixed inset-0 bg-black/80 z-[9998]"></div>
 
-  <!-- Right Slide-In Drawer (no logo/brand name inside) -->
+  <!-- Right Slide-In Drawer -->
   <div id="side-menu" class="fixed top-0 bottom-0 right-0 w-80 bg-dark shadow-2xl translate-x-full transition-transform duration-300 z-[9999] overflow-y-auto">
     <div class="p-6">
       <button id="close-menu" class="float-right text-4xl text-white/70 hover:text-white">
@@ -159,11 +168,20 @@
         <a href="/pricing_guide.html" class="py-5 border-b border-white/10">Pricing</a>
         <a href="/contact.html" class="py-5 border-b border-white/10">Contact</a>
         <a href="/blog.html" class="py-5 border-b border-white/10">Blog</a>
+
+        <!-- Language Switcher in mobile drawer -->
+        <div class="pt-8 border-t border-white/10">
+          <div class="flex items-center gap-3 text-xl font-medium">
+            <a href="/privacy-policy.html" class="text-accent hover:text-white transition-colors font-semibold">EN</a>
+            <span class="text-white/40">/</span>
+            <a href="/privacy-policy-fr.html" class="hover:text-accent transition-colors">FR</a>
+          </div>
+        </div>
       </nav>
     </div>
   </div>
 
-  <!-- HERO -->
+  <!-- HERO (unchanged) -->
   <section class="pt-32 pb-16 bg-dark">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
       <div class="max-w-3xl mx-auto text-center">
@@ -178,7 +196,7 @@
     </div>
   </section>
 
-  <!-- CONTENT - CLEAN FLOWING STORY STYLE -->
+  <!-- CONTENT - CLEAN FLOWING STORY STYLE (unchanged) -->
   <section class="py-20 bg-dark-100">
     <div class="privacy-content max-w-4xl mx-auto px-5 sm:px-8 lg:px-12">
 
@@ -228,13 +246,11 @@
     </div>
   </section>
 
-
-  <!-- FLOATING WHATSAPP BUTTON (kept) -->
+  <!-- FLOATING WHATSAPP BUTTON -->
   <a href="https://wa.me/14185738680" target="_blank"
    class="fixed bottom-8 right-8 w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-2xl transition-all z-50">
   <i class="fab fa-whatsapp text-4xl text-white"></i>
 </a>
-
 
   <!-- FOOTER (exact match to index) -->
   <footer class="bg-black border-t border-white/10 py-20">
@@ -251,7 +267,7 @@
         <div class="md:col-span-2">
           <p class="font-medium text-accent mb-6">Company</p>
           <ul class="space-y-3 text-sm">
-            <li><a href="/" class="hover:text-white">Home</a></li>
+            <li><a href="index.html" class="hover:text-white">Home</a></li>
             <li><a href="/website-dev.html" class="hover:text-white">Services</a></li>
             <li><a href="/portfolio.html" class="hover:text-white">Portfolio</a></li>
           </ul>

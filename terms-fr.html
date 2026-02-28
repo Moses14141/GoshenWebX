@@ -4,13 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Découvrez le portfolio de Goshen Web X — sites web premium sur mesure, projets d’optimisation ultra-rapides et magnifiques sites portfolio conçus pour les entreprises ambitieuses au Québec et au-delà." />
-  <title>Goshen Web X | Notre Portfolio</title>
+  <meta name="description" content="Goshen Web X Conditions d'utilisation — Termes légaux régissant l'utilisation de notre site web et de nos services. Dernière mise à jour février 2026." />
+  <title>Goshen Web X | Conditions d'utilisation</title>
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Tailwind Config - EXACT same as all other pages -->
+  <!-- Tailwind Config -->
   <script>
     tailwind.config = {
       content: [],
@@ -37,24 +37,41 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
   <link rel="icon" type="image/png" href="/images/2.png" />
 
-  <!-- Masonry Brick-Wall Style -->
+  <!-- Custom CSS for Readability & Accessibility -->
   <style>
-    .masonry {
-      column-count: 1;
+    .terms-content {
+      max-width: 75ch;
+      line-height: 1.9;
+      font-size: 1.0625rem; /* 17px */
+      color: #e5e7eb;
     }
-    @media (min-width: 768px) {
-      .masonry {
-        column-count: 2;
+    .terms-content h2 {
+      font-size: 1.75rem;
+      margin-top: 3rem;
+      margin-bottom: 1.25rem;
+      font-weight: 600;
+      color: white;
+    }
+    .terms-content p {
+      margin-bottom: 1.5rem;
+    }
+    .terms-content a {
+      color: #d4a017;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+    .terms-content a:hover {
+      color: #f5d06a;
+    }
+    .terms-content a:focus {
+      outline: 3px solid #d4a017;
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+    @media (max-width: 640px) {
+      .terms-content {
+        font-size: 1.05rem;
       }
-    }
-    @media (min-width: 1024px) {
-      .masonry {
-        column-count: 3;
-      }
-    }
-    .masonry-item {
-      break-inside: avoid;
-      margin-bottom: 2rem;
     }
   </style>
 </head>
@@ -96,9 +113,9 @@
         <!-- Language Switcher + CTA (desktop) -->
         <div class="hidden lg:flex items-center gap-6">
           <div class="flex items-center text-sm font-medium">
-            <a href="/portfolio.html" class="hover:text-accent transition-colors px-2">EN</a>
+            <a href="/terms.html" class="hover:text-accent transition-colors px-2">EN</a>
             <span class="text-white/40 mx-1">/</span>
-            <a href="/portfolio-fr.html" class="text-accent hover:text-white transition-colors px-2 font-semibold">FR</a>
+            <a href="/terms-fr.html" class="text-accent hover:text-white transition-colors px-2 font-semibold">FR</a>
           </div>
 
           <a href="/contact-fr.html" class="flex items-center gap-3 bg-accent hover:bg-white text-black font-semibold px-8 py-3.5 rounded-3xl transition-all">
@@ -148,109 +165,61 @@
         <!-- Language Switcher in mobile menu -->
         <div class="pt-8 border-t border-white/10">
           <div class="flex items-center gap-3 text-xl font-medium">
-            <a href="/portfolio.html" class="hover:text-accent transition-colors">EN</a>
+            <a href="/terms.html" class="hover:text-accent transition-colors">EN</a>
             <span class="text-white/40">/</span>
-            <a href="/portfolio-fr.html" class="text-accent hover:text-white transition-colors font-semibold">FR</a>
+            <a href="/terms-fr.html" class="text-accent hover:text-white transition-colors font-semibold">FR</a>
           </div>
         </div>
       </nav>
     </div>
   </div>
 
-  <!-- DRAMATIC HERO -->
-  <section class="relative h-[90vh] flex items-center justify-center overflow-hidden">
-    <div class="absolute inset-0 bg-[url('https://picsum.photos/id/1015/2000/1200')] bg-cover bg-center"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/80 to-black"></div>
-    
-    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
-      <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-8 py-4 rounded-full text-sm border border-white/20 mb-8">
-        QUÉBEC • 2026
+  <!-- HERO -->
+  <section class="pt-32 pb-16 bg-dark">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full text-sm mb-6">
+          Légal
+        </div>
+        <h1 class="text-5xl md:text-7xl font-heading font-bold tracking-tighter leading-none">
+          Conditions d'utilisation
+        </h1>
+        <p class="mt-6 text-gray-400">Dernière mise à jour : 27 février 2026</p>
       </div>
-      <h1 class="text-6xl md:text-7xl font-heading font-bold tracking-tighter leading-none">
-        Du vrai travail.<br>
-        <span class="text-accent">De vrais résultats.</span>
-      </h1>
-      <p class="mt-8 text-2xl text-gray-300 max-w-2xl mx-auto">
-        Des sites web premium qui chargent instantanément, se classent mieux et transforment les visiteurs en clients fidèles.
-      </p>
     </div>
   </section>
 
-  <!-- PORTFOLIO MASONRY BRICK WALL -->
-  <section class="py-24 bg-dark-100">
-    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
-      <div class="text-center mb-16">
-        <span class="uppercase text-accent tracking-widest text-sm font-medium">Travaux en vedette</span>
-        <h2 class="text-5xl font-heading font-bold tracking-tighter mt-4">Nos derniers projets</h2>
-      </div>
+  <!-- CONTENT -->
+  <section class="py-20 bg-dark-100">
+    <div class="terms-content max-w-4xl mx-auto px-5 sm:px-8 lg:px-12">
+      
+      <h2>Introduction</h2>
+      <p>Bienvenue chez Goshen Web X. Ces Conditions d'utilisation régissent votre utilisation de notre site web et de nos services. En accédant ou en utilisant nos services, vous acceptez d'être lié par ces conditions. Veuillez les lire attentivement avant de continuer.</p>
 
-      <div class="masonry gap-8">
-        <!-- Project 1 -->
-        <a href="https://serenitysolutions.netlify.app/" target="_blank" class="masonry-item group block bg-dark-200 rounded-3xl overflow-hidden hover:-translate-y-3 transition-all duration-500">
-          <img src="./images/serenity.png" alt="Serenity Solutions" class="w-full h-80 object-cover transition-transform group-hover:scale-105" />
-          <div class="p-8">
-            <span class="inline-block px-4 py-1 text-xs uppercase tracking-widest bg-accent/10 text-accent rounded-full">Développement de sites web</span>
-            <h3 class="font-semibold text-2xl mt-4">Serenity Solutions</h3>
-            <p class="text-gray-400 mt-2">Site web moderne pour startup technologique</p>
-          </div>
-        </a>
+      <h2>Nos Services</h2>
+      <p>Goshen Web X offre des services professionnels de développement de sites web sur mesure, d'optimisation web, de référencement SEO et de création de sites portfolio. Tous les projets sont régis par une entente écrite distincte qui définit la portée spécifique, l'échéancier et les tarifs.</p>
 
-        <!-- Project 2 -->
-        <a href="https://nyxgold.netlify.app/" target="_blank" class="masonry-item group block bg-dark-200 rounded-3xl overflow-hidden hover:-translate-y-3 transition-all duration-500">
-          <img src="./images/nails_website.png" alt="Nyx Gold" class="w-full h-80 object-cover transition-transform group-hover:scale-105" />
-          <div class="p-8">
-            <span class="inline-block px-4 py-1 text-xs uppercase tracking-widest bg-accent/10 text-accent rounded-full">Développement de sites web</span>
-            <h3 class="font-semibold text-2xl mt-4">Nyx Gold</h3>
-            <p class="text-gray-400 mt-2">E-commerce luxe beauté</p>
-          </div>
-        </a>
+      <h2>Paiements et remboursements</h2>
+      <p>Un dépôt de cinquante pour cent (50 %) est exigé pour commencer tout projet. Le solde restant est payable à la fin du projet et après approbation du client. Tous les paiements sont non remboursables, sauf stipulation contraire dans l'entente de projet.</p>
 
-        <!-- Project 3 -->
-        <a href="https://noahoutlet.netlify.app/" target="_blank" class="masonry-item group block bg-dark-200 rounded-3xl overflow-hidden hover:-translate-y-3 transition-all duration-500">
-          <img src="images/e-com.png" alt="Noah Outlet" class="w-full h-80 object-cover transition-transform group-hover:scale-105" />
-          <div class="p-8">
-            <span class="inline-block px-4 py-1 text-xs uppercase tracking-widest bg-accent/10 text-accent rounded-full">Optimisation web</span>
-            <h3 class="font-semibold text-2xl mt-4">Noah Outlet</h3>
-            <p class="text-gray-400 mt-2">Boost de vitesse et SEO e-commerce</p>
-          </div>
-        </a>
+      <h2>Propriété intellectuelle</h2>
+      <p>Une fois le paiement complet et final effectué, vous obtenez la propriété complète du design final du site web et du code source. Nous nous réservons le droit d'exposer le projet terminé dans notre portfolio, à moins qu'une entente de confidentialité distincte ne soit en place.</p>
 
-        <!-- Project 4 -->
-        <a href="https://actresspoland.netlify.app/" target="_blank" class="masonry-item group block bg-dark-200 rounded-3xl overflow-hidden hover:-translate-y-3 transition-all duration-500">
-          <img src="images/actresspoland.png" alt="Actress Poland" class="w-full h-80 object-cover transition-transform group-hover:scale-105" />
-          <div class="p-8">
-            <span class="inline-block px-4 py-1 text-xs uppercase tracking-widest bg-accent/10 text-accent rounded-full">Site portfolio</span>
-            <h3 class="font-semibold text-2xl mt-4">Actress Poland</h3>
-            <p class="text-gray-400 mt-2">Vitrine créative pour artiste</p>
-          </div>
-        </a>
+      <h2>Responsabilités du client</h2>
+      <p>Vous acceptez de fournir des rétroactions, contenus, images et approbations en temps opportun, comme demandé. Tout retard causé par le client peut affecter l'échéancier et la date de livraison convenus.</p>
 
-        <!-- Project 5 -->
-        <a href="https://thecoffeebliss.netlify.app/" target="_blank" class="masonry-item group block bg-dark-200 rounded-3xl overflow-hidden hover:-translate-y-3 transition-all duration-500">
-          <img src="images/Coffee.png" alt="Coffee Bliss" class="w-full h-80 object-cover transition-transform group-hover:scale-105" />
-          <div class="p-8">
-            <span class="inline-block px-4 py-1 text-xs uppercase tracking-widest bg-accent/10 text-accent rounded-full">Développement de sites web</span>
-            <h3 class="font-semibold text-2xl mt-4">Coffee Bliss</h3>
-            <p class="text-gray-400 mt-2">Site corporatif premium pour café</p>
-          </div>
-        </a>
+      <h2>Limitation de responsabilité</h2>
+      <p>Goshen Web X ne sera pas responsable des dommages indirects, accessoires, spéciaux ou consécutifs découlant de l'utilisation de nos services ou du site web.</p>
 
-        <!-- Project 6 -->
-        <a href="https://bmcultureglobal.com/" target="_blank" class="masonry-item group block bg-dark-200 rounded-3xl overflow-hidden hover:-translate-y-3 transition-all duration-500">
-          <img src="/images/optim.png" alt="BM Culture Global" class="w-full h-80 object-cover transition-transform group-hover:scale-105" />
-          <div class="p-8">
-            <span class="inline-block px-4 py-1 text-xs uppercase tracking-widest bg-accent/10 text-accent rounded-full">Optimisation web</span>
-            <h3 class="font-semibold text-2xl mt-4">BM Culture Global</h3>
-            <p class="text-gray-400 mt-2">Refonte complète performance & SEO</p>
-          </div>
-        </a>
-      </div>
+      <h2>Loi applicable</h2>
+      <p>Ces Conditions d'utilisation sont régies par les lois de la province de Québec et les lois fédérales applicables du Canada.</p>
 
-      <div class="text-center mt-20">
-        <a href="/contact-fr.html" class="inline-block bg-accent hover:bg-white text-black font-semibold px-12 py-6 rounded-3xl text-xl transition-all">
-          Prêt pour votre propre projet remarquable ? Parlons-en →
-        </a>
-      </div>
+      <h2>Modifications des présentes conditions</h2>
+      <p>Nous pouvons mettre à jour ces Conditions d'utilisation de temps à autre. Toute modification sera publiée sur cette page avec une date de révision mise à jour. Votre utilisation continue de nos services après ces modifications constitue une acceptation des conditions révisées.</p>
+
+      <h2>Nous contacter</h2>
+      <p>Si vous avez des questions concernant ces Conditions d'utilisation, n'hésitez pas à nous contacter à <a href="mailto:info@goshenwebx.io" class="text-accent hover:underline">info@goshenwebx.io</a> ou à nous écrire à notre studio au Québec, Canada.</p>
+
     </div>
   </section>
 
@@ -278,7 +247,6 @@
             <li><a href="index-fr.html" class="hover:text-white">Accueil</a></li>
             <li><a href="/website-dev-fr.html" class="hover:text-white">Services</a></li>
             <li><a href="/portfolio-fr.html" class="hover:text-white">Portfolio</a></li>
-            <li><a href="/about-fr.html" class="hover:text-white">À propos</a></li>
           </ul>
         </div>
 

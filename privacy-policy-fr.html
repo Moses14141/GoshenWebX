@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Goshen Web X Politique de confidentialité — Comment nous recueillons, utilisons et protégeons vos renseignements personnels. Dernière mise à jour février 2026." />
+    <title>Goshen Web X | Politique de confidentialité</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            content: [],
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'],
+                        body: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        accent: '#d4a017',
+                        secondary: '#2a5a4e',
+                        dark: '#0a0a0a',
+                        'dark-100': '#121212',
+                        'dark-200': '#1e1e1e',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link rel="icon" type="image/png" href="/images/2.png" />
+
+    <!-- Custom CSS for Readability & Accessibility -->
+    <style>
+        .privacy-content {
+            max-width: 75ch;
+            line-height: 1.9;
+            font-size: 1.0625rem; /* 17px */
+            color: #e5e7eb;
+        }
+        .privacy-content h2 {
+            font-size: 1.75rem;
+            margin-top: 3rem;
+            margin-bottom: 1.25rem;
+            font-weight: 600;
+            color: white;
+        }
+        .privacy-content p {
+            margin-bottom: 1.5rem;
+        }
+        .privacy-content a {
+            color: #d4a017;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+        .privacy-content a:hover {
+            color: #f5d06a;
+        }
+        .privacy-content a:focus {
+            outline: 3px solid #d4a017;
+            outline-offset: 4px;
+            border-radius: 4px;
+        }
+        @media (max-width: 640px) {
+            .privacy-content {
+                font-size: 1.05rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-dark text-white font-body overflow-x-hidden">
+
+  <!-- HEADER (updated & consistent with all French pages) -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-lg border-b border-white/10">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+      <div class="flex items-center justify-between h-20">
+        <a href="index-fr.html" class="flex items-center gap-3">
+          <img src="/images/2.png" alt="Goshen Web X" class="h-14 w-auto" />
+          <div class="font-heading text-3xl font-semibold tracking-tighter">GOSHEN <span class="text-accent">WEB X</span></div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
+          <a href="index-fr.html" class="hover:text-accent transition-colors">Accueil</a>
+          <div class="group relative">
+            <button class="flex items-center gap-1 hover:text-accent transition-colors">
+              Nos Services
+              <i class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute hidden group-hover:block pt-4">
+              <div class="bg-dark-200 border border-white/10 rounded-2xl py-4 px-6 w-56 text-sm shadow-2xl">
+                <a href="/website-dev-fr.html" class="block py-3 hover:text-accent">Développement de sites web</a>
+                <a href="/web-optimisation-fr.html" class="block py-3 hover:text-accent">Optimisation web et SEO</a>
+                <a href="/portfolio-fr.html" class="block py-3 hover:text-accent">Sites portfolio</a>
+              </div>
+            </div>
+          </div>
+          <a href="/about-fr.html" class="hover:text-accent transition-colors">À propos</a>
+          <a href="/portfolio-fr.html" class="hover:text-accent transition-colors">Portfolio</a>
+          <a href="/pricing_guide-fr.html" class="hover:text-accent transition-colors">Tarifs</a>
+          <a href="/contact-fr.html" class="hover:text-accent transition-colors">Contact</a>
+          <a href="/blog-fr.html" class="hover:text-accent transition-colors">Blog</a>
+        </nav>
+
+        <!-- Language Switcher + CTA (desktop) -->
+        <div class="hidden lg:flex items-center gap-6">
+          <div class="flex items-center text-sm font-medium">
+            <a href="/privacy-policy.html" class="hover:text-accent transition-colors px-2">EN</a>
+            <span class="text-white/40 mx-1">/</span>
+            <a href="/privacy-policy-fr.html" class="text-accent hover:text-white transition-colors px-2 font-semibold">FR</a>
+          </div>
+
+          <a href="/contact-fr.html" class="flex items-center gap-3 bg-accent hover:bg-white text-black font-semibold px-8 py-3.5 rounded-3xl transition-all">
+            Demander un devis gratuit <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Hamburger -->
+        <button id="hamburger" class="lg:hidden text-4xl p-4 -mr-3 focus:outline-none active:scale-90 transition-transform">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Backdrop -->
+  <div id="backdrop" class="hidden fixed inset-0 bg-black/80 z-[9998]"></div>
+
+  <!-- Right Slide-In Drawer -->
+  <div id="side-menu" class="fixed top-0 bottom-0 right-0 w-80 bg-dark shadow-2xl translate-x-full transition-transform duration-300 z-[9999] overflow-y-auto">
+    <div class="p-6">
+      <button id="close-menu" class="float-right text-4xl text-white/70 hover:text-white">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <nav class="flex flex-col text-2xl font-medium mt-12">
+        <a href="index-fr.html" class="py-5 border-b border-white/10">Accueil</a>
+
+        <div class="border-b border-white/10">
+          <button onclick="toggleServicesDrawer()" class="w-full py-5 flex items-center justify-between hover:text-accent">
+            Nos Services
+            <i id="drawer-chevron" class="fas fa-chevron-down transition-transform duration-300"></i>
+          </button>
+          <div id="drawer-services-submenu" class="hidden pl-6 pt-2 pb-6">
+            <a href="/website-dev-fr.html" class="block py-4 text-xl hover:text-accent">Développement de sites web</a>
+            <a href="/web-optimisation-fr.html" class="block py-4 text-xl hover:text-accent">Optimisation web et SEO</a>
+            <a href="/portfolio-fr.html" class="block py-4 text-xl hover:text-accent">Sites portfolio</a>
+          </div>
+        </div>
+
+        <a href="/about-fr.html" class="py-5 border-b border-white/10">À propos</a>
+        <a href="/portfolio-fr.html" class="py-5 border-b border-white/10">Portfolio</a>
+        <a href="/pricing_guide-fr.html" class="py-5 border-b border-white/10">Tarifs</a>
+        <a href="/contact-fr.html" class="py-5 border-b border-white/10">Contact</a>
+        <a href="/blog-fr.html" class="py-5 border-b border-white/10">Blog</a>
+
+        <!-- Language Switcher in mobile menu -->
+        <div class="pt-8 border-t border-white/10">
+          <div class="flex items-center gap-3 text-xl font-medium">
+            <a href="/privacy-policy.html" class="hover:text-accent transition-colors">EN</a>
+            <span class="text-white/40">/</span>
+            <a href="/privacy-policy-fr.html" class="text-accent hover:text-white transition-colors font-semibold">FR</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="pt-32 pb-16 bg-dark">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full text-sm mb-6">
+          Légal
+        </div>
+        <h1 class="text-5xl md:text-7xl font-heading font-bold tracking-tighter leading-none">
+          Politique de confidentialité
+        </h1>
+        <p class="mt-6 text-gray-400">Dernière mise à jour : 27 février 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="py-20 bg-dark-100">
+    <div class="privacy-content max-w-4xl mx-auto px-5 sm:px-8 lg:px-12">
+
+      <h2>Notre engagement envers la confidentialité</h2>
+      <p>Chez Goshen Web X, votre vie privée est l’une de nos plus grandes priorités. Cette Politique de confidentialité explique comment nous recueillons, utilisons, divulguons et protégeons vos renseignements personnels lorsque vous visitez notre site web ou que vous faites appel à nos services.</p>
+
+      <h2>Quels renseignements nous recueillons</h2>
+      <p>Nous ne recueillons que les renseignements que vous fournissez volontairement et en toute connaissance de cause. Cela inclut généralement votre nom, votre adresse courriel, votre numéro de téléphone et tout détail de projet que vous partagez via nos formulaires de contact, demandes de devis ou communications directes par courriel ou téléphone.</p>
+      <p>Nous pouvons également recevoir des renseignements limités sur des tiers lorsqu’ils sont directement liés aux services de développement de sites web, de SEO ou de sites portfolio que vous avez demandés.</p>
+      <p>Nous ne recueillons jamais de données personnelles sans votre consentement explicite.</p>
+
+      <h2>Comment nous utilisons les renseignements recueillis</h2>
+      <p>Nous utilisons les renseignements que vous fournissez uniquement pour vous offrir des services numériques exceptionnels. Cela inclut la coordination de projets, le soutien à la clientèle, l’envoi de mises à jour, le traitement des factures et, occasionnellement, l’envoi de bulletins d’information ou d’informations sur nos services. Vous pouvez vous désabonner des communications marketing à tout moment.</p>
+      <p>Nous ne vendons, ne louons ni ne partageons vos renseignements personnels avec des tiers, sauf lorsque cela est strictement nécessaire pour réaliser les services demandés ou lorsque la loi l’exige.</p>
+
+      <h2>Cookies et analyses du site web</h2>
+      <p>Notre site web utilise des cookies et des technologies similaires pour améliorer votre expérience, mémoriser vos préférences et analyser la façon dont les visiteurs interagissent avec notre contenu. Ces outils nous aident à améliorer les performances du site, la pertinence du contenu et l’expérience globale des utilisateurs.</p>
+      <p>Les renseignements recueillis via les cookies sont anonymes et ne vous identifient pas personnellement. Ces données sont partagées avec Google Analytics uniquement pour des rapports sur le trafic et l’engagement du site https://goshenwebx.io.</p>
+
+      <h2>Remarketing</h2>
+      <p>Nous pouvons utiliser des cookies de remarketing pour afficher des publicités pertinentes aux visiteurs précédents de notre site sur d’autres sites internet. Ces annonces sont basées uniquement sur vos visites et comportements de navigation passés sur notre site.</p>
+      <p>Vous pouvez gérer ou désactiver la publicité personnalisée à tout moment en visitant le Gestionnaire de préférences des annonces Google.</p>
+
+      <h2>Sites web et liens externes</h2>
+      <p>Notre site peut contenir des liens vers des sites externes pour votre commodité. Nous ne contrôlons pas ces sites tiers ni leurs pratiques de confidentialité, et nous ne sommes pas responsables de leur contenu ou de leur gestion des données. Nous vous encourageons vivement à consulter les politiques de confidentialité de tout site externe que vous visitez.</p>
+
+      <h2>Notre engagement en matière de sécurité des données</h2>
+      <p>Nous maintenons des mesures techniques, administratives et physiques appropriées pour protéger les renseignements personnels que nous recueillons. Toutes les transactions sensibles, y compris les paiements, se déroulent sur des serveurs sécurisés et chiffrés utilisant la technologie SSL standard de l’industrie.</p>
+
+      <h2>Traitement des paiements</h2>
+      <p>Nous acceptons les paiements en ligne sécurisés via PayPal et Stripe. Toutes les données de carte de crédit et de paiement sont traitées directement par ces fournisseurs de confiance sur leurs plateformes sécurisées. Nous ne conservons pas vos données de paiement complètes sur nos serveurs.</p>
+
+      <h2>Protection de la vie privée des enfants</h2>
+      <p>Goshen Web X s’engage à protéger la vie privée des enfants. Notre site web et nos services ne sont ni conçus ni destinés aux personnes de moins de 18 ans, et nous ne recueillons ni ne conservons sciemment des renseignements sur quiconque âgé de moins de 13 ans.</p>
+      <p>Si nous découvrons qu’un utilisateur de moins de 18 ans a soumis des renseignements personnels, nous les supprimerons immédiatement et ne les utiliserons à aucune fin.</p>
+
+      <h2>Votre consentement et mises à jour de la politique</h2>
+      <p>En utilisant notre site web et nos services, vous consentez aux pratiques décrites dans cette Politique de confidentialité. Si nous apportons des modifications importantes à cette politique, nous mettrons à jour la date « Dernière mise à jour » et publierons la version révisée sur cette page. Votre utilisation continue après toute modification constitue une acceptation de la politique mise à jour.</p>
+
+      <h2>Vos droits et choix en matière de confidentialité</h2>
+      <p>Vous n’êtes pas obligé de fournir des renseignements personnels pour naviguer sur notre site. Vous pouvez refuser les communications marketing à tout moment en cliquant sur le lien de désabonnement dans nos courriels ou en nous contactant directement.</p>
+      <p>Vous pouvez demander l’accès à, la correction ou la suppression de vos renseignements personnels en nous contactant par écrit. Nous répondrons à votre demande le plus rapidement possible et conformément à la loi applicable.</p>
+
+      <h2>Nous contacter</h2>
+      <p>Si vous avez des questions, des préoccupations ou des demandes concernant cette Politique de confidentialité, veuillez nous contacter à <a href="mailto:info@goshenwebx.io" class="text-accent hover:underline">info@goshenwebx.io</a></p>
+
+    </div>
+  </section>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/14185738680" target="_blank"
+   class="fixed bottom-8 right-8 w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-2xl transition-all z-50">
+  <i class="fab fa-whatsapp text-4xl text-white"></i>
+</a>
+
+  <!-- FOOTER -->
+  <footer class="bg-black border-t border-white/10 py-20">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+      <div class="grid md:grid-cols-12 gap-12">
+        <div class="md:col-span-4">
+          <div class="flex items-center gap-3 mb-6">
+            <img src="/images/2.png" alt="Logo" class="h-14" />
+            <span class="font-heading text-3xl font-bold tracking-tighter">GOSHEN WEB X</span>
+          </div>
+          <p class="text-gray-400 max-w-xs">Studio de développement web premium au Québec, Canada.</p>
+        </div>
+
+        <div class="md:col-span-2">
+          <p class="font-medium text-accent mb-6">Entreprise</p>
+          <ul class="space-y-3 text-sm">
+            <li><a href="index-fr.html" class="hover:text-white">Accueil</a></li>
+            <li><a href="/website-dev-fr.html" class="hover:text-white">Services</a></li>
+            <li><a href="/portfolio-fr.html" class="hover:text-white">Portfolio</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-2">
+          <p class="font-medium text-accent mb-6">Services</p>
+          <ul class="space-y-3 text-sm">
+            <li><a href="/website-dev-fr.html" class="hover:text-white">Développement de sites web</a></li>
+            <li><a href="/web-optimisation-fr.html" class="hover:text-white">Optimisation &amp; SEO</a></li>
+            <li><a href="/portfolio-fr.html" class="hover:text-white">Sites portfolio</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-4">
+          <p class="font-medium text-accent mb-6">Dites bonjour</p>
+          <p class="text-gray-400">info@goshenwebx.io</p>
+          <p class="text-gray-400 mt-1">Québec, Canada</p>
+          
+          <div class="flex gap-6 text-3xl mt-10">
+            <a href="https://x.com/goshenwebx" class="hover:text-accent"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/goshen-web-x-9b3246364" class="hover:text-accent"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/gwx_technologies" class="hover:text-accent"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 mt-16 pt-8 text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p>© 2026 Goshen Web X. Tous droits réservés.</p>
+        <p class="flex gap-6">
+          <a href="/privacy-policy-fr.html" class="hover:text-white">Politique de confidentialité</a>
+          <a href="/terms-fr.html" class="hover:text-white">Conditions d'utilisation</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const sideMenu = document.getElementById('side-menu');
+    const backdrop = document.getElementById('backdrop');
+    const closeBtn = document.getElementById('close-menu');
+
+    hamburger.addEventListener('click', () => {
+      sideMenu.classList.remove('translate-x-full');
+      backdrop.classList.remove('hidden');
+    });
+
+    function closeMenu() {
+      sideMenu.classList.add('translate-x-full');
+      backdrop.classList.add('hidden');
+    }
+
+    closeBtn.addEventListener('click', closeMenu);
+    backdrop.addEventListener('click', closeMenu);
+
+    window.toggleServicesDrawer = function () {
+      const submenu = document.getElementById('drawer-services-submenu');
+      const chevron = document.getElementById('drawer-chevron');
+      submenu.classList.toggle('hidden');
+      chevron.classList.toggle('rotate-180');
+    };
+
+    AOS.init({ duration: 1000, once: true });
+  </script>
+</body>
+</html>

@@ -72,9 +72,19 @@
           <a href="/blog.html" class="hover:text-accent transition-colors">Blog</a>
         </nav>
 
-        <a href="/contact.html" class="hidden lg:flex items-center gap-3 bg-accent hover:bg-white text-black font-semibold px-8 py-3.5 rounded-3xl transition-all">
-          Request a Free Quote <i class="fas fa-arrow-right"></i>
-        </a>
+        <!-- Language Switcher + CTA (desktop) -->
+        <div class="hidden lg:flex items-center gap-6">
+          <!-- Translation Button (French) - perfectly styled, no layout shift -->
+          <div class="flex items-center text-sm font-medium">
+            <a href="pricing_guide.html" class="hover:text-accent transition-colors px-2">EN</a>
+            <span class="text-white/40 mx-1">/</span>
+            <a href="pricing_guide-fr.html" class="text-accent hover:text-white transition-colors px-2 font-semibold">FR</a>
+          </div>
+
+          <a href="/contact.html" class="flex items-center gap-3 bg-accent hover:bg-white text-black font-semibold px-8 py-3.5 rounded-3xl transition-all">
+            Request a Free Quote <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
 
         <!-- Hamburger -->
         <button id="hamburger" class="lg:hidden text-4xl p-4 -mr-3 focus:outline-none active:scale-90 transition-transform">

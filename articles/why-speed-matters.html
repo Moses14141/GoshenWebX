@@ -47,7 +47,7 @@
 
 <body class="bg-dark text-white font-body overflow-x-hidden">
 
-  <!-- HEADER (standard across entire site) -->
+    <!-- HEADER (consistent with all pages) -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-lg border-b border-white/10">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
       <div class="flex items-center justify-between h-20">
@@ -79,9 +79,19 @@
           <a href="/blog.html" class="hover:text-accent transition-colors">Blog</a>
         </nav>
 
-        <a href="/contact.html" class="hidden lg:flex items-center gap-3 bg-accent hover:bg-white text-black font-semibold px-8 py-3.5 rounded-3xl transition-all">
-          Request a Free Quote <i class="fas fa-arrow-right"></i>
-        </a>
+        <!-- Language Switcher + CTA (desktop) -->
+        <div class="hidden lg:flex items-center gap-6">
+          <!-- Translation Button (French) - perfectly styled, no layout shift -->
+          <div class="flex items-center text-sm font-medium">
+            <a href="contact.html" class="hover:text-accent transition-colors px-2">EN</a>
+            <span class="text-white/40 mx-1">/</span>
+            <a href="contact_fr.html" class="text-accent hover:text-white transition-colors px-2 font-semibold">FR</a>
+          </div>
+
+          <a href="/contact.html" class="flex items-center gap-3 bg-accent hover:bg-white text-black font-semibold px-8 py-3.5 rounded-3xl transition-all">
+            Request a Free Quote <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
 
         <!-- Hamburger -->
         <button id="hamburger" class="lg:hidden text-4xl p-4 -mr-3 focus:outline-none active:scale-90 transition-transform">

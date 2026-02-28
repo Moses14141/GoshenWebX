@@ -1,338 +1,417 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Découvrez les services web professionnels de Goshen Web X : développement de sites personnalisés, optimisation web, et superbes portfolios."
-    />
-    <title>Goshen Web X - Nos Services</title>
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/splitting/dist/splitting.css"
-    />
-    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
-    <link rel="icon" type="image/png" href="/images/2.png">
 
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RBSLCPZFBV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Services web premium au Québec : développement de sites web sur mesure, optimisation web et SEO, ainsi que de magnifiques sites portfolio. Conçus pour les petites entreprises ambitieuses." />
+  <title>Goshen Web X | Nos Services</title>
 
-  gtag('config', 'G-RBSLCPZFBV');
-</script>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      content: [],
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            accent: '#d4a017',
+            secondary: '#2a5a4e',
+            dark: '#0a0a0a',
+            'dark-100': '#121212',
+            'dark-200': '#1e1e1e',
+          }
+        }
+      }
+    }
+  </script>
 
-  </head>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <link rel="icon" type="image/png" href="/images/2.png" />
+</head>
 
-  <body>
-    <header class="sticky-header">
-        <div class="logo">
-          <a href="index-fr.html">Goshen Web X</a>
-        </div>
-        <div class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <nav>
-          <ul>
-            <li><a href="index-fr.html">Accueil</a></li>
-            <li><a href="service-fr.html">Services</a></li>
-            <li><a href="portfolio-fr.html">Portfolio</a></li>
-            <li><a href="index-fr.html#about">À Propos</a></li>
-            <li><a href="index-fr.html#contact">Contact</a></li>
-            <li class="lang-toggle">
-              <a href="website-dev.html" title="Switch to French">
-                <i class="fas fa-globe"></i> EN
-              </a>
-            </li>
-          </ul>
+<body class="bg-dark text-white font-body overflow-x-hidden">
+
+  <!-- HEADER (updated & consistent with all French pages) -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-lg border-b border-white/10">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+      <div class="flex items-center justify-between h-20">
+        <a href="index-fr.html" class="flex items-center gap-3">
+          <img src="/images/2.png" alt="Goshen Web X" class="h-14 w-auto" />
+          <div class="font-heading text-3xl font-semibold tracking-tighter">GOSHEN <span class="text-accent">WEB X</span></div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
+          <a href="index-fr.html" class="hover:text-accent transition-colors">Accueil</a>
+          <div class="group relative">
+            <button class="flex items-center gap-1 hover:text-accent transition-colors">
+              Nos Services
+              <i class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute hidden group-hover:block pt-4">
+              <div class="bg-dark-200 border border-white/10 rounded-2xl py-4 px-6 w-56 text-sm shadow-2xl">
+                <a href="/website-dev-fr.html" class="block py-3 hover:text-accent">Développement de sites web</a>
+                <a href="/web-optimisation-fr.html" class="block py-3 hover:text-accent">Optimisation web et SEO</a>
+                <a href="/portfolio-fr.html" class="block py-3 hover:text-accent">Sites portfolio</a>
+              </div>
+            </div>
+          </div>
+          <a href="/about-fr.html" class="hover:text-accent transition-colors">À propos</a>
+          <a href="/portfolio-fr.html" class="hover:text-accent transition-colors">Portfolio</a>
+          <a href="/pricing_guide-fr.html" class="hover:text-accent transition-colors">Tarifs</a>
+          <a href="/contact-fr.html" class="hover:text-accent transition-colors">Contact</a>
+          <a href="/blog-fr.html" class="hover:text-accent transition-colors">Blog</a>
         </nav>
-      </header>
 
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Nos Services Web</h1>
-        <p>
-          Offrant des solutions sur mesure à fort impact pour stimuler la
-          croissance de votre entreprise avec des sites web personnalisés,
-          l'optimisation et des portfolios époustouflants.
-        </p>
-        <button class="cta-button" onclick="location.href='#services'">
-          Découvrir les Services
+        <!-- Language Switcher + CTA (desktop) -->
+        <div class="hidden lg:flex items-center gap-6">
+          <div class="flex items-center text-sm font-medium">
+            <a href="/services.html" class="hover:text-accent transition-colors px-2">EN</a>
+            <span class="text-white/40 mx-1">/</span>
+            <a href="/services-fr.html" class="text-accent hover:text-white transition-colors px-2 font-semibold">FR</a>
+          </div>
+
+          <a href="/contact-fr.html" class="flex items-center gap-3 bg-accent hover:bg-white text-black font-semibold px-8 py-3.5 rounded-3xl transition-all">
+            Demander un devis gratuit <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Hamburger -->
+        <button id="hamburger" class="lg:hidden text-4xl p-4 -mr-3 focus:outline-none active:scale-90 transition-transform">
+          <i class="fas fa-bars"></i>
         </button>
       </div>
-    </section>
+    </div>
+  </header>
 
-    <section id="services" class="services-section" data-aos="fade-right">
-      <p class="text-center">
-        Transformez votre présence en ligne avec nos services professionnels de
-        <span class="text-decor">
-          développement web, optimisation et portfolio
-        </span>.
-      </p>
-      <h2>Notre <span class="word-underline" data-splitting>Expertise</span></h2>
+  <!-- Backdrop -->
+  <div id="backdrop" class="hidden fixed inset-0 bg-black/80 z-[9998]"></div>
 
-      <div class="service-grid">
-        <div class="service-item">
-          <i class="fas fa-laptop-code fa-3x"></i>
-          <h3>Développement de Sites Web</h3>
-          <p>
-            Sites web personnalisés et responsifs adaptés à votre marque, conçus
-            pour la performance, l'évolutivité et une expérience utilisateur fluide.
-          </p>
-          <a href="/website-dev-fr.html" class="cta-link">Commencer</a>
-        </div>
-        <div class="service-item">
-          <i class="fas fa-tachometer-alt fa-3x"></i>
-          <h3>Optimisation Web</h3>
-          <p>
-            Améliorez la vitesse, le référencement et l'expérience utilisateur de
-            votre site avec des techniques de pointe pour maximiser les conversions.
-          </p>
-          <a href="#contact" class="cta-link">Optimiser Maintenant</a>
-        </div>
-        <div class="service-item">
-          <i class="fas fa-briefcase fa-3x"></i>
-          <h3>Portfolio Web</h3>
-          <p>
-            Mettez en valeur votre succès avec des sites de portfolio époustouflants
-            qui soulignent vos réalisations et captivent votre public.
-          </p>
-          <a href="/portfolio-fr.html" class="cta-link">Voir les Portfolios</a>
-        </div>
-      </div>
-    </section>
+  <!-- Right Slide-In Drawer -->
+  <div id="side-menu" class="fixed top-0 bottom-0 right-0 w-80 bg-dark shadow-2xl translate-x-full transition-transform duration-300 z-[9999] overflow-y-auto">
+    <div class="p-6">
+      <button id="close-menu" class="float-right text-4xl text-white/70 hover:text-white">
+        <i class="fas fa-times"></i>
+      </button>
 
-    <section
-      id="benefits"
-      class="benefits-section bg-secondary"
-      data-aos="fade-up"
-    >
-      <p class="text-center">
-        Notre expertise offre des résultats mesurables pour votre
-        <span class="text-decor"> entreprise. </span>
-      </p>
-      <h2>
-        Pourquoi Choisir Nos
-        <span class="word-underline" data-splitting>Services ?</span>
-      </h2>
-      <div class="benefits-grid">
-        <div class="benefit-item">
-          <i class="fas fa-star fa-2x"></i>
-          <h3>Approche Centrée sur le Client</h3>
-          <p>
-            Nous priorisons votre vision, garantissant que chaque projet est en
-            phase avec votre marque et vos objectifs.
-          </p>
-        </div>
-        <div class="benefit-item">
-          <i class="fas fa-clock fa-2x"></i>
-          <h3>Livraison Ponctuelle</h3>
-          <p>
-            Notre processus simplifié garantit que les projets sont terminés à
-            temps sans compromettre la qualité.
-          </p>
-        </div>
-        <div class="benefit-item">
-          <i class="fas fa-shield-alt fa-2x"></i>
-          <h3>Expertise Prouvée</h3>
-          <p>
-            Soutenus par des années d'expérience, nous proposons des solutions
-            innovantes approuvées par des clients du monde entier.
-          </p>
-        </div>
-      </div>
-    </section>
+      <nav class="flex flex-col text-2xl font-medium mt-12">
+        <a href="index-fr.html" class="py-5 border-b border-white/10">Accueil</a>
 
-    <section id="testimonials" class="testimonials-section" data-aos="fade-top">
-      <h2>
-        Ce Que Nos <span class="word-underline" data-splitting>Clients</span> Disent
-      </h2>
-
-      <div class="testimonial-grid">
-        <div class="testimonial-item">
-          <p>
-            « Goshen Web X a transformé notre vision en un site web magnifique en un
-            temps record. Professionnel et abordable ! »
-          </p>
-          <span>- Sarah K., Propriétaire de Petite Entreprise</span>
-        </div>
-        <div class="testimonial-item">
-          <p>
-            « Leurs services d'optimisation web ont considérablement amélioré les
-            performances de notre site. Hautement recommandé ! »
-          </p>
-          <span>- James T., Entrepreneur</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq" class="faq-section bg-secondary" data-aos="fade-right">
-      <p style="text-align: center">
-        Trouvez des réponses aux questions fréquentes
-        <span class="text-decor"> sur nos services. </span>
-      </p>
-      <h2>
-        Questions <span class="word-underline" data-splitting>Fréquemment Posées</span>
-      </h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <h3 class="faq-question">
-            Combien de temps faut-il pour construire un site web ?
-          </h3>
-          <div class="faq-answer">
-            <p>
-              Les délais varient selon la complexité, mais la plupart des projets
-              prennent de 4 à 8 semaines, de la découverte au lancement.
-            </p>
+        <div class="border-b border-white/10">
+          <button onclick="toggleServicesDrawer()" class="w-full py-5 flex items-center justify-between hover:text-accent">
+            Nos Services
+            <i id="drawer-chevron" class="fas fa-chevron-down transition-transform duration-300"></i>
+          </button>
+          <div id="drawer-services-submenu" class="hidden pl-6 pt-2 pb-6">
+            <a href="/website-dev-fr.html" class="block py-4 text-xl hover:text-accent">Développement de sites web</a>
+            <a href="/web-optimisation-fr.html" class="block py-4 text-xl hover:text-accent">Optimisation web et SEO</a>
+            <a href="/portfolio-fr.html" class="block py-4 text-xl hover:text-accent">Sites portfolio</a>
           </div>
         </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Offrez-vous un support continu ?</h3>
-          <div class="faq-answer">
-            <p>
-              Oui, nous proposons des services de maintenance, de mises à jour et
-              d'optimisation pour maintenir votre site à son meilleur niveau.
-            </p>
+
+        <a href="/about-fr.html" class="py-5 border-b border-white/10">À propos</a>
+        <a href="/portfolio-fr.html" class="py-5 border-b border-white/10">Portfolio</a>
+        <a href="/pricing_guide-fr.html" class="py-5 border-b border-white/10">Tarifs</a>
+        <a href="/contact-fr.html" class="py-5 border-b border-white/10">Contact</a>
+        <a href="/blog-fr.html" class="py-5 border-b border-white/10">Blog</a>
+
+        <!-- Language Switcher in mobile menu -->
+        <div class="pt-8 border-t border-white/10">
+          <div class="flex items-center gap-3 text-xl font-medium">
+            <a href="/services.html" class="hover:text-accent transition-colors">EN</a>
+            <span class="text-white/40">/</span>
+            <a href="/services-fr.html" class="text-accent hover:text-white transition-colors font-semibold">FR</a>
           </div>
         </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Pouvez-vous optimiser un site web existant ?</h3>
-          <div class="faq-answer">
-            <p>
-              Absolument ! Nous analysons votre site et mettons en œuvre des stratégies
-              sur mesure pour améliorer la vitesse, le référencement et l'expérience utilisateur.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+      </nav>
+    </div>
+  </div>
 
-    <section id="contact" class="contact-section" data-aos="fade-up">
-      <p>
-        Contactez-nous pour démarrer votre projet de
-        <span class="text-decor">
-          développement, d'optimisation ou de portfolio
-        </span>
-        dès aujourd'hui.
-      </p>
-      <h2>
-        Construisons Votre
-        <span class="word-underline" data-splitting>Avenir</span>
-      </h2>
-      <div id="alertContainer">
-        <div id="successAlert" class="alert success">
-          Merci ! Votre message a été envoyé avec succès.
-        </div>
-        <div id="errorAlert" class="alert error">
-          Une erreur s'est produite. Veuillez réessayer plus tard.
-        </div>
-      </div>
-
-      <form id="contactForm">
-        <input type="text" name="name" placeholder="Votre Nom" required />
-        <input type="email" name="email" placeholder="Votre Email" required />
-        <textarea
-          name="message"
-          placeholder="Parlez-nous de votre projet"
-          rows="5"
-          required
-        ></textarea>
-        <button type="submit" class="cta-button">Envoyer le Message</button>
-      </form>
-      <p>
-        Ou envoyez-nous un email :
-        <a href="mailto:info@goshenwebx.com" class="email-link"
-          >info@goshenwebx.com</a
-        >
-      </p>
-    </section>
-
+  <!-- HERO -->
+  <section class="min-h-screen relative flex items-center bg-black pt-20">
+    <div class="absolute inset-0 bg-[url('https://picsum.photos/id/1015/1920/1080')] bg-cover bg-center"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent"></div>
     
-    <footer class="footer">
-      <p>© 2025 Goshen Web X Inc. Tous droits réservés.</p>
-      <div class="social-links">
-        <a href="https://x.com/goshenwebx?s=21" class="social-link"
-          ><i class="bi bi-twitter"></i> Twitter</a
-        >
-        <a href="https://www.linkedin.com/in/goshen-web-x-9b3246364?trk=contact-info" class="social-link"
-          ><i class="bi bi-linkedin"></i> LinkedIn</a
-        >
-        <a href="https://www.instagram.com/gwx_technologies?igsh=MXBsNm1mNGpycW9uag%3D%3D&utm_source=qr" class="social-link"
-          ><i class="bi bi-instagram"></i> Instagram</a
-        >
+    <div class="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-12">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full text-sm mb-6">
+          <span class="w-3 h-3 bg-accent rounded-full animate-pulse"></span>
+          SERVICES WEB PROFESSIONNELS • QUÉBEC
+        </div>
+        
+        <h1 class="text-5xl md:text-7xl font-heading font-bold tracking-tighter leading-none mb-8">
+          Des services qui<br>
+          <span class="text-accent">font croître votre entreprise</span>
+        </h1>
+        
+        <p class="text-xl text-gray-300 mb-10 max-w-lg">
+          Sites web sur mesure, optimisation rigoureuse et portfolios époustouflants conçus pour amplifier votre présence en ligne et générer une vraie croissance.
+        </p>
+        
+        <a href="#services" class="inline-block bg-accent hover:bg-white text-black font-semibold px-10 py-5 rounded-3xl text-lg transition-all">
+          Découvrir nos services →
+        </a>
       </div>
-    </footer>
+    </div>
+  </section>
 
+  <!-- SERVICES GRID -->
+  <section id="services" class="py-24 bg-dark-100">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+      <div class="text-center mb-16">
+        <span class="uppercase text-accent tracking-widest text-sm">Ce que nous offrons</span>
+        <h2 class="text-5xl font-heading font-bold tracking-tighter mt-4">Nos services principaux</h2>
+      </div>
 
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-dark-200 rounded-3xl overflow-hidden hover:-translate-y-2 transition-all">
+          <img src="/images/web_ilustr.jpg" alt="Développement de sites web" class="w-full h-64 object-cover">
+          <div class="p-8">
+            <h3 class="text-3xl font-semibold mb-4">Développement de sites web</h3>
+            <p class="text-gray-400 mb-6">Sites web sur mesure et haute performance conçus pour transformer les visiteurs en clients fidèles.</p>
+            <a href="/website-dev-fr.html" class="text-accent font-medium hover:underline">En savoir plus →</a>
+          </div>
+        </div>
 
-    <!-- Firebase SDKs -->
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-    <script src="/js/storage.js"></script>
-    <script src="/js/service.js"></script>
+        <div class="bg-dark-200 rounded-3xl overflow-hidden hover:-translate-y-2 transition-all">
+          <img src="/images/web_opt.jpg" alt="Optimisation web et SEO" class="w-full h-64 object-cover">
+          <div class="p-8">
+            <h3 class="text-3xl font-semibold mb-4">Optimisation web et SEO</h3>
+            <p class="text-gray-400 mb-6">Vitesse foudroyante, meilleurs classements Google et augmentations massives des conversions.</p>
+            <a href="/web-optimisation-fr.html" class="text-accent font-medium hover:underline">En savoir plus →</a>
+          </div>
+        </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/typewriter-effect@2.18.0/dist/core.js"></script>
-    <script>
-      const app = document.getElementById('typewriter-text');
+        <div class="bg-dark-200 rounded-3xl overflow-hidden hover:-translate-y-2 transition-all">
+          <img src="/images/portfolio.jpg" alt="Sites portfolio" class="w-full h-64 object-cover">
+          <div class="p-8">
+            <h3 class="text-3xl font-semibold mb-4">Sites portfolio</h3>
+            <p class="text-gray-400 mb-6">Portfolios personnels et d’entreprise époustouflants qui vous rendent inoubliable.</p>
+            <a href="/portfolio-fr.html" class="text-accent font-medium hover:underline">En savoir plus →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      const typewriter = new Typewriter(app, {
-        loop: true,
-        delay: 75,
-      });
+  <!-- WHY US -->
+  <section class="py-24 bg-dark">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl font-heading font-bold tracking-tighter">Pourquoi les entreprises nous choisissent</h2>
+      </div>
 
-      typewriter
-        .typeString('Goshen Web X')
-        .pauseFor(2000)
-        .deleteAll()
-        .typeString('Sites Web Éblouissants')
-        .pauseFor(2000)
-        .deleteAll()
-        .typeString('SEO Avancé')
-        .pauseFor(2000)
-        .start();
-    </script>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center bg-dark-200 rounded-3xl p-10">
+          <i class="fas fa-star text-5xl text-accent mb-6"></i>
+          <h3 class="text-2xl font-semibold mb-4">Centré sur le client</h3>
+          <p class="text-gray-400">Votre vision passe en premier. Chaque détail est adapté à votre marque et à vos objectifs.</p>
+        </div>
+        <div class="text-center bg-dark-200 rounded-3xl p-10">
+          <i class="fas fa-clock text-5xl text-accent mb-6"></i>
+          <h3 class="text-2xl font-semibold mb-4">Livraison rapide</h3>
+          <p class="text-gray-400">La plupart des projets sont lancés en 4 à 6 semaines sans aucun compromis sur la qualité.</p>
+        </div>
+        <div class="text-center bg-dark-200 rounded-3xl p-10">
+          <i class="fas fa-shield-alt text-5xl text-accent mb-6"></i>
+          <h3 class="text-2xl font-semibold mb-4">Résultats prouvés</h3>
+          <p class="text-gray-400">Augmentation moyenne de +340 % des conversions et scores Lighthouse de 98 %.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- AOS Animation -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        duration: 1000,
-        once: true,
-      });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        duration: 1000,
-        once: true,
-      });
-    </script>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        Splitting();
-      });
-    </script>
-  </body>
+  <!-- TESTIMONIALS -->
+  <section class="py-24 bg-dark-100">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 text-center">
+      <h2 class="text-5xl font-heading font-bold tracking-tighter mb-12">Ce que disent nos clients</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-dark-200 rounded-3xl p-8">
+          <p class="italic text-lg">"Goshen Web X a transformé notre vision en un site web magnifique en un temps record. Professionnel et abordable !"</p>
+          <p class="mt-8 font-semibold">- Sarah K., Propriétaire de petite entreprise</p>
+        </div>
+        <div class="bg-dark-200 rounded-3xl p-8">
+          <p class="italic text-lg">"Leurs services d’optimisation ont boosté les performances de notre site de façon spectaculaire. Je recommande vivement !"</p>
+          <p class="mt-8 font-semibold">- James T., Entrepreneur</p>
+        </div>
+        <div class="bg-dark-200 rounded-3xl p-8">
+          <p class="italic text-lg">"Service imbattable. Ils livrent un design exceptionnel et des résultats concrets."</p>
+          <p class="mt-8 font-semibold">- Maria L., Fondatrice</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-24 bg-dark">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl font-heading font-bold tracking-tighter">Questions fréquentes</h2>
+      </div>
+
+      <div class="max-w-3xl mx-auto space-y-4">
+        <div class="faq-item bg-dark-200 rounded-3xl overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center px-8 py-6 text-left font-semibold text-xl hover:bg-dark-100 transition-colors">
+            Combien de temps faut-il pour créer un site web ?
+            <i class="fas fa-chevron-down text-accent transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 px-8">
+            <p class="text-gray-400 pb-6">La plupart des projets prennent de 4 à 6 semaines de la découverte au lancement, selon la complexité.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-dark-200 rounded-3xl overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center px-8 py-6 text-left font-semibold text-xl hover:bg-dark-100 transition-colors">
+            Offrez-vous un soutien continu ?
+            <i class="fas fa-chevron-down text-accent transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 px-8">
+            <p class="text-gray-400 pb-6">Oui. Nous proposons des plans de maintenance, mises à jour et optimisation pour garder votre site au sommet de sa performance.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-dark-200 rounded-3xl overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center px-8 py-6 text-left font-semibold text-xl hover:bg-dark-100 transition-colors">
+            Pouvez-vous optimiser un site web existant ?
+            <i class="fas fa-chevron-down text-accent transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 px-8">
+            <p class="text-gray-400 pb-6">Absolument ! Nous analysons votre site actuel et mettons en place des améliorations sur mesure pour la vitesse, le SEO et les conversions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-24 bg-dark-100">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 text-center">
+      <h2 class="text-5xl font-heading font-bold tracking-tighter mb-6">Prêt à faire croître votre entreprise en ligne ?</h2>
+      <p class="text-xl text-gray-300 max-w-xl mx-auto mb-12">Construisons quelque chose d’incroyable ensemble.</p>
+      
+      <a href="/contact-fr.html" class="inline-block bg-accent hover:bg-white text-black font-semibold px-14 py-6 rounded-3xl text-xl transition-all">
+        Obtenez votre devis gratuit
+      </a>
+    </div>
+  </section>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/14185738680" target="_blank"
+   class="fixed bottom-8 right-8 w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-2xl transition-all z-50">
+  <i class="fab fa-whatsapp text-4xl text-white"></i>
+</a>
+
+  <!-- FOOTER -->
+  <footer class="bg-black border-t border-white/10 py-20">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+      <div class="grid md:grid-cols-12 gap-12">
+        <div class="md:col-span-4">
+          <div class="flex items-center gap-3 mb-6">
+            <img src="/images/2.png" alt="Logo" class="h-14" />
+            <span class="font-heading text-3xl font-bold tracking-tighter">GOSHEN WEB X</span>
+          </div>
+          <p class="text-gray-400 max-w-xs">Studio de développement web premium au Québec, Canada.</p>
+        </div>
+
+        <div class="md:col-span-2">
+          <p class="font-medium text-accent mb-6">Entreprise</p>
+          <ul class="space-y-3 text-sm">
+            <li><a href="index-fr.html" class="hover:text-white">Accueil</a></li>
+            <li><a href="/website-dev-fr.html" class="hover:text-white">Services</a></li>
+            <li><a href="/portfolio-fr.html" class="hover:text-white">Portfolio</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-2">
+          <p class="font-medium text-accent mb-6">Services</p>
+          <ul class="space-y-3 text-sm">
+            <li><a href="/website-dev-fr.html" class="hover:text-white">Développement de sites web</a></li>
+            <li><a href="/web-optimisation-fr.html" class="hover:text-white">Optimisation &amp; SEO</a></li>
+            <li><a href="/portfolio-fr.html" class="hover:text-white">Sites portfolio</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-4">
+          <p class="font-medium text-accent mb-6">Dites bonjour</p>
+          <p class="text-gray-400">info@goshenwebx.io</p>
+          <p class="text-gray-400 mt-1">Québec, Canada</p>
+          
+          <div class="flex gap-6 text-3xl mt-10">
+            <a href="https://x.com/goshenwebx" class="hover:text-accent"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/goshen-web-x-9b3246364" class="hover:text-accent"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/gwx_technologies" class="hover:text-accent"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 mt-16 pt-8 text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p>© 2026 Goshen Web X. Tous droits réservés.</p>
+        <p class="flex gap-6">
+          <a href="/privacy-policy-fr.html" class="hover:text-white">Confidentialité</a>
+          <a href="/terms-fr.html" class="hover:text-white">Conditions d'utilisation</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // FAQ Accordion
+    function toggleFaq(btn) {
+      const answer = btn.nextElementSibling;
+      const icon = btn.querySelector('i');
+      
+      if (answer.style.maxHeight && answer.style.maxHeight !== '0px') {
+        answer.style.maxHeight = '0px';
+        icon.style.transform = 'rotate(0deg)';
+      } else {
+        document.querySelectorAll('.faq-answer').forEach(el => {
+          el.style.maxHeight = '0px';
+          el.previousElementSibling.querySelector('i').style.transform = 'rotate(0deg)';
+        });
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        icon.style.transform = 'rotate(180deg)';
+      }
+    }
+
+    // Mobile Drawer
+    const hamburger = document.getElementById('hamburger');
+    const sideMenu = document.getElementById('side-menu');
+    const backdrop = document.getElementById('backdrop');
+    const closeBtn = document.getElementById('close-menu');
+
+    hamburger.addEventListener('click', () => {
+      sideMenu.classList.remove('translate-x-full');
+      backdrop.classList.remove('hidden');
+    });
+
+    function closeMenu() {
+      sideMenu.classList.add('translate-x-full');
+      backdrop.classList.add('hidden');
+    }
+
+    closeBtn.addEventListener('click', closeMenu);
+    backdrop.addEventListener('click', closeMenu);
+
+    window.toggleServicesDrawer = function () {
+      const submenu = document.getElementById('drawer-services-submenu');
+      const chevron = document.getElementById('drawer-chevron');
+      submenu.classList.toggle('hidden');
+      chevron.classList.toggle('rotate-180');
+    };
+
+    AOS.init({ duration: 1000, once: true });
+  </script>
+</body>
 </html>

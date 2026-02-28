@@ -4,13 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Découvrez le portfolio de Goshen Web X — sites web premium sur mesure, projets d’optimisation ultra-rapides et magnifiques sites portfolio conçus pour les entreprises ambitieuses au Québec et au-delà." />
-  <title>Goshen Web X | Notre Portfolio</title>
+  <meta name="description" content="Tarification transparente pour des sites web premium sur mesure au Québec. Sites de départ à partir de 450 $, Croissance à partir de 1 875 $, Avancé à partir de 5 625 $. Obtenez votre devis gratuit dès aujourd’hui." />
+  <title>Goshen Web X | Tarifs</title>
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Tailwind Config - EXACT same as all other pages -->
+  <!-- Tailwind Config -->
   <script>
     tailwind.config = {
       content: [],
@@ -36,27 +36,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
   <link rel="icon" type="image/png" href="/images/2.png" />
-
-  <!-- Masonry Brick-Wall Style -->
-  <style>
-    .masonry {
-      column-count: 1;
-    }
-    @media (min-width: 768px) {
-      .masonry {
-        column-count: 2;
-      }
-    }
-    @media (min-width: 1024px) {
-      .masonry {
-        column-count: 3;
-      }
-    }
-    .masonry-item {
-      break-inside: avoid;
-      margin-bottom: 2rem;
-    }
-  </style>
 </head>
 
 <body class="bg-dark text-white font-body overflow-x-hidden">
@@ -96,9 +75,9 @@
         <!-- Language Switcher + CTA (desktop) -->
         <div class="hidden lg:flex items-center gap-6">
           <div class="flex items-center text-sm font-medium">
-            <a href="/portfolio.html" class="hover:text-accent transition-colors px-2">EN</a>
+            <a href="/pricing_guide.html" class="hover:text-accent transition-colors px-2">EN</a>
             <span class="text-white/40 mx-1">/</span>
-            <a href="/portfolio-fr.html" class="text-accent hover:text-white transition-colors px-2 font-semibold">FR</a>
+            <a href="/pricing_guide-fr.html" class="text-accent hover:text-white transition-colors px-2 font-semibold">FR</a>
           </div>
 
           <a href="/contact-fr.html" class="flex items-center gap-3 bg-accent hover:bg-white text-black font-semibold px-8 py-3.5 rounded-3xl transition-all">
@@ -148,109 +127,168 @@
         <!-- Language Switcher in mobile menu -->
         <div class="pt-8 border-t border-white/10">
           <div class="flex items-center gap-3 text-xl font-medium">
-            <a href="/portfolio.html" class="hover:text-accent transition-colors">EN</a>
+            <a href="/pricing_guide.html" class="hover:text-accent transition-colors">EN</a>
             <span class="text-white/40">/</span>
-            <a href="/portfolio-fr.html" class="text-accent hover:text-white transition-colors font-semibold">FR</a>
+            <a href="/pricing_guide-fr.html" class="text-accent hover:text-white transition-colors font-semibold">FR</a>
           </div>
         </div>
       </nav>
     </div>
   </div>
 
-  <!-- DRAMATIC HERO -->
-  <section class="relative h-[90vh] flex items-center justify-center overflow-hidden">
-    <div class="absolute inset-0 bg-[url('https://picsum.photos/id/1015/2000/1200')] bg-cover bg-center"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/80 to-black"></div>
+  <!-- HERO -->
+  <section class="min-h-screen relative flex items-center bg-black pt-20">
+    <div class="absolute inset-0 bg-[url('https://picsum.photos/id/1015/1920/1080')] bg-cover bg-center"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent"></div>
     
-    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
-      <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-8 py-4 rounded-full text-sm border border-white/20 mb-8">
-        QUÉBEC • 2026
+    <div class="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-12">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full text-sm mb-6">
+          <span class="w-3 h-3 bg-accent rounded-full animate-pulse"></span>
+          TARIFICATION TRANSPARENTE • QUÉBEC
+        </div>
+        
+        <h1 class="text-5xl md:text-7xl font-heading font-bold tracking-tighter leading-none mb-8">
+          Sites web premium.<br>
+          <span class="text-accent">Prix justes.</span>
+        </h1>
+        
+        <p class="text-xl text-gray-300 mb-10">
+          Pas de frais cachés. Pas de surprises. Juste une tarification claire et honnête pour des sites web haute performance.
+        </p>
+        
+        <a href="#pricing" class="inline-block bg-accent hover:bg-white text-black font-semibold px-10 py-5 rounded-3xl text-lg transition-all">
+          Voir nos forfaits →
+        </a>
       </div>
-      <h1 class="text-6xl md:text-7xl font-heading font-bold tracking-tighter leading-none">
-        Du vrai travail.<br>
-        <span class="text-accent">De vrais résultats.</span>
-      </h1>
-      <p class="mt-8 text-2xl text-gray-300 max-w-2xl mx-auto">
-        Des sites web premium qui chargent instantanément, se classent mieux et transforment les visiteurs en clients fidèles.
-      </p>
     </div>
   </section>
 
-  <!-- PORTFOLIO MASONRY BRICK WALL -->
-  <section class="py-24 bg-dark-100">
+  <!-- PRICING PLANS -->
+  <section id="pricing" class="py-24 bg-dark-100">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
       <div class="text-center mb-16">
-        <span class="uppercase text-accent tracking-widest text-sm font-medium">Travaux en vedette</span>
-        <h2 class="text-5xl font-heading font-bold tracking-tighter mt-4">Nos derniers projets</h2>
+        <span class="uppercase text-accent tracking-widest text-sm">Choisissez votre forfait</span>
+        <h2 class="text-5xl font-heading font-bold tracking-tighter mt-4">Tarification simple & transparente</h2>
       </div>
 
-      <div class="masonry gap-8">
-        <!-- Project 1 -->
-        <a href="https://serenitysolutions.netlify.app/" target="_blank" class="masonry-item group block bg-dark-200 rounded-3xl overflow-hidden hover:-translate-y-3 transition-all duration-500">
-          <img src="./images/serenity.png" alt="Serenity Solutions" class="w-full h-80 object-cover transition-transform group-hover:scale-105" />
-          <div class="p-8">
-            <span class="inline-block px-4 py-1 text-xs uppercase tracking-widest bg-accent/10 text-accent rounded-full">Développement de sites web</span>
-            <h3 class="font-semibold text-2xl mt-4">Serenity Solutions</h3>
-            <p class="text-gray-400 mt-2">Site web moderne pour startup technologique</p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Starter -->
+        <div class="bg-dark-200 rounded-3xl p-10 hover:-translate-y-2 transition-all border border-accent/30">
+          <h3 class="text-3xl font-semibold mb-2">Site Web Départ</h3>
+          <p class="text-gray-400 mb-6">Idéal pour petites entreprises et travailleurs autonomes</p>
+          
+          <div class="mb-8">
+            <span class="text-5xl font-bold">450 $</span>
+            <span class="text-gray-400"> – 1 875 $</span>
           </div>
-        </a>
+          
+          <ul class="space-y-4 mb-10">
+            <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i> 3 à 5 pages</li>
+            <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i> Responsive mobile</li>
+            <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i> SEO de base</li>
+            <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i> Formulaire de contact</li>
+          </ul>
+          <a href="#contact" class="block text-center bg-accent hover:bg-white text-black font-semibold py-4 rounded-3xl transition-all">Commencer</a>
+        </div>
 
-        <!-- Project 2 -->
-        <a href="https://nyxgold.netlify.app/" target="_blank" class="masonry-item group block bg-dark-200 rounded-3xl overflow-hidden hover:-translate-y-3 transition-all duration-500">
-          <img src="./images/nails_website.png" alt="Nyx Gold" class="w-full h-80 object-cover transition-transform group-hover:scale-105" />
-          <div class="p-8">
-            <span class="inline-block px-4 py-1 text-xs uppercase tracking-widest bg-accent/10 text-accent rounded-full">Développement de sites web</span>
-            <h3 class="font-semibold text-2xl mt-4">Nyx Gold</h3>
-            <p class="text-gray-400 mt-2">E-commerce luxe beauté</p>
+        <!-- Growth -->
+        <div class="bg-dark-200 rounded-3xl p-10 hover:-translate-y-2 transition-all border-2 border-accent relative">
+          <div class="absolute -top-4 right-8 bg-accent text-black text-xs font-bold px-5 py-1 rounded-full">LE PLUS POPULAIRE</div>
+          <h3 class="text-3xl font-semibold mb-2">Site Web Croissance</h3>
+          <p class="text-gray-400 mb-6">Pour les entreprises en croissance qui ont besoin de plus de fonctionnalités</p>
+          
+          <div class="mb-8">
+            <span class="text-5xl font-bold">1 875 $</span>
+            <span class="text-gray-400"> – 5 625 $</span>
           </div>
-        </a>
+          
+          <ul class="space-y-4 mb-10">
+            <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i> Jusqu’à 10 pages</li>
+            <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i> Section blog / actualités</li>
+            <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i> SEO avancé</li>
+            <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i> Intégration réseaux sociaux</li>
+            <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i> Configuration analytique</li>
+          </ul>
+          <a href="#contact" class="block text-center bg-accent hover:bg-white text-black font-semibold py-4 rounded-3xl transition-all">Commencer</a>
+        </div>
 
-        <!-- Project 3 -->
-        <a href="https://noahoutlet.netlify.app/" target="_blank" class="masonry-item group block bg-dark-200 rounded-3xl overflow-hidden hover:-translate-y-3 transition-all duration-500">
-          <img src="images/e-com.png" alt="Noah Outlet" class="w-full h-80 object-cover transition-transform group-hover:scale-105" />
-          <div class="p-8">
-            <span class="inline-block px-4 py-1 text-xs uppercase tracking-widest bg-accent/10 text-accent rounded-full">Optimisation web</span>
-            <h3 class="font-semibold text-2xl mt-4">Noah Outlet</h3>
-            <p class="text-gray-400 mt-2">Boost de vitesse et SEO e-commerce</p>
+        <!-- Advanced -->
+        <div class="bg-dark-200 rounded-3xl p-10 hover:-translate-y-2 transition-all">
+          <h3 class="text-3xl font-semibold mb-2">Site Web Avancé</h3>
+          <p class="text-gray-400 mb-6">E-commerce, CRM, applications sur mesure et plus</p>
+          
+          <div class="mb-8">
+            <span class="text-5xl font-bold">5 625 $</span>
+            <span class="text-gray-400"> – 18 750 $</span>
           </div>
-        </a>
-
-        <!-- Project 4 -->
-        <a href="https://actresspoland.netlify.app/" target="_blank" class="masonry-item group block bg-dark-200 rounded-3xl overflow-hidden hover:-translate-y-3 transition-all duration-500">
-          <img src="images/actresspoland.png" alt="Actress Poland" class="w-full h-80 object-cover transition-transform group-hover:scale-105" />
-          <div class="p-8">
-            <span class="inline-block px-4 py-1 text-xs uppercase tracking-widest bg-accent/10 text-accent rounded-full">Site portfolio</span>
-            <h3 class="font-semibold text-2xl mt-4">Actress Poland</h3>
-            <p class="text-gray-400 mt-2">Vitrine créative pour artiste</p>
-          </div>
-        </a>
-
-        <!-- Project 5 -->
-        <a href="https://thecoffeebliss.netlify.app/" target="_blank" class="masonry-item group block bg-dark-200 rounded-3xl overflow-hidden hover:-translate-y-3 transition-all duration-500">
-          <img src="images/Coffee.png" alt="Coffee Bliss" class="w-full h-80 object-cover transition-transform group-hover:scale-105" />
-          <div class="p-8">
-            <span class="inline-block px-4 py-1 text-xs uppercase tracking-widest bg-accent/10 text-accent rounded-full">Développement de sites web</span>
-            <h3 class="font-semibold text-2xl mt-4">Coffee Bliss</h3>
-            <p class="text-gray-400 mt-2">Site corporatif premium pour café</p>
-          </div>
-        </a>
-
-        <!-- Project 6 -->
-        <a href="https://bmcultureglobal.com/" target="_blank" class="masonry-item group block bg-dark-200 rounded-3xl overflow-hidden hover:-translate-y-3 transition-all duration-500">
-          <img src="/images/optim.png" alt="BM Culture Global" class="w-full h-80 object-cover transition-transform group-hover:scale-105" />
-          <div class="p-8">
-            <span class="inline-block px-4 py-1 text-xs uppercase tracking-widest bg-accent/10 text-accent rounded-full">Optimisation web</span>
-            <h3 class="font-semibold text-2xl mt-4">BM Culture Global</h3>
-            <p class="text-gray-400 mt-2">Refonte complète performance & SEO</p>
-          </div>
-        </a>
+          
+          <ul class="space-y-4 mb-10">
+            <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i> Pages illimitées</li>
+            <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i> Prêt pour l’e-commerce</li>
+            <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i> Intégrations personnalisées</li>
+            <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i> 6 mois de soutien</li>
+            <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i> Soutien prioritaire</li>
+          </ul>
+          <a href="#contact" class="block text-center bg-accent hover:bg-white text-black font-semibold py-4 rounded-3xl transition-all">Commencer</a>
+        </div>
       </div>
 
-      <div class="text-center mt-20">
-        <a href="/contact-fr.html" class="inline-block bg-accent hover:bg-white text-black font-semibold px-12 py-6 rounded-3xl text-xl transition-all">
-          Prêt pour votre propre projet remarquable ? Parlons-en →
-        </a>
+      <!-- Additional Services -->
+      <div class="mt-20 max-w-2xl mx-auto text-center">
+        <h3 class="text-3xl font-semibold mb-6">Services additionnels</h3>
+        <div class="grid md:grid-cols-2 gap-8 text-left">
+          <div class="bg-dark-200 rounded-3xl p-8">
+            <p class="font-medium">Maintenance mensuelle</p>
+            <p class="text-3xl font-bold text-accent mt-2">25 $ – 200 $ / mois</p>
+          </div>
+          <div class="bg-dark-200 rounded-3xl p-8">
+            <p class="font-medium">Forfait optimisation SEO</p>
+            <p class="text-3xl font-bold text-accent mt-2">250 $ – 1 500 $</p>
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="py-24 bg-dark">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 text-center">
+      <h2 class="text-5xl font-heading font-bold tracking-tighter mb-16">Pourquoi les entreprises nous choisissent</h2>
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="bg-dark-200 rounded-3xl p-8">
+          <i class="fas fa-dollar-sign text-5xl text-accent mb-6"></i>
+          <h3 class="font-semibold text-2xl mb-3">Tarification transparente</h3>
+          <p class="text-gray-400">Aucun frais caché. Jamais.</p>
+        </div>
+        <div class="bg-dark-200 rounded-3xl p-8">
+          <i class="fas fa-bolt text-5xl text-accent mb-6"></i>
+          <h3 class="font-semibold text-2xl mb-3">Livraison ultra-rapide</h3>
+          <p class="text-gray-400">La plupart des sites en ligne en 4 à 6 semaines</p>
+        </div>
+        <div class="bg-dark-200 rounded-3xl p-8">
+          <i class="fas fa-headset text-5xl text-accent mb-6"></i>
+          <h3 class="font-semibold text-2xl mb-3">Soutien humain réel</h3>
+          <p class="text-gray-400">Nous répondons au téléphone</p>
+        </div>
+        <div class="bg-dark-200 rounded-3xl p-8">
+          <i class="fas fa-chart-line text-5xl text-accent mb-6"></i>
+          <h3 class="font-semibold text-2xl mb-3">Résultats garantis</h3>
+          <p class="text-gray-400">Augmentation moyenne de +340 % des conversions</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section id="contact" class="py-24 bg-dark-100">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 text-center">
+      <h2 class="text-5xl font-heading font-bold tracking-tighter mb-6">Prêt à commencer ?</h2>
+      <p class="text-xl text-gray-300 max-w-xl mx-auto mb-12">Parlez-nous de votre projet et nous vous enverrons un devis personnalisé dans les 24 heures.</p>
+      
+      <a href="/contact-fr.html" class="inline-block bg-accent hover:bg-white text-black font-semibold px-14 py-6 rounded-3xl text-xl transition-all">
+        Obtenez votre devis gratuit
+      </a>
     </div>
   </section>
 
@@ -278,7 +316,6 @@
             <li><a href="index-fr.html" class="hover:text-white">Accueil</a></li>
             <li><a href="/website-dev-fr.html" class="hover:text-white">Services</a></li>
             <li><a href="/portfolio-fr.html" class="hover:text-white">Portfolio</a></li>
-            <li><a href="/about-fr.html" class="hover:text-white">À propos</a></li>
           </ul>
         </div>
 
