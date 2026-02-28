@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Découvrez comment Goshen Web X crée des sites web personnalisés, responsifs, optimisés pour la performance et l'évolutivité." />
+  <title>Goshen Web X - Développement de Sites Web</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      content: [],
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            accent: '#d4a017',
+            secondary: '#2a5a4e',
+            dark: '#0a0a0a',
+            'dark-100': '#121212',
+            'dark-200': '#1e1e1e',
+          }
+        }
+      }
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <link rel="icon" type="image/png" href="/images/2.png" />
+</head>
+
+<body class="bg-dark text-white font-body overflow-x-hidden">
+
+  <!-- HEADER (identical structure to English index) -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-lg border-b border-white/10">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+      <div class="flex items-center justify-between h-20">
+        <a href="/" class="flex items-center gap-3">
+          <img src="/images/2.png" alt="Goshen Web X" class="h-14 w-auto" />
+          <div class="font-heading text-3xl font-semibold tracking-tighter">GOSHEN <span class="text-accent">WEB X</span></div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
+          <a href="index-fr.html" class="hover:text-accent transition-colors">Accueil</a>
+          <div class="group relative">
+            <button class="flex items-center gap-1 hover:text-accent transition-colors">
+              Services
+              <i class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute hidden group-hover:block pt-4">
+              <div class="bg-dark-200 border border-white/10 rounded-2xl py-4 px-6 w-56 text-sm shadow-2xl">
+                <a href="/website-dev.html" class="block py-3 hover:text-accent">Développement de Sites Web</a>
+                <a href="/web-optimisation.html" class="block py-3 hover:text-accent">Optimisation & SEO</a>
+                <a href="/portfolio.html" class="block py-3 hover:text-accent">Sites Portfolio</a>
+              </div>
+            </div>
+          </div>
+          <a href="/about.html" class="hover:text-accent transition-colors">À Propos</a>
+          <a href="/portfolio.html" class="hover:text-accent transition-colors">Portfolio</a>
+          <a href="/pricing_guide.html" class="hover:text-accent transition-colors">Tarifs</a>
+          <a href="/contact.html" class="hover:text-accent transition-colors">Contact</a>
+          <a href="/blog.html" class="hover:text-accent transition-colors">Blog</a>
+        </nav>
+
+        <a href="/contact.html" class="hidden lg:flex items-center gap-3 bg-accent hover:bg-white text-black font-semibold px-8 py-3.5 rounded-3xl transition-all">
+          Demander un Devis Gratuit <i class="fas fa-arrow-right"></i>
+        </a>
+
+        <!-- Hamburger -->
+        <button id="hamburger" class="lg:hidden text-4xl p-4 -mr-3 focus:outline-none active:scale-90 transition-transform">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Backdrop -->
+  <div id="backdrop" class="hidden fixed inset-0 bg-black/80 z-[9998]"></div>
+
+  <!-- Right Slide-In Drawer -->
+  <div id="side-menu" class="fixed top-0 bottom-0 right-0 w-80 bg-dark shadow-2xl translate-x-full transition-transform duration-300 z-[9999] overflow-y-auto">
+    <div class="p-6">
+      <button id="close-menu" class="float-right text-4xl text-white/70 hover:text-white">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <nav class="flex flex-col text-2xl font-medium mt-12">
+        <a href="index-fr.html" class="py-5 border-b border-white/10">Accueil</a>
+
+        <div class="border-b border-white/10">
+          <button onclick="toggleServicesDrawer()" class="w-full py-5 flex items-center justify-between hover:text-accent">
+            Services
+            <i id="drawer-chevron" class="fas fa-chevron-down transition-transform duration-300"></i>
+          </button>
+          <div id="drawer-services-submenu" class="hidden pl-6 pt-2 pb-6">
+            <a href="/website-dev.html" class="block py-4 text-xl hover:text-accent">Développement de Sites Web</a>
+            <a href="/web-optimisation.html" class="block py-4 text-xl hover:text-accent">Optimisation & SEO</a>
+            <a href="/portfolio.html" class="block py-4 text-xl hover:text-accent">Sites Portfolio</a>
+          </div>
+        </div>
+
+        <a href="/about.html" class="py-5 border-b border-white/10">À Propos</a>
+        <a href="/portfolio.html" class="py-5 border-b border-white/10">Portfolio</a>
+        <a href="/pricing_guide.html" class="py-5 border-b border-white/10">Tarifs</a>
+        <a href="/contact.html" class="py-5 border-b border-white/10">Contact</a>
+        <a href="/blog.html" class="py-5 border-b border-white/10">Blog</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- REST OF YOUR FRENCH PAGE (unchanged) -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Développement de Sites Web Personnalisés</h1>
+      <div class="text-slider">
+        <div class="slide-text">Adapté à Votre Marque</div>
+        <div class="slide-text">Conçu pour la Performance</div>
+        <div class="slide-text">Évolutif pour la Croissance</div>
+      </div>
+      <button class="cta-button" onclick="location.href='#contact'">Commencer</button>
+    </div>
+  </section>
+
+  <section id="process" class="process-section">
+    <h2>Processus de Développement</h2>
+    <p>Nous suivons une approche simplifiée pour livrer des sites web exceptionnels qui répondent à vos objectifs.</p>
+    <div class="process-grid">
+      <div class="process-item">
+        <i class="fas fa-lightbulb fa-3x"></i>
+        <h3>1. Découverte</h3>
+        <p>Nous comprenons votre marque, vos objectifs et votre public pour créer une stratégie sur mesure.</p>
+      </div>
+      <div class="process-item">
+        <i class="fas fa-paint-brush fa-3x"></i>
+        <h3>2. Conception</h3>
+        <p>Nos designers créent des maquettes responsives et visuellement attrayantes pour votre approbation.</p>
+      </div>
+      <div class="process-item">
+        <i class="fas fa-code fa-3x"></i>
+        <h3>3. Développement</h3>
+        <p>Nous construisons votre site avec un code propre, garantissant performance et évolutivité.</p>
+      </div>
+      <div class="process-item">
+        <i class="fas fa-rocket fa-3x"></i>
+        <h3>4. Lancement & Support</h3>
+        <p>Nous lançons votre site et fournissons un support continu pour le maintenir performant.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="features-section bg-secondary">
+    <p class="text-center">Nos services de développement offrent une <span class="text-decor">qualité</span> et une <span class="text-decor">fonctionnalité</span> incomparables.</p>
+    <h2>Pourquoi Choisir <span class="word-underline" data-splitting>Nos Sites Web ?</span></h2>
+    <div class="features-grid">
+      <div class="feature-item">
+        <i class="fas fa-mobile-alt fa-2x"></i>
+        <h3>Conception Responsive</h3>
+        <p>Performance fluide sur tous les appareils, du mobile au bureau.</p>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-tachometer-alt fa-2x"></i>
+        <h3>Haute Performance</h3>
+        <p>Sites à chargement rapide optimisés pour la vitesse et l'expérience utilisateur.</p>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-lock fa-2x"></i>
+        <h3>Sécurisé & Évolutif</h3>
+        <p>Architecture robuste et sécurisée pour une croissance future.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section" data-aos="fade-up">
+    <p>Prêt à donner vie à vos idées ? Contactez-nous pour une <span class="text-decor"> consultation gratuite. </span></p>
+    <h2>Collaborons <span class="word-underline" data-splitting>Ensemble</span></h2>
+
+    <div id="alertContainer">
+      <div id="successAlert" class="alert success">Merci ! Votre message a été envoyé avec succès.</div>
+      <div id="errorAlert" class="alert error">Une erreur s'est produite. Veuillez réessayer plus tard.</div>
+    </div>
+
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Votre Nom" required />
+      <input type="email" name="email" placeholder="Votre Email" required />
+      <textarea name="message" placeholder="Parlez-nous de votre projet" rows="5" required></textarea>
+      <button type="submit" class="cta-button">Envoyer le Message</button>
+    </form>
+
+    <p>Ou envoyez-nous un email : <a href="mailto:info@goshenwebx.io" class="email-link">info@goshenwebx.io</a></p>
+  </section>
+
+
+  <!-- FLOATING WHATSAPP BUTTON (kept) -->
+  <a href="https://wa.me/14185738680" target="_blank"
+   class="fixed bottom-8 right-8 w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-2xl transition-all z-50">
+  <i class="fab fa-whatsapp text-4xl text-white"></i>
+</a>
+
+
+  <!-- FOOTER (updated to match English index) -->
+  <footer class="bg-black border-t border-white/10 py-20">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+      <div class="grid md:grid-cols-12 gap-12">
+        <div class="md:col-span-4">
+          <div class="flex items-center gap-3 mb-6">
+            <img src="/images/2.png" alt="Logo" class="h-14" />
+            <span class="font-heading text-3xl font-bold tracking-tighter">GOSHEN WEB X</span>
+          </div>
+          <p class="text-gray-400 max-w-xs">Studio de développement web premium au Québec, Canada.</p>
+        </div>
+
+        <div class="md:col-span-2">
+          <p class="font-medium text-accent mb-6">Entreprise</p>
+          <ul class="space-y-3 text-sm">
+            <li><a href="/" class="hover:text-white">Accueil</a></li>
+            <li><a href="/website-dev.html" class="hover:text-white">Services</a></li>
+            <li><a href="/portfolio.html" class="hover:text-white">Portfolio</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-2">
+          <p class="font-medium text-accent mb-6">Services</p>
+          <ul class="space-y-3 text-sm">
+            <li><a href="/website-dev.html" class="hover:text-white">Développement de Sites Web</a></li>
+            <li><a href="/web-optimisation.html" class="hover:text-white">Optimisation & SEO</a></li>
+            <li><a href="/portfolio.html" class="hover:text-white">Sites Portfolio</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-4">
+          <p class="font-medium text-accent mb-6">Contactez-nous</p>
+          <p class="text-gray-400">info@goshenwebx.io</p>
+          <p class="text-gray-400 mt-1">Québec, Canada</p>
+
+          <div class="flex gap-6 text-3xl mt-10">
+            <a href="https://x.com/goshenwebx" class="hover:text-accent"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/goshen-web-x-9b3246364" class="hover:text-accent"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/gwx_technologies" class="hover:text-accent"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 mt-16 pt-8 text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p>© 2026 Goshen Web X. Tous droits réservés.</p>
+        <p class="flex gap-6">
+          <a href="/privacy-policy.html" class="hover:text-white">Confidentialité</a>
+          <a href="/terms.html" class="hover:text-white">Conditions</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const sideMenu = document.getElementById('side-menu');
+    const backdrop = document.getElementById('backdrop');
+    const closeBtn = document.getElementById('close-menu');
+
+    hamburger.addEventListener('click', () => {
+      sideMenu.classList.remove('translate-x-full');
+      backdrop.classList.remove('hidden');
+    });
+
+    function closeMenu() {
+      sideMenu.classList.add('translate-x-full');
+      backdrop.classList.add('hidden');
+    }
+
+    closeBtn.addEventListener('click', closeMenu);
+    backdrop.addEventListener('click', closeMenu);
+
+    window.toggleServicesDrawer = function() {
+      const submenu = document.getElementById('drawer-services-submenu');
+      const chevron = document.getElementById('drawer-chevron');
+      submenu.classList.toggle('hidden');
+      chevron.classList.toggle('rotate-180');
+    };
+
+    AOS.init({ duration: 1000, once: true });
+  </script>
+</body>
+</html>

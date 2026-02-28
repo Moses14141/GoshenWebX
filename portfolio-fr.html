@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Découvrez le portfolio de Goshen Web X — sites web premium, optimisation SEO et portfolios époustouflants créés pour des entrepreneurs ambitieux au Québec et ailleurs." />
+  <title>Goshen Web X | Notre Portfolio</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Config - EXACT same as all other pages -->
+  <script>
+    tailwind.config = {
+      content: [],
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            accent: '#d4a017',
+            secondary: '#2a5a4e',
+            dark: '#0a0a0a',
+            'dark-100': '#121212',
+            'dark-200': '#1e1e1e',
+          }
+        }
+      }
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <link rel="icon" type="image/png" href="/images/2.png" />
+</head>
+
+<body class="bg-dark text-white font-body overflow-x-hidden">
+
+  <!-- HEADER - Identique à toutes les autres pages (mobile toggle 100% fonctionnel) -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-lg border-b border-white/10">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+      <div class="flex items-center justify-between h-20">
+        <a href="/index-fr.html" class="flex items-center gap-3">
+          <img src="/images/2.png" alt="Goshen Web X" class="h-14 w-auto" />
+          <div class="font-heading text-3xl font-semibold tracking-tighter">
+            GOSHEN <span class="text-accent">WEB X</span>
+          </div>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
+          <a href="/index-fr.html" class="hover:text-accent transition-colors">Accueil</a>
+          <div class="group relative">
+            <button class="flex items-center gap-1 hover:text-accent transition-colors">
+              Nos Services 
+              <i class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute hidden group-hover:block pt-4">
+              <div class="bg-dark-200 border border-white/10 rounded-2xl py-4 px-6 w-56 text-sm shadow-2xl">
+                <a href="/website-dev.html" class="block py-3 hover:text-accent">Développement Web</a>
+                <a href="/web-optimisation.html" class="block py-3 hover:text-accent">Optimisation &amp; SEO</a>
+                <a href="/portfolio-fr.html" class="block py-3 hover:text-accent">Sites Portfolio</a>
+              </div>
+            </div>
+          </div>
+          <a href="/index-fr.html#about" class="hover:text-accent transition-colors">À propos</a>
+          <a href="/portfolio-fr.html" class="hover:text-accent transition-colors">Portfolio</a>
+          <a href="#" class="hover:text-accent transition-colors">Tarifs</a>
+          <a href="/index-fr.html#contact" class="hover:text-accent transition-colors">Contact</a>
+        </nav>
+
+        <a href="/index-fr.html#contact" 
+           class="hidden lg:flex items-center gap-3 bg-accent hover:bg-white text-black font-semibold px-8 py-3.5 rounded-3xl transition-all">
+          Demander un devis gratuit
+          <i class="fas fa-arrow-right"></i>
+        </a>
+
+        <button id="hamburger" class="lg:hidden text-4xl p-3 -mr-3 focus:outline-none active:scale-90 transition-transform">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden fixed inset-0 bg-dark z-[60] pt-20 px-8 overflow-y-auto">
+      <nav class="flex flex-col text-2xl font-medium gap-6 text-center">
+        <a href="/index-fr.html" class="py-4 border-b border-white/10">Accueil</a>
+        <a href="/website-dev.html" class="py-4 border-b border-white/10">Développement Web</a>
+        <a href="/web-optimisation.html" class="py-4 border-b border-white/10">Optimisation &amp; SEO</a>
+        <a href="/portfolio-fr.html" class="py-4 border-b border-white/10">Portfolio</a>
+        <a href="/index-fr.html#about" class="py-4 border-b border-white/10">À propos</a>
+        <a href="/index-fr.html#contact" class="py-4 border-b border-white/10">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="min-h-screen relative flex items-center bg-black pt-20">
+    <div class="absolute inset-0 bg-[url('https://picsum.photos/id/1015/1920/1080')] bg-cover bg-center"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent"></div>
+    
+    <div class="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-12">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full text-sm mb-6">
+          <span class="w-3 h-3 bg-accent rounded-full animate-pulse"></span>
+          NOTRE PORTFOLIO • QUÉBEC
+        </div>
+        
+        <h1 class="text-5xl md:text-7xl font-heading font-bold tracking-tighter leading-none mb-8">
+          Des sites qui<br>
+          <span class="text-accent">font la différence</span>
+        </h1>
+        
+        <p class="text-xl text-gray-300 mb-10">
+          Découvrez les projets que nous avons réalisés pour des entrepreneurs ambitieux. 
+          Chaque site est conçu pour performer, convertir et impressionner.
+        </p>
+        
+        <a href="#projects" class="inline-block bg-accent hover:bg-white text-black font-semibold px-10 py-5 rounded-3xl text-lg transition-all">
+          Voir tous nos projets →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO GRID -->
+  <section id="projects" class="py-24 bg-dark-100">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+      <div class="text-center mb-16">
+        <span class="uppercase text-accent tracking-widest text-sm">Travaux Récents</span>
+        <h2 class="text-5xl font-heading font-bold tracking-tighter mt-4">Nos Derniers Projets</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <a href="https://serenitysolutions.netlify.app/" target="_blank" class="group block bg-dark-200 rounded-3xl overflow-hidden hover:-translate-y-2 transition-all">
+          <img src="./images/serenity.png" alt="Serenity Solutions" class="w-full h-80 object-cover transition-transform group-hover:scale-105" />
+          <div class="p-8">
+            <span class="text-xs uppercase tracking-widest text-accent">Développement</span>
+            <h3 class="font-semibold text-2xl mt-2">Serenity Solutions</h3>
+            <p class="text-gray-400 mt-1">Site moderne pour startup tech</p>
+          </div>
+        </a>
+
+        <!-- Project 2 -->
+        <a href="https://nyxgold.netlify.app/" target="_blank" class="group block bg-dark-200 rounded-3xl overflow-hidden hover:-translate-y-2 transition-all">
+          <img src="./images/nails_website.png" alt="Nyx Gold" class="w-full h-80 object-cover transition-transform group-hover:scale-105" />
+          <div class="p-8">
+            <span class="text-xs uppercase tracking-widest text-accent">Développement</span>
+            <h3 class="font-semibold text-2xl mt-2">Nyx Gold</h3>
+            <p class="text-gray-400 mt-1">Site e-commerce beauté</p>
+          </div>
+        </a>
+
+        <!-- Project 3 -->
+        <a href="https://noahoutlet.netlify.app/" target="_blank" class="group block bg-dark-200 rounded-3xl overflow-hidden hover:-translate-y-2 transition-all">
+          <img src="images/e-com.png" alt="Noah Outlet" class="w-full h-80 object-cover transition-transform group-hover:scale-105" />
+          <div class="p-8">
+            <span class="text-xs uppercase tracking-widest text-accent">Optimisation</span>
+            <h3 class="font-semibold text-2xl mt-2">Noah Outlet</h3>
+            <p class="text-gray-400 mt-1">Optimisation e-commerce</p>
+          </div>
+        </a>
+
+        <!-- Project 4 -->
+        <a href="https://actresspoland.netlify.app/" target="_blank" class="group block bg-dark-200 rounded-3xl overflow-hidden hover:-translate-y-2 transition-all">
+          <img src="images/actresspoland.png" alt="Actress Poland" class="w-full h-80 object-cover transition-transform group-hover:scale-105" />
+          <div class="p-8">
+            <span class="text-xs uppercase tracking-widest text-accent">Portfolio</span>
+            <h3 class="font-semibold text-2xl mt-2">Actress Poland</h3>
+            <p class="text-gray-400 mt-1">Portfolio artistique</p>
+          </div>
+        </a>
+
+        <!-- Project 5 -->
+        <a href="https://thecoffeebliss.netlify.app/" target="_blank" class="group block bg-dark-200 rounded-3xl overflow-hidden hover:-translate-y-2 transition-all">
+          <img src="images/Coffee.png" alt="Coffee Bliss" class="w-full h-80 object-cover transition-transform group-hover:scale-105" />
+          <div class="p-8">
+            <span class="text-xs uppercase tracking-widest text-accent">Développement</span>
+            <h3 class="font-semibold text-2xl mt-2">Coffee Bliss</h3>
+            <p class="text-gray-400 mt-1">Site corporate café</p>
+          </div>
+        </a>
+
+        <!-- Project 6 -->
+        <a href="https://bmcultureglobal.com/" target="_blank" class="group block bg-dark-200 rounded-3xl overflow-hidden hover:-translate-y-2 transition-all">
+          <img src="/images/optim.png" alt="BM Culture" class="w-full h-80 object-cover transition-transform group-hover:scale-105" />
+          <div class="p-8">
+            <span class="text-xs uppercase tracking-widest text-accent">Optimisation</span>
+            <h3 class="font-semibold text-2xl mt-2">BM Culture Global</h3>
+            <p class="text-gray-400 mt-1">Optimisation SEO + vitesse</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="text-center mt-16">
+        <a href="/index-fr.html#contact" 
+           class="inline-block bg-accent hover:bg-white text-black font-semibold px-12 py-6 rounded-3xl text-xl transition-all">
+          Lancez votre projet avec nous
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER - Identique aux autres pages -->
+  <footer class="bg-black border-t border-white/10 py-20">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+      <div class="grid md:grid-cols-12 gap-12">
+        <div class="md:col-span-4">
+          <div class="flex items-center gap-3 mb-6">
+            <img src="/images/2.png" alt="Logo" class="h-14" />
+            <span class="font-heading text-3xl font-bold tracking-tighter">GOSHEN WEB X</span>
+          </div>
+          <p class="text-gray-400 max-w-xs">Studio de développement web premium au Québec, Canada.</p>
+        </div>
+
+        <div class="md:col-span-2">
+          <p class="font-medium text-accent mb-6">Entreprise</p>
+          <ul class="space-y-3 text-sm">
+            <li><a href="/index-fr.html" class="hover:text-white">Accueil</a></li>
+            <li><a href="/website-dev.html" class="hover:text-white">Services</a></li>
+            <li><a href="/portfolio-fr.html" class="hover:text-white">Portfolio</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-2">
+          <p class="font-medium text-accent mb-6">Services</p>
+          <ul class="space-y-3 text-sm">
+            <li><a href="/website-dev.html" class="hover:text-white">Développement Web</a></li>
+            <li><a href="/web-optimisation.html" class="hover:text-white">Optimisation &amp; SEO</a></li>
+            <li><a href="/portfolio-fr.html" class="hover:text-white">Sites Portfolio</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-4">
+          <p class="font-medium text-accent mb-6">Contactez-nous</p>
+          <p class="text-gray-400">info@goshenwebx.io</p>
+          <p class="text-gray-400 mt-1">Québec, Canada</p>
+          
+          <div class="flex gap-6 text-3xl mt-10">
+            <a href="https://x.com/goshenwebx" class="hover:text-accent"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/goshen-web-x-9b3246364" class="hover:text-accent"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/gwx_technologies" class="hover:text-accent"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 mt-16 pt-8 text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p>© 2026 Goshen Web X. Tous droits réservés.</p>
+        <p class="flex gap-6">
+          <a href="#" class="hover:text-white">Confidentialité</a>
+          <a href="#" class="hover:text-white">Conditions</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const hamburger = document.getElementById('hamburger');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const icon = hamburger.querySelector('i');
+
+      hamburger.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        if (mobileMenu.classList.contains('hidden')) {
+          icon.classList.remove('fa-xmark');
+          icon.classList.add('fa-bars');
+        } else {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-xmark');
+        }
+      });
+
+      document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          icon.classList.remove('fa-xmark');
+          icon.classList.add('fa-bars');
+        });
+      });
+    });
+
+    AOS.init({ duration: 1000, once: true });
+  </script>
+</body>
+</html>

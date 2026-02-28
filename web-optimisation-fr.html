@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Découvrez comment Goshen Web X améliore la vitesse, le référencement et l'expérience utilisateur de votre site web avec des techniques d'optimisation avancées."
+    />
+    <title>Goshen Web X - Optimisation Web</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="icon" type="image/png" href="/images/2.png">
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RBSLCPZFBV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RBSLCPZFBV');
+</script>
+
+  </head>
+  <body>
+  <!-- HEADER -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-lg border-b border-white/10">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-3">
+          <img src="/images/2.png" alt="Goshen Web X" class="h-14 w-auto" />
+          <div class="font-heading text-3xl font-semibold tracking-tighter">
+            GOSHEN <span class="text-accent">WEB X</span>
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
+          <a href="#home" class="hover:text-accent transition-colors">Home</a>
+          <div class="group relative">
+            <button class="flex items-center gap-1 hover:text-accent transition-colors">
+              Our Services
+              <i class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute hidden group-hover:block pt-4">
+              <div class="bg-dark-200 border border-white/10 rounded-2xl py-4 px-6 w-56 text-sm shadow-2xl">
+                <a href="/website-dev.html" class="block py-3 hover:text-accent">Website Development</a>
+                <a href="/web-optimisation.html" class="block py-3 hover:text-accent">Web Optimisation and SEO</a>
+                <a href="/portfolio.html" class="block py-3 hover:text-accent">Portfolio Websites</a>
+              </div>
+            </div>
+          </div>
+          <a href="#about" class="hover:text-accent transition-colors">About Us</a>
+          <a href="#work" class="hover:text-accent transition-colors">Portfolio</a>
+          <a href="#" class="hover:text-accent transition-colors">Pricing</a>
+          <a href="#contact" class="hover:text-accent transition-colors">Contact</a>
+          <a href="#blog" class="hover:text-accent transition-colors">Blog</a>
+        </nav>
+
+        <a href="/contact.html" class="hidden lg:flex items-center gap-3 bg-accent hover:bg-white text-black font-semibold px-8 py-3.5 rounded-3xl transition-all">
+          Request a Free Quote <i class="fas fa-arrow-right"></i>
+        </a>
+
+        <!-- Hamburger -->
+        <button id="hamburger" class="lg:hidden text-4xl p-4 -mr-3 focus:outline-none active:scale-90 transition-transform">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu - PURE CSS (no JS for dropdown) -->
+    <div id="mobile-menu" class="hidden lg:hidden fixed inset-0 bg-dark z-[60] pt-20 px-6 overflow-y-auto">
+      <nav class="flex flex-col text-2xl font-medium text-center">
+        <a href="#home" class="py-6 border-b border-white/10">Home</a>
+
+        <!-- Services Dropdown - PURE CSS CHECKBOX -->
+        <div class="border-b border-white/10">
+          <input type="checkbox" id="services-toggle" class="peer hidden">
+          <label for="services-toggle" class="cursor-pointer w-full py-6 flex items-center justify-center gap-3 hover:text-accent active:bg-white/10 transition-all">
+            Our Services
+            <i class="fas fa-chevron-down text-2xl peer-checked:rotate-180 transition-transform duration-300"></i>
+          </label>
+
+          <div class="hidden peer-checked:block px-4 pb-6">
+            <div class="bg-dark-200/70 rounded-2xl overflow-hidden">
+              <a href="/website-dev.html" class="block py-5 px-6 border-b border-white/10 hover:bg-white/5 text-xl">Website Development</a>
+              <a href="/web-optimisation.html" class="block py-5 px-6 border-b border-white/10 hover:bg-white/5 text-xl">Web Optimisation and SEO</a>
+              <a href="/portfolio.html" class="block py-5 px-6 hover:bg-white/5 text-xl">Portfolio Websites</a>
+            </div>
+          </div>
+        </div>
+
+        <a href="#about" class="py-6 border-b border-white/10">About Us</a>
+        <a href="#work" class="py-6 border-b border-white/10">Portfolio</a>
+        <a href="#" class="py-6 border-b border-white/10">Pricing</a>
+        <a href="#contact" class="py-6 border-b border-white/10">Contact</a>
+        <a href="#blog" class="py-6 border-b border-white/10">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Excellence en Optimisation Web</h1>
+        <p>
+          Boostez votre site web avec des temps de chargement plus rapides, un meilleur
+          classement dans les recherches et une expérience utilisateur supérieure.
+        </p>
+        <div class="stats-counter">
+          <div class="stat-item">
+            <span class="stat-number" data-target="50">0</span>%
+            <p>Temps de Chargement Réduits</p>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="40">0</span>%
+            <p>Amélioration du Référencement</p>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="30">0</span>%
+            <p>Augmentation des Conversions</p>
+          </div>
+        </div>
+        <button class="cta-button" onclick="window.open('pricing_guide_fr.html', '_blank')">
+          Optimiser Maintenant
+        </button>
+        
+      </div>
+    </section>
+
+    <section id="process" class="process-section">
+      <p class="text-center" style="margin-bottom: 0">
+        Nous utilisons une approche basée sur les données pour améliorer la
+        <span class="text-decor">performance</span> et la
+        <span class="text-decor">visibilité</span> de votre site web.
+      </p>
+      <h2>
+        Notre
+        <span class="word-underline" data-splitting>Processus d'Optimisation</span>
+      </h2>
+
+      <div class="process-grid">
+        <div class="process-item">
+          <i class="fas fa-chart-line fa-3x"></i>
+          <h3>1. Analyse</h3>
+          <p>
+            Nous évaluons la vitesse, le référencement et l'expérience utilisateur de votre site
+            pour identifier les opportunités d'amélioration.
+          </p>
+        </div>
+        <div class="process-item">
+          <i class="fas fa-cogs fa-3x"></i>
+          <h3>2. Stratégie</h3>
+          <p>
+            Nous développons un plan sur mesure pour optimiser le code, le contenu et
+            l'infrastructure.
+          </p>
+        </div>
+        <div class="process-item">
+          <i class="fas fa-tools fa-3x"></i>
+          <h3>3. Mise en Œuvre</h3>
+          <p>
+            Nous appliquons des techniques avancées, de la compression d'images aux
+            améliorations du référencement.
+          </p>
+        </div>
+        <div class="process-item">
+          <i class="fas fa-check-circle fa-3x"></i>
+          <h3>4. Tests & Suivi</h3>
+          <p>
+            Nous testons les résultats et surveillons les performances pour garantir un succès
+            durable.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="benefits" class="benefits-section bg-secondary">
+      <p class="text-center" style="margin-bottom: 0">
+        Libérez tout le potentiel de votre site web avec notre
+        <span class="text-decor">expertise.</span>
+      </p>
+      <h2>
+        Avantages de l'
+        <span class="word-underline" data-splitting>Optimisation Web</span>
+      </h2>
+
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <i class="fas fa-bolt fa-2x"></i>
+          <h3>Vitesse Éclair</h3>
+          <p>
+            Réduisez les temps de chargement pour garder les visiteurs engagés et améliorer
+            le classement dans les recherches.
+          </p>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-search fa-2x"></i>
+          <h3>Meilleur Classement SEO</h3>
+          <p>
+            Un contenu et une structure optimisés augmentent votre visibilité sur les moteurs
+            de recherche.
+          </p>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-users fa-2x"></i>
+          <h3>Expérience Utilisateur Améliorée</h3>
+          <p>
+            Une navigation fluide et un design intuitif augmentent la satisfaction des
+            visiteurs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="case-study" class="case-study-section">
+      <p class="text-center" style="margin-bottom: 0">
+        Découvrez comment nous avons transformé un site e-commerce avec nos
+        <span class="text-decor">services d'optimisation.</span>
+      </p>
+      <h2>
+        Résultats
+        <span class="word-underline" data-splitting>Réels</span>
+      </h2>
+
+      <div class="case-study-content">
+        <div class="case-study-text">
+          <h3>Histoire de Succès E-Commerce</h3>
+          <p>
+            Pour un détaillant en ligne, nous avons réduit les temps de chargement des pages
+            de 60 %, amélioré le classement SEO de 45 % et augmenté les conversions de 35 %
+            grâce à des stratégies d'optimisation ciblées.
+          </p>
+          <a href="/portfolio.html" class="cta-link">Voir Plus de Projets</a>
+        </div>
+        <div class="case-study-image">
+          <img
+            src="images/optimis.png"
+            alt="Optimisation E-Commerce"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="faq-section bg-secondary">
+      <h2>Questions Fréquemment Posées</h2>
+      <p>En savoir plus sur nos services d'optimisation web.</p>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">Combien de temps prend l'optimisation ?</h3>
+          <div class="faq-answer">
+            <p>
+              La plupart des projets prennent de 2 à 4 semaines, selon la complexité du site
+              et les objectifs.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">
+            L'optimisation affectera-t-elle le design de mon site ?
+          </h3>
+          <div class="faq-answer">
+            <p>
+              Non, nous améliorons les performances et le référencement tout en préservant
+              l'apparence et la convivialité de votre site.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Proposez-vous une optimisation continue ?</h3>
+          <div class="faq-answer">
+            <p>
+              Oui, nous proposons des plans de maintenance pour assurer des améliorations
+              continues des performances.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section" data-aos="fade-up">
+      <p>
+        Prêt à donner vie à vos idées ? Contactez-nous pour une
+        <span class="text-decor"> consultation gratuite. </span>
+      </p>
+      <h2>
+        Collaborons <span class="word-underline" data-splitting>Ensemble</span>
+      </h2>
+
+      <div id="alertContainer">
+        <div id="successAlert" class="alert success">
+          Merci ! Votre message a été envoyé avec succès.
+        </div>
+        <div id="errorAlert" class="alert error">
+          Une erreur s'est produite. Veuillez réessayer plus tard.
+        </div>
+      </div>
+
+      <form id="contactForm">
+        <input type="text" name="name" placeholder="Votre Nom" required />
+        <input type="email" name="email" placeholder="Votre Email" required />
+        <textarea
+          name="message"
+          placeholder="Parlez-nous de votre projet"
+          rows="5"
+          required
+        ></textarea>
+        <button type="submit" class="cta-button">Envoyer le Message</button>
+      </form>
+
+      <p>
+        Ou envoyez-nous un email :
+        <a href="mailto:info@goshenwebx.io" class="email-link"
+          >info@goshenwebx.io</a
+        >
+      </p>
+    </section>
+
+   
+    <footer class="footer">
+      <p>© 2025 Goshen Web X Inc. Tous droits réservés.</p>
+      <div class="social-links">
+        <a href="https://x.com/goshenwebx?s=21" class="social-link"
+          ><i class="bi bi-twitter"></i> Twitter</a
+        >
+        <a href="https://www.linkedin.com/in/goshen-web-x-9b3246364?trk=contact-info" class="social-link"
+          ><i class="bi bi-linkedin"></i> LinkedIn</a
+        >
+        <a href="https://www.instagram.com/gwx_technologies?igsh=MXBsNm1mNGpycW9uag%3D%3D&utm_source=qr" class="social-link"
+          ><i class="bi bi-instagram"></i> Instagram</a
+        >
+      </div>
+    </footer>
+
+
+
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+    <script src="/js/storage.js"></script>
+    <script src="/js/website_optimisation.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typewriter-effect@2.18.0/dist/core.js"></script>
+    <script>
+      const app = document.getElementById('typewriter-text');
+
+      const typewriter = new Typewriter(app, {
+        loop: true,
+        delay: 75,
+      });
+
+      typewriter
+        .typeString('Goshen Web X')
+        .pauseFor(2000)
+        .deleteAll()
+        .typeString('Sites Web Éblouissants')
+        .pauseFor(2000)
+        .deleteAll()
+        .typeString('SEO Avancé')
+        .pauseFor(2000)
+        .start();
+    </script>
+
+    <!-- AOS Animation -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    </script>
+
+    <!-- AOS Animation -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        Splitting();
+      });
+    </script>
+  </body>
+</html>

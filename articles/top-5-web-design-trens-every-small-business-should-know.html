@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Discover the top 5 web design trends every small business must know in 2026 to stay competitive and convert more customers." />
+  <title>Top 5 Web Design Trends Every Small Business Should Know | Goshen Web X Blog</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      content: [],
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            accent: '#d4a017',
+            secondary: '#2a5a4e',
+            dark: '#0a0a0a',
+            'dark-100': '#121212',
+            'dark-200': '#1e1e1e',
+          }
+        }
+      }
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <link rel="icon" type="image/png" href="/images/2.png" />
+
+  <!-- Masonry Styles -->
+  <style>
+    .masonry { column-count: 1; }
+    @media (min-width: 768px) { .masonry { column-count: 2; } }
+    .masonry-item { break-inside: avoid; margin-bottom: 2rem; }
+  </style>
+</head>
+
+<body class="bg-dark text-white font-body overflow-x-hidden">
+
+  <!-- HEADER (consistent with all pages) -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-lg border-b border-white/10">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+      <div class="flex items-center justify-between h-20">
+        <a href="/" class="flex items-center gap-3">
+          <img src="/images/2.png" alt="Goshen Web X" class="h-14 w-auto" />
+          <div class="font-heading text-3xl font-semibold tracking-tighter">GOSHEN <span class="text-accent">WEB X</span></div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
+          <a href="index.html" class="hover:text-accent transition-colors">Home</a>
+          <div class="group relative">
+            <button class="flex items-center gap-1 hover:text-accent transition-colors">
+              Our Services
+              <i class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute hidden group-hover:block pt-4">
+              <div class="bg-dark-200 border border-white/10 rounded-2xl py-4 px-6 w-56 text-sm shadow-2xl">
+                <a href="/website-dev.html" class="block py-3 hover:text-accent">Website Development</a>
+                <a href="/web-optimisation.html" class="block py-3 hover:text-accent">Web Optimisation and SEO</a>
+                <a href="/portfolio.html" class="block py-3 hover:text-accent">Portfolio Websites</a>
+              </div>
+            </div>
+          </div>
+          <a href="/about.html" class="hover:text-accent transition-colors">About Us</a>
+          <a href="/portfolio.html" class="hover:text-accent transition-colors">Portfolio</a>
+          <a href="/pricing_guide.html" class="hover:text-accent transition-colors">Pricing</a>
+          <a href="/contact.html" class="hover:text-accent transition-colors">Contact</a>
+          <a href="/blog.html" class="hover:text-accent transition-colors">Blog</a>
+        </nav>
+
+        <a href="/contact.html" class="hidden lg:flex items-center gap-3 bg-accent hover:bg-white text-black font-semibold px-8 py-3.5 rounded-3xl transition-all">
+          Request a Free Quote <i class="fas fa-arrow-right"></i>
+        </a>
+
+        <!-- Hamburger -->
+        <button id="hamburger" class="lg:hidden text-4xl p-4 -mr-3 focus:outline-none active:scale-90 transition-transform">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Backdrop -->
+  <div id="backdrop" class="hidden fixed inset-0 bg-black/80 z-[9998]"></div>
+
+  <!-- Right Slide-In Drawer (no logo/brand name inside) -->
+  <div id="side-menu" class="fixed top-0 bottom-0 right-0 w-80 bg-dark shadow-2xl translate-x-full transition-transform duration-300 z-[9999] overflow-y-auto">
+    <div class="p-6">
+      <button id="close-menu" class="float-right text-4xl text-white/70 hover:text-white">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <nav class="flex flex-col text-2xl font-medium mt-12">
+        <a href="index.html" class="py-5 border-b border-white/10">Home</a>
+
+        <div class="border-b border-white/10">
+          <button onclick="toggleServicesDrawer()" class="w-full py-5 flex items-center justify-between hover:text-accent">
+            Our Services
+            <i id="drawer-chevron" class="fas fa-chevron-down transition-transform duration-300"></i>
+          </button>
+          <div id="drawer-services-submenu" class="hidden pl-6 pt-2 pb-6">
+            <a href="/website-dev.html" class="block py-4 text-xl hover:text-accent">Website Development</a>
+            <a href="/web-optimisation.html" class="block py-4 text-xl hover:text-accent">Web Optimisation and SEO</a>
+            <a href="/portfolio.html" class="block py-4 text-xl hover:text-accent">Portfolio Websites</a>
+          </div>
+        </div>
+
+        <a href="/about.html" class="py-5 border-b border-white/10">About Us</a>
+        <a href="/portfolio.html" class="py-5 border-b border-white/10">Portfolio</a>
+        <a href="/pricing_guide.html" class="py-5 border-b border-white/10">Pricing</a>
+        <a href="/contact.html" class="py-5 border-b border-white/10">Contact</a>
+        <a href="/blog.html" class="py-5 border-b border-white/10">Blog</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- DRAMATIC HERO -->
+  <section class="relative h-[85vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-[url('https://picsum.photos/id/1015/2000/1200')] bg-cover bg-center"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/80 to-black"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-8 py-4 rounded-full text-sm border border-white/20 mb-8">
+        DESIGN • 2026 TRENDS
+      </div>
+      <h1 class="text-5xl md:text-7xl font-heading font-bold tracking-tighter leading-none">
+        Top 5 Web Design Trends Every Small Business Should Know
+      </h1>
+      <p class="mt-8 text-2xl text-gray-300 max-w-2xl mx-auto">Stay ahead, look premium, and convert more visitors in 2026</p>
+    </div>
+  </section>
+
+  <!-- FEATURED IMAGE -->
+  <div class="max-w-6xl mx-auto px-6 -mt-16 relative z-20">
+    <img src="https://picsum.photos/id/201/1600/900" alt="Web Design Trends 2026" class="w-full rounded-3xl shadow-2xl" />
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 py-20 grid lg:grid-cols-12 gap-12">
+    
+    <!-- ARTICLE -->
+    <div class="lg:col-span-8 prose prose-invert prose-lg leading-relaxed max-w-none">
+      
+      <p class="text-xl text-gray-300">In 2026, your website is often the first impression customers have of your business. The right design trends can make you look established, trustworthy, and modern — without a massive budget.</p>
+
+      <h2>1. Dark Mode First Design</h2>
+      <p>Dark themes are no longer optional. They reduce eye strain, improve battery life on mobile devices, and give your brand a premium, high-end feel. Small businesses using dark mode see higher time-on-site and better conversion rates.</p>
+
+      <h2>2. 3D Elements & Micro-Interactions</h2>
+      <p>Subtle 3D illustrations, hover effects, and smooth micro-interactions make websites feel alive. These details turn a static page into an engaging experience that keeps visitors exploring longer.</p>
+
+      <h2>3. Brutalist & Bold Typography</h2>
+      <p>Large, confident typography paired with generous white space creates instant visual impact. This trend works especially well for service-based businesses that want to stand out.</p>
+
+      <h2>4. Glassmorphism & Neumorphism</h2>
+      <p>Translucent cards with blur effects (glassmorphism) and soft shadows (neumorphism) create depth and modern elegance. Perfect for portfolios, service pages, and contact sections.</p>
+
+      <h2>5. AI-Powered Personalisation</h2>
+      <p>Websites that adapt content, colours, or layout based on visitor behaviour are becoming mainstream. Even small businesses can use simple personalisation tools to show the right offer to the right person.</p>
+
+      <!-- MASONRY BRICK WALL -->
+      <h3 class="text-3xl font-heading font-semibold mt-20 mb-10">2026 Design Trends in Action</h3>
+      <div class="masonry gap-8">
+        <div class="masonry-item bg-dark-200 rounded-3xl overflow-hidden">
+          <img src="https://picsum.photos/id/180/600/500" class="w-full" alt="Dark Mode" />
+          <div class="p-8">
+            <h4 class="font-semibold">Dark Mode First</h4>
+            <p class="text-gray-400 text-sm mt-3">Premium feel + better UX</p>
+          </div>
+        </div>
+        <div class="masonry-item bg-dark-200 rounded-3xl overflow-hidden">
+          <img src="https://picsum.photos/id/237/600/400" class="w-full" alt="3D Elements" />
+          <div class="p-8">
+            <h4 class="font-semibold">3D & Micro-Interactions</h4>
+            <p class="text-gray-400 text-sm mt-3">Make your site feel alive</p>
+          </div>
+        </div>
+        <div class="masonry-item bg-dark-200 rounded-3xl overflow-hidden">
+          <img src="https://picsum.photos/id/201/600/450" class="w-full" alt="Bold Typography" />
+          <div class="p-8">
+            <h4 class="font-semibold">Bold Typography</h4>
+            <p class="text-gray-400 text-sm mt-3">Instant authority & impact</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>Why These Trends Matter for Small Businesses</h2>
+      <p>Implementing even 2-3 of these trends can dramatically improve first impressions, trust, and conversions. However, most AI website builders cannot properly execute these advanced design techniques — which is why a professional developer remains the smartest investment for long-term growth.</p>
+
+      <div class="mt-16 bg-dark-200 rounded-3xl p-10">
+        <p class="text-2xl italic text-center">“Your website should not just look good today — it should still look premium and convert visitors in 2028.”</p>
+      </div>
+
+      <div class="mt-16">
+        <a href="/contact.html" class="inline-flex items-center gap-4 bg-accent hover:bg-white text-black font-semibold px-12 py-6 rounded-3xl text-xl transition-all">
+          Let’s Build Your 2026-Ready Website <span class="text-3xl">→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- STICKY TABLE OF CONTENTS -->
+    <div class="lg:col-span-4">
+      <div class="lg:sticky top-28">
+        <h4 class="font-semibold mb-6 flex items-center gap-3">
+          <span class="w-2 h-px bg-accent flex-1"></span>
+          In This Article
+        </h4>
+        <ul class="space-y-4 text-sm">
+          <li><a href="#" class="toc-link text-gray-400 hover:text-accent">1. Dark Mode First Design</a></li>
+          <li><a href="#" class="toc-link text-gray-400 hover:text-accent">2. 3D Elements & Micro-Interactions</a></li>
+          <li><a href="#" class="toc-link text-gray-400 hover:text-accent">3. Brutalist & Bold Typography</a></li>
+          <li><a href="#" class="toc-link text-gray-400 hover:text-accent">4. Glassmorphism & Neumorphism</a></li>
+          <li><a href="#" class="toc-link text-gray-400 hover:text-accent">5. AI-Powered Personalisation</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- FLOATING WHATSAPP BUTTON (kept) -->
+  <a href="https://wa.me/14185738680" target="_blank"
+   class="fixed bottom-8 right-8 w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-2xl transition-all z-50">
+  <i class="fab fa-whatsapp text-4xl text-white"></i>
+</a>
+
+
+  <!-- FOOTER (exact match to index) -->
+  <footer class="bg-black border-t border-white/10 py-20">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+      <div class="grid md:grid-cols-12 gap-12">
+        <div class="md:col-span-4">
+          <div class="flex items-center gap-3 mb-6">
+            <img src="/images/2.png" alt="Logo" class="h-14" />
+            <span class="font-heading text-3xl font-bold tracking-tighter">GOSHEN WEB X</span>
+          </div>
+          <p class="text-gray-400 max-w-xs">Premium web development studio in Quebec, Canada.</p>
+        </div>
+
+        <div class="md:col-span-2">
+          <p class="font-medium text-accent mb-6">Company</p>
+          <ul class="space-y-3 text-sm">
+            <li><a href="/" class="hover:text-white">Home</a></li>
+            <li><a href="/website-dev.html" class="hover:text-white">Services</a></li>
+            <li><a href="/portfolio.html" class="hover:text-white">Portfolio</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-2">
+          <p class="font-medium text-accent mb-6">Services</p>
+          <ul class="space-y-3 text-sm">
+            <li><a href="/website-dev.html" class="hover:text-white">Website Development</a></li>
+            <li><a href="/web-optimisation.html" class="hover:text-white">Optimisation &amp; SEO</a></li>
+            <li><a href="/portfolio.html" class="hover:text-white">Portfolio Sites</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-4">
+          <p class="font-medium text-accent mb-6">Say Hello</p>
+          <p class="text-gray-400">info@goshenwebx.io</p>
+          <p class="text-gray-400 mt-1">Quebec, Canada</p>
+          
+          <div class="flex gap-6 text-3xl mt-10">
+            <a href="https://x.com/goshenwebx" class="hover:text-accent"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/goshen-web-x-9b3246364" class="hover:text-accent"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/gwx_technologies" class="hover:text-accent"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 mt-16 pt-8 text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p>© 2026 Goshen Web X. All Rights Reserved.</p>
+        <p class="flex gap-6">
+          <a href="/privacy-policy.html" class="hover:text-white">Privacy</a>
+          <a href="/terms.html" class="hover:text-white">Terms</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const sideMenu = document.getElementById('side-menu');
+    const backdrop = document.getElementById('backdrop');
+    const closeBtn = document.getElementById('close-menu');
+
+    hamburger.addEventListener('click', () => {
+      sideMenu.classList.remove('translate-x-full');
+      backdrop.classList.remove('hidden');
+    });
+
+    function closeMenu() {
+      sideMenu.classList.add('translate-x-full');
+      backdrop.classList.add('hidden');
+    }
+
+    closeBtn.addEventListener('click', closeMenu);
+    backdrop.addEventListener('click', closeMenu);
+
+    window.toggleServicesDrawer = function () {
+      const submenu = document.getElementById('drawer-services-submenu');
+      const chevron = document.getElementById('drawer-chevron');
+      submenu.classList.toggle('hidden');
+      chevron.classList.toggle('rotate-180');
+    };
+
+    AOS.init({ duration: 1000, once: true });
+  </script>
+</body>
+</html>
