@@ -2,83 +2,83 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Goshen Web X Politique de confidentialité — Comment nous recueillons, utilisons et protégeons vos renseignements personnels. Dernière mise à jour février 2026." />
-    <title>Goshen Web X | Politique de confidentialité</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Goshen Web X Politique de Confidentialité — Comment nous collectons, utilisons et protégeons vos informations personnelles. Dernière mise à jour février 2026." />
+  <title>Goshen Web X | Politique de Confidentialité</title>
 
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      content: [],
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            accent: '#d4a017',
+            secondary: '#2a5a4e',
+            dark: '#0a0a0a',
+            'dark-100': '#121212',
+            'dark-200': '#1e1e1e',
+          }
+        }
+      }
+    }
+  </script>
 
-    <!-- Tailwind Config -->
-    <script>
-        tailwind.config = {
-            content: [],
-            theme: {
-                extend: {
-                    fontFamily: {
-                        heading: ['Poppins', 'sans-serif'],
-                        body: ['Plus Jakarta Sans', 'sans-serif'],
-                    },
-                    colors: {
-                        accent: '#d4a017',
-                        secondary: '#2a5a4e',
-                        dark: '#0a0a0a',
-                        'dark-100': '#121212',
-                        'dark-200': '#1e1e1e',
-                    }
-                }
-            }
-        }
-    </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <link rel="icon" type="image/png" href="/images/2.png" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-    <link rel="icon" type="image/png" href="/images/2.png" />
-
-    <!-- Custom CSS for Readability & Accessibility -->
-    <style>
-        .privacy-content {
-            max-width: 75ch;
-            line-height: 1.9;
-            font-size: 1.0625rem; /* 17px */
-            color: #e5e7eb;
-        }
-        .privacy-content h2 {
-            font-size: 1.75rem;
-            margin-top: 3rem;
-            margin-bottom: 1.25rem;
-            font-weight: 600;
-            color: white;
-        }
-        .privacy-content p {
-            margin-bottom: 1.5rem;
-        }
-        .privacy-content a {
-            color: #d4a017;
-            text-decoration: underline;
-            text-underline-offset: 4px;
-        }
-        .privacy-content a:hover {
-            color: #f5d06a;
-        }
-        .privacy-content a:focus {
-            outline: 3px solid #d4a017;
-            outline-offset: 4px;
-            border-radius: 4px;
-        }
-        @media (max-width: 640px) {
-            .privacy-content {
-                font-size: 1.05rem;
-            }
-        }
-    </style>
+  <!-- Custom CSS for Readability & Accessibility -->
+  <style>
+    .privacy-content {
+      max-width: 75ch;
+      line-height: 1.9;
+      font-size: 1.0625rem; /* 17px */
+      color: #e5e7eb;
+    }
+    .privacy-content h2 {
+      font-size: 1.75rem;
+      margin-top: 3rem;
+      margin-bottom: 1.25rem;
+      font-weight: 600;
+      color: white;
+    }
+    .privacy-content p {
+      margin-bottom: 1.5rem;
+    }
+    .privacy-content a {
+      color: #d4a017;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+    .privacy-content a:hover {
+      color: #f5d06a;
+    }
+    .privacy-content a:focus {
+      outline: 3px solid #d4a017;
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+    @media (max-width: 640px) {
+      .privacy-content {
+        font-size: 1.05rem;
+      }
+    }
+  </style>
 </head>
 
 <body class="bg-dark text-white font-body overflow-x-hidden">
 
-  <!-- HEADER (updated & consistent with all French pages) -->
+  <!-- HEADER (updated to 100% consistent bilingual pattern – EN active) -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-lg border-b border-white/10">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
       <div class="flex items-center justify-between h-20">
@@ -110,7 +110,7 @@
           <a href="/blog-fr.html" class="hover:text-accent transition-colors">Blog</a>
         </nav>
 
-        <!-- Language Switcher + CTA (desktop) -->
+        <!-- Language Switcher + CTA (desktop) – FR active -->
         <div class="hidden lg:flex items-center gap-6">
           <div class="flex items-center text-sm font-medium">
             <a href="/privacy-policy.html" class="hover:text-accent transition-colors px-2">EN</a>
@@ -162,7 +162,7 @@
         <a href="/contact-fr.html" class="py-5 border-b border-white/10">Contact</a>
         <a href="/blog-fr.html" class="py-5 border-b border-white/10">Blog</a>
 
-        <!-- Language Switcher in mobile menu -->
+        <!-- Language Switcher in mobile drawer -->
         <div class="pt-8 border-t border-white/10">
           <div class="flex items-center gap-3 text-xl font-medium">
             <a href="/privacy-policy.html" class="hover:text-accent transition-colors">EN</a>
@@ -182,59 +182,57 @@
           Légal
         </div>
         <h1 class="text-5xl md:text-7xl font-heading font-bold tracking-tighter leading-none">
-          Politique de confidentialité
+          Politique de Confidentialité
         </h1>
         <p class="mt-6 text-gray-400">Dernière mise à jour : 27 février 2026</p>
       </div>
     </div>
   </section>
 
-  <!-- CONTENT -->
+  <!-- CONTENT - HIGHLY READABLE & ACCESSIBLE -->
   <section class="py-20 bg-dark-100">
     <div class="privacy-content max-w-4xl mx-auto px-5 sm:px-8 lg:px-12">
-
+      
       <h2>Notre engagement envers la confidentialité</h2>
-      <p>Chez Goshen Web X, votre vie privée est l’une de nos plus grandes priorités. Cette Politique de confidentialité explique comment nous recueillons, utilisons, divulguons et protégeons vos renseignements personnels lorsque vous visitez notre site web ou que vous faites appel à nos services.</p>
+      <p>Chez Goshen Web X, votre vie privée est l’une de nos plus grandes priorités. Cette Politique de Confidentialité explique comment nous collectons, utilisons, divulguons et protégeons vos informations personnelles lorsque vous visitez notre site web ou utilisez nos services.</p>
 
-      <h2>Quels renseignements nous recueillons</h2>
-      <p>Nous ne recueillons que les renseignements que vous fournissez volontairement et en toute connaissance de cause. Cela inclut généralement votre nom, votre adresse courriel, votre numéro de téléphone et tout détail de projet que vous partagez via nos formulaires de contact, demandes de devis ou communications directes par courriel ou téléphone.</p>
-      <p>Nous pouvons également recevoir des renseignements limités sur des tiers lorsqu’ils sont directement liés aux services de développement de sites web, de SEO ou de sites portfolio que vous avez demandés.</p>
-      <p>Nous ne recueillons jamais de données personnelles sans votre consentement explicite.</p>
+      <h2>Quelles informations nous collectons</h2>
+      <p>Nous ne collectons que les informations que vous nous fournissez volontairement et en toute connaissance de cause. Cela inclut généralement votre nom, adresse courriel, numéro de téléphone et les détails de projet que vous partagez via nos formulaires de contact, demandes de devis ou communications directes.</p>
+      <p>Nous pouvons également recevoir des informations limitées concernant des tiers lorsqu’elles sont directement liées aux services de développement web, SEO ou création de portfolio que vous nous avez demandés.</p>
+      <p>Nous ne collectons jamais de données personnelles sans votre consentement explicite.</p>
 
-      <h2>Comment nous utilisons les renseignements recueillis</h2>
-      <p>Nous utilisons les renseignements que vous fournissez uniquement pour vous offrir des services numériques exceptionnels. Cela inclut la coordination de projets, le soutien à la clientèle, l’envoi de mises à jour, le traitement des factures et, occasionnellement, l’envoi de bulletins d’information ou d’informations sur nos services. Vous pouvez vous désabonner des communications marketing à tout moment.</p>
-      <p>Nous ne vendons, ne louons ni ne partageons vos renseignements personnels avec des tiers, sauf lorsque cela est strictement nécessaire pour réaliser les services demandés ou lorsque la loi l’exige.</p>
+      <h2>Comment nous utilisons les informations collectées</h2>
+      <p>Nous utilisons les informations que vous fournissez uniquement pour vous offrir des services numériques de qualité supérieure. Cela comprend la coordination de projets, le soutien client, l’envoi de mises à jour, le traitement des factures et, occasionnellement, l’envoi d’informations pertinentes sur nos services. Vous pouvez vous désinscrire des communications marketing à tout moment.</p>
+      <p>Nous ne vendons, ne louons ni ne partageons vos informations personnelles avec des tiers, sauf lorsque cela est strictement nécessaire pour réaliser les services demandés ou lorsque la loi l’exige.</p>
 
-      <h2>Cookies et analyses du site web</h2>
-      <p>Notre site web utilise des cookies et des technologies similaires pour améliorer votre expérience, mémoriser vos préférences et analyser la façon dont les visiteurs interagissent avec notre contenu. Ces outils nous aident à améliorer les performances du site, la pertinence du contenu et l’expérience globale des utilisateurs.</p>
-      <p>Les renseignements recueillis via les cookies sont anonymes et ne vous identifient pas personnellement. Ces données sont partagées avec Google Analytics uniquement pour des rapports sur le trafic et l’engagement du site https://goshenwebx.io.</p>
+      <h2>Cookies et analyse de site web</h2>
+      <p>Notre site utilise des cookies et des technologies similaires pour améliorer votre expérience, mémoriser vos préférences et analyser la façon dont les visiteurs interagissent avec notre contenu. Ces outils nous aident à améliorer les performances du site et l’expérience utilisateur.</p>
+      <p>Les informations collectées via les cookies sont anonymes et ne permettent pas de vous identifier personnellement.</p>
 
       <h2>Remarketing</h2>
-      <p>Nous pouvons utiliser des cookies de remarketing pour afficher des publicités pertinentes aux visiteurs précédents de notre site sur d’autres sites internet. Ces annonces sont basées uniquement sur vos visites et comportements de navigation passés sur notre site.</p>
-      <p>Vous pouvez gérer ou désactiver la publicité personnalisée à tout moment en visitant le Gestionnaire de préférences des annonces Google.</p>
+      <p>Nous pouvons utiliser des cookies de remarketing pour afficher des publicités pertinentes aux visiteurs précédents de notre site sur d’autres sites internet. Ces publicités sont basées uniquement sur vos visites passées sur notre site.</p>
 
-      <h2>Sites web et liens externes</h2>
-      <p>Notre site peut contenir des liens vers des sites externes pour votre commodité. Nous ne contrôlons pas ces sites tiers ni leurs pratiques de confidentialité, et nous ne sommes pas responsables de leur contenu ou de leur gestion des données. Nous vous encourageons vivement à consulter les politiques de confidentialité de tout site externe que vous visitez.</p>
+      <h2>Sites web et liens tiers</h2>
+      <p>Notre site peut contenir des liens vers des sites externes pour votre commodité. Nous ne contrôlons pas ces sites tiers ni leurs pratiques en matière de confidentialité et nous ne sommes pas responsables de leur contenu ou de leur gestion des données.</p>
 
       <h2>Notre engagement en matière de sécurité des données</h2>
-      <p>Nous maintenons des mesures techniques, administratives et physiques appropriées pour protéger les renseignements personnels que nous recueillons. Toutes les transactions sensibles, y compris les paiements, se déroulent sur des serveurs sécurisés et chiffrés utilisant la technologie SSL standard de l’industrie.</p>
+      <p>Nous maintenons des mesures techniques, administratives et physiques appropriées pour protéger les informations personnelles que nous collectons. Toutes les transactions sensibles, y compris les paiements, s’effectuent sur des serveurs sécurisés et chiffrés utilisant la technologie SSL standard de l’industrie.</p>
 
       <h2>Traitement des paiements</h2>
-      <p>Nous acceptons les paiements en ligne sécurisés via PayPal et Stripe. Toutes les données de carte de crédit et de paiement sont traitées directement par ces fournisseurs de confiance sur leurs plateformes sécurisées. Nous ne conservons pas vos données de paiement complètes sur nos serveurs.</p>
+      <p>Nous acceptons les paiements en ligne sécurisés via PayPal et Stripe. Toutes les données de carte de crédit et de paiement sont traitées directement par ces fournisseurs sur leurs plateformes sécurisées. Nous ne conservons pas vos informations de paiement complètes sur nos serveurs.</p>
 
       <h2>Protection de la vie privée des enfants</h2>
-      <p>Goshen Web X s’engage à protéger la vie privée des enfants. Notre site web et nos services ne sont ni conçus ni destinés aux personnes de moins de 18 ans, et nous ne recueillons ni ne conservons sciemment des renseignements sur quiconque âgé de moins de 13 ans.</p>
-      <p>Si nous découvrons qu’un utilisateur de moins de 18 ans a soumis des renseignements personnels, nous les supprimerons immédiatement et ne les utiliserons à aucune fin.</p>
+      <p>Goshen Web X s’engage à protéger la vie privée des enfants. Notre site et nos services ne sont pas conçus pour ni destinés aux personnes de moins de 18 ans, et nous ne collectons ni ne conservons sciemment d’informations provenant de personnes que nous savons être âgées de moins de 13 ans.</p>
 
       <h2>Votre consentement et mises à jour de la politique</h2>
-      <p>En utilisant notre site web et nos services, vous consentez aux pratiques décrites dans cette Politique de confidentialité. Si nous apportons des modifications importantes à cette politique, nous mettrons à jour la date « Dernière mise à jour » et publierons la version révisée sur cette page. Votre utilisation continue après toute modification constitue une acceptation de la politique mise à jour.</p>
+      <p>En utilisant notre site web et nos services, vous consentez aux pratiques décrites dans cette Politique de Confidentialité. Si nous apportons des modifications importantes à cette politique, nous mettrons à jour la date de « Dernière mise à jour » et publierons la version révisée sur cette page.</p>
 
-      <h2>Vos droits et choix en matière de confidentialité</h2>
-      <p>Vous n’êtes pas obligé de fournir des renseignements personnels pour naviguer sur notre site. Vous pouvez refuser les communications marketing à tout moment en cliquant sur le lien de désabonnement dans nos courriels ou en nous contactant directement.</p>
-      <p>Vous pouvez demander l’accès à, la correction ou la suppression de vos renseignements personnels en nous contactant par écrit. Nous répondrons à votre demande le plus rapidement possible et conformément à la loi applicable.</p>
+      <h2>Vos droits et choix en matière de vie privée</h2>
+      <p>Vous n’êtes pas obligé de fournir des informations personnelles pour naviguer sur notre site. Vous pouvez vous désinscrire des communications marketing à tout moment en cliquant sur le lien de désabonnement dans nos courriels ou en nous contactant directement.</p>
+      <p>Vous pouvez demander l’accès à, la correction ou la suppression de vos informations personnelles en nous contactant par écrit. Nous répondrons à votre demande dans les meilleurs délais conformément à la loi applicable.</p>
 
       <h2>Nous contacter</h2>
-      <p>Si vous avez des questions, des préoccupations ou des demandes concernant cette Politique de confidentialité, veuillez nous contacter à <a href="mailto:info@goshenwebx.io" class="text-accent hover:underline">info@goshenwebx.io</a></p>
+      <p>Si vous avez des questions, préoccupations ou demandes concernant cette Politique de Confidentialité, n’hésitez pas à nous contacter à <a href="mailto:info@goshenwebx.io" class="text-accent hover:underline">info@goshenwebx.io</a>.</p>
 
     </div>
   </section>
@@ -254,7 +252,7 @@
             <img src="/images/2.png" alt="Logo" class="h-14" />
             <span class="font-heading text-3xl font-bold tracking-tighter">GOSHEN WEB X</span>
           </div>
-          <p class="text-gray-400 max-w-xs">Studio de développement web premium au Québec, Canada.</p>
+          <p class="text-gray-400 max-w-xs">Entreprise de développement web professionnel basée au Canada.</p>
         </div>
 
         <div class="md:col-span-2">
@@ -276,9 +274,9 @@
         </div>
 
         <div class="md:col-span-4">
-          <p class="font-medium text-accent mb-6">Dites bonjour</p>
+          <p class="font-medium text-accent mb-6">Contactez-nous</p>
           <p class="text-gray-400">info@goshenwebx.io</p>
-          <p class="text-gray-400 mt-1">Québec, Canada</p>
+          <p class="text-gray-400 mt-1">Canada</p>
           
           <div class="flex gap-6 text-3xl mt-10">
             <a href="https://x.com/goshenwebx" class="hover:text-accent"><i class="fab fa-x-twitter"></i></a>
@@ -291,7 +289,7 @@
       <div class="border-t border-white/10 mt-16 pt-8 text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
         <p>© 2026 Goshen Web X. Tous droits réservés.</p>
         <p class="flex gap-6">
-          <a href="/privacy-policy-fr.html" class="hover:text-white">Politique de confidentialité</a>
+          <a href="/privacy-policy-fr.html" class="hover:text-white">Politique de Confidentialité</a>
           <a href="/terms-fr.html" class="hover:text-white">Conditions d'utilisation</a>
         </p>
       </div>

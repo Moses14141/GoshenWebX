@@ -4,13 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Entrez en contact avec Goshen Web X — studio de développement web premium au Québec. Devis gratuit, appel stratégique ou simplement dites bonjour. Nous sommes prêts quand vous l'êtes." />
-  <title>Goshen Web X | Contactez-nous</title>
+  <meta name="description" content="Développement professionnel de sites web personnalisés basé au Canada. Sites web haute performance et orientés résultats développés pour les petites entreprises et entrepreneurs du monde entier." />
+  <title>Goshen Web X | Développement de sites web sur mesure</title>
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Tailwind Config -->
+  <!-- Tailwind Config - same as all other pages -->
   <script>
     tailwind.config = {
       content: [],
@@ -40,16 +40,16 @@
 
 <body class="bg-dark text-white font-body overflow-x-hidden">
 
-  <!-- HEADER (consistent with all pages) -->
+  <!-- HEADER (version française complète – FR actif) -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-lg border-b border-white/10">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
       <div class="flex items-center justify-between h-20">
-        <a href="/" class="flex items-center gap-3">
+        <a href="index-fr.html" class="flex items-center gap-3">
           <img src="/images/2.png" alt="Goshen Web X" class="h-14 w-auto" />
           <div class="font-heading text-3xl font-semibold tracking-tighter">GOSHEN <span class="text-accent">WEB X</span></div>
         </a>
 
-        <!-- Desktop Nav -->
+        <!-- Desktop Nav (français) -->
         <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
           <a href="index-fr.html" class="hover:text-accent transition-colors">Accueil</a>
           <div class="group relative">
@@ -67,18 +67,17 @@
           </div>
           <a href="/about-fr.html" class="hover:text-accent transition-colors">À propos</a>
           <a href="/portfolio-fr.html" class="hover:text-accent transition-colors">Portfolio</a>
-          <a href="/pricing_guide-fr.html" class="hover:text-accent transition-colors">Tarifs</a>
+          <a href="/pricing_guide-fr.html" class="hover:text-accent transition-colors">Tarification</a>
           <a href="/contact-fr.html" class="hover:text-accent transition-colors">Contact</a>
           <a href="/blog-fr.html" class="hover:text-accent transition-colors">Blog</a>
         </nav>
 
-        <!-- Language Switcher + CTA (desktop) -->
+        <!-- Language Switcher + CTA (FR actif) -->
         <div class="hidden lg:flex items-center gap-6">
-          <!-- Translation Button -->
           <div class="flex items-center text-sm font-medium">
-            <a href="/contact.html" class="hover:text-accent transition-colors px-2">EN</a>
+            <a href="/website-dev.html" class="hover:text-accent transition-colors px-2">EN</a>
             <span class="text-white/40 mx-1">/</span>
-            <a href="website-dev-fr.html" class="text-accent hover:text-white transition-colors px-2 font-semibold">FR</a>
+            <a href="/website-dev-fr.html" class="text-accent hover:text-white transition-colors px-2 font-semibold">FR</a>
           </div>
 
           <a href="/contact-fr.html" class="flex items-center gap-3 bg-accent hover:bg-white text-black font-semibold px-8 py-3.5 rounded-3xl transition-all">
@@ -121,16 +120,16 @@
 
         <a href="/about-fr.html" class="py-5 border-b border-white/10">À propos</a>
         <a href="/portfolio-fr.html" class="py-5 border-b border-white/10">Portfolio</a>
-        <a href="/pricing_guide-fr.html" class="py-5 border-b border-white/10">Tarifs</a>
+        <a href="/pricing_guide-fr.html" class="py-5 border-b border-white/10">Tarification</a>
         <a href="/contact-fr.html" class="py-5 border-b border-white/10">Contact</a>
         <a href="/blog-fr.html" class="py-5 border-b border-white/10">Blog</a>
 
-        <!-- Language Switcher in mobile menu -->
+        <!-- Language Switcher in mobile drawer -->
         <div class="pt-8 border-t border-white/10">
           <div class="flex items-center gap-3 text-xl font-medium">
-            <a href="website-dev.html" class="hover:text-accent transition-colors">EN</a>
+            <a href="/website-dev.html" class="hover:text-accent transition-colors">EN</a>
             <span class="text-white/40">/</span>
-            <a href="custom-web-dev-fr.html" class="text-accent hover:text-white transition-colors font-semibold">FR</a>
+            <a href="/website-dev-fr.html" class="text-accent hover:text-white transition-colors font-semibold">FR</a>
           </div>
         </div>
       </nav>
@@ -140,116 +139,110 @@
   <!-- HERO -->
   <section class="min-h-screen relative flex items-center bg-black pt-20">
     <div class="absolute inset-0 bg-[url('https://picsum.photos/id/1015/1920/1080')] bg-cover bg-center"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-black via-black/95 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent"></div>
     
     <div class="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-12">
-      <div class="max-w-2xl">
-        <h1 class="text-6xl md:text-7xl font-heading font-bold tracking-tighter leading-none mb-6">
-          Toc toc !<br>
-          <span class="text-accent">Qui est là ?</span>
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full text-sm mb-6">
+          <span class="w-3 h-3 bg-accent rounded-full animate-pulse"></span>
+          SITES WEB SUR MESURE • CANADA ET À L’INTERNATIONAL
+        </div>
+        
+        <h1 class="text-5xl md:text-7xl font-heading font-bold tracking-tighter leading-none mb-8">
+          Des sites web qui ne sont pas seulement professionnels.<br>
+          <span class="text-accent">Ils génèrent des résultats.</span>
         </h1>
-        <p class="text-2xl text-gray-300 mb-10">
-          Votre partenaire web premium au Québec.<br>
-          Sans blague — nous livrons des sites web époustouflants et haute performance qui font réellement croître votre entreprise.
+        
+        <p class="text-xl text-gray-300 mb-10">
+          Sites web sur mesure, haute performance et axés sur les résultats, conçus exclusivement pour les petites entreprises et entrepreneurs.
         </p>
-        <a href="#form" class="inline-block bg-accent hover:bg-white text-black font-semibold px-12 py-6 rounded-3xl text-xl transition-all">
-          Commençons votre projet →
-        </a>
+        
+        <div class="flex flex-wrap gap-4">
+          <a href="#contact" class="bg-accent hover:bg-white text-black font-semibold px-10 py-5 rounded-3xl flex items-center gap-3 transition-all text-lg">
+            Commencer votre projet →
+          </a>
+          <a href="#process" class="border border-white/50 hover:border-white font-medium px-10 py-5 rounded-3xl transition-all text-lg">
+            Voir notre processus
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- MAIN CONTACT SECTION -->
+  <!-- PROCESS -->
+  <section id="process" class="py-24 bg-dark-100">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+      <div class="text-center mb-16">
+        <span class="uppercase text-accent tracking-widest text-sm">4 semaines pour le lancement</span>
+        <h2 class="text-5xl font-heading font-bold tracking-tighter mt-4">Notre processus éprouvé</h2>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="bg-dark-200 rounded-3xl p-8 hover:-translate-y-2 transition-all">
+          <div class="text-6xl font-bold text-accent/20 mb-4">01</div>
+          <h3 class="text-2xl font-semibold mb-3">Découverte & Stratégie</h3>
+          <p class="text-gray-400">Analyse complète de vos objectifs, de votre public cible, de vos concurrents et de votre identité de marque.</p>
+        </div>
+        <div class="bg-dark-200 rounded-3xl p-8 hover:-translate-y-2 transition-all">
+          <div class="text-6xl font-bold text-accent/20 mb-4">02</div>
+          <h3 class="text-2xl font-semibold mb-3">Wireframes & Design</h3>
+          <p class="text-gray-400">Wireframes détaillés et designs professionnels avec prototypes interactifs pour votre approbation.</p>
+        </div>
+        <div class="bg-dark-200 rounded-3xl p-8 hover:-translate-y-2 transition-all">
+          <div class="text-6xl font-bold text-accent/20 mb-4">03</div>
+          <h3 class="text-2xl font-semibold mb-3">Développement & Tests</h3>
+          <p class="text-gray-400">Code de haute qualité, approche mobile-first, pleine responsivité et tests approfondis.</p>
+        </div>
+        <div class="bg-dark-200 rounded-3xl p-8 hover:-translate-y-2 transition-all">
+          <div class="text-6xl font-bold text-accent/20 mb-4">04</div>
+          <h3 class="text-2xl font-semibold mb-3">Lancement & Support</h3>
+          <p class="text-gray-400">Mise en ligne accompagnée d’une formation et de 90 jours de support prioritaire.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
   <section class="py-24 bg-dark">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
-      <div class="grid lg:grid-cols-2 gap-16">
-        
-        <!-- LEFT COLUMN -->
-        <div>
-          <h2 class="text-5xl font-heading font-bold tracking-tighter mb-10">Contactez-nous</h2>
-          
-          <div class="space-y-12">
-            <!-- Address -->
-            <div>
-              <p class="uppercase text-accent text-sm tracking-widest mb-2">Services à distance — Basés à,</p>
-              <p class="text-2xl font-medium">Québec, Canada</p>
-              <p class="text-gray-400 mt-1">Disponibles pour des réunions virtuelles partout dans le monde</p>
-            </div>
+      <div class="text-center mb-16">
+        <h2 class="text-5xl font-heading font-bold tracking-tighter">Chaque site web inclut</h2>
+      </div>
 
-            <!-- Contact Info -->
-            <div class="grid grid-cols-1 gap-8">
-              <div>
-                <p class="uppercase text-accent text-sm tracking-widest mb-2">Courriel</p>
-                <a href="mailto:info@goshenwebx.io" class="text-2xl hover:text-accent transition-colors">info@goshenwebx.io</a>
-              </div>
-              <div>
-                <p class="uppercase text-accent text-sm tracking-widest mb-2">Téléphone</p>
-                <a href="tel:+15811234567" class="text-2xl hover:text-accent transition-colors">+1 (581) 123-4567</a>
-              </div>
-            </div>
-
-            <!-- Google Map -->
-            <div class="rounded-3xl overflow-hidden border border-white/10">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113000.000!2d-71.5!3d46.8!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ba4c0b0b0b0b0b0%3A0x0!2sQuebec+City%2C+QC%2C+Canada!5e0!3m2!1sfr!2sca!4v1700000000000" 
-                      width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-
-            <!-- Reviews -->
-            <div>
-              <div class="flex items-center gap-3 mb-4">
-                <div class="flex text-accent text-3xl">
-                  ★★★★☆
-                </div>
-                <div>
-                  <span class="text-4xl font-bold">4.8</span>
-                  <span class="text-gray-400 ml-2">/ 5</span>
-                </div>
-              </div>
-              <p class="text-gray-300">"La meilleure équipe web avec laquelle nous ayons travaillé. Rapide, professionnelle et axée sur les résultats."</p>
-              <p class="text-sm text-gray-400 mt-2">- Marc D., Startup tech du Québec</p>
-            </div>
-          </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-dark-200 rounded-3xl p-10 text-center">
+          <i class="fas fa-bolt text-6xl text-accent mb-6"></i>
+          <h3 class="text-3xl font-semibold mb-4">Haute performance</h3>
+          <p class="text-gray-400">Scores Lighthouse 98+ garantis. Chargement en moins de 1,5 seconde.</p>
         </div>
-
-        <!-- RIGHT COLUMN: Contact Form -->
-        <div id="form" class="bg-dark-200 rounded-3xl p-10">
-          <h3 class="text-3xl font-semibold mb-8">Envoyez-nous un message</h3>
-          
-          <form id="contactForm" class="space-y-6">
-            <div class="grid md:grid-cols-2 gap-6">
-              <input type="text" name="name" placeholder="Votre nom" required 
-                     class="bg-dark border border-white/20 focus:border-accent rounded-2xl px-6 py-4 w-full outline-none">
-              <input type="email" name="email" placeholder="Votre courriel" required 
-                     class="bg-dark border border-white/20 focus:border-accent rounded-2xl px-6 py-4 w-full outline-none">
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-6">
-              <input type="tel" name="phone" placeholder="Votre numéro de téléphone" 
-                     class="bg-dark border border-white/20 focus:border-accent rounded-2xl px-6 py-4 w-full outline-none">
-              <input type="text" name="budget" placeholder="Budget du projet (optionnel)" 
-                     class="bg-dark border border-white/20 focus:border-accent rounded-2xl px-6 py-4 w-full outline-none">
-            </div>
-            
-            <textarea name="message" placeholder="Parlez-nous de votre projet..." rows="6" required
-                      class="bg-dark border border-white/20 focus:border-accent rounded-3xl px-6 py-4 w-full outline-none resize-y"></textarea>
-            
-            <button type="submit" 
-                    class="w-full bg-accent hover:bg-white text-black font-semibold py-5 rounded-3xl text-lg transition-all">
-              Envoyer le message
-            </button>
-          </form>
+        <div class="bg-dark-200 rounded-3xl p-10 text-center">
+          <i class="fas fa-mobile-alt text-6xl text-accent mb-6"></i>
+          <h3 class="text-3xl font-semibold mb-4">Entièrement responsive</h3>
+          <p class="text-gray-400">Optimisé pour tous les appareils — téléphone, tablette, ordinateur et écrans haute résolution.</p>
+        </div>
+        <div class="bg-dark-200 rounded-3xl p-10 text-center">
+          <i class="fas fa-search text-6xl text-accent mb-6"></i>
+          <h3 class="text-3xl font-semibold mb-4">Optimisé SEO</h3>
+          <p class="text-gray-400">Balises schema, URLs propres, meta tags — prêt pour les moteurs de recherche dès le jour 1.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FLOATING WHATSAPP BUTTON -->
-  <a href="https://wa.me/14185738680" target="_blank"
-   class="fixed bottom-8 right-8 w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-2xl transition-all z-50">
-  <i class="fab fa-whatsapp text-4xl text-white"></i>
-</a>
+  <!-- CONTACT CTA -->
+  <section id="contact" class="py-24 bg-dark-100">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 text-center">
+      <h2 class="text-5xl font-heading font-bold tracking-tighter mb-6">Prêt à développer un site web qui fait avancer votre entreprise ?</h2>
+      <p class="text-xl text-gray-300 max-w-xl mx-auto mb-12">Réservez votre appel stratégique gratuit de 30 minutes. Aucune obligation — seulement des conseils d’expert.</p>
+      
+      <a href="mailto:info@goshenwebx.io" 
+         class="inline-block bg-accent hover:bg-white text-black font-semibold px-14 py-6 rounded-3xl text-xl transition-all">
+        Demandez votre devis gratuit maintenant
+      </a>
+    </div>
+  </section>
 
-  <!-- FOOTER -->
+  <!-- FOOTER – exact match -->
   <footer class="bg-black border-t border-white/10 py-20">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
       <div class="grid md:grid-cols-12 gap-12">
@@ -258,15 +251,15 @@
             <img src="/images/2.png" alt="Logo" class="h-14" />
             <span class="font-heading text-3xl font-bold tracking-tighter">GOSHEN WEB X</span>
           </div>
-          <p class="text-gray-400 max-w-xs">Studio de développement web premium au Québec, Canada.</p>
+          <p class="text-gray-400 max-w-xs">Entreprise de développement web professionnel basée au Canada.</p>
         </div>
 
         <div class="md:col-span-2">
           <p class="font-medium text-accent mb-6">Entreprise</p>
           <ul class="space-y-3 text-sm">
             <li><a href="index-fr.html" class="hover:text-white">Accueil</a></li>
-            <li><a href="/website-dev-fr.html" class="hover:text-white">Services</a></li>
-            <li><a href="/portfolio-fr.html" class="hover:text-white">Portfolio</a></li>
+            <li><a href="/about-fr.html" class="hover:text-white">À propos</a></li>
+            <li><a href="/blog-fr.html" class="hover:text-white">Blog</a></li>
           </ul>
         </div>
 
@@ -280,9 +273,9 @@
         </div>
 
         <div class="md:col-span-4">
-          <p class="font-medium text-accent mb-6">Dites bonjour</p>
+          <p class="font-medium text-accent mb-6">Contactez-nous</p>
           <p class="text-gray-400">info@goshenwebx.io</p>
-          <p class="text-gray-400 mt-1">Québec, Canada</p>
+          <p class="text-gray-400 mt-1">Canada</p>
           
           <div class="flex gap-6 text-3xl mt-10">
             <a href="https://x.com/goshenwebx" class="hover:text-accent"><i class="fab fa-x-twitter"></i></a>
@@ -296,13 +289,13 @@
         <p>© 2026 Goshen Web X. Tous droits réservés.</p>
         <p class="flex gap-6">
           <a href="/privacy-policy-fr.html" class="hover:text-white">Confidentialité</a>
-          <a href="/terms-fr.html" class="hover:text-white">Conditions</a>
+          <a href="/terms-fr.html" class="hover:text-white">Conditions d’utilisation</a>
         </p>
       </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Scripts – standardized -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     const hamburger = document.getElementById('hamburger');

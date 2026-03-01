@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Pourquoi la vitesse d’un site web compte en 2026. Explication claire des Core Web Vitals (LCP, INP, CLS) et leur impact sur vos classements Google et votre croissance d’affaires de Goshen Web X — entreprise de développement web professionnel basée au Canada." />
+    <title>Pourquoi la vitesse compte : Les Core Web Vitals expliqués | Goshen Web X Blog</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            content: [],
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'],
+                        body: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        accent: '#d4a017',
+                        secondary: '#2a5a4e',
+                        dark: '#0a0a0a',
+                        'dark-100': '#121212',
+                        'dark-200': '#1e1e1e',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link rel="icon" type="image/png" href="/images/2.png" />
+
+    <!-- Masonry Styles -->
+    <style>
+        .masonry { column-count: 1; }
+        @media (min-width: 768px) { .masonry { column-count: 2; } }
+        .masonry-item { break-inside: avoid; margin-bottom: 2rem; }
+    </style>
+</head>
+
+<body class="bg-dark text-white font-body overflow-x-hidden">
+
+    <!-- HEADER (version française complète – FR actif) -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-lg border-b border-white/10">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+            <div class="flex items-center justify-between h-20">
+                <a href="index-fr.html" class="flex items-center gap-3">
+                    <img src="/images/2.png" alt="Goshen Web X" class="h-14 w-auto" />
+                    <div class="font-heading text-3xl font-semibold tracking-tighter">GOSHEN <span class="text-accent">WEB X</span></div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
+                    <a href="../index-fr.html" class="hover:text-accent transition-colors">Accueil</a>
+                    <div class="group relative">
+                        <button class="flex items-center gap-1 hover:text-accent transition-colors">
+                            Nos Services
+                            <i class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                        </button>
+                        <div class="absolute hidden group-hover:block pt-4">
+                            <div class="bg-dark-200 border border-white/10 rounded-2xl py-4 px-6 w-56 text-sm shadow-2xl">
+                                <a href="/website-dev-fr.html" class="block py-3 hover:text-accent">Développement de sites web</a>
+                                <a href="/web-optimisation-fr.html" class="block py-3 hover:text-accent">Optimisation web et SEO</a>
+                                <a href="/portfolio-fr.html" class="block py-3 hover:text-accent">Sites portfolio</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/about-fr.html" class="hover:text-accent transition-colors">À propos</a>
+                    <a href="/portfolio-fr.html" class="hover:text-accent transition-colors">Portfolio</a>
+                    <a href="/pricing_guide-fr.html" class="hover:text-accent transition-colors">Tarification</a>
+                    <a href="/contact-fr.html" class="hover:text-accent transition-colors">Contact</a>
+                    <a href="/blog-fr.html" class="hover:text-accent transition-colors">Blog</a>
+                </nav>
+
+                <!-- Language Switcher + CTA (FR actif) -->
+                <div class="hidden lg:flex items-center gap-6">
+                    <div class="flex items-center text-sm font-medium">
+                        <a href="/core-web-vitals.html" class="hover:text-accent transition-colors px-2">EN</a>
+                        <span class="text-white/40 mx-1">/</span>
+                        <a href="/core-web-vitals-fr.html" class="text-accent hover:text-white transition-colors px-2 font-semibold">FR</a>
+                    </div>
+
+                    <a href="/contact-fr.html" class="flex items-center gap-3 bg-accent hover:bg-white text-black font-semibold px-8 py-3.5 rounded-3xl transition-all">
+                        Demander un devis gratuit <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Hamburger -->
+                <button id="hamburger" class="lg:hidden text-4xl p-4 -mr-3 focus:outline-none active:scale-90 transition-transform">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Backdrop -->
+    <div id="backdrop" class="hidden fixed inset-0 bg-black/80 z-[9998]"></div>
+
+    <!-- Right Slide-In Drawer -->
+    <div id="side-menu" class="fixed top-0 bottom-0 right-0 w-80 bg-dark shadow-2xl translate-x-full transition-transform duration-300 z-[9999] overflow-y-auto">
+        <div class="p-6">
+            <button id="close-menu" class="float-right text-4xl text-white/70 hover:text-white">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <nav class="flex flex-col text-2xl font-medium mt-12">
+                <a href="../index-fr.html" class="py-5 border-b border-white/10">Accueil</a>
+
+                <div class="border-b border-white/10">
+                    <button onclick="toggleServicesDrawer()" class="w-full py-5 flex items-center justify-between hover:text-accent">
+                        Nos Services
+                        <i id="drawer-chevron" class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div id="drawer-services-submenu" class="hidden pl-6 pt-2 pb-6">
+                        <a href="/website-dev-fr.html" class="block py-4 text-xl hover:text-accent">Développement de sites web</a>
+                        <a href="/web-optimisation-fr.html" class="block py-4 text-xl hover:text-accent">Optimisation web et SEO</a>
+                        <a href="/portfolio-fr.html" class="block py-4 text-xl hover:text-accent">Sites portfolio</a>
+                    </div>
+                </div>
+
+                <a href="/about-fr.html" class="py-5 border-b border-white/10">À propos</a>
+                <a href="/portfolio-fr.html" class="py-5 border-b border-white/10">Portfolio</a>
+                <a href="/pricing_guide-fr.html" class="py-5 border-b border-white/10">Tarification</a>
+                <a href="/contact-fr.html" class="py-5 border-b border-white/10">Contact</a>
+                <a href="/blog-fr.html" class="py-5 border-b border-white/10">Blog</a>
+
+                <!-- Language Switcher in drawer -->
+                <div class="pt-8 border-t border-white/10">
+                    <div class="flex items-center gap-3 text-xl font-medium">
+                        <a href="/core-web-vitals.html" class="hover:text-accent transition-colors">EN</a>
+                        <span class="text-white/40">/</span>
+                        <a href="/core-web-vitals-fr.html" class="text-accent hover:text-white transition-colors font-semibold">FR</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- DRAMATIC HERO -->
+    <section class="relative h-[85vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://picsum.photos/id/1015/2000/1200')] bg-cover bg-center"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/80 to-black"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-8 py-4 rounded-full text-sm border border-white/20 mb-8">
+                VITESSE • PERFORMANCE • 2026 • BASÉ AU CANADA, AU SERVICE DU MONDE ENTIER
+            </div>
+            <h1 class="text-5xl md:text-7xl font-heading font-bold tracking-tighter leading-none">
+                Pourquoi la vitesse compte : Les Core Web Vitals expliqués
+            </h1>
+            <p class="mt-8 text-2xl text-gray-300 max-w-2xl mx-auto">Les trois métriques que Google utilise pour décider si votre site mérite de ranker — et comment les gagner</p>
+        </div>
+    </section>
+
+    <!-- FEATURED IMAGE -->
+    <div class="max-w-6xl mx-auto px-6 -mt-16 relative z-20">
+        <img src="https://picsum.photos/id/201/1600/900" alt="Core Web Vitals 2026" class="w-full rounded-3xl shadow-2xl" />
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 py-20 grid lg:grid-cols-12 gap-12">
+        
+        <!-- ARTICLE -->
+        <div class="lg:col-span-8 prose prose-invert prose-lg leading-relaxed max-w-none">
+            
+            <p class="text-xl text-gray-300">En 2026, la vitesse d’un site web n’est plus seulement une question d’expérience utilisateur — c’est un signal de classement direct qui décide si votre petite entreprise apparaît en page 1 ou en page 10 de Google.</p>
+
+            <h2>Qu’est-ce que les Core Web Vitals ?</h2>
+            <p>Les Core Web Vitals sont trois mesures précises que Google utilise pour évaluer l’expérience réelle de votre site : Largest Contentful Paint (LCP), Interaction to Next Paint (INP) et Cumulative Layout Shift (CLS). Elles portent sur la vitesse de chargement, la réactivité et la stabilité visuelle.</p>
+
+            <h2>1. Largest Contentful Paint (LCP) – La sensation de chargement</h2>
+            <p>Le LCP mesure le temps nécessaire pour afficher le plus gros élément de contenu (habituellement l’image héros ou le titre principal). Google veut moins de 2,5 secondes. Au-delà, les visiteurs partent et Google baisse votre classement.</p>
+
+            <h2>2. Interaction to Next Paint (INP) – La réactivité perçue</h2>
+            <p>L’INP remplace l’ancien FID et mesure la rapidité avec laquelle votre site répond à un clic, un toucher ou une saisie. Un bon score est inférieur à 200 millisecondes. Une réponse lente donne l’impression que le site est cassé.</p>
+
+            <h2>3. Cumulative Layout Shift (CLS) – Pas de sauts de mise en page</h2>
+            <p>Le CLS mesure les déplacements inattendus du contenu pendant le chargement. Un score inférieur à 0,1 est excellent. Un CLS élevé frustre les utilisateurs (boutons qui bougent au moment où on clique) et nuit aux conversions et aux classements.</p>
+
+            <!-- MASONRY BRICK WALL -->
+            <h3 class="text-3xl font-heading font-semibold mt-20 mb-10">Core Web Vitals en un coup d’œil</h3>
+            <div class="masonry gap-8">
+                <div class="masonry-item bg-dark-200 rounded-3xl overflow-hidden">
+                    <img src="https://picsum.photos/id/180/600/500" class="w-full" alt="LCP" />
+                    <div class="p-8">
+                        <h4 class="font-semibold">Largest Contentful Paint</h4>
+                        <p class="text-gray-400 text-sm mt-3">Objectif : Moins de 2,5 secondes</p>
+                    </div>
+                </div>
+                <div class="masonry-item bg-dark-200 rounded-3xl overflow-hidden">
+                    <img src="https://picsum.photos/id/237/600/400" class="w-full" alt="INP" />
+                    <div class="p-8">
+                        <h4 class="font-semibold">Interaction to Next Paint</h4>
+                        <p class="text-gray-400 text-sm mt-3">Objectif : Moins de 200 ms</p>
+                    </div>
+                </div>
+                <div class="masonry-item bg-dark-200 rounded-3xl overflow-hidden">
+                    <img src="https://picsum.photos/id/201/600/450" class="w-full" alt="CLS" />
+                    <div class="p-8">
+                        <h4 class="font-semibold">Cumulative Layout Shift</h4>
+                        <p class="text-gray-400 text-sm mt-3">Objectif : Moins de 0,1</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Pourquoi la plupart des sites créés par IA échouent à ces métriques</h2>
+            <p>Les constructeurs de sites par IA produisent souvent du code lourd et non optimisé qui échoue aux Core Web Vitals. Le développement professionnel garantit que chaque image est bien dimensionnée, chaque script est différé et chaque élément de mise en page est stable — pour des scores qui font vraiment ranker.</p>
+
+            <div class="mt-16">
+                <a href="/contact-fr.html" class="inline-flex items-center gap-4 bg-accent hover:bg-white text-black font-semibold px-12 py-6 rounded-3xl text-xl transition-all">
+                    Obtenez votre audit gratuit des Core Web Vitals <span class="text-3xl">→</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- STICKY TABLE OF CONTENTS -->
+        <div class="lg:col-span-4">
+            <div class="lg:sticky top-28">
+                <h4 class="font-semibold mb-6 flex items-center gap-3">
+                    <span class="w-2 h-px bg-accent flex-1"></span>
+                    Dans cet article
+                </h4>
+                <ul class="space-y-4 text-sm">
+                    <li><a href="#" class="toc-link text-gray-400 hover:text-accent">Qu’est-ce que les Core Web Vitals ?</a></li>
+                    <li><a href="#" class="toc-link text-gray-400 hover:text-accent">Largest Contentful Paint</a></li>
+                    <li><a href="#" class="toc-link text-gray-400 hover:text-accent">Interaction to Next Paint</a></li>
+                    <li><a href="#" class="toc-link text-gray-400 hover:text-accent">Cumulative Layout Shift</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/14185738680" target="_blank"
+     class="fixed bottom-8 right-8 w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-2xl transition-all z-50">
+    <i class="fab fa-whatsapp text-4xl text-white"></i>
+</a>
+
+    <!-- FOOTER -->
+    <footer class="bg-black border-t border-white/10 py-20">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+            <div class="grid md:grid-cols-12 gap-12">
+                <div class="md:col-span-4">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="/images/2.png" alt="Logo" class="h-14" />
+                        <span class="font-heading text-3xl font-bold tracking-tighter">GOSHEN WEB X</span>
+                    </div>
+                    <p class="text-gray-400 max-w-xs">Entreprise de développement web professionnel basée au Canada.</p>
+                </div>
+
+                <div class="md:col-span-2">
+                    <p class="font-medium text-accent mb-6">Entreprise</p>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index-fr.html" class="hover:text-white">Accueil</a></li>
+                        <li><a href="/about-fr.html" class="hover:text-white">À propos</a></li>
+                        <li><a href="/blog-fr.html" class="hover:text-white">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-2">
+                    <p class="font-medium text-accent mb-6">Services</p>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="/website-dev-fr.html" class="hover:text-white">Développement de sites web</a></li>
+                        <li><a href="/web-optimisation-fr.html" class="hover:text-white">Optimisation &amp; SEO</a></li>
+                        <li><a href="/portfolio-fr.html" class="hover:text-white">Sites portfolio</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-4">
+                    <p class="font-medium text-accent mb-6">Contactez-nous</p>
+                    <p class="text-gray-400">info@goshenwebx.io</p>
+                    <p class="text-gray-400 mt-1">Canada</p>
+                    
+                    <div class="flex gap-6 text-3xl mt-10">
+                        <a href="https://x.com/goshenwebx" class="hover:text-accent"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/goshen-web-x-9b3246364" class="hover:text-accent"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/gwx_technologies" class="hover:text-accent"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 mt-16 pt-8 text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p>© 2026 Goshen Web X. Tous droits réservés.</p>
+                <p class="flex gap-6">
+                    <a href="/privacy-policy-fr.html" class="hover:text-white">Confidentialité</a>
+                    <a href="/terms-fr.html" class="hover:text-white">Conditions d'utilisation</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const sideMenu = document.getElementById('side-menu');
+        const backdrop = document.getElementById('backdrop');
+        const closeBtn = document.getElementById('close-menu');
+
+        hamburger.addEventListener('click', () => {
+            sideMenu.classList.remove('translate-x-full');
+            backdrop.classList.remove('hidden');
+        });
+
+        function closeMenu() {
+            sideMenu.classList.add('translate-x-full');
+            backdrop.classList.add('hidden');
+        }
+
+        closeBtn.addEventListener('click', closeMenu);
+        backdrop.addEventListener('click', closeMenu);
+
+        window.toggleServicesDrawer = function () {
+            const submenu = document.getElementById('drawer-services-submenu');
+            const chevron = document.getElementById('drawer-chevron');
+            submenu.classList.toggle('hidden');
+            chevron.classList.toggle('rotate-180');
+        };
+
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+</html>
