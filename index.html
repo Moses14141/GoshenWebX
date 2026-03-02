@@ -40,13 +40,14 @@
 
 <body class="bg-dark text-white font-body overflow-x-hidden">
 
-  <!-- HEADER (updated – 100% consistent bilingual English pattern) -->
+  <!-- HEADER -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-lg border-b border-white/10">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
       <div class="flex items-center justify-between h-20">
         <a href="index.html" class="flex items-center gap-3">
           <img src="/images/2.png" alt="Goshen Web X" class="h-14 w-auto" />
-          <div class="font-heading text-3xl font-semibold tracking-tighter">GOSHEN <span class="text-accent">WEB X</span></div>
+          <div class="font-heading text-3xl font-semibold tracking-tighter">GOSHEN <span class="text-accent">WEB
+              X</span></div>
         </a>
 
         <!-- Desktop Nav -->
@@ -72,7 +73,7 @@
           <a href="/blog.html" class="hover:text-accent transition-colors">Blog</a>
         </nav>
 
-        <!-- Language Switcher + CTA (desktop) – EN active -->
+        <!-- Language Switcher + CTA -->
         <div class="hidden lg:flex items-center gap-6">
           <div class="flex items-center text-sm font-medium">
             <a href="/website-dev.html" class="text-accent hover:text-white transition-colors px-2 font-semibold">EN</a>
@@ -80,18 +81,21 @@
             <a href="/website-dev-fr.html" class="hover:text-accent transition-colors px-2">FR</a>
           </div>
 
-          <a href="/contact.html" class="flex items-center gap-3 bg-accent hover:bg-white text-black font-semibold px-8 py-3.5 rounded-3xl transition-all">
+          <a href="/contact.html"
+            class="flex items-center gap-3 bg-accent hover:bg-white text-black font-semibold px-8 py-3.5 rounded-3xl transition-all">
             Request a Free Quote <i class="fas fa-arrow-right"></i>
           </a>
         </div>
 
         <!-- Hamburger -->
-        <button id="hamburger" class="lg:hidden text-4xl p-4 -mr-3 focus:outline-none active:scale-90 transition-transform">
+        <button id="hamburger"
+          class="lg:hidden text-4xl p-4 -mr-3 focus:outline-none active:scale-90 transition-transform">
           <i class="fas fa-bars"></i>
         </button>
       </div>
     </div>
   </header>
+
   <!-- Backdrop -->
   <div id="backdrop" class="hidden fixed inset-0 bg-black/80 z-[9998]"></div>
 
@@ -253,35 +257,113 @@
     </div>
   </section>
 
- <!-- STATS -->
-<section id="stats" class="py-24 bg-dark-100">
-  <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
-    <div>
-      <div class="text-6xl font-bold text-accent flex items-baseline justify-center gap-1">
-        <span class="counter font-mono tabular-nums" data-target="98">0</span>
-        <span class="text-3xl font-normal">%</span>
+  <!-- STATS -->
+  <section id="stats" class="py-24 bg-dark-100">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+      <div>
+        <div class="text-6xl font-bold text-accent flex items-baseline justify-center gap-1">
+          <span class="counter font-mono tabular-nums" data-target="98">0</span>
+          <span class="text-3xl font-normal">%</span>
+        </div>
+        <div class="mt-3 text-gray-400">Average Lighthouse Score</div>
       </div>
-      <div class="mt-3 text-gray-400">Average Lighthouse Score</div>
-    </div>
-    <div>
-      <div class="text-6xl font-bold text-accent flex items-baseline justify-center gap-1">
-        <span class="counter font-mono tabular-nums" data-target="340">0</span>
-        <span class="text-3xl font-normal">%</span>
+      <div>
+        <div class="text-6xl font-bold text-accent flex items-baseline justify-center gap-1">
+          <span class="counter font-mono tabular-nums" data-target="340">0</span>
+          <span class="text-3xl font-normal">%</span>
+        </div>
+        <div class="mt-3 text-gray-400">Average Conversion Rate Improvement</div>
       </div>
-      <div class="mt-3 text-gray-400">Average Conversion Rate Improvement</div>
-    </div>
-    <div>
-      <div class="text-6xl font-bold text-accent">
-        <span class="counter font-mono tabular-nums" data-target="47">0</span>
+      <div>
+        <div class="text-6xl font-bold text-accent">
+          <span class="counter font-mono tabular-nums" data-target="47">0</span>
+        </div>
+        <div class="mt-3 text-gray-400">Satisfied Clients</div>
       </div>
-      <div class="mt-3 text-gray-400">Satisfied Clients</div>
+      <div>
+        <div class="text-6xl font-bold text-accent">∞</div>
+        <div class="mt-3 text-gray-400">Cups of Coffee</div>
+      </div>
     </div>
-    <div>
-      <div class="text-6xl font-bold text-accent">∞</div>
-      <div class="mt-3 text-gray-400">Cups of Coffee</div>
+  </section>
+
+  <!-- DEVELOPMENT TOOLS -->
+  <section class="py-24 bg-dark">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+      <div class="text-center mb-16">
+        <span class="uppercase text-accent tracking-widest text-sm">TECHNOLOGY STACK</span>
+        <h2 class="text-5xl font-heading font-bold tracking-tighter mt-3">Development Tools We Master</h2>
+        <p class="text-gray-400 mt-4 max-w-2xl mx-auto">We build with modern, powerful, and reliable technologies to
+          deliver exceptional performance and scalability.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- CSS3 -->
+        <div class="bg-dark-200 p-8 rounded-3xl hover:-translate-y-2 transition-all group">
+          <div class="text-5xl mb-6 text-[#1572B6]"><i class="fab fa-css3-alt"></i></div>
+          <h4 class="font-semibold text-2xl mb-3">CSS3</h4>
+          <p class="text-gray-400 leading-relaxed">Advanced styling for modern, responsive, and visually stunning
+            front-end designs.</p>
+        </div>
+
+        <!-- PHP 8 -->
+        <div class="bg-dark-200 p-8 rounded-3xl hover:-translate-y-2 transition-all group">
+          <div class="text-5xl mb-6 text-[#787CB5]"><i class="fab fa-php"></i></div>
+          <h4 class="font-semibold text-2xl mb-3">PHP 8</h4>
+          <p class="text-gray-400 leading-relaxed">Powerful server-side scripting for fast, secure, and scalable
+            back-end applications.</p>
+        </div>
+
+        <!-- AWS -->
+        <div class="bg-dark-200 p-8 rounded-3xl hover:-translate-y-2 transition-all group">
+          <div class="text-5xl mb-6 text-[#FF9900]"><i class="fab fa-aws"></i></div>
+          <h4 class="font-semibold text-2xl mb-3">AWS</h4>
+          <p class="text-gray-400 leading-relaxed">Cloud infrastructure for secure, reliable, and scalable web hosting
+            and services.</p>
+        </div>
+
+        <!-- Firebase -->
+        <div class="bg-dark-200 p-8 rounded-3xl hover:-translate-y-2 transition-all group">
+          <div class="text-5xl mb-6 text-[#FFCA28]"><i class="fas fa-fire"></i></div>
+          <h4 class="font-semibold text-2xl mb-3">Firebase</h4>
+          <p class="text-gray-400 leading-relaxed">Real-time database and authentication for dynamic, user-focused
+            applications.</p>
+        </div>
+
+        <!-- MySQL -->
+        <div class="bg-dark-200 p-8 rounded-3xl hover:-translate-y-2 transition-all group">
+          <div class="text-5xl mb-6 text-[#4479A1]"><i class="fas fa-database"></i></div>
+          <h4 class="font-semibold text-2xl mb-3">MySQL</h4>
+          <p class="text-gray-400 leading-relaxed">Reliable relational database for structured data and high-performance
+            queries.</p>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="bg-dark-200 p-8 rounded-3xl hover:-translate-y-2 transition-all group">
+          <div class="text-5xl mb-6 text-[#F7DF1E]"><i class="fab fa-js"></i></div>
+          <h4 class="font-semibold text-2xl mb-3">JavaScript</h4>
+          <p class="text-gray-400 leading-relaxed">Modern client-side scripting for interactive, dynamic, and responsive
+            user interfaces.</p>
+        </div>
+
+        <!-- RESTful API -->
+        <div class="bg-dark-200 p-8 rounded-3xl hover:-translate-y-2 transition-all group">
+          <div class="text-5xl mb-6 text-accent"><i class="fas fa-plug"></i></div>
+          <h4 class="font-semibold text-2xl mb-3">RESTful API</h4>
+          <p class="text-gray-400 leading-relaxed">Seamless communication between front-end and back-end for dynamic
+            functionality.</p>
+        </div>
+
+        <!-- Shopify -->
+        <div class="bg-dark-200 p-8 rounded-3xl hover:-translate-y-2 transition-all group">
+          <div class="text-5xl mb-6 text-[#95BF46]"><i class="fab fa-shopify"></i></div>
+          <h4 class="font-semibold text-2xl mb-3">Shopify</h4>
+          <p class="text-gray-400 leading-relaxed">Powerful e-commerce platform for building, customizing, and managing
+            online stores with ease.</p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- PORTFOLIO -->
   <section id="work" class="py-24 bg-dark">
@@ -293,26 +375,40 @@
       <div class="grid md:grid-cols-3 gap-8">
         <a href="/portfolio.html"
           class="group block bg-dark-200 rounded-3xl overflow-hidden hover:-translate-y-2 transition-all">
-          <img src="/images/afro.jpg" class="w-full h-80 object-cover transition-transform group-hover:scale-105"
-            alt="">
+
+          <img src="/images/rcm.jpg" class="w-full h-80 object-cover transition-transform group-hover:scale-105"
+            alt="RCM Church Website">
+
           <div class="p-8">
-            <p class="font-semibold">AfroTech Startup – Modern SaaS Platform</p>
+            <p class="font-semibold">RCM Church</p>
+            <p class="text-sm text-gray-400 mt-2">
+              Modern church website • Events, sermons & community information
+            </p>
           </div>
         </a>
         <a href="/portfolio.html"
           class="group block bg-dark-200 rounded-3xl overflow-hidden hover:-translate-y-2 transition-all">
-          <img src="/images/none_profit.jpg" class="w-full h-80 object-cover transition-transform group-hover:scale-105"
-            alt="">
+
+          <img src="/images/FOA.jpg" class="w-full h-80 object-cover transition-transform group-hover:scale-105"
+            alt="Restaurant Project">
+
           <div class="p-8">
-            <p class="font-semibold">Non-Profit Organisation Optimisation Initiative</p>
+            <p class="font-semibold">
+              Restaurant Brand Design & Experience Project
+            </p>
           </div>
         </a>
         <a href="/portfolio.html"
           class="group block bg-dark-200 rounded-3xl overflow-hidden hover:-translate-y-2 transition-all">
-          <img src="/images/portfolio.jpg" class="w-full h-80 object-cover transition-transform group-hover:scale-105"
-            alt="">
+
+          <img src="/images/clinic.jpg" class="w-full h-80 object-cover transition-transform group-hover:scale-105"
+            alt="Podology Clinic Website">
+
           <div class="p-8">
-            <p class="font-semibold">Creative Professional Portfolio Website</p>
+            <p class="font-semibold">Podology Clinic</p>
+            <p class="text-sm text-gray-400 mt-2">
+              Professional clinic website • Services, appointments & patient information
+            </p>
           </div>
         </a>
       </div>
@@ -333,19 +429,19 @@
           <h3 class="text-4xl font-bold tracking-tighter leading-none mb-6 text-white">Achieving Success Together</h3>
           <p class="text-gray-300 text-lg">"Goshen Web X has proven to be the ideal partner for our business. We have
             already observed remarkable results."</p>
-          <p class="mt-8 text-sm text-gray-400">- Sarah K., Small Business Owner</p>
+          <p class="mt-8 text-sm text-gray-400">- Issac A., Small Business Owner</p>
         </div>
         <div class="p-2 rounded-3xl">
           <h3 class="text-4xl font-bold tracking-tighter leading-none mb-6 text-white">Transformative Service</h3>
           <p class="text-gray-300 text-lg">"Words cannot adequately express my gratitude for the exceptional web design
             services provided. The results have been truly transformative. I highly recommend their expertise."</p>
-          <p class="mt-8 text-sm text-gray-400">- James T., Entrepreneur</p>
+          <p class="mt-8 text-sm text-gray-400">- Jhon J., Entrepreneur</p>
         </div>
         <div class="p-2 rounded-3xl">
           <h3 class="text-4xl font-bold tracking-tighter leading-none mb-6 text-white">Superior Digital Presence</h3>
           <p class="text-gray-300 text-lg">"The service provided by Goshen Web X is unparalleled. They deliver
             exceptional design and measurable results. We are proud to collaborate with them."</p>
-          <p class="mt-8 text-sm text-gray-400">- Maria L., Founder</p>
+          <p class="mt-8 text-sm text-gray-400">- Lilibeth H., Founder</p>
         </div>
       </div>
     </div>
@@ -402,13 +498,13 @@
   </section>
 
 
-  <!-- FLOATING WHATSAPP BUTTON (like your reference) -->
+  <!-- FLOATING WHATSAPP BUTTON -->
   <a href="https://wa.me/15811234567" target="_blank"
-     class="fixed bottom-8 right-8 w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-2xl transition-all z-50">
+    class="fixed bottom-8 right-8 w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-2xl transition-all z-50">
     <i class="fab fa-whatsapp text-4xl text-white"></i>
   </a>
 
-  <!-- FOOTER – exact match -->
+  <!-- FOOTER -->
   <footer class="bg-black border-t border-white/10 py-20">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
       <div class="grid md:grid-cols-12 gap-12">
@@ -442,16 +538,19 @@
           <p class="font-medium text-accent mb-6">Say Hello</p>
           <p class="text-gray-400">info@goshenwebx.io</p>
           <p class="text-gray-400 mt-1">Canada</p>
-          
+
           <div class="flex gap-6 text-3xl mt-10">
             <a href="https://x.com/goshenwebx" class="hover:text-accent"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://www.linkedin.com/in/goshen-web-x-9b3246364" class="hover:text-accent"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/gwx_technologies" class="hover:text-accent"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/goshen-web-x-9b3246364" class="hover:text-accent"><i
+                class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/gwx_technologies" class="hover:text-accent"><i
+                class="fab fa-instagram"></i></a>
           </div>
         </div>
       </div>
 
-      <div class="border-t border-white/10 mt-16 pt-8 text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div
+        class="border-t border-white/10 mt-16 pt-8 text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
         <p>© 2026 Goshen Web X. All Rights Reserved.</p>
         <p class="flex gap-6">
           <a href="/privacy-policy.html" class="hover:text-white">Privacy</a>
@@ -492,52 +591,46 @@
     AOS.init({ duration: 1000, once: true });
   </script>
 
+  <script>
+    function animateCounter(counter) {
+      const target = parseInt(counter.getAttribute('data-target'));
+      const duration = 2000;
+      let startTime = null;
 
+      function update(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const elapsed = timestamp - startTime;
+        let progress = Math.min(elapsed / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 4);
+        counter.textContent = Math.floor(target * ease);
 
-<script>
-  // 🔥 Premium Stats Counter Animation
-  function animateCounter(counter) {
-    const target = parseInt(counter.getAttribute('data-target'));
-    const duration = 2000;
-    let startTime = null;
-
-    function update(timestamp) {
-      if (!startTime) startTime = timestamp;
-      const elapsed = timestamp - startTime;
-      let progress = Math.min(elapsed / duration, 1);
-
-      // Beautiful ease-out quartic
-      const ease = 1 - Math.pow(1 - progress, 4);
-      counter.textContent = Math.floor(target * ease);
-
-      if (progress < 1) {
-        requestAnimationFrame(update);
-      } else {
-        counter.textContent = target;
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          counter.textContent = target;
+        }
       }
+      requestAnimationFrame(update);
     }
-    requestAnimationFrame(update);
-  }
 
-  // Trigger on scroll with stagger
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const counters = entry.target.querySelectorAll('.counter');
-        counters.forEach((counter, i) => {
-          setTimeout(() => animateCounter(counter), i * 80); // nice staggered effect
-        });
-        observer.unobserve(entry.target); // once only
-      }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counters = entry.target.querySelectorAll('.counter');
+          counters.forEach((counter, i) => {
+            setTimeout(() => animateCounter(counter), i * 80);
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.35,
+      rootMargin: "0px 0px -50px 0px"
     });
-  }, {
-    threshold: 0.35,
-    rootMargin: "0px 0px -50px 0px"
-  });
 
-  const statsSection = document.getElementById('stats');
-  if (statsSection) observer.observe(statsSection);
-</script>
+    const statsSection = document.getElementById('stats');
+    if (statsSection) observer.observe(statsSection);
+  </script>
 </body>
 
 </html>
