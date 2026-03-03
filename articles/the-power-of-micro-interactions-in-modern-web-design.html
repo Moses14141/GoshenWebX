@@ -44,7 +44,7 @@
 
 <body class="bg-light text-gray-900 font-body overflow-x-hidden">
 
-  <!-- HEADER -->
+  <!-- HEADER (unchanged – all links preserved) -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-gray-100">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
       <div class="flex items-center justify-between h-20">
@@ -93,7 +93,7 @@
     </div>
   </header>
 
-  <!-- Backdrop + Drawer -->
+  <!-- Backdrop + Drawer (unchanged – all links preserved) -->
   <div id="backdrop" class="hidden fixed inset-0 bg-black/60 z-[9998]"></div>
   <div id="side-menu" class="fixed top-0 bottom-0 right-0 w-80 bg-white shadow-2xl translate-x-full transition-transform duration-300 z-[9999] overflow-y-auto">
     <div class="p-6">
@@ -120,7 +120,7 @@
     </div>
   </div>
 
-  <!-- DRAMATIC HERO -->
+  <!-- DRAMATIC HERO (unchanged) -->
   <section class="relative h-[85vh] flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0 bg-[url('https://picsum.photos/id/1015/2000/1200')] bg-cover bg-center"></div>
     <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/70 to-black"></div>
@@ -135,113 +135,105 @@
     </div>
   </section>
 
-  <!-- FEATURED IMAGE -->
+  <!-- FEATURED IMAGE (unchanged) -->
   <div class="max-w-6xl mx-auto px-6 -mt-16 relative z-20">
     <img src="https://picsum.photos/id/201/1600/900" alt="Micro-interactions in web design" class="w-full rounded-3xl shadow-2xl" />
   </div>
 
-  <!-- MAIN CONTENT -->
-  <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 py-20 grid lg:grid-cols-12 gap-12">
-    
-    <div class="lg:col-span-8 prose prose-lg leading-relaxed max-w-none">
-      
-      <p class="text-xl text-gray-600">In 2026, it’s no longer the big features that impress visitors — it’s the tiny details. Micro-interactions turn a “good” website into a memorable, fluid, and addictive experience. They increase time on site, reduce bounce rates, and dramatically boost conversions.</p>
+  <!-- MAIN CONTENT – OPTIMIZED FOR PERFECT READING (2026 standard) -->
+  <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 py-24">
+    <div class="grid lg:grid-cols-12 gap-x-16 gap-y-12 max-w-7xl mx-auto">
 
-      <h2>What Exactly Is a Micro-Interaction?</h2>
-      <p>A micro-interaction is a small visual or animated response to a user’s action: button hover, click, scroll, loading state, success feedback… They usually last less than 300 ms, yet their impact is massive.</p>
+      <!-- ARTICLE – Narrow, big text, generous spacing -->
+      <article class="lg:col-span-8 max-w-[42rem] mx-auto">
+        <div class="text-[17.5px] leading-[1.82] text-gray-800 space-y-9">
 
-      <h2>Why Micro-Interactions Have Become Essential in 2026</h2>
-      <p>Modern users have zero tolerance for frustration. A button that doesn’t react, a form with no feedback, or a menu that opens with a 400 ms delay = instant loss of trust. Great micro-interactions:</p>
-      <ul class="list-disc pl-6 space-y-3">
-        <li>Guide users naturally</li>
-        <li>Give a feeling of control</li>
-        <li>Strengthen brand personality</li>
-        <li>Improve accessibility and engagement</li>
-      </ul>
+          <p class="text-[19px] text-gray-600">In 2026, it’s no longer the big features that impress visitors — it’s the tiny details. Micro-interactions turn a “good” website into a memorable, fluid, and addictive experience. They increase time on site, reduce bounce rates, and dramatically boost conversions.</p>
 
-      <!-- MASONRY -->
-      <h3 class="text-3xl font-heading font-semibold mt-20 mb-10">Real Examples of Micro-Interactions That Make a Difference</h3>
-      <div class="masonry gap-8">
-        <div class="masonry-item bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl transition-all">
-          <img src="https://picsum.photos/id/180/600/500" class="w-full" alt="Button hover" />
-          <div class="p-8">
-            <h4 class="font-semibold text-primary">Buttons with tactile feedback</h4>
-            <p class="text-gray-600 text-sm mt-3">Scale + shadow + color on hover and click</p>
+          <h2 class="text-4xl font-heading font-semibold tracking-tighter text-primary mt-16">What Exactly Is a Micro-Interaction?</h2>
+          <p>A micro-interaction is a small visual or animated response to a user’s action: button hover, click, scroll, loading state, success feedback… They usually last less than 300 ms, yet their impact is massive.</p>
+
+          <h2 class="text-4xl font-heading font-semibold tracking-tighter text-primary mt-16">Why Micro-Interactions Have Become Essential in 2026</h2>
+          <p>Modern users have zero tolerance for frustration. A button that doesn’t react, a form with no feedback, or a menu that opens with a 400 ms delay = instant loss of trust. Great micro-interactions:</p>
+          <ul class="list-disc pl-6 space-y-3">
+            <li>Guide users naturally</li>
+            <li>Give a feeling of control</li>
+            <li>Strengthen brand personality</li>
+            <li>Improve accessibility and engagement</li>
+          </ul>
+
+          <!-- Masonry -->
+          <h3 class="text-3xl font-heading font-semibold mt-20 mb-10">Real Examples of Micro-Interactions That Make a Difference</h3>
+          <div class="masonry gap-8">
+            <div class="masonry-item bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl transition-all">
+              <img src="https://picsum.photos/id/180/600/500" class="w-full" alt="Button hover" />
+              <div class="p-8">
+                <h4 class="font-semibold text-primary">Buttons with tactile feedback</h4>
+                <p class="text-gray-600 text-sm mt-3">Scale + shadow + color on hover and click</p>
+              </div>
+            </div>
+            <div class="masonry-item bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl transition-all">
+              <img src="https://picsum.photos/id/237/600/400" class="w-full" alt="Loading state" />
+              <div class="p-8">
+                <h4 class="font-semibold text-primary">Elegant loading states</h4>
+                <p class="text-gray-600 text-sm mt-3">Skeleton screens + smooth animation instead of a basic spinner</p>
+              </div>
+            </div>
+            <div class="masonry-item bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl transition-all">
+              <img src="https://picsum.photos/id/201/600/450" class="w-full" alt="Success animation" />
+              <div class="p-8">
+                <h4 class="font-semibold text-primary">Success animations</h4>
+                <p class="text-gray-600 text-sm mt-3">Animated checkmark + subtle confetti after purchase</p>
+              </div>
+            </div>
           </div>
+
+          <h2 class="text-4xl font-heading font-semibold tracking-tighter text-primary mt-16">True Story: How Micro-Interactions Helped a Quebec Startup Raise $1.2 Million</h2>
+          <p>In September 2025, a Quebec City startup building a reservation platform for independent restaurants launched their new website. The product was excellent, but the old site was just “okay.”</p>
+          <p>We added thoughtful micro-interactions everywhere: smooth mobile menu animation, instant feedback on reservation slots, elegant success animation on booking confirmation, refined hover states on restaurant cards…</p>
+          <p>Results: average time on site increased by 68 %, conversion rate by 41 %, and bounce rate dropped 52 %. During their investor pitch, the live demo of the website was the highlight of the presentation. Two weeks later they closed a $1.2 million funding round.</p>
+          <p>The founder told us: “Investors didn’t just buy the product — they fell in love with the experience we gave them on the website.”</p>
+
+          <h2 class="text-4xl font-heading font-semibold tracking-tighter text-primary mt-16">How to Add Micro-Interactions Without Slowing Down Your Site</h2>
+          <p>At Goshen Web X we use lightweight CSS transitions, GPU-accelerated animations, and Framer Motion (for React projects) to keep perfect Core Web Vitals scores. The secret: keep them intentional and extremely light.</p>
+
+          <div class="mt-16 bg-white border border-gray-100 rounded-3xl p-10">
+            <p class="text-2xl font-heading font-semibold text-primary">Does your website lack that “little magic” that makes all the difference?</p>
+            <p class="mt-4 text-gray-600">Let our Canadian team audit your current micro-interactions for free and give you a concrete improvement plan.</p>
+            <a href="/contact.html" class="inline-flex items-center gap-4 mt-8 bg-primary hover:bg-emerald text-white font-semibold px-12 py-6 rounded-3xl text-xl transition-all">
+              Free Micro-Interactions Audit for Your Website <span class="text-3xl">→</span>
+            </a>
+          </div>
+
         </div>
-        <div class="masonry-item bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl transition-all">
-          <img src="https://picsum.photos/id/237/600/400" class="w-full" alt="Loading state" />
-          <div class="p-8">
-            <h4 class="font-semibold text-primary">Elegant loading states</h4>
-            <p class="text-gray-600 text-sm mt-3">Skeleton screens + smooth animation instead of a basic spinner</p>
-          </div>
-        </div>
-        <div class="masonry-item bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl transition-all">
-          <img src="https://picsum.photos/id/201/600/450" class="w-full" alt="Success animation" />
-          <div class="p-8">
-            <h4 class="font-semibold text-primary">Success animations</h4>
-            <p class="text-gray-600 text-sm mt-3">Animated checkmark + subtle confetti after purchase</p>
-          </div>
+      </article>
+
+      <!-- STICKY TABLE OF CONTENTS (unchanged) -->
+      <div class="lg:col-span-4">
+        <div class="lg:sticky top-28 bg-white border border-gray-100 rounded-3xl p-8 shadow">
+          <h4 class="font-semibold mb-6 flex items-center gap-3">
+            <span class="w-2 h-px bg-emerald flex-1"></span>
+            In This Article
+          </h4>
+          <ul class="space-y-4 text-sm text-gray-600">
+            <li class="flex items-center gap-3"><span class="text-emerald">•</span> What Is a Micro-Interaction?</li>
+            <li class="flex items-center gap-3"><span class="text-emerald">•</span> Why They Are Essential in 2026</li>
+            <li class="flex items-center gap-3"><span class="text-emerald">•</span> Real Examples That Make a Difference</li>
+            <li class="flex items-center gap-3"><span class="text-emerald">•</span> Quebec Startup Raises $1.2M Thanks to Their Website</li>
+            <li class="flex items-center gap-3"><span class="text-emerald">•</span> How to Add Them Without Slowing Down Your Site</li>
+          </ul>
         </div>
       </div>
 
-      <h2>True Story: How Micro-Interactions Helped a Quebec Startup Raise $1.2 Million</h2>
-      <p>In September 2025, a Quebec City startup building a reservation platform for independent restaurants launched their new website. The product was excellent, but the old site was just “okay.”</p>
-      <p>We added thoughtful micro-interactions everywhere: smooth mobile menu animation, instant feedback on reservation slots, elegant success animation on booking confirmation, refined hover states on restaurant cards…</p>
-      <p>Results: average time on site increased by 68 %, conversion rate by 41 %, and bounce rate dropped 52 %. During their investor pitch, the live demo of the website was the highlight of the presentation. Two weeks later they closed a $1.2 million funding round.</p>
-      <p>The founder told us: “Investors didn’t just buy the product — they fell in love with the experience we gave them on the website.”</p>
-
-      <h2>How to Add Micro-Interactions Without Slowing Down Your Site</h2>
-      <p>At Goshen Web X we use lightweight CSS transitions, GPU-accelerated animations, and Framer Motion (for React projects) to keep perfect Core Web Vitals scores. The secret: keep them intentional and extremely light.</p>
-
-      <div class="mt-16 bg-white border border-gray-100 rounded-3xl p-10">
-        <p class="text-2xl font-heading font-semibold text-primary">Does your website lack that “little magic” that makes all the difference?</p>
-        <p class="mt-4 text-gray-600">Let our Canadian team audit your current micro-interactions for free and give you a concrete improvement plan.</p>
-        <a href="/contact.html" class="inline-flex items-center gap-4 mt-8 bg-primary hover:bg-emerald text-white font-semibold px-12 py-6 rounded-3xl text-xl transition-all">
-          Free Micro-Interactions Audit for Your Website <span class="text-3xl">→</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- STICKY TABLE OF CONTENTS – STATIC -->
-    <div class="lg:col-span-4">
-      <div class="lg:sticky top-28 bg-white border border-gray-100 rounded-3xl p-8 shadow">
-        <h4 class="font-semibold mb-6 flex items-center gap-3">
-          <span class="w-2 h-px bg-emerald flex-1"></span>
-          In This Article
-        </h4>
-        <ul class="space-y-4 text-sm text-gray-600">
-          <li class="flex items-center gap-3">
-            <span class="text-emerald">•</span>
-            What Is a Micro-Interaction?
-          </li>
-          <li class="flex items-center gap-3">
-            <span class="text-emerald">•</span>
-            Why They Are Essential in 2026
-          </li>
-          <li class="flex items-center gap-3">
-            <span class="text-emerald">•</span>
-            Real Examples That Make a Difference
-          </li>
-          <li class="flex items-center gap-3">
-            <span class="text-emerald">•</span>
-            Quebec Startup Raises $1.2M Thanks to Their Website
-          </li>
-          <li class="flex items-center gap-3">
-            <span class="text-emerald">•</span>
-            How to Add Them Without Slowing Down Your Site
-          </li>
-        </ul>
-      </div>
     </div>
   </div>
 
-  <!-- FLOATING WHATSAPP -->
+  <!-- FLOATING WHATSAPP (unchanged) -->
   <a href="https://wa.me/14185738680" target="_blank" class="fixed bottom-8 right-8 w-16 h-16 bg-emerald hover:bg-primary rounded-full flex items-center justify-center shadow-2xl transition-all z-50">
     <i class="fab fa-whatsapp text-4xl text-white"></i>
   </a>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (unchanged) -->
   <footer class="bg-white border-t border-gray-100 py-20">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
       <div class="grid md:grid-cols-12 gap-12">
@@ -294,7 +286,7 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Scripts (unchanged) -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     const hamburger = document.getElementById('hamburger');

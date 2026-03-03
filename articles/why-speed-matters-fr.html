@@ -44,7 +44,7 @@
 
 <body class="bg-light text-gray-900 font-body overflow-x-hidden">
 
-    <!-- HEADER (identique à votre version) -->
+    <!-- HEADER (identique) -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-gray-100">
         <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
             <div class="flex items-center justify-between h-20">
@@ -53,7 +53,6 @@
                     <div class="font-heading text-3xl font-semibold tracking-tighter text-primary">GOSHEN <span class="text-emerald">WEB X</span></div>
                 </a>
 
-                <!-- Desktop Nav -->
                 <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
                     <a href="../index-fr.html" class="hover:text-primary transition-colors">Accueil</a>
                     <div class="group relative">
@@ -76,7 +75,6 @@
                     <a href="/blog-fr.html" class="hover:text-primary transition-colors">Blog</a>
                 </nav>
 
-                <!-- Language Switcher + CTA -->
                 <div class="hidden lg:flex items-center gap-6">
                     <div class="flex items-center text-sm font-medium">
                         <a href="why-speed-matters.html" class="hover:text-primary transition-colors px-2">EN</a>
@@ -118,18 +116,11 @@
                 <a href="/pricing_guide-fr.html" class="py-5 border-b border-gray-100">Tarification</a>
                 <a href="/contact-fr.html" class="py-5 border-b border-gray-100">Contact</a>
                 <a href="/blog-fr.html" class="py-5 border-b border-gray-100">Blog</a>
-                <div class="pt-8 border-t border-gray-100">
-                    <div class="flex items-center gap-3 text-xl font-medium">
-                        <a href="/core-web-vitals.html" class="hover:text-primary">EN</a>
-                        <span class="text-gray-400">/</span>
-                        <a href="/core-web-vitals-fr.html" class="text-emerald font-semibold">FR</a>
-                    </div>
-                </div>
             </nav>
         </div>
     </div>
 
-    <!-- DRAMATIC HERO (mis à jour) -->
+    <!-- DRAMATIC HERO (identique) -->
     <section class="relative h-[85vh] flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 bg-[url('https://picsum.photos/id/1015/2000/1200')] bg-cover bg-center"></div>
         <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/80 to-black"></div>
@@ -144,152 +135,146 @@
         </div>
     </section>
 
-    <!-- FEATURED IMAGE -->
+    <!-- FEATURED IMAGE (identique) -->
     <div class="max-w-6xl mx-auto px-6 -mt-16 relative z-20">
         <img src="https://picsum.photos/id/201/1600/900" alt="Core Web Vitals 2026" class="w-full rounded-3xl shadow-2xl" />
     </div>
 
-    <!-- MAIN CONTENT -->
-    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 py-20 grid lg:grid-cols-12 gap-12">
-        
-        <!-- ARTICLE – VERSION ENRICHIE ET LONGUE -->
-        <div class="lg:col-span-8 prose prose-lg leading-relaxed max-w-none">
-            
-            <p class="text-xl text-gray-600">En 2026, la vitesse d’un site web n’est plus un « nice-to-have » — c’est l’un des signaux de classement les plus puissants utilisés par Google. Les Core Web Vitals sont exactement les trois chiffres qui déterminent si votre petite entreprise apparaît en page 1 ou disparaît en page 10. Ce guide complet explique chaque métrique dans tous ses détails techniques et commerciaux, pourquoi elles comptent plus que jamais, et comment un développement professionnel vous permet de les réussir haut la main.</p>
+    <!-- MAIN CONTENT – OPTIMISÉ POUR UNE LECTURE PARFAITE (standard 2026) -->
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 py-24">
+        <div class="grid lg:grid-cols-12 gap-x-16 gap-y-12 max-w-7xl mx-auto">
 
-            <h2>Qu’est-ce que les Core Web Vitals ?</h2>
-            <p>Les Core Web Vitals sont un ensemble de métriques de performance basées sur l’expérience réelle des utilisateurs que Google a introduites en 2020 et qu’il a continuellement affinées. Elles se concentrent exclusivement sur la qualité de l’expérience vécue par les visiteurs plutôt que sur des scores techniques serveur. Les trois vitals — Largest Contentful Paint (LCP), Interaction to Next Paint (INP) et Cumulative Layout Shift (CLS) — forment ensemble un portrait complet de la rapidité, de la réactivité et de la stabilité visuelle de votre site.</p>
-            <p>Google collecte ces données auprès de millions d’utilisateurs Chrome via le Chrome User Experience Report (CrUX). Les pages qui obtiennent systématiquement des scores « Bon » sur les trois vitals bénéficient d’un boost significatif dans le classement mobile-first. En 2026, ne pas respecter ces seuils peut coûter jusqu’à 70 % du trafic organique potentiel.</p>
+            <!-- ARTICLE – Colonne étroite, texte plus gros, espacement parfait -->
+            <article class="lg:col-span-8 max-w-[42rem] mx-auto">
+                <div class="text-[17.5px] leading-[1.82] text-gray-800 space-y-9">
 
-            <h2>1. Largest Contentful Paint (LCP) – La sensation que la page est chargée</h2>
-            <p>Le LCP mesure le temps nécessaire pour que le plus gros élément visible (généralement l’image héros, le titre principal ou la vidéo) s’affiche complètement à l’écran. Il répond à la question simple : « Combien de temps avant que le contenu principal apparaisse vraiment ? »</p>
-            
-            <div class="bg-emerald-50 border border-emerald-100 rounded-2xl p-6 my-8">
-                <p class="font-semibold text-emerald-800 mb-2">Seuils 2026</p>
-                <ul class="space-y-2 text-sm">
-                    <li><span class="font-medium text-emerald-700">Bon</span> — ≤ 2,5 secondes</li>
-                    <li><span class="font-medium text-amber-700">À améliorer</span> — 2,5 – 4,0 secondes</li>
-                    <li><span class="font-medium text-red-700">Mauvais</span> — > 4,0 secondes</li>
-                </ul>
-            </div>
+                    <p class="text-[19px] text-gray-600">En 2026, la vitesse d’un site web n’est plus un « nice-to-have » — c’est l’un des signaux de classement les plus puissants utilisés par Google. Les Core Web Vitals sont exactement les trois chiffres qui déterminent si votre petite entreprise apparaît en page 1 ou disparaît en page 10. Ce guide complet explique chaque métrique dans tous ses détails techniques et commerciaux, pourquoi elles comptent plus que jamais, et comment un développement professionnel vous permet de les réussir haut la main.</p>
 
-            <p>Les causes courantes d’un mauvais LCP incluent un Time to First Byte (TTFB) élevé, des JavaScript et CSS bloquants, des images héros non optimisées de plus de 1 Mo et un rendu côté client excessif. Chez Goshen Web X, nous résolvons cela avec un CDN rapide, des images compressées en WebP/AVIF, la priorisation du CSS critique et le report des scripts non essentiels.</p>
+                    <h2 class="text-4xl font-heading font-semibold tracking-tighter text-primary mt-16">Qu’est-ce que les Core Web Vitals ?</h2>
+                    <p>Les Core Web Vitals sont un ensemble de métriques de performance basées sur l’expérience réelle des utilisateurs que Google a introduites en 2020 et qu’il a continuellement affinées. Elles se concentrent exclusivement sur la qualité de l’expérience vécue par les visiteurs plutôt que sur des scores techniques serveur. Les trois vitals — Largest Contentful Paint (LCP), Interaction to Next Paint (INP) et Cumulative Layout Shift (CLS) — forment ensemble un portrait complet de la rapidité, de la réactivité et de la stabilité visuelle de votre site.</p>
+                    <p>Google collecte ces données auprès de millions d’utilisateurs Chrome via le Chrome User Experience Report (CrUX). Les pages qui obtiennent systématiquement des scores « Bon » sur les trois vitals bénéficient d’un boost significatif dans le classement mobile-first. En 2026, ne pas respecter ces seuils peut coûter jusqu’à 70 % du trafic organique potentiel.</p>
 
-            <h2>2. Interaction to Next Paint (INP) – La réactivité perçue</h2>
-            <p>L’INP a remplacé le FID en 2024 car il donne une image plus complète de la réactivité sur toute la durée de vie de la page. Il mesure la latence la plus longue d’une interaction (clic, toucher ou saisie clavier). En d’autres termes : « À quelle vitesse la page réagit-elle quand le visiteur veut faire quelque chose ? »</p>
-            
-            <div class="bg-emerald-50 border border-emerald-100 rounded-2xl p-6 my-8">
-                <p class="font-semibold text-emerald-800 mb-2">Seuils 2026</p>
-                <ul class="space-y-2 text-sm">
-                    <li><span class="font-medium text-emerald-700">Bon</span> — ≤ 200 millisecondes</li>
-                    <li><span class="font-medium text-amber-700">À améliorer</span> — 200 – 500 millisecondes</li>
-                    <li><span class="font-medium text-red-700">Mauvais</span> — > 500 millisecondes</li>
-                </ul>
-            </div>
-
-            <p>Les gros bundles JavaScript, les tâches longues sur le thread principal et les écouteurs d’événements non optimisés sont les principaux coupables. Chez Goshen Web X nous éliminons ces problèmes grâce au code splitting, au lazy-loading des scripts tiers et à l’utilisation judicieuse des Web Workers — pour une fluidité parfaite même sur les appareils mobiles de milieu de gamme.</p>
-
-            <h2>3. Cumulative Layout Shift (CLS) – Aucun saut de contenu</h2>
-            <p>Le CLS quantifie les déplacements inattendus de la mise en page pendant le chargement. Un score élevé signifie que les boutons bougent, le texte saute ou les images apparaissent soudainement et poussent le contenu vers le bas — extrêmement frustrant pour l’utilisateur.</p>
-            
-            <div class="bg-emerald-50 border border-emerald-100 rounded-2xl p-6 my-8">
-                <p class="font-semibold text-emerald-800 mb-2">Seuils 2026</p>
-                <ul class="space-y-2 text-sm">
-                    <li><span class="font-medium text-emerald-700">Bon</span> — ≤ 0,1</li>
-                    <li><span class="font-medium text-amber-700">À améliorer</span> — 0,1 – 0,25</li>
-                    <li><span class="font-medium text-red-700">Mauvais</span> — > 0,25</li>
-                </ul>
-            </div>
-
-            <p>Les causes les plus fréquentes sont les images ou vidéos sans attributs width/height explicites, les publicités injectées dynamiquement et les polices qui provoquent du FOIT/FOUT. La solution est simple : toujours réserver l’espace avec aspect-ratio ou les nouveaux attributs HTML, utiliser font-display: swap et précharger les polices critiques.</p>
-
-            <!-- MASONRY -->
-            <h3 class="text-3xl font-heading font-semibold mt-20 mb-10">Core Web Vitals en un coup d’œil – 2026</h3>
-            <div class="masonry gap-8">
-                <div class="masonry-item bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl transition-all">
-                    <img src="https://picsum.photos/id/180/600/500" class="w-full" alt="LCP" />
-                    <div class="p-8">
-                        <h4 class="font-semibold text-primary">Largest Contentful Paint</h4>
-                        <p class="text-gray-600 text-sm mt-3">Objectif : Moins de 2,5 secondes</p>
+                    <h2 class="text-4xl font-heading font-semibold tracking-tighter text-primary mt-16">1. Largest Contentful Paint (LCP) – La sensation que la page est chargée</h2>
+                    <p>Le LCP mesure le temps nécessaire pour que le plus gros élément visible (généralement l’image héros, le titre principal ou la vidéo) s’affiche complètement à l’écran. Il répond à la question simple : « Combien de temps avant que le contenu principal apparaisse vraiment ? »</p>
+                    
+                    <div class="bg-emerald-50 border border-emerald-100 rounded-2xl p-6 my-8">
+                        <p class="font-semibold text-emerald-800 mb-2">Seuils 2026</p>
+                        <ul class="space-y-2 text-sm">
+                            <li><span class="font-medium text-emerald-700">Bon</span> — ≤ 2,5 secondes</li>
+                            <li><span class="font-medium text-amber-700">À améliorer</span> — 2,5 – 4,0 secondes</li>
+                            <li><span class="font-medium text-red-700">Mauvais</span> — > 4,0 secondes</li>
+                        </ul>
                     </div>
-                </div>
-                <div class="masonry-item bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl transition-all">
-                    <img src="https://picsum.photos/id/237/600/400" class="w-full" alt="INP" />
-                    <div class="p-8">
-                        <h4 class="font-semibold text-primary">Interaction to Next Paint</h4>
-                        <p class="text-gray-600 text-sm mt-3">Objectif : Moins de 200 ms</p>
+
+                    <p>Les causes courantes d’un mauvais LCP incluent un Time to First Byte (TTFB) élevé, des JavaScript et CSS bloquants, des images héros non optimisées de plus de 1 Mo et un rendu côté client excessif. Chez Goshen Web X, nous résolvons cela avec un CDN rapide, des images compressées en WebP/AVIF, la priorisation du CSS critique et le report des scripts non essentiels.</p>
+
+                    <h2 class="text-4xl font-heading font-semibold tracking-tighter text-primary mt-16">2. Interaction to Next Paint (INP) – La réactivité perçue</h2>
+                    <p>L’INP a remplacé le FID en 2024 car il donne une image plus complète de la réactivité sur toute la durée de vie de la page. Il mesure la latence la plus longue d’une interaction (clic, toucher ou saisie clavier). En d’autres termes : « À quelle vitesse la page réagit-elle quand le visiteur veut faire quelque chose ? »</p>
+                    
+                    <div class="bg-emerald-50 border border-emerald-100 rounded-2xl p-6 my-8">
+                        <p class="font-semibold text-emerald-800 mb-2">Seuils 2026</p>
+                        <ul class="space-y-2 text-sm">
+                            <li><span class="font-medium text-emerald-700">Bon</span> — ≤ 200 millisecondes</li>
+                            <li><span class="font-medium text-amber-700">À améliorer</span> — 200 – 500 millisecondes</li>
+                            <li><span class="font-medium text-red-700">Mauvais</span> — > 500 millisecondes</li>
+                        </ul>
                     </div>
-                </div>
-                <div class="masonry-item bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl transition-all">
-                    <img src="https://picsum.photos/id/201/600/450" class="w-full" alt="CLS" />
-                    <div class="p-8">
-                        <h4 class="font-semibold text-primary">Cumulative Layout Shift</h4>
-                        <p class="text-gray-600 text-sm mt-3">Objectif : Moins de 0,1</p>
+
+                    <p>Les gros bundles JavaScript, les tâches longues sur le thread principal et les écouteurs d’événements non optimisés sont les principaux coupables. Chez Goshen Web X nous éliminons ces problèmes grâce au code splitting, au lazy-loading des scripts tiers et à l’utilisation judicieuse des Web Workers — pour une fluidité parfaite même sur les appareils mobiles de milieu de gamme.</p>
+
+                    <h2 class="text-4xl font-heading font-semibold tracking-tighter text-primary mt-16">3. Cumulative Layout Shift (CLS) – Aucun saut de contenu</h2>
+                    <p>Le CLS quantifie les déplacements inattendus de la mise en page pendant le chargement. Un score élevé signifie que les boutons bougent, le texte saute ou les images apparaissent soudainement et poussent le contenu vers le bas — extrêmement frustrant pour l’utilisateur.</p>
+                    
+                    <div class="bg-emerald-50 border border-emerald-100 rounded-2xl p-6 my-8">
+                        <p class="font-semibold text-emerald-800 mb-2">Seuils 2026</p>
+                        <ul class="space-y-2 text-sm">
+                            <li><span class="font-medium text-emerald-700">Bon</span> — ≤ 0,1</li>
+                            <li><span class="font-medium text-amber-700">À améliorer</span> — 0,1 – 0,25</li>
+                            <li><span class="font-medium text-red-700">Mauvais</span> — > 0,25</li>
+                        </ul>
                     </div>
+
+                    <p>Les causes les plus fréquentes sont les images ou vidéos sans attributs width/height explicites, les publicités injectées dynamiquement et les polices qui provoquent du FOIT/FOUT. La solution est simple : toujours réserver l’espace avec aspect-ratio ou les nouveaux attributs HTML, utiliser font-display: swap et précharger les polices critiques.</p>
+
+                    <!-- Masonry -->
+                    <h3 class="text-3xl font-heading font-semibold mt-20 mb-10">Core Web Vitals en un coup d’œil – 2026</h3>
+                    <div class="masonry gap-8">
+                        <div class="masonry-item bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl transition-all">
+                            <img src="https://picsum.photos/id/180/600/500" class="w-full" alt="LCP" />
+                            <div class="p-8">
+                                <h4 class="font-semibold text-primary">Largest Contentful Paint</h4>
+                                <p class="text-gray-600 text-sm mt-3">Objectif : Moins de 2,5 secondes</p>
+                            </div>
+                        </div>
+                        <div class="masonry-item bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl transition-all">
+                            <img src="https://picsum.photos/id/237/600/400" class="w-full" alt="INP" />
+                            <div class="p-8">
+                                <h4 class="font-semibold text-primary">Interaction to Next Paint</h4>
+                                <p class="text-gray-600 text-sm mt-3">Objectif : Moins de 200 ms</p>
+                            </div>
+                        </div>
+                        <div class="masonry-item bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl transition-all">
+                            <img src="https://picsum.photos/id/201/600/450" class="w-full" alt="CLS" />
+                            <div class="p-8">
+                                <h4 class="font-semibold text-primary">Cumulative Layout Shift</h4>
+                                <p class="text-gray-600 text-sm mt-3">Objectif : Moins de 0,1</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 class="text-4xl font-heading font-semibold tracking-tighter text-primary mt-16">Pourquoi la plupart des sites créés par IA échouent à ces métriques</h2>
+                    <p>Les constructeurs de sites par IA produisent rapidement des pages visuellement attrayantes, mais ils génèrent presque toujours du code lourd et non optimisé. Images héroïques trop lourdes, scripts bloquants, ratios d’aspect manquants et trackers tiers excessifs entraînent de mauvais scores LCP, INP et CLS. Le développement professionnel sur mesure, au contraire, livre un code propre et ultra-rapide qui passe systématiquement tous les seuils de Google.</p>
+
+                    <h2 class="text-4xl font-heading font-semibold tracking-tighter text-primary mt-16">Comment mesurer vos Core Web Vitals en 2026</h2>
+                    <p>Les outils les plus précis sont :</p>
+                    <ul class="list-disc pl-6 space-y-3">
+                        <li><strong>Google PageSpeed Insights</strong> — données de terrain et de laboratoire en un seul endroit</li>
+                        <li><strong>Lighthouse</strong> dans les outils de développement Chrome (onglet Performance)</li>
+                        <li><strong>Extension Web Vitals Chrome</strong> — scores en temps réel pendant la navigation</li>
+                        <li><strong>Rapport Core Web Vitals dans Search Console</strong> — données agrégées pour tout votre site</li>
+                    </ul>
+
+                    <h2 class="text-4xl font-heading font-semibold tracking-tighter text-primary mt-16">L’impact commercial en 2026</h2>
+                    <p>Les sites avec des Core Web Vitals « Bons » bénéficient de :</p>
+                    <ul class="list-disc pl-6 space-y-3">
+                        <li>Jusqu’à 32 % de taux de rebond en moins</li>
+                        <li>Jusqu’à 25 % de taux de conversion en plus</li>
+                        <li>Meilleures positions dans les résultats de recherche mobile</li>
+                        <li>Meilleure visibilité des publicités et CPM plus élevés</li>
+                        <li>Perception de marque améliorée — les utilisateurs font davantage confiance aux sites rapides</li>
+                    </ul>
+
+                    <div class="mt-16 bg-white border border-gray-100 rounded-3xl p-10">
+                        <p class="text-2xl font-heading font-semibold text-primary">Prêt à dominer Google en 2026 ?</p>
+                        <p class="mt-4 text-gray-600">Laissez notre équipe de développeurs canadiens auditer gratuitement votre site et vous livrer un site ultra-rapide, parfaitement optimisé qui passe tous les Core Web Vitals haut la main.</p>
+                        <a href="/contact-fr.html" class="inline-flex items-center gap-4 mt-8 bg-primary hover:bg-emerald text-white font-semibold px-12 py-6 rounded-3xl text-xl transition-all">
+                            Obtenez votre audit gratuit des Core Web Vitals <span class="text-3xl">→</span>
+                        </a>
+                    </div>
+
+                </div>
+            </article>
+
+            <!-- STICKY TABLE OF CONTENTS (version française) -->
+            <div class="lg:col-span-4">
+                <div class="lg:sticky top-28 bg-white border border-gray-100 rounded-3xl p-8 shadow">
+                    <h4 class="font-semibold mb-6 flex items-center gap-3">
+                        <span class="w-2 h-px bg-emerald flex-1"></span>
+                        Dans cet article
+                    </h4>
+                    <ul class="space-y-4 text-sm text-gray-600">
+                        <li class="flex items-center gap-3"><span class="text-emerald">•</span> Qu’est-ce que les Core Web Vitals ?</li>
+                        <li class="flex items-center gap-3"><span class="text-emerald">•</span> Largest Contentful Paint</li>
+                        <li class="flex items-center gap-3"><span class="text-emerald">•</span> Interaction to Next Paint</li>
+                        <li class="flex items-center gap-3"><span class="text-emerald">•</span> Cumulative Layout Shift</li>
+                    </ul>
                 </div>
             </div>
 
-            <h2>Pourquoi la plupart des sites créés par IA échouent à ces métriques</h2>
-            <p>Les constructeurs de sites par IA produisent rapidement des pages visuellement attrayantes, mais ils génèrent presque toujours du code lourd et non optimisé. Images héroïques trop lourdes, scripts bloquants, ratios d’aspect manquants et trackers tiers excessifs entraînent de mauvais scores LCP, INP et CLS. Le développement professionnel sur mesure, au contraire, livre un code propre et ultra-rapide qui passe systématiquement tous les seuils de Google.</p>
-
-            <h2>Comment mesurer vos Core Web Vitals en 2026</h2>
-            <p>Les outils les plus précis sont :</p>
-            <ul class="list-disc pl-6 space-y-3">
-                <li><strong>Google PageSpeed Insights</strong> — données de terrain et de laboratoire en un seul endroit</li>
-                <li><strong>Lighthouse</strong> dans les outils de développement Chrome (onglet Performance)</li>
-                <li><strong>Extension Web Vitals Chrome</strong> — scores en temps réel pendant la navigation</li>
-                <li><strong>Rapport Core Web Vitals dans Search Console</strong> — données agrégées pour tout votre site</li>
-            </ul>
-
-            <h2>L’impact commercial en 2026</h2>
-            <p>Les sites avec des Core Web Vitals « Bons » bénéficient de :</p>
-            <ul class="list-disc pl-6 space-y-3">
-                <li>Jusqu’à 32 % de taux de rebond en moins</li>
-                <li>Jusqu’à 25 % de taux de conversion en plus</li>
-                <li>Meilleures positions dans les résultats de recherche mobile</li>
-                <li>Meilleure visibilité des publicités et CPM plus élevés</li>
-                <li>Perception de marque améliorée — les utilisateurs font davantage confiance aux sites rapides</li>
-            </ul>
-
-            <div class="mt-16 bg-white border border-gray-100 rounded-3xl p-10">
-                <p class="text-2xl font-heading font-semibold text-primary">Prêt à dominer Google en 2026 ?</p>
-                <p class="mt-4 text-gray-600">Laissez notre équipe de développeurs canadiens auditer gratuitement votre site et vous livrer un site ultra-rapide, parfaitement optimisé qui passe tous les Core Web Vitals haut la main.</p>
-                <a href="/contact-fr.html" class="inline-flex items-center gap-4 mt-8 bg-primary hover:bg-emerald text-white font-semibold px-12 py-6 rounded-3xl text-xl transition-all">
-                    Obtenez votre audit gratuit des Core Web Vitals <span class="text-3xl">→</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- STICKY TABLE OF CONTENTS – VERSION STATIQUE (sans liens) -->
-        <div class="lg:col-span-4">
-            <div class="lg:sticky top-28 bg-white border border-gray-100 rounded-3xl p-8 shadow">
-                <h4 class="font-semibold mb-6 flex items-center gap-3">
-                    <span class="w-2 h-px bg-emerald flex-1"></span>
-                    Dans cet article
-                </h4>
-                <ul class="space-y-4 text-sm text-gray-600">
-                    <li class="flex items-center gap-3">
-                        <span class="text-emerald">•</span>
-                        Qu’est-ce que les Core Web Vitals ?
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <span class="text-emerald">•</span>
-                        Largest Contentful Paint
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <span class="text-emerald">•</span>
-                        Interaction to Next Paint
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <span class="text-emerald">•</span>
-                        Cumulative Layout Shift
-                    </li>
-                </ul>
-            </div>
         </div>
     </div>
 
-    <!-- FLOATING WHATSAPP -->
+    <!-- FLOATING WHATSAPP (identique) -->
     <a href="https://wa.me/14185738680" target="_blank" class="fixed bottom-8 right-8 w-16 h-16 bg-emerald hover:bg-primary rounded-full flex items-center justify-center shadow-2xl transition-all z-50">
         <i class="fab fa-whatsapp text-4xl text-white"></i>
     </a>
@@ -347,7 +332,7 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Scripts (identiques) -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         const hamburger = document.getElementById('hamburger');
