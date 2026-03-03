@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+a<!DOCTYPE html>
 <html lang="fr">
 
 <head>
@@ -173,10 +173,10 @@
         </a>
       </div>
 
-      <!-- All Posts Grid -->
+      <!-- All Posts Grid (STATIC) -->
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Post 1 -->
-        <a href="/blog-fr/seo-2026.html" class="group block bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl hover:-translate-y-2 transition-all">
+        <a href="./articles/SEO-strategies-for-small-business-growth-in-2026-fr.html" class="group block bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl hover:-translate-y-2 transition-all">
           <img src="/images/web_opt.jpg" alt="" class="w-full h-56 object-cover transition-transform group-hover:scale-105">
           <div class="p-8">
             <div class="flex items-center gap-4 text-xs text-gray-500 mb-4">
@@ -189,7 +189,7 @@
         </a>
 
         <!-- Post 2 -->
-        <a href="/blog-fr/web-design-trends.html" class="group block bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl hover:-translate-y-2 transition-all">
+        <a href="./articles/top-5-web-design-trens-every-small-business-should-know-fr.html" class="group block bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl hover:-translate-y-2 transition-all">
           <img src="/images/portfolio.jpg" alt="" class="w-full h-56 object-cover transition-transform group-hover:scale-105">
           <div class="p-8">
             <div class="flex items-center gap-4 text-xs text-gray-500 mb-4">
@@ -202,7 +202,7 @@
         </a>
 
         <!-- Post 3 -->
-        <a href="/blog-fr/choosing-website.html" class="group block bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl hover:-translate-y-2 transition-all">
+        <a href="./articles/how-to-choose-the-perfect-website-for-your-business-fr.html" class="group block bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl hover:-translate-y-2 transition-all">
           <img src="/images/web_ilustr.jpg" alt="" class="w-full h-56 object-cover transition-transform group-hover:scale-105">
           <div class="p-8">
             <div class="flex items-center gap-4 text-xs text-gray-500 mb-4">
@@ -215,7 +215,7 @@
         </a>
 
         <!-- Post 4 -->
-        <a href="/blog-fr/core-web-vitals.html" class="group block bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl hover:-translate-y-2 transition-all">
+        <a href="./articles/SEO-strategies-for-small-business-growth-in-2026-fr.html" class="group block bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl hover:-translate-y-2 transition-all">
           <img src="/images/14622.jpg" alt="" class="w-full h-56 object-cover transition-transform group-hover:scale-105">
           <div class="p-8">
             <div class="flex items-center gap-4 text-xs text-gray-500 mb-4">
@@ -228,7 +228,7 @@
         </a>
 
         <!-- Post 5 -->
-        <a href="#" class="group block bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl hover:-translate-y-2 transition-all">
+        <a href="/articles/la-puissance-des-micro-interactions-design-web-fr.html" class="group block bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl hover:-translate-y-2 transition-all">
           <img src="/images/creative2.png" alt="" class="w-full h-56 object-cover transition-transform group-hover:scale-105">
           <div class="p-8">
             <div class="flex items-center gap-4 text-xs text-gray-500 mb-4">
@@ -241,7 +241,7 @@
         </a>
 
         <!-- Post 6 -->
-        <a href="#" class="group block bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl hover:-translate-y-2 transition-all">
+        <a href="/articles/comment-un-excellent-site-web-aide-startup-quebecoise-lever-1-2m.html" class="group block bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl hover:-translate-y-2 transition-all">
           <img src="/images/afro.jpg" alt="" class="w-full h-56 object-cover transition-transform group-hover:scale-105">
           <div class="p-8">
             <div class="flex items-center gap-4 text-xs text-gray-500 mb-4">
@@ -263,7 +263,7 @@
       <p class="text-gray-600 mb-8 max-w-md mx-auto">Recevez les dernières réflexions sur les tendances web, les conseils SEO et la croissance des affaires directement dans votre boîte de réception.</p>
       
       <div class="max-w-md mx-auto">
-        <form class="flex gap-3">
+        <form id="newsletter-form" class="flex gap-3">
           <input type="email" placeholder="Votre adresse courriel" class="bg-white border border-gray-200 focus:border-emerald rounded-3xl px-6 py-4 flex-1 outline-none">
           <button type="submit" class="bg-primary hover:bg-emerald text-white font-semibold px-10 rounded-3xl transition-all">S’abonner</button>
         </form>
@@ -329,9 +329,68 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- 🔥 Firebase SDKs (Newsletter uniquement) -->
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics-compat.js"></script>
+
+  <!-- AOS -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Main JS -->
   <script>
+    // ==================== FIREBASE CONFIG ====================
+    const firebaseConfig = {
+      apiKey: "AIzaSyDzByIV5lB8Fyx4NAYts-fksXusNRQzYIo",
+      authDomain: "goshenwebx.firebaseapp.com",
+      projectId: "goshenwebx",
+      storageBucket: "goshenwebx.firebasestorage.app",
+      messagingSenderId: "329698254304",
+      appId: "1:329698254304:web:df7fd2be15688fe0e79f85",
+      measurementId: "G-RBSLCPZFBV"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    const analytics = firebase.analytics();
+
+    console.log("✅ Goshen Web X Newsletter Backend Connected! (FR)");
+
+    // ==================== NEWSLETTER (French version) ====================
+    const newsletterForm = document.getElementById('newsletter-form');
+
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const emailInput = newsletterForm.querySelector('input[type="email"]');
+        const email = emailInput.value.trim().toLowerCase();
+
+        if (!email || !email.includes('@')) {
+          alert("Veuillez entrer une adresse courriel valide 😊");
+          return;
+        }
+
+        try {
+          await db.collection('subscribers').add({
+            email: email,
+            subscribedAt: firebase.firestore.FieldValue.serverTimestamp(),
+            source: "blog-fr-page"
+          });
+
+          alert("🎉 Merci ! Vous êtes maintenant sur la liste Goshen Web X.");
+          emailInput.value = '';
+
+          analytics.logEvent('newsletter_subscribe', { email_domain: email.split('@')[1] });
+        } catch (error) {
+          console.error(error);
+          alert("Une erreur s’est produite. Veuillez réessayer ou écrire à info@goshenwebx.io");
+        }
+      });
+    }
+
+    // ==================== MOBILE MENU & AOS ====================
     const hamburger = document.getElementById('hamburger');
     const sideMenu = document.getElementById('side-menu');
     const backdrop = document.getElementById('backdrop');

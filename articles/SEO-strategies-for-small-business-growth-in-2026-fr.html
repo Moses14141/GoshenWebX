@@ -4,13 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Discover powerful SEO strategies for small business growth in 2026. Why AI website builders fall short and how professional development delivers lasting results." />
-  <title>Stratégies SEO pour la croissance des petites entreprises en 2026 | Goshen Web X</title>
+  <meta name="description" content="Stratégies SEO puissantes pour la croissance des petites entreprises en 2026. Pourquoi la plupart des sites générés par IA restent invisibles sur Google — et comment un développement web professionnel canadien vous offre des classements durables et une croissance réelle de vos revenus." />
+  <title>Stratégies SEO pour la croissance des petites entreprises en 2026 | Blog Goshen Web X</title>
 
-  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Tailwind Config -->
   <script>
     tailwind.config = {
       content: [],
@@ -21,11 +18,11 @@
             body: ['Plus Jakarta Sans', 'sans-serif'],
           },
           colors: {
-            accent: '#d4a017',
-            secondary: '#2a5a4e',
-            dark: '#0a0a0a',
-            'dark-100': '#121212',
-            'dark-200': '#1e1e1e',
+            primary: '#14532d',
+            emerald: '#10b981',
+            'emerald-light': '#34d399',
+            light: '#f8faf5',
+            soft: '#f1f5f0',
           }
         }
       }
@@ -37,108 +34,94 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
   <link rel="icon" type="image/png" href="/images/goshen_webx_logo.png" />
 
-  <!-- Custom Styles for Premium Look -->
   <style>
     .masonry { column-count: 1; }
     @media (min-width: 768px) { .masonry { column-count: 2; } }
     .masonry-item { break-inside: avoid; margin-bottom: 2rem; }
-    .toc-link { transition: all 0.3s ease; }
-    .toc-link:hover { color: #d4a017; padding-left: 0.75rem; }
   </style>
 </head>
 
-<body class="bg-dark text-white font-body overflow-x-hidden">
+<body class="bg-light text-gray-900 font-body overflow-x-hidden">
 
-  <!-- HEADER (100% consistent with all French pages) -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-lg border-b border-white/10">
+  <!-- HEADER – EXACTEMENT COMME VOUS L’AVEZ FOURNI -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-gray-100">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
       <div class="flex items-center justify-between h-20">
         <a href="index-fr.html" class="flex items-center gap-3">
           <img src="/images/logo_goshenwbeX.png" alt="Goshen Web X" class="h-14 w-auto" />
-          <div class="font-heading text-3xl font-semibold tracking-tighter">GOSHEN <span class="text-accent">WEB X</span></div>
+          <div class="font-heading text-3xl font-semibold tracking-tighter text-primary">GOSHEN <span class="text-emerald">WEB X</span></div>
         </a>
 
         <!-- Desktop Nav -->
         <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
-          <a href="/index-fr.html" class="hover:text-accent transition-colors">Accueil</a>
+          <a href="index-fr.html" class="hover:text-primary transition-colors">Accueil</a>
           <div class="group relative">
-            <button class="flex items-center gap-1 hover:text-accent transition-colors">
+            <button class="flex items-center gap-1 hover:text-primary transition-colors">
               Nos Services
               <i class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
             </button>
             <div class="absolute hidden group-hover:block pt-4">
-              <div class="bg-dark-200 border border-white/10 rounded-2xl py-4 px-6 w-56 text-sm shadow-2xl">
-                <a href="/website-dev-fr.html" class="block py-3 hover:text-accent">Développement de sites web</a>
-                <a href="/web-optimisation-fr.html" class="block py-3 hover:text-accent">Optimisation web et SEO</a>
-                <a href="/portfolio-fr.html" class="block py-3 hover:text-accent">Sites portfolio</a>
+              <div class="bg-white border border-gray-100 rounded-3xl py-5 px-7 w-64 shadow-xl text-sm">
+                <a href="website-dev-fr.html" class="block py-3 hover:text-emerald">Développement de sites web</a>
+                <a href="web-optimisation-fr.html" class="block py-3 hover:text-emerald">Optimisation web & SEO</a>
+                <a href="portfolio-fr.html" class="block py-3 hover:text-emerald">Sites portfolio</a>
               </div>
             </div>
           </div>
-          <a href="/about-fr.html" class="hover:text-accent transition-colors">À propos</a>
-          <a href="/portfolio-fr.html" class="hover:text-accent transition-colors">Portfolio</a>
-          <a href="/pricing_guide-fr.html" class="hover:text-accent transition-colors">Tarifs</a>
-          <a href="/contact-fr.html" class="hover:text-accent transition-colors">Contact</a>
-          <a href="/blog-fr.html" class="hover:text-accent transition-colors">Blog</a>
+          <a href="/about-fr.html" class="hover:text-primary transition-colors">À propos</a>
+          <a href="/portfolio-fr.html" class="hover:text-primary transition-colors">Portfolio</a>
+          <a href="/pricing_guide-fr.html" class="hover:text-primary transition-colors">Tarifs</a>
+          <a href="/contact-fr.html" class="hover:text-primary transition-colors">Contact</a>
+          <a href="/blog-fr.html" class="hover:text-primary transition-colors">Blog</a>
         </nav>
 
-        <!-- Language Switcher + CTA (desktop) -->
+        <!-- Language + CTA -->
         <div class="hidden lg:flex items-center gap-6">
           <div class="flex items-center text-sm font-medium">
-            <a href="SEO-strategies-for-small-business-growth-in-2026.html" class="text-accent hover:text-white transition-colors px-2 font-semibold">EN</a>
-            <span class="text-white/40 mx-1">/</span>
-            <a href="SEO-strategies-for-small-business-growth-in-2026-fr.html" class="hover:text-accent transition-colors px-2">FR</a>
+            <a href="SEO-strategies-for-small-business-growth-in-2026.html" class="hover:text-primary transition-colors px-2">EN</a>
+            <span class="text-gray-400 mx-1">/</span>
+            <a href="SEO-strategies-for-small-business-growth-in-2026-fr.html" class="text-emerald font-semibold px-2">FR</a>
           </div>
-
-          <a href="/contact-fr.html" class="flex items-center gap-3 bg-accent hover:bg-white text-black font-semibold px-8 py-3.5 rounded-3xl transition-all">
+          <a href="/contact-fr.html" class="flex items-center gap-3 bg-primary hover:bg-emerald text-white font-semibold px-8 py-3.5 rounded-3xl transition-all shadow-lg shadow-emerald/30">
             Demander un devis gratuit <i class="fas fa-arrow-right"></i>
           </a>
         </div>
 
-        <!-- Hamburger -->
-        <button id="hamburger" class="lg:hidden text-4xl p-4 -mr-3 focus:outline-none active:scale-90 transition-transform">
+        <button id="hamburger" class="lg:hidden text-4xl p-4 -mr-3 text-primary">
           <i class="fas fa-bars"></i>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Backdrop -->
-  <div id="backdrop" class="hidden fixed inset-0 bg-black/80 z-[9998]"></div>
-
-  <!-- Right Slide-In Drawer -->
-  <div id="side-menu" class="fixed top-0 bottom-0 right-0 w-80 bg-dark shadow-2xl translate-x-full transition-transform duration-300 z-[9999] overflow-y-auto">
+  <!-- Backdrop & Drawer – EXACTEMENT COMME VOUS L’AVEZ FOURNI -->
+  <div id="backdrop" class="hidden fixed inset-0 bg-black/60 z-[9998]"></div>
+  <div id="side-menu" class="fixed top-0 bottom-0 right-0 w-80 bg-white shadow-2xl translate-x-full transition-transform duration-300 z-[9999] overflow-y-auto">
     <div class="p-6">
-      <button id="close-menu" class="float-right text-4xl text-white/70 hover:text-white">
-        <i class="fas fa-times"></i>
-      </button>
-
-      <nav class="flex flex-col text-2xl font-medium mt-12">
-        <a href="/index-fr.html" class="py-5 border-b border-white/10">Accueil</a>
-
-        <div class="border-b border-white/10">
-          <button onclick="toggleServicesDrawer()" class="w-full py-5 flex items-center justify-between hover:text-accent">
+      <button id="close-menu" class="float-right text-4xl text-gray-400 hover:text-primary">✕</button>
+      <nav class="flex flex-col text-2xl font-medium mt-12 text-gray-800">
+        <a href="index-fr.html" class="py-5 border-b border-gray-100">Accueil</a>
+        <div class="border-b border-gray-100">
+          <button onclick="toggleServicesDrawer()" class="w-full py-5 flex items-center justify-between hover:text-emerald">
             Nos Services
             <i id="drawer-chevron" class="fas fa-chevron-down transition-transform duration-300"></i>
           </button>
           <div id="drawer-services-submenu" class="hidden pl-6 pt-2 pb-6">
-            <a href="/website-dev-fr.html" class="block py-4 text-xl hover:text-accent">Développement de sites web</a>
-            <a href="/web-optimisation-fr.html" class="block py-4 text-xl hover:text-accent">Optimisation web et SEO</a>
-            <a href="/portfolio-fr.html" class="block py-4 text-xl hover:text-accent">Sites portfolio</a>
+            <a href="website-dev-fr.html" class="block py-4 text-xl hover:text-emerald">Développement de sites web</a>
+            <a href="web-optimisation-fr.html" class="block py-4 text-xl hover:text-emerald">Optimisation web et SEO</a>
+            <a href="portfolio-fr.html" class="block py-4 text-xl hover:text-emerald">Sites portfolio</a>
           </div>
         </div>
-
-        <a href="/about-fr.html" class="py-5 border-b border-white/10">À propos</a>
-        <a href="/portfolio-fr.html" class="py-5 border-b border-white/10">Portfolio</a>
-        <a href="/pricing_guide-fr.html" class="py-5 border-b border-white/10">Tarifs</a>
-        <a href="/contact-fr.html" class="py-5 border-b border-white/10">Contact</a>
-        <a href="/blog-fr.html" class="py-5 border-b border-white/10">Blog</a>
-
-        <!-- Language Switcher in mobile menu -->
-        <div class="pt-8 border-t border-white/10">
+        <a href="/about-fr.html" class="py-5 border-b border-gray-100">À propos</a>
+        <a href="/portfolio-fr.html" class="py-5 border-b border-gray-100">Portfolio</a>
+        <a href="/pricing_guide-fr.html" class="py-5 border-b border-gray-100">Tarifs</a>
+        <a href="/contact-fr.html" class="py-5 border-b border-gray-100">Contact</a>
+        <a href="/blog-fr.html" class="py-5 border-b border-gray-100">Blog</a>
+        <div class="pt-8 border-t border-gray-100">
           <div class="flex items-center gap-3 text-xl font-medium">
-            <a href="SEO-strategies-for-small-business-growth-in-2026.html" class="text-accent hover:text-white transition-colors font-semibold">EN</a>
-            <span class="text-white/40">/</span>
-            <a href="SEO-strategies-for-small-business-growth-in-2026-fr.html" class="hover:text-accent transition-colors">FR</a>
+            <a href="SEO-strategies-for-small-business-growth-in-2026.html" class="hover:text-primary">EN</a>
+            <span class="text-gray-400">/</span>
+            <a href="SEO-strategies-for-small-business-growth-in-2026-fr.html" class="text-emerald font-semibold">FR</a>
           </div>
         </div>
       </nav>
@@ -148,15 +131,15 @@
   <!-- DRAMATIC HERO -->
   <section class="relative h-[85vh] flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0 bg-[url('https://picsum.photos/id/1015/2000/1200')] bg-cover bg-center"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/70 to-black"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/70 to-black"></div>
     <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
       <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-8 py-4 rounded-full text-sm border border-white/20 mb-8">
-        SEO • CROISSANCE 2026
+        SEO • CROISSANCE • 2026
       </div>
-      <h1 class="text-5xl md:text-7xl font-heading font-bold tracking-tighter leading-none">
+      <h1 class="text-5xl md:text-7xl font-heading font-bold tracking-tighter leading-none text-white">
         Stratégies SEO pour la croissance des petites entreprises en 2026
       </h1>
-      <p class="mt-8 text-2xl text-gray-300 max-w-2xl mx-auto">Pourquoi les sites web générés par IA échouent souvent à croître — et comment un développement professionnel offre des résultats durables</p>
+      <p class="mt-8 text-2xl text-gray-200 max-w-2xl mx-auto">Pourquoi la plupart des sites générés par IA restent invisibles sur Google — et comment un développement professionnel canadien vous offre des classements durables et une croissance réelle de revenus.</p>
     </div>
   </section>
 
@@ -167,121 +150,174 @@
 
   <!-- MAIN CONTENT -->
   <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 py-20 grid lg:grid-cols-12 gap-12">
-    <!-- ARTICLE -->
-    <div class="lg:col-span-8 prose prose-invert prose-lg leading-relaxed max-w-none">
-      <p class="text-xl text-gray-300">En 2026, le référencement naturel demeure le levier le plus puissant pour une croissance durable des petites entreprises.</p>
+    
+    <!-- ARTICLE – VERSION LONGUE ET PROFESSIONNELLE -->
+    <div class="lg:col-span-8 prose prose-lg leading-relaxed max-w-none text-gray-700">
+      
+      <p class="text-xl">En 2026, le référencement naturel (SEO) reste le levier le plus puissant et le plus rentable pour la croissance durable des petites entreprises. Google évolue rapidement avec les AI Overviews, les recherches sans clic et des exigences de qualité toujours plus strictes. Les entreprises qui maîtrisent le SEO bénéficient d’un trafic organique constant et de taux de conversion élevés. Celles qui se contentent d’outils IA restent souvent enterrées en page 3 ou pire.</p>
 
       <h2>Les limites des constructeurs de sites web par IA</h2>
-      <p>De nombreux propriétaires de petites entreprises sont attirés par les outils d’intelligence artificielle qui promettent la création rapide d’un site web. Ces plateformes imposent souvent des frais mensuels récurrents simplement pour maintenir le site en ligne. Cependant, elles offrent rarement une optimisation SEO adéquate, une excellence technique ou des stratégies de croissance à long terme.</p>
+      <p>Les plateformes d’intelligence artificielle promettent un site en quelques minutes, mais elles produisent généralement du code générique et lourd que les moteurs de recherche peinent à comprendre. La plupart :</p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li>Utilisent des templates répétitifs sans balisage schema unique</li>
+        <li>Génèrent du contenu mince que Google pénalise désormais</li>
+        <li>Échouent aux Core Web Vitals à cause de scripts lourds et d’images non optimisées</li>
+        <li>Vous enferment dans des frais mensuels récurrents simplement pour garder le site en ligne</li>
+        <li>Offrent presque aucun contrôle sur les fondations techniques SEO</li>
+      </ul>
+      <p>Résultat : des sites qui ont l’air beaux… mais qui ne reçoivent presque aucun trafic et convertissent encore moins.</p>
 
-      <h2>Pourquoi le développement professionnel reste indispensable</h2>
-      <p>Un site web réalisé par des professionnels est construit avec un code propre et structuré, des performances exceptionnelles, un balisage schema approprié et des fondations SEO complètes dès le premier jour. C’est cette approche qui assure un positionnement solide sur Google et transforme les visiteurs en clients fidèles mois après mois.</p>
+      <h2>Pourquoi le développement professionnel reste indispensable en 2026</h2>
+      <p>Un site réalisé par des professionnels est conçu dès le premier jour pour les moteurs de recherche et les vrais utilisateurs. Chez Goshen Web X nous créons :</p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li>Un code HTML5 propre et sémantique avec une structure de titres parfaite</li>
+        <li>Un balisage schema avancé (LocalBusiness, FAQ, Review, Article)</li>
+        <li>Des performances ultra-rapides qui passent tous les Core Web Vitals</li>
+        <li>Des liens internes stratégiques et des clusters de sujets</li>
+        <li>Un code mobile-first et accessible que Google adore</li>
+      </ul>
+      <p>Ces fondations solides produisent des classements qui durent des années, pas des semaines.</p>
 
-      <!-- MASONRY BRICK WALL -->
-      <h3 class="text-3xl font-heading font-semibold mt-20 mb-10">Tendances SEO 2026 en un coup d’œil</h3>
+      <!-- MASONRY -->
+      <h3 class="text-3xl font-heading font-semibold mt-20 mb-10 text-primary">Tendances SEO dominantes en 2026</h3>
       <div class="masonry gap-8">
-        <div class="masonry-item bg-dark-200 rounded-3xl overflow-hidden">
-          <img src="https://picsum.photos/id/237/600/400" class="w-full" alt="Voice Search" />
+        <div class="masonry-item bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl transition-all">
+          <img src="https://picsum.photos/id/237/600/400" class="w-full" alt="Recherche vocale" />
           <div class="p-8">
-            <h4 class="font-semibold">Recherche vocale et SEO conversationnel</h4>
-            <p class="text-gray-400 text-sm mt-3">Les utilisateurs posent désormais des questions naturelles — votre site doit y répondre de manière fluide.</p>
+            <h4 class="font-semibold text-primary">Recherche vocale &amp; SEO conversationnel</h4>
+            <p class="text-gray-600 text-sm mt-3">Les gens posent des questions — votre site doit y répondre naturellement.</p>
           </div>
         </div>
-        <div class="masonry-item bg-dark-200 rounded-3xl overflow-hidden">
+        <div class="masonry-item bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl transition-all">
           <img src="https://picsum.photos/id/180/600/500" class="w-full" alt="Core Web Vitals" />
           <div class="p-8">
-            <h4 class="font-semibold">Maîtrise des Core Web Vitals</h4>
-            <p class="text-gray-400 text-sm mt-3">La vitesse et l’expérience utilisateur influencent directement les classements.</p>
+            <h4 class="font-semibold text-primary">Maîtrise des Core Web Vitals</h4>
+            <p class="text-gray-600 text-sm mt-3">Vitesse et expérience utilisateur impactent directement les classements.</p>
           </div>
         </div>
-        <div class="masonry-item bg-dark-200 rounded-3xl overflow-hidden">
-          <img src="https://picsum.photos/id/201/600/450" class="w-full" alt="Local SEO" />
+        <div class="masonry-item bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl transition-all">
+          <img src="https://picsum.photos/id/201/600/450" class="w-full" alt="SEO local" />
           <div class="p-8">
-            <h4 class="font-semibold">SEO hyper-local pour les entreprises canadiennes</h4>
-            <p class="text-gray-400 text-sm mt-3">Dominez les recherches « près de moi » dans votre ville et votre région.</p>
+            <h4 class="font-semibold text-primary">SEO hyper-local pour les entreprises canadiennes</h4>
+            <p class="text-gray-600 text-sm mt-3">Dominez les recherches « près de moi » dans votre ville et votre région.</p>
           </div>
         </div>
       </div>
 
-      <p class="mt-16">Prêt à dépasser les approximations et à obtenir une croissance mesurable ? Construisons ensemble un site web qui se positionne efficacement et convertit les visiteurs en clients en 2026.</p>
+      <h2>1. Recherche vocale et SEO conversationnel</h2>
+      <p>Plus de 50 % des recherches sont désormais vocales. Google attend des réponses naturelles et sous forme de questions. Un développement professionnel utilise le schema FAQ, cible les « People Also Ask » et adopte un ton conversationnel — ce que les outils IA font rarement bien.</p>
 
-      <div class="mt-16">
-        <a href="/contact-fr.html" class="inline-flex items-center gap-4 bg-accent hover:bg-white text-black font-semibold px-12 py-6 rounded-3xl text-xl transition-all">
+      <h2>2. Maîtrise des Core Web Vitals (toujours critique en 2026)</h2>
+      <p>Google continue d’utiliser LCP, INP et CLS comme signaux de classement directs. Une équipe professionnelle garantit que chaque image est optimisée, que les scripts sont différés et qu’il n’y a aucun déplacement de mise en page — chose que les plateformes IA échouent presque toujours à réaliser.</p>
+
+      <h2>3. SEO hyper-local pour les entreprises canadiennes</h2>
+      <p>Les recherches « près de moi », « à Québec », « ouvert maintenant » dominent. Le SEO professionnel inclut l’optimisation du Google Business Profile, le schema local, la cohérence NAP partout sur le web et des pages d’atterrissage géo-ciblées qui rankent vraiment.</p>
+
+      <h2>Comment mesurer le vrai succès SEO en 2026</h2>
+      <ul class="list-disc pl-6 space-y-3">
+        <li>Croissance du trafic organique dans Google Search Console</li>
+        <li>Positions sur les mots-clés à forte intention</li>
+        <li>Taux de conversion des sessions organiques</li>
+        <li>Rapport Core Web Vitals dans Search Console</li>
+        <li>Revenus attribués au SEO (Google Analytics 4)</li>
+      </ul>
+
+      <h2>L’impact commercial réel</h2>
+      <p>Les entreprises avec un SEO professionnel fort constatent généralement :</p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li>3 à 5 fois plus de leads qualifiés que via les publicités payantes, à moindre coût</li>
+        <li>Une croissance stable même quand les budgets publicitaires sont réduits</li>
+        <li>Une confiance et une autorité de marque accrues</li>
+        <li>Un actif à long terme qui augmente la valeur de l’entreprise</li>
+      </ul>
+
+      <div class="mt-16 bg-white border border-gray-100 rounded-3xl p-10">
+        <p class="text-2xl font-heading font-semibold text-primary">Prêt pour une croissance durable en 2026 ?</p>
+        <p class="mt-4 text-gray-600">Arrêtez de payer des frais mensuels pour un site IA invisible. Laissez notre équipe canadienne vous construire un site rapide, parfaitement optimisé SEO qui se positionne, convertit et grandit avec votre entreprise pendant des années.</p>
+        <a href="/contact-fr.html" class="inline-flex items-center gap-4 mt-8 bg-primary hover:bg-emerald text-white font-semibold px-12 py-6 rounded-3xl text-xl transition-all">
           Réservez votre consultation stratégique SEO 2026 gratuite <span class="text-3xl">→</span>
         </a>
       </div>
     </div>
 
-    <!-- STICKY TABLE OF CONTENTS -->
+    <!-- STICKY TABLE OF CONTENTS – VERSION STATIQUE -->
     <div class="lg:col-span-4">
-      <div class="lg:sticky top-28">
+      <div class="lg:sticky top-28 bg-white border border-gray-100 rounded-3xl p-8 shadow">
         <h4 class="font-semibold mb-6 flex items-center gap-3">
-          <span class="w-2 h-px bg-accent flex-1"></span>
+          <span class="w-2 h-px bg-emerald flex-1"></span>
           Dans cet article
         </h4>
-        <ul class="space-y-4 text-sm">
-          <li><a href="#" class="toc-link text-gray-400 hover:text-accent">Les limites des constructeurs de sites web par IA</a></li>
-          <li><a href="#" class="toc-link text-gray-400 hover:text-accent">Pourquoi le développement professionnel reste indispensable</a></li>
-          <li><a href="#" class="toc-link text-gray-400 hover:text-accent">Tendances SEO 2026 en un coup d’œil</a></li>
+        <ul class="space-y-4 text-sm text-gray-600">
+          <li class="flex items-center gap-3">
+            <span class="text-emerald">•</span>
+            Les limites des constructeurs de sites web par IA
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="text-emerald">•</span>
+            Pourquoi le développement professionnel reste indispensable
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="text-emerald">•</span>
+            Tendances SEO 2026 en un coup d’œil
+          </li>
         </ul>
       </div>
     </div>
   </div>
 
-  <!-- FLOATING WHATSAPP BUTTON -->
-  <a href="https://wa.me/14185738680" target="_blank"
-   class="fixed bottom-8 right-8 w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-2xl transition-all z-50">
-  <i class="fab fa-whatsapp text-4xl text-white"></i>
-</a>
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/14185738680" target="_blank" class="fixed bottom-8 right-8 w-16 h-16 bg-emerald hover:bg-primary rounded-full flex items-center justify-center shadow-2xl transition-all z-50">
+    <i class="fab fa-whatsapp text-4xl text-white"></i>
+  </a>
 
-  <!-- FOOTER – updated exactly as requested -->
-  <footer class="bg-black border-t border-white/10 py-20">
+  <!-- FOOTER – EXACTEMENT COMME VOUS L’AVEZ FOURNI -->
+  <footer class="bg-white border-t border-gray-100 py-20">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
       <div class="grid md:grid-cols-12 gap-12">
         <div class="md:col-span-4">
           <div class="flex items-center gap-3 mb-6">
             <img src="/images/logo_goshenwbeX.png" alt="Logo" class="h-14" />
-            <span class="font-heading text-3xl font-bold tracking-tighter">GOSHEN WEB X</span>
+            <span class="font-heading text-3xl font-bold tracking-tighter text-primary">GOSHEN WEB X</span>
           </div>
-          <p class="text-gray-400 max-w-xs">Entreprise de développement web professionnel basée au Canada, au service des clients du monde entier.</p>
+          <p class="text-gray-500 max-w-xs">Entreprise de développement web professionnel basée au Québec. Nous aidons les entreprises à grandir en ligne depuis 2024.</p>
         </div>
 
         <div class="md:col-span-2">
-          <p class="font-medium text-accent mb-6">Entreprise</p>
+          <p class="font-medium text-primary mb-6">Entreprise</p>
           <ul class="space-y-3 text-sm">
-            <li><a href="index-fr.html" class="hover:text-white">Accueil</a></li>
-            <li><a href="/website-dev-fr.html" class="hover:text-white">Services</a></li>
-            <li><a href="/portfolio-fr.html" class="hover:text-white">Portfolio</a></li>
+            <li><a href="index-fr.html" class="hover:text-emerald">Accueil</a></li>
+            <li><a href="/about-fr.html" class="hover:text-emerald">À propos</a></li>
+            <li><a href="/blog-fr.html" class="hover:text-emerald">Blog</a></li>
           </ul>
         </div>
 
         <div class="md:col-span-2">
-          <p class="font-medium text-accent mb-6">Services</p>
+          <p class="font-medium text-primary mb-6">Services</p>
           <ul class="space-y-3 text-sm">
-            <li><a href="/website-dev-fr.html" class="hover:text-white">Développement de sites web</a></li>
-            <li><a href="/web-optimisation-fr.html" class="hover:text-white">Optimisation &amp; SEO</a></li>
-            <li><a href="/portfolio-fr.html" class="hover:text-white">Sites portfolio</a></li>
+            <li><a href="website-dev-fr.html" class="hover:text-emerald">Développement de sites web</a></li>
+            <li><a href="web-optimisation-fr.html" class="hover:text-emerald">Optimisation & SEO</a></li>
+            <li><a href="portfolio-fr.html" class="hover:text-emerald">Sites portfolio</a></li>
           </ul>
         </div>
 
         <div class="md:col-span-4">
-          <p class="font-medium text-accent mb-6">Contactez-nous</p>
-          <p class="text-gray-400">info@goshenwebx.io</p>
-          <p class="text-gray-400 mt-1">Canada</p>
-          
+          <p class="font-medium text-primary mb-6">Contactez-nous</p>
+          <p class="text-gray-500">info@goshenwebx.io</p>
+          <p class="text-gray-500 mt-1">Québec, Canada</p>
+
           <div class="flex gap-6 text-3xl mt-10">
-            <a href="https://x.com/goshenwebx" class="hover:text-accent"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://www.linkedin.com/in/goshen-web-x-9b3246364" class="hover:text-accent"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/gwx_technologies" class="hover:text-accent"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/goshenwebx" class="hover:text-emerald"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/goshen-web-x-9b3246364" class="hover:text-emerald"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/gwx_technologies" class="hover:text-emerald"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
       </div>
 
-      <div class="border-t border-white/10 mt-16 pt-8 text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="border-t border-gray-100 mt-16 pt-8 text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
         <p>© 2026 Goshen Web X. Tous droits réservés.</p>
         <p class="flex gap-6">
-          <a href="/privacy-policy-fr.html" class="hover:text-white">Confidentialité</a>
-          <a href="/terms-fr.html" class="hover:text-white">Conditions d'utilisation</a>
+          <a href="/privacy-policy-fr.html" class="hover:text-emerald">Confidentialité</a>
+          <a href="/terms-fr.html" class="hover:text-emerald">Conditions d'utilisation</a>
         </p>
       </div>
     </div>
