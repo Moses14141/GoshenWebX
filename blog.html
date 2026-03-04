@@ -173,7 +173,7 @@
         </a>
       </div>
 
-      <!-- All Posts Grid (STATIC - as you wanted) -->
+      <!-- All Posts Grid -->
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Post 1 -->
         <a href="/articles/SEO-strategies-for-small-business-growth-in-2026.html" class="group block bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl hover:-translate-y-2 transition-all">
@@ -329,7 +329,7 @@
     </div>
   </footer>
 
-  <!-- 🔥 Firebase SDKs (only for Newsletter) -->
+  <!-- 🔥 Firebase SDKs -->
   <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics-compat.js"></script>
@@ -350,21 +350,22 @@
       measurementId: "G-RBSLCPZFBV"
     };
 
-    // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
     const analytics = firebase.analytics();
 
     console.log("✅ Goshen Web X Newsletter Backend Connected!");
-
-    // ==================== NEWSLETTER ONLY ====================
+        // ==================== NEWSLETTER – FINAL SECURE VERSION ====================
     const newsletterForm = document.getElementById('newsletter-form');
 
     if (newsletterForm) {
       newsletterForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
+
+        const submitBtn = newsletterForm.querySelector('button');
         const emailInput = newsletterForm.querySelector('input[type="email"]');
+        const originalText = submitBtn.textContent;
+
         const email = emailInput.value.trim().toLowerCase();
 
         if (!email || !email.includes('@')) {
@@ -372,20 +373,39 @@
           return;
         }
 
+        // Loading state
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Subscribing...";
+
         try {
-          await db.collection('subscribers').add({
+          const subscriberRef = db.collection('subscribers').doc(email);
+
+          // Check if already subscribed
+          const docSnap = await subscriberRef.get();
+          if (docSnap.exists) {
+            alert("✅ You are already subscribed to the Goshen Web X newsletter!");
+            emailInput.value = '';
+            return;
+          }
+
+          // Save new subscriber
+          await subscriberRef.set({
             email: email,
             subscribedAt: firebase.firestore.FieldValue.serverTimestamp(),
             source: "blog-page"
           });
 
-          alert("🎉 Thank you! You're now on the Goshen Web X list.");
+          alert("🎉 Thank you! You're now on the list.");
           emailInput.value = '';
 
           analytics.logEvent('newsletter_subscribe', { email_domain: email.split('@')[1] });
+
         } catch (error) {
           console.error(error);
-          alert("Something went wrong. Please try again or email info@goshenwebx.io");
+          alert("Something went wrong. Please email info@goshenwebx.io");
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
         }
       });
     }
