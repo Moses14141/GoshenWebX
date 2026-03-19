@@ -80,10 +80,11 @@
             <span class="text-gray-400 mx-1">/</span>
             <a href="index-fr.html" class="text-emerald font-semibold px-2">FR</a>
           </div>
-          <a href="/contact-fr.html"
+
+          <button onclick="openQuoteModal()"
             class="flex items-center gap-3 bg-primary hover:bg-emerald text-white font-semibold px-8 py-3.5 rounded-3xl transition-all shadow-lg shadow-emerald/30">
             Demander un devis gratuit <i class="fas fa-arrow-right"></i>
-          </a>
+          </button>
         </div>
 
         <button id="hamburger" class="lg:hidden text-4xl p-4 -mr-3 text-primary">
@@ -101,23 +102,30 @@
       <button id="close-menu" class="float-right text-4xl text-gray-400 hover:text-primary">✕</button>
       <nav class="flex flex-col text-2xl font-medium mt-12 text-gray-800">
         <a href="index-fr.html" class="py-5 border-b border-gray-100">Accueil</a>
+        
+        <!-- FIXED SERVICES ACCORDION -->
         <div class="border-b border-gray-100">
           <button onclick="toggleServicesDrawer()"
-            class="w-full py-5 flex items-center justify-between hover:text-emerald">
+            class="w-full py-5 flex items-center justify-between hover:text-emerald text-2xl font-medium">
             Nos Services
-            <i id="drawer-chevron" class="fas fa-chevron-down transition-transform duration-300"></i>
+            <i id="drawer-chevron" class="fas fa-chevron-down text-xl transition-transform duration-300"></i>
           </button>
-          <div id="drawer-services-submenu" class="hidden pl-6 pt-2 pb-6">
-            <a href="website-dev-fr.html" class="block py-4 text-xl hover:text-emerald">Développement de sites web</a>
-            <a href="web-optimisation-fr.html" class="block py-4 text-xl hover:text-emerald">Optimisation web et SEO</a>
-            <a href="portfolio-fr.html" class="block py-4 text-xl hover:text-emerald">Sites portfolio</a>
+          
+          <!-- SMOOTH EXPANDING SUBMENU -->
+          <div id="drawer-services-submenu"
+            class="max-h-0 overflow-hidden transition-all duration-300 ease-out pl-8 pt-1 pb-4">
+            <a href="website-dev-fr.html" class="block py-5 text-2xl hover:text-emerald transition-colors">Développement de sites web</a>
+            <a href="web-optimisation-fr.html" class="block py-5 text-2xl hover:text-emerald transition-colors">Optimisation web et SEO</a>
+            <a href="portfolio-fr.html" class="block py-5 text-2xl hover:text-emerald transition-colors">Sites portfolio</a>
           </div>
         </div>
+
         <a href="/about-fr.html" class="py-5 border-b border-gray-100">À propos</a>
         <a href="/portfolio-fr.html" class="py-5 border-b border-gray-100">Portfolio</a>
         <a href="/pricing_guide-fr.html" class="py-5 border-b border-gray-100">Tarifs</a>
         <a href="/contact-fr.html" class="py-5 border-b border-gray-100">Contact</a>
         <a href="/blog-fr.html" class="py-5 border-b border-gray-100">Blog</a>
+        
         <div class="pt-8 border-t border-gray-100">
           <div class="flex items-center gap-3 text-xl font-medium">
             <a href="index.html" class="hover:text-primary">EN</a>
@@ -129,41 +137,29 @@
     </div>
   </div>
 
-  <!-- HERO - SOPHISTICATED DARK-LEFT / LIGHT-RIGHT -->
+  <!-- HERO -->
   <section id="home" class="min-h-screen relative flex items-center pt-20 overflow-hidden">
-    <!-- Background Image (élégant et moderne – remplacez par votre photo quand vous voulez) -->
-    <div
-      class="absolute inset-0 bg-[url('/images/hedro.jpg')] bg-cover bg-center bg-no-repeat">
-    </div>
-
-    <!-- Overlay premium : très sombre à gauche pour une lisibilité parfaite → clair/transparent à droite -->
+    <div class="absolute inset-0 bg-[url('/images/hedro.jpg')] bg-cover bg-center bg-no-repeat"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-transparent"></div>
-
-    <!-- Fondu supplémentaire en bas -->
     <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
 
     <div class="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-12">
       <div class="max-w-2xl">
-
-        <!-- Badge glassmorphic premium -->
-        <div
-          class="mt-8 inline-flex items-center gap-3 bg-white/10 backdrop-blur-2xl border border-white/20 px-7 py-3.5 rounded-3xl text-sm font-medium text-white mb-10">
+        <div class="mt-8 inline-flex items-center gap-3 bg-white/10 backdrop-blur-2xl border border-white/20 px-7 py-3.5 rounded-3xl text-sm font-medium text-white mb-10">
           <span class="relative flex h-3 w-3">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald opacity-75"></span>
             <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald"></span>
           </span>
-          SOLUTIONS WEB PROFESSIONNELLES • QUÉBEC ET AU-DELÀ
+          SOLUTIONS WEB PROFESSIONNELLES • CANADA ET AU-DELÀ
         </div>
 
-        <h1
-          class="text-5xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tighter leading-none text-white mb-8">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tighter leading-none text-white mb-8">
           Nous créons des sites web qui ne sont pas seulement beaux.<br>
           <span class="text-emerald">Ils font fleurir votre entreprise.</span>
         </h1>
 
         <p class="text-xl md:text-2xl text-white/90 mb-12 max-w-md">
-          Sites web sur mesure, optimisation ultra-rapide et portfolios captivants conçus avec stratégie et passion pour
-          les petites entreprises et entrepreneurs ambitieux.
+          Sites web sur mesure, optimisation ultra-rapide et portfolios captivants conçus avec stratégie et passion pour les petites entreprises et entrepreneurs ambitieux.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-5">
@@ -171,17 +167,15 @@
             class="mb-8 bg-white text-primary font-semibold px-10 py-6 rounded-3xl inline-flex items-center gap-3 hover:bg-emerald hover:text-white transition-all text-lg shadow-xl">
             Découvrir nos réalisations →
           </a>
-          <a href="/contact-fr.html"
+          <button onclick="openQuoteModal()"
             class="mb-8 border-2 border-white/70 text-white hover:bg-white/10 font-medium px-10 py-6 rounded-3xl transition-all text-lg backdrop-blur-sm inline-block">
             Consultation gratuite
-          </a>
+          </button>
         </div>
       </div>
     </div>
 
-    <!-- Floating growth badge (glassmorphic – desktop only) -->
-    <div
-      class="hidden xl:block absolute bottom-20 right-12 bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl px-8 py-6 shadow-2xl">
+    <div class="hidden xl:block absolute bottom-20 right-12 bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl px-8 py-6 shadow-2xl">
       <div class="flex items-center gap-4">
         <div class="text-5xl">🌱</div>
         <div>
@@ -198,46 +192,34 @@
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <div>
           <span class="uppercase text-emerald tracking-[3px] text-sm font-medium">Présentation de Goshen Web X</span>
-          <h2 class="text-5xl font-heading font-bold tracking-tighter mt-4 leading-none text-primary">Là où la stratégie
-            rencontre un design élégant et une vraie croissance</h2>
-          <p class="mt-8 text-lg text-gray-600 max-w-lg">Nous créons des expériences numériques qui vont bien au-delà du
-            beau : elles génèrent des résultats concrets, de la rapidité et de la joie pour vos clients.</p>
+          <h2 class="text-5xl font-heading font-bold tracking-tighter mt-4 leading-none text-primary">Là où la stratégie rencontre un design élégant et une vraie croissance</h2>
+          <p class="mt-8 text-lg text-gray-600 max-w-lg">Nous créons des expériences numériques qui vont bien au-delà du beau : elles génèrent des résultats concrets, de la rapidité et de la joie pour vos clients.</p>
 
           <div class="mt-12 space-y-10">
             <div class="flex gap-6">
-              <div
-                class="w-9 h-9 rounded-2xl bg-emerald flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
-                01</div>
+              <div class="w-9 h-9 rounded-2xl bg-emerald flex items-center justify-center text-white text-sm font-bold flex-shrink-0">01</div>
               <div>
                 <h4 class="font-semibold text-xl">Découverte et stratégie</h4>
-                <p class="text-gray-500">Nous analysons en profondeur vos objectifs et construisons une feuille de route
-                  sur mesure.</p>
+                <p class="text-gray-500">Nous analysons en profondeur vos objectifs et construisons une feuille de route sur mesure.</p>
               </div>
             </div>
             <div class="flex gap-6">
-              <div
-                class="w-9 h-9 rounded-2xl bg-emerald flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
-                02</div>
+              <div class="w-9 h-9 rounded-2xl bg-emerald flex items-center justify-center text-white text-sm font-bold flex-shrink-0">02</div>
               <div>
                 <h4 class="font-semibold text-xl">Design et développement</h4>
-                <p class="text-gray-500">Designs parfaits au pixel près et code haute performance, adaptés à votre
-                  marque et à votre public.</p>
+                <p class="text-gray-500">Designs parfaits au pixel près et code haute performance, adaptés à votre marque et à votre public.</p>
               </div>
             </div>
             <div class="flex gap-6">
-              <div
-                class="w-9 h-9 rounded-2xl bg-emerald flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
-                03</div>
+              <div class="w-9 h-9 rounded-2xl bg-emerald flex items-center justify-center text-white text-sm font-bold flex-shrink-0">03</div>
               <div>
                 <h4 class="font-semibold text-xl">Lancement et soutien continu</h4>
-                <p class="text-gray-500">Nous déployons votre site et restons à vos côtés pour garantir performance et
-                  succès à long terme.</p>
+                <p class="text-gray-500">Nous déployons votre site et restons à vos côtés pour garantir performance et succès à long terme.</p>
               </div>
             </div>
           </div>
-          <a href="/contact-fr.html"
-            class="mt-12 inline-block bg-emerald hover:bg-primary text-white font-semibold px-10 py-5 rounded-3xl transition-all">Obtenir
-            votre devis gratuit →</a>
+          <button onclick="openQuoteModal()"
+            class="mt-12 inline-block bg-emerald hover:bg-primary text-white font-semibold px-10 py-5 rounded-3xl transition-all">Obtenir votre devis gratuit →</button>
         </div>
         <div class="relative"><img src="/images/creative2.png" alt="Studio" class="shadow-2xl" /></div>
       </div>
@@ -248,41 +230,31 @@
   <section class="py-24 bg-soft">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 text-center">
       <span class="uppercase text-emerald tracking-widest text-sm font-medium">Nos Offres</span>
-      <h2 class="text-5xl font-heading font-bold tracking-tighter mt-2 text-primary">Des services conçus pour une
-        croissance durable</h2>
+      <h2 class="text-5xl font-heading font-bold tracking-tighter mt-2 text-primary">Des services conçus pour une croissance durable</h2>
     </div>
     <div class="grid md:grid-cols-3 gap-8 max-w-screen-2xl mx-auto px-6 lg:px-12 mt-12">
-      <div
-        class="md:bg-white bg-transparent md:rounded-3xl rounded-none overflow-hidden md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100">
+      <div class="md:bg-white bg-transparent md:rounded-3xl rounded-none overflow-hidden md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100">
         <img src="/images/web_ilustr.jpg" alt="" class="w-full h-80 object-cover" />
         <div class="p-8">
           <h3 class="text-3xl font-semibold mb-3 text-primary">Développement de sites web</h3>
-          <p class="text-gray-600">Sites web sur mesure, entièrement responsifs, conçus pour transformer vos visiteurs
-            en clients fidèles.</p>
-          <a href="website-dev-fr.html" class="mt-6 inline-block text-emerald font-medium hover:text-primary">En savoir
-            plus →</a>
+          <p class="text-gray-600">Sites web sur mesure, entièrement responsifs, conçus pour transformer vos visiteurs en clients fidèles.</p>
+          <a href="website-dev-fr.html" class="mt-6 inline-block text-emerald font-medium hover:text-primary">En savoir plus →</a>
         </div>
       </div>
-      <div
-        class="md:bg-white bg-transparent md:rounded-3xl rounded-none overflow-hidden md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100">
+      <div class="md:bg-white bg-transparent md:rounded-3xl rounded-none overflow-hidden md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100">
         <img src="/images/web_opt.jpg" alt="" class="w-full h-80 object-cover" />
         <div class="p-8">
           <h3 class="text-3xl font-semibold mb-3 text-primary">Optimisation web et SEO</h3>
-          <p class="text-gray-600">Vitesse exceptionnelle, optimisation pour les moteurs de recherche et performance qui
-            vous placent en tête sur Google.</p>
-          <a href="web-optimisation-fr.html" class="mt-6 inline-block text-emerald font-medium hover:text-primary">En
-            savoir plus →</a>
+          <p class="text-gray-600">Vitesse exceptionnelle, optimisation pour les moteurs de recherche et performance qui vous placent en tête sur Google.</p>
+          <a href="web-optimisation-fr.html" class="mt-6 inline-block text-emerald font-medium hover:text-primary">En savoir plus →</a>
         </div>
       </div>
-      <div
-        class="md:bg-white bg-transparent md:rounded-3xl rounded-none overflow-hidden md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100">
+      <div class="md:bg-white bg-transparent md:rounded-3xl rounded-none overflow-hidden md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100">
         <img src="/images/portfolio.jpg" alt="" class="w-full h-80 object-cover" />
         <div class="p-8">
           <h3 class="text-3xl font-semibold mb-3 text-primary">Sites portfolio</h3>
-          <p class="text-gray-600">Portfolios personnels et corporatifs captivants qui laissent une impression durable.
-          </p>
-          <a href="portfolio-fr.html" class="mt-6 inline-block text-emerald font-medium hover:text-primary">En savoir
-            plus →</a>
+          <p class="text-gray-600">Portfolios personnels et corporatifs captivants qui laissent une impression durable.</p>
+          <a href="portfolio-fr.html" class="mt-6 inline-block text-emerald font-medium hover:text-primary">En savoir plus →</a>
         </div>
       </div>
     </div>
@@ -321,74 +293,54 @@
     </div>
   </section>
 
-  <!-- DEVELOPMENT TOOLS - COMPACT ON MOBILE -->
+  <!-- DEVELOPMENT TOOLS -->
   <section class="py-24 bg-soft">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
       <div class="text-center mb-16">
         <span class="uppercase text-emerald tracking-widest text-sm font-medium">STACK TECHNOLOGIQUE</span>
-        <h2 class="text-5xl font-heading font-bold tracking-tighter mt-3 text-primary">Outils de développement que nous
-          maîtrisons</h2>
-        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Nous construisons avec des technologies modernes, puissantes et
-          fiables pour une performance et une scalabilité exceptionnelles.</p>
+        <h2 class="text-5xl font-heading font-bold tracking-tighter mt-3 text-primary">Outils de développement que nous maîtrisons</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Nous construisons avec des technologies modernes, puissantes et fiables pour une performance et une scalabilité exceptionnelles.</p>
       </div>
-
-      <!-- Compact 2-column grid on mobile only -->
       <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-        <div
-          class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-6 md:p-8 md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100 group">
+        <div class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-6 md:p-8 md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100 group">
           <div class="text-5xl mb-6 text-[#1572B6]"><i class="fab fa-css3-alt"></i></div>
           <h4 class="font-semibold text-2xl mb-3 text-primary">CSS3</h4>
-          <p class="text-gray-600 leading-relaxed text-sm md:text-base">Styling avancé pour des designs front-end
-            modernes, responsifs et visuellement époustouflants.</p>
+          <p class="text-gray-600 leading-relaxed text-sm md:text-base">Styling avancé pour des designs front-end modernes, responsifs et visuellement époustouflants.</p>
         </div>
-        <div
-          class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-6 md:p-8 md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100 group">
+        <div class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-6 md:p-8 md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100 group">
           <div class="text-5xl mb-6 text-[#787CB5]"><i class="fab fa-php"></i></div>
           <h4 class="font-semibold text-2xl mb-3 text-primary">PHP 8</h4>
-          <p class="text-gray-600 leading-relaxed text-sm md:text-base">Scripting serveur puissant pour des applications
-            back-end rapides, sécurisées et scalables.</p>
+          <p class="text-gray-600 leading-relaxed text-sm md:text-base">Scripting serveur puissant pour des applications back-end rapides, sécurisées et scalables.</p>
         </div>
-        <div
-          class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-6 md:p-8 md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100 group">
+        <div class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-6 md:p-8 md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100 group">
           <div class="text-5xl mb-6 text-[#FF9900]"><i class="fab fa-aws"></i></div>
           <h4 class="font-semibold text-2xl mb-3 text-primary">AWS</h4>
-          <p class="text-gray-600 leading-relaxed text-sm md:text-base">Infrastructure cloud pour un hébergement web
-            sécurisé, fiable et scalable.</p>
+          <p class="text-gray-600 leading-relaxed text-sm md:text-base">Infrastructure cloud pour un hébergement web sécurisé, fiable et scalable.</p>
         </div>
-        <div
-          class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-6 md:p-8 md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100 group">
+        <div class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-6 md:p-8 md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100 group">
           <div class="text-5xl mb-6 text-[#FFCA28]"><i class="fas fa-fire"></i></div>
           <h4 class="font-semibold text-2xl mb-3 text-primary">Firebase</h4>
-          <p class="text-gray-600 leading-relaxed text-sm md:text-base">Base de données temps réel et authentification
-            pour des applications dynamiques centrées sur l'utilisateur.</p>
+          <p class="text-gray-600 leading-relaxed text-sm md:text-base">Base de données temps réel et authentification pour des applications dynamiques centrées sur l'utilisateur.</p>
         </div>
-        <div
-          class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-6 md:p-8 md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100 group">
+        <div class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-6 md:p-8 md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100 group">
           <div class="text-5xl mb-6 text-[#4479A1]"><i class="fas fa-database"></i></div>
           <h4 class="font-semibold text-2xl mb-3 text-primary">MySQL</h4>
-          <p class="text-gray-600 leading-relaxed text-sm md:text-base">Base de données relationnelle fiable pour des
-            données structurées et des requêtes haute performance.</p>
+          <p class="text-gray-600 leading-relaxed text-sm md:text-base">Base de données relationnelle fiable pour des données structurées et des requêtes haute performance.</p>
         </div>
-        <div
-          class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-6 md:p-8 md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100 group">
+        <div class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-6 md:p-8 md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100 group">
           <div class="text-5xl mb-6 text-[#F7DF1E]"><i class="fab fa-js"></i></div>
           <h4 class="font-semibold text-2xl mb-3 text-primary">JavaScript</h4>
-          <p class="text-gray-600 leading-relaxed text-sm md:text-base">Scripting client-side moderne pour des
-            interfaces utilisateur interactives, dynamiques et responsives.</p>
+          <p class="text-gray-600 leading-relaxed text-sm md:text-base">Scripting client-side moderne pour des interfaces utilisateur interactives, dynamiques et responsives.</p>
         </div>
-        <div
-          class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-6 md:p-8 md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100 group">
+        <div class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-6 md:p-8 md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100 group">
           <div class="text-5xl mb-6 text-emerald"><i class="fas fa-plug"></i></div>
           <h4 class="font-semibold text-2xl mb-3 text-primary">API RESTful</h4>
-          <p class="text-gray-600 leading-relaxed text-sm md:text-base">Communication fluide entre front-end et back-end
-            pour des fonctionnalités dynamiques.</p>
+          <p class="text-gray-600 leading-relaxed text-sm md:text-base">Communication fluide entre front-end et back-end pour des fonctionnalités dynamiques.</p>
         </div>
-        <div
-          class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-6 md:p-8 md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100 group">
+        <div class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-6 md:p-8 md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100 group">
           <div class="text-5xl mb-6 text-[#95BF46]"><i class="fab fa-shopify"></i></div>
           <h4 class="font-semibold text-2xl mb-3 text-primary">Shopify</h4>
-          <p class="text-gray-600 leading-relaxed text-sm md:text-base">Plateforme e-commerce puissante pour créer,
-            personnaliser et gérer des boutiques en ligne facilement.</p>
+          <p class="text-gray-600 leading-relaxed text-sm md:text-base">Plateforme e-commerce puissante pour créer, personnaliser et gérer des boutiques en ligne facilement.</p>
         </div>
       </div>
     </div>
@@ -402,17 +354,16 @@
         <h2 class="text-5xl font-heading font-bold tracking-tighter mt-3 text-primary">Nos projets récents</h2>
       </div>
       <div class="grid md:grid-cols-3 gap-8">
-        <a href="/portfolio-fr.html"
+         <a href="https://rcmchurch.netlify.app/" 
           class="group block md:bg-white bg-transparent md:rounded-3xl rounded-none overflow-hidden md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100">
           <img src="/images/rcm.jpg" class="w-full h-80 object-cover transition-transform group-hover:scale-105"
             alt="Site web Église RCM">
           <div class="p-8">
             <p class="font-semibold text-primary">Église RCM</p>
-            <p class="text-sm text-gray-500 mt-2">Site web d'église moderne • Événements, sermons et informations
-              communautaires</p>
+            <p class="text-sm text-gray-500 mt-2">Site web d'église moderne • Événements, sermons et informations communautaires</p>
           </div>
         </a>
-        <a href="/portfolio-fr.html"
+        <a href="https://feastofafrica.netlify.app/"
           class="group block md:bg-white bg-transparent md:rounded-3xl rounded-none overflow-hidden md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100">
           <img src="/images/FOA.jpg" class="w-full h-80 object-cover transition-transform group-hover:scale-105"
             alt="Projet Restaurant">
@@ -420,21 +371,19 @@
             <p class="font-semibold text-primary">Projet Design & Expérience de Marque Restaurant</p>
           </div>
         </a>
-        <a href="/portfolio-fr.html"
+       <a href="http://cliniquedepodologielilibethhuertas.com/"
           class="group block md:bg-white bg-transparent md:rounded-3xl rounded-none overflow-hidden md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100">
           <img src="/images/clinic.jpg" class="w-full h-80 object-cover transition-transform group-hover:scale-105"
             alt="Clinique Podologie">
           <div class="p-8">
             <p class="font-semibold text-primary">Clinique de Podologie</p>
-            <p class="text-sm text-gray-500 mt-2">Site web professionnel de clinique • Services, rendez-vous et
-              informations patients</p>
+            <p class="text-sm text-gray-500 mt-2">Site web professionnel de clinique • Services, rendez-vous et informations patients</p>
           </div>
         </a>
       </div>
       <div class="mt-12 text-center">
         <a href="/portfolio-fr.html"
-          class="bg-primary hover:bg-emerald text-white font-semibold px-10 py-5 rounded-3xl transition-all">Voir plus
-          de projets →</a>
+          class="bg-primary hover:bg-emerald text-white font-semibold px-10 py-5 rounded-3xl transition-all">Voir plus de projets →</a>
       </div>
     </div>
   </section>
@@ -449,26 +398,19 @@
         </div>
       </div>
       <div class="grid md:grid-cols-3 gap-8">
-        <div
-          class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-8 md:shadow border-transparent md:border border-gray-100">
+        <div class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-8 md:shadow border-transparent md:border border-gray-100">
           <h3 class="text-4xl font-bold tracking-tighter leading-none mb-6 text-primary">"Réussir Ensemble"</h3>
-          <p class="text-gray-600 text-lg">"Goshen Web X s'est avéré être le partenaire idéal pour notre entreprise.
-            Nous avons déjà constaté des résultats remarquables."</p>
+          <p class="text-gray-600 text-lg">"Goshen Web X s'est avéré être le partenaire idéal pour notre entreprise. Nous avons déjà constaté des résultats remarquables."</p>
           <p class="mt-8 text-sm text-gray-500">- Issac A., Propriétaire de petite entreprise</p>
         </div>
-        <div
-          class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-8 md:shadow border-transparent md:border border-gray-100">
+        <div class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-8 md:shadow border-transparent md:border border-gray-100">
           <h3 class="text-4xl font-bold tracking-tighter leading-none mb-6 text-primary">"Service Transformateur"</h3>
-          <p class="text-gray-600 text-lg">"Les mots ne suffisent pas pour exprimer ma gratitude pour les services
-            exceptionnels de conception web fournis. Les résultats ont été véritablement transformateurs."</p>
-          <p class="mt-8 text-sm text-gray-500">- Jhon J., Entrepreneur</p>
+          <p class="text-gray-600 text-lg">"Les mots ne suffisent pas pour exprimer ma gratitude pour les services exceptionnels de conception web fournis. Les résultats ont été véritablement transformateurs."</p>
+          <p class="mt-8 text-sm text-gray-500">- Daniel K., Entrepreneur</p>
         </div>
-        <div
-          class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-8 md:shadow border-transparent md:border border-gray-100">
-          <h3 class="text-4xl font-bold tracking-tighter leading-none mb-6 text-primary">"Présence Numérique Supérieure"
-          </h3>
-          <p class="text-gray-600 text-lg">"Le service fourni par Goshen Web X est inégalé. Ils livrent un design
-            exceptionnel et des résultats mesurables. Nous sommes fiers de collaborer avec eux."</p>
+        <div class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-8 md:shadow border-transparent md:border border-gray-100">
+          <h3 class="text-4xl font-bold tracking-tighter leading-none mb-6 text-primary">"Présence Numérique Supérieure"</h3>
+          <p class="text-gray-600 text-lg">"Le service fourni par Goshen Web X est inégalé. Ils livrent un design exceptionnel et des résultats mesurables. Nous sommes fiers de collaborer avec eux."</p>
           <p class="mt-8 text-sm text-gray-500">- Lilibeth H., Fondatrice</p>
         </div>
       </div>
@@ -485,42 +427,34 @@
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         <a href="/articles/SEO-strategies-for-small-business-growth-in-2026.html"
           class="group block md:bg-white bg-transparent md:rounded-3xl rounded-none overflow-hidden md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100">
-          <img src="/images/web_opt.jpg" alt=""
-            class="w-full h-48 object-cover transition-transform group-hover:scale-105">
+          <img src="/images/web_opt.jpg" alt="" class="w-full h-48 object-cover transition-transform group-hover:scale-105">
           <div class="p-6">
             <p class="text-xs text-gray-500 mb-2">07 Sep 2025</p>
-            <h4 class="font-semibold text-lg leading-tight mb-3 text-primary">Stratégies SEO pour la croissance des
-              petites entreprises en 2026</h4>
+            <h4 class="font-semibold text-lg leading-tight mb-3 text-primary">Stratégies SEO pour la croissance des petites entreprises en 2026</h4>
           </div>
         </a>
         <a href="/articles/how-to-choose-the-perfect-website-for-your-business.html"
           class="group block md:bg-white bg-transparent md:rounded-3xl rounded-none overflow-hidden md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100">
-          <img src="/images/portfolio.jpg" alt=""
-            class="w-full h-48 object-cover transition-transform group-hover:scale-105">
+          <img src="/images/portfolio.jpg" alt="" class="w-full h-48 object-cover transition-transform group-hover:scale-105">
           <div class="p-6">
             <p class="text-xs text-gray-500 mb-2">15 Sep 2025</p>
-            <h4 class="font-semibold text-lg leading-tight mb-3 text-primary">Les 5 tendances de design web que chaque
-              petite entreprise devrait connaître</h4>
+            <h4 class="font-semibold text-lg leading-tight mb-3 text-primary">Les 5 tendances de design web que chaque petite entreprise devrait connaître</h4>
           </div>
         </a>
         <a href="/articles/how-to-choose-the-perfect-website-for-your-business.html"
           class="group block md:bg-white bg-transparent md:rounded-3xl rounded-none overflow-hidden md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100">
-          <img src="/images/web_ilustr.jpg" alt=""
-            class="w-full h-48 object-cover transition-transform group-hover:scale-105">
+          <img src="/images/web_ilustr.jpg" alt="" class="w-full h-48 object-cover transition-transform group-hover:scale-105">
           <div class="p-6">
             <p class="text-xs text-gray-500 mb-2">22 Sep 2025</p>
-            <h4 class="font-semibold text-lg leading-tight mb-3 text-primary">Comment choisir le site web parfait pour
-              votre entreprise</h4>
+            <h4 class="font-semibold text-lg leading-tight mb-3 text-primary">Comment choisir le site web parfait pour votre entreprise</h4>
           </div>
         </a>
         <a href="/articles/why-speed-matters.html"
           class="group block md:bg-white bg-transparent md:rounded-3xl rounded-none overflow-hidden md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100">
-          <img src="/images/14622.jpg" alt=""
-            class="w-full h-48 object-cover transition-transform group-hover:scale-105">
+          <img src="/images/14622.jpg" alt="" class="w-full h-48 object-cover transition-transform group-hover:scale-105">
           <div class="p-6">
             <p class="text-xs text-gray-500 mb-2">01 Oct 2025</p>
-            <h4 class="font-semibold text-lg leading-tight mb-3 text-primary">Pourquoi la vitesse compte : Core Web
-              Vitals expliqués</h4>
+            <h4 class="font-semibold text-lg leading-tight mb-3 text-primary">Pourquoi la vitesse compte : Core Web Vitals expliqués</h4>
           </div>
         </a>
       </div>
@@ -533,6 +467,80 @@
     <i class="fab fa-whatsapp text-4xl text-white"></i>
   </a>
 
+  <!-- DYNAMIC FREE QUOTE MODAL - MOBILE OPTIMIZED (slightly smaller) -->
+  <div id="quote-modal" class="hidden fixed inset-0 z-[10000] flex items-center justify-center p-4 bg-black/70">
+    <div onclick="event.stopImmediatePropagation()" 
+         class="bg-white rounded-3xl max-w-md w-full shadow-2xl overflow-hidden">
+      
+      <!-- Modal Header - reduced top padding -->
+      <div class="px-6 pt-6 pb-4 border-b flex items-center justify-between">
+        <div>
+          <div class="inline-flex items-center gap-2 bg-emerald/10 text-emerald px-4 py-1.5 rounded-3xl text-xs font-medium">GRATUIT • SANS OBLIGATION</div>
+          <h3 class="text-3xl font-heading font-bold tracking-tighter text-primary mt-3">Demander un devis gratuit</h3>
+        </div>
+        <button onclick="closeQuoteModal()" class="text-3xl leading-none text-gray-400 hover:text-gray-600">✕</button>
+      </div>
+
+      <div class="p-6">
+        <p class="text-gray-600 text-center mb-8">Partagez quelques détails sur votre projet et recevez un devis personnalisé en moins de 24 heures.</p>
+        
+        <!-- FORM -->
+        <form id="quote-form" class="space-y-6">
+          <div class="grid grid-cols-1 gap-6">
+            <div>
+              <label class="block text-sm font-medium mb-2 text-gray-700">Votre nom complet</label>
+              <input type="text" id="name" required 
+                     class="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:border-emerald focus:ring-0 outline-none transition-all">
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2 text-gray-700">Email professionnel</label>
+              <input type="email" id="email" required 
+                     class="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:border-emerald focus:ring-0 outline-none transition-all">
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2 text-gray-700">Numéro de téléphone (optionnel)</label>
+              <input type="tel" id="phone" 
+                     class="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:border-emerald focus:ring-0 outline-none transition-all">
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2 text-gray-700">Service qui vous intéresse</label>
+              <select id="service" required 
+                      class="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:border-emerald focus:ring-0 outline-none transition-all bg-white">
+                <option value="">Choisissez un service...</option>
+                <option value="Développement de sites web">Développement de sites web</option>
+                <option value="Optimisation web & SEO">Optimisation web & SEO</option>
+                <option value="Site portfolio">Site portfolio</option>
+                <option value="Autre">Autre / Sur mesure</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2 text-gray-700">Brève description de votre projet</label>
+              <textarea id="description" rows="4" required placeholder="Ex. : J'ai besoin d'un site e-commerce moderne pour ma boutique à Québec..." 
+                        class="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:border-emerald focus:ring-0 outline-none transition-all resize-y"></textarea>
+            </div>
+          </div>
+
+          <!-- SUBMIT BUTTON - slightly smaller -->
+          <button type="submit" 
+            class="w-full mt-4 bg-emerald hover:bg-primary transition-all text-white font-semibold py-4 rounded-3xl text-base flex items-center justify-center gap-3 shadow-lg shadow-emerald/30">
+            Envoyer ma demande de devis gratuit <i class="fas fa-arrow-right"></i>
+          </button>
+        </form>
+
+        <!-- SUCCESS MESSAGE -->
+        <div id="quote-success" class="hidden text-center py-12">
+          <div class="mx-auto w-16 h-16 bg-emerald/10 rounded-2xl flex items-center justify-center text-5xl mb-6">🎉</div>
+          <h4 class="font-heading text-3xl font-semibold text-primary">Merci !</h4>
+          <p class="text-gray-600 mt-3 max-w-xs mx-auto">Votre demande a été reçue. Notre équipe vous contactera sous peu avec un devis personnalisé.</p>
+          <button onclick="closeQuoteModal()" 
+            class="mt-8 px-10 py-3.5 bg-primary hover:bg-emerald text-white rounded-3xl font-medium transition-all">
+            Retour au site
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <footer class="bg-white border-t border-gray-100 py-20">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
@@ -542,8 +550,7 @@
             <img src="/images/logo_goshenwbeX.png" alt="Logo" class="h-14" />
             <span class="font-heading text-3xl font-bold tracking-tighter text-primary">GOSHEN WEB X</span>
           </div>
-          <p class="text-gray-500 max-w-xs">Entreprise de développement web professionnel basée au Québec. Nous aidons
-            les entreprises à grandir en ligne depuis 2024.</p>
+          <p class="text-gray-500 max-w-xs">Entreprise de développement web professionnel basée au Québec. Nous aidons les entreprises à grandir en ligne depuis 2024.</p>
         </div>
 
         <div class="md:col-span-2">
@@ -570,16 +577,13 @@
 
           <div class="flex gap-6 text-3xl mt-10">
             <a href="https://x.com/goshenwebx" class="hover:text-emerald"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://www.linkedin.com/in/goshen-web-x-9b3246364" class="hover:text-emerald"><i
-                class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/gwx_technologies" class="hover:text-emerald"><i
-                class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/goshen-web-x-9b3246364" class="hover:text-emerald"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/gwx_technologies" class="hover:text-emerald"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
       </div>
 
-      <div
-        class="border-t border-gray-100 mt-16 pt-8 text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="border-t border-gray-100 mt-16 pt-8 text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
         <p>© 2026 Goshen Web X. Tous droits réservés.</p>
         <p class="flex gap-6">
           <a href="/privacy-policy-fr.html" class="hover:text-emerald">Confidentialité</a>
@@ -610,10 +614,16 @@
     closeBtn.addEventListener('click', closeMenu);
     backdrop.addEventListener('click', closeMenu);
 
+    // FIXED SERVICES DRAWER (smooth accordion)
     window.toggleServicesDrawer = function () {
       const submenu = document.getElementById('drawer-services-submenu');
       const chevron = document.getElementById('drawer-chevron');
-      submenu.classList.toggle('hidden');
+
+      if (submenu.style.maxHeight && submenu.style.maxHeight !== "0px") {
+        submenu.style.maxHeight = "0px";
+      } else {
+        submenu.style.maxHeight = submenu.scrollHeight + "px";
+      }
       chevron.classList.toggle('rotate-180');
     };
 
@@ -657,6 +667,42 @@
     const statsSection = document.getElementById('stats');
     if (statsSection) observer.observe(statsSection);
   </script>
-</body>
 
+  <!-- DYNAMIC QUOTE MODAL JAVASCRIPT -->
+  <script>
+    window.openQuoteModal = function () {
+      const modal = document.getElementById('quote-modal');
+      const form = document.getElementById('quote-form');
+      const success = document.getElementById('quote-success');
+      
+      modal.classList.remove('hidden');
+      form.classList.remove('hidden');
+      success.classList.add('hidden');
+      form.reset();
+    };
+
+    window.closeQuoteModal = function () {
+      const modal = document.getElementById('quote-modal');
+      modal.classList.add('hidden');
+    };
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const modal = document.getElementById('quote-modal');
+      const form = document.getElementById('quote-form');
+      const success = document.getElementById('quote-success');
+
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) {
+          closeQuoteModal();
+        }
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        form.classList.add('hidden');
+        success.classList.remove('hidden');
+      });
+    });
+  </script>
+</body>
 </html>

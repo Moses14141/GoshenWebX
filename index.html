@@ -79,10 +79,10 @@
             <a href="/index-fr.html" class="hover:text-primary transition-colors px-2">FR</a>
           </div>
 
-          <a href="/contact.html"
+          <button onclick="openQuoteModal()"
             class="flex items-center gap-3 bg-primary hover:bg-emerald text-white font-semibold px-8 py-3.5 rounded-3xl transition-all shadow-lg shadow-emerald/30">
             Request a Free Quote <i class="fas fa-arrow-right"></i>
-          </a>
+          </button>
         </div>
 
         <!-- Hamburger -->
@@ -104,23 +104,28 @@
       <button id="close-menu" class="float-right text-4xl text-gray-400 hover:text-primary">✕</button>
       <nav class="flex flex-col text-2xl font-medium mt-12 text-gray-800">
         <a href="index.html" class="py-5 border-b border-gray-100">Home</a>
+        
         <div class="border-b border-gray-100">
           <button onclick="toggleServicesDrawer()"
-            class="w-full py-5 flex items-center justify-between hover:text-emerald">
+            class="w-full py-5 flex items-center justify-between hover:text-emerald text-2xl font-medium">
             Our Services
-            <i id="drawer-chevron" class="fas fa-chevron-down transition-transform duration-300"></i>
+            <i id="drawer-chevron" class="fas fa-chevron-down text-xl transition-transform duration-300"></i>
           </button>
-          <div id="drawer-services-submenu" class="hidden pl-6 pt-2 pb-6">
-            <a href="/website-dev.html" class="block py-4 text-xl hover:text-emerald">Website Development</a>
-            <a href="/web-optimisation.html" class="block py-4 text-xl hover:text-emerald">Web Optimisation and SEO</a>
-            <a href="/portfolio.html" class="block py-4 text-xl hover:text-emerald">Portfolio Websites</a>
+          
+          <div id="drawer-services-submenu"
+            class="max-h-0 overflow-hidden transition-all duration-300 ease-out pl-8 pt-1 pb-4">
+            <a href="/website-dev.html" class="block py-5 text-2xl hover:text-emerald transition-colors">Website Development</a>
+            <a href="/web-optimisation.html" class="block py-5 text-2xl hover:text-emerald transition-colors">Web Optimisation and SEO</a>
+            <a href="/portfolio.html" class="block py-5 text-2xl hover:text-emerald transition-colors">Portfolio Websites</a>
           </div>
         </div>
+
         <a href="/about.html" class="py-5 border-b border-gray-100">About Us</a>
         <a href="/portfolio.html" class="py-5 border-b border-gray-100">Portfolio</a>
         <a href="/pricing_guide.html" class="py-5 border-b border-gray-100">Pricing</a>
         <a href="/contact.html" class="py-5 border-b border-gray-100">Contact</a>
         <a href="/blog.html" class="py-5 border-b border-gray-100">Blog</a>
+        
         <div class="pt-8 border-t border-gray-100">
           <div class="flex items-center gap-3 text-xl font-medium">
             <a href="#" class="text-emerald font-semibold">EN</a>
@@ -132,34 +137,23 @@
     </div>
   </div>
 
-  <!-- HERO - SOPHISTICATED DARK-LEFT / LIGHT-RIGHT -->
+  <!-- HERO -->
   <section id="home" class="min-h-screen relative flex items-center pt-20 overflow-hidden">
-    <!-- Background Image (elegant modern workspace – replace URL anytime with your own) -->
-    <div
-      class="absolute inset-0 bg-[url('/images/hedro.jpg')] bg-cover bg-center bg-no-repeat">
-    </div>
-
-    <!-- Premium gradient overlay: dark on left for perfect readability → light/transparent on right so image breathes -->
+    <div class="absolute inset-0 bg-[url('/images/hedro.jpg')] bg-cover bg-center bg-no-repeat"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-transparent"></div>
-
-    <!-- Extra depth fade at bottom -->
     <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
 
     <div class="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-12">
       <div class="max-w-2xl">
-
-        <!-- Premium glassmorphic badge -->
-        <div
-          class="mt-8 inline-flex items-center gap-3 bg-white/10 backdrop-blur-2xl border border-white/20 px-7 py-3.5 rounded-3xl text-sm font-medium text-white mb-10">
+        <div class="mt-8 inline-flex items-center gap-3 bg-white/10 backdrop-blur-2xl border border-white/20 px-7 py-3.5 rounded-3xl text-sm font-medium text-white mb-10">
           <span class="relative flex h-3 w-3">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald opacity-75"></span>
             <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald"></span>
           </span>
-          PROFESSIONAL WEB SOLUTIONS • QUÉBEC & BEYOND
+          PROFESSIONAL WEB SOLUTIONS • CANADA & BEYOND
         </div>
 
-        <h1
-          class="text-5xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tighter leading-none text-white mb-8">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tighter leading-none text-white mb-8">
           We build websites that don't just look good.<br>
           <span class="text-emerald">They help your business flourish.</span>
         </h1>
@@ -174,17 +168,15 @@
             class="bg-white text-primary font-semibold px-10 py-6 rounded-3xl flex items-center gap-3 hover:bg-emerald hover:text-white transition-all text-lg shadow-xl">
             Explore Our Portfolio →
           </a>
-          <a href="/contact.html"
+          <button onclick="openQuoteModal()"
             class="mb-8 inline-block border-2 border-white/70 text-white hover:bg-white/10 font-medium px-10 py-6 rounded-3xl transition-all text-lg backdrop-blur-sm">
             Request a Free Consultation
-          </a>
+          </button>
         </div>
       </div>
     </div>
 
-    <!-- Floating growth badge (glassmorphic – desktop only) -->
-    <div
-      class="hidden xl:block absolute bottom-20 right-12 bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl px-8 py-6 shadow-2xl">
+    <div class="hidden xl:block absolute bottom-20 right-12 bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl px-8 py-6 shadow-2xl">
       <div class="flex items-center gap-4">
         <div class="text-5xl">🌱</div>
         <div>
@@ -238,9 +230,9 @@
               </div>
             </div>
           </div>
-          <a href="/contact.html"
+          <button onclick="openQuoteModal()"
             class="mt-12 inline-block bg-emerald hover:bg-primary text-white font-semibold px-10 py-5 rounded-3xl transition-all">Request
-            Your Free Quote →</a>
+            Your Free Quote →</button>
         </div>
         <div class="relative"><img src="/images/creative2.png" alt="Studio" class="shadow-2xl" /></div>
       </div>
@@ -323,7 +315,7 @@
     </div>
   </section>
 
-  <!-- DEVELOPMENT TOOLS - UPDATED FOR MOBILE -->
+  <!-- DEVELOPMENT TOOLS -->
   <section class="py-24 bg-soft">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
       <div class="text-center mb-16">
@@ -333,7 +325,6 @@
           deliver exceptional performance and scalability.</p>
       </div>
 
-      <!-- Compact 2-column grid on mobile only -->
       <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         <div
           class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-6 md:p-8 md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100 group">
@@ -403,7 +394,7 @@
         <h2 class="text-5xl font-heading font-bold tracking-tighter mt-3 text-primary">Our Recent Projects</h2>
       </div>
       <div class="grid md:grid-cols-3 gap-8">
-        <a href="/portfolio.html"
+        <a href="https://rcmchurch.netlify.app/"
           class="group block md:bg-white bg-transparent md:rounded-3xl rounded-none overflow-hidden md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100">
           <img src="/images/rcm.jpg" class="w-full h-80 object-cover transition-transform group-hover:scale-105"
             alt="RCM Church Website">
@@ -412,7 +403,7 @@
             <p class="text-sm text-gray-500 mt-2">Modern church website • Events, sermons & community information</p>
           </div>
         </a>
-        <a href="/portfolio.html"
+        <a href="https://feastofafrica.netlify.app/"
           class="group block md:bg-white bg-transparent md:rounded-3xl rounded-none overflow-hidden md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100">
           <img src="/images/FOA.jpg" class="w-full h-80 object-cover transition-transform group-hover:scale-105"
             alt="Restaurant Project">
@@ -420,7 +411,7 @@
             <p class="font-semibold text-primary">Restaurant Brand Design & Experience Project</p>
           </div>
         </a>
-        <a href="/portfolio.html"
+        <a href="http://cliniquedepodologielilibethhuertas.com/"
           class="group block md:bg-white bg-transparent md:rounded-3xl rounded-none overflow-hidden md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100">
           <img src="/images/clinic.jpg" class="w-full h-80 object-cover transition-transform group-hover:scale-105"
             alt="Podology Clinic Website">
@@ -462,7 +453,7 @@
           <h3 class="text-4xl font-bold tracking-tighter leading-none mb-6 text-primary">"Transformative Service"</h3>
           <p class="text-gray-600 text-lg">"Words cannot adequately express my gratitude for the exceptional web design
             services provided. The results have been truly transformative. I highly recommend their expertise."</p>
-          <p class="mt-8 text-sm text-gray-500">- Jhon J., Entrepreneur</p>
+          <p class="mt-8 text-sm text-gray-500">- Daniel K., Entrepreneur</p>
         </div>
         <div
           class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-8 md:shadow border-transparent md:border border-gray-100">
@@ -533,6 +524,80 @@
     class="fixed bottom-8 right-8 w-16 h-16 bg-emerald hover:bg-primary rounded-full flex items-center justify-center shadow-2xl transition-all z-50">
     <i class="fab fa-whatsapp text-4xl text-white"></i>
   </a>
+
+  <!-- DYNAMIC FREE QUOTE MODAL - MOBILE OPTIMIZED (slightly smaller) -->
+  <div id="quote-modal" class="hidden fixed inset-0 z-[10000] flex items-center justify-center p-4 bg-black/70">
+    <div onclick="event.stopImmediatePropagation()" 
+         class="bg-white rounded-3xl max-w-md w-full shadow-2xl overflow-hidden">
+      
+      <!-- Modal Header - reduced top padding -->
+      <div class="px-6 pt-6 pb-4 border-b flex items-center justify-between">
+        <div>
+          <div class="inline-flex items-center gap-2 bg-emerald/10 text-emerald px-4 py-1.5 rounded-3xl text-xs font-medium">FREE • NO OBLIGATION</div>
+          <h3 class="text-3xl font-heading font-bold tracking-tighter text-primary mt-3">Request a Free Quote</h3>
+        </div>
+        <button onclick="closeQuoteModal()" class="text-3xl leading-none text-gray-400 hover:text-gray-600">✕</button>
+      </div>
+
+      <div class="p-6"> <!-- reduced from p-8 -->
+        <p class="text-gray-600 text-center mb-8">Share a few details about your project and get a personalized quote in under 24 hours.</p>
+        
+        <!-- FORM -->
+        <form id="quote-form" class="space-y-6">
+          <div class="grid grid-cols-1 gap-6">
+            <div>
+              <label class="block text-sm font-medium mb-2 text-gray-700">Your Full Name</label>
+              <input type="text" id="name" required 
+                     class="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:border-emerald focus:ring-0 outline-none transition-all">
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2 text-gray-700">Business Email</label>
+              <input type="email" id="email" required 
+                     class="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:border-emerald focus:ring-0 outline-none transition-all">
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2 text-gray-700">Phone Number (optional)</label>
+              <input type="tel" id="phone" 
+                     class="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:border-emerald focus:ring-0 outline-none transition-all">
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2 text-gray-700">Service You're Interested In</label>
+              <select id="service" required 
+                      class="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:border-emerald focus:ring-0 outline-none transition-all bg-white">
+                <option value="">Select a service...</option>
+                <option value="Website Development">Website Development</option>
+                <option value="Web Optimisation & SEO">Web Optimisation & SEO</option>
+                <option value="Portfolio Website">Portfolio Website</option>
+                <option value="Other">Other / Custom</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2 text-gray-700">Brief Project Description</label>
+              <textarea id="description" rows="4" required placeholder="E.g. I need a modern e-commerce site for my boutique in Québec..." 
+                        class="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:border-emerald focus:ring-0 outline-none transition-all resize-y"></textarea>
+            </div>
+          </div>
+
+          <!-- SUBMIT BUTTON - slightly smaller -->
+          <button type="submit" 
+            class="w-full mt-4 bg-emerald hover:bg-primary transition-all text-white font-semibold py-4 rounded-3xl text-base flex items-center justify-center gap-3 shadow-lg shadow-emerald/30">
+            Send My Free Quote Request <i class="fas fa-arrow-right"></i>
+          </button>
+        </form>
+
+        <!-- SUCCESS MESSAGE -->
+        <div id="quote-success" class="hidden text-center py-12">
+          <div class="mx-auto w-16 h-16 bg-emerald/10 rounded-2xl flex items-center justify-center text-5xl mb-6">🎉</div>
+          <h4 class="font-heading text-3xl font-semibold text-primary">Thank You!</h4>
+          <p class="text-gray-600 mt-3 max-w-xs mx-auto">Your request has been received. Our team will contact you shortly with a tailored quote.</p>
+          <button onclick="closeQuoteModal()" 
+            class="mt-8 px-10 py-3.5 bg-primary hover:bg-emerald text-white rounded-3xl font-medium transition-all">
+            Back to site
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <footer class="bg-white border-t border-gray-100 py-20">
@@ -615,7 +680,12 @@
     window.toggleServicesDrawer = function () {
       const submenu = document.getElementById('drawer-services-submenu');
       const chevron = document.getElementById('drawer-chevron');
-      submenu.classList.toggle('hidden');
+
+      if (submenu.style.maxHeight && submenu.style.maxHeight !== "0px") {
+        submenu.style.maxHeight = "0px";
+      } else {
+        submenu.style.maxHeight = submenu.scrollHeight + "px";
+      }
       chevron.classList.toggle('rotate-180');
     };
 
@@ -658,6 +728,43 @@
 
     const statsSection = document.getElementById('stats');
     if (statsSection) observer.observe(statsSection);
+  </script>
+
+  <!-- DYNAMIC QUOTE MODAL JAVASCRIPT -->
+  <script>
+    window.openQuoteModal = function () {
+      const modal = document.getElementById('quote-modal');
+      const form = document.getElementById('quote-form');
+      const success = document.getElementById('quote-success');
+      
+      modal.classList.remove('hidden');
+      form.classList.remove('hidden');
+      success.classList.add('hidden');
+      form.reset();
+    };
+
+    window.closeQuoteModal = function () {
+      const modal = document.getElementById('quote-modal');
+      modal.classList.add('hidden');
+    };
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const modal = document.getElementById('quote-modal');
+      const form = document.getElementById('quote-form');
+      const success = document.getElementById('quote-success');
+
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) {
+          closeQuoteModal();
+        }
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        form.classList.add('hidden');
+        success.classList.remove('hidden');
+      });
+    });
   </script>
 </body>
 
