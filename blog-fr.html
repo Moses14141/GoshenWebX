@@ -1,4 +1,4 @@
-a<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 
 <head>
@@ -173,7 +173,7 @@ a<!DOCTYPE html>
         </a>
       </div>
 
-      <!-- All Posts Grid (STATIC) -->
+      <!-- All Posts Grid -->
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Post 1 -->
         <a href="./articles/SEO-strategies-for-small-business-growth-in-2026-fr.html" class="group block bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl hover:-translate-y-2 transition-all">
@@ -292,8 +292,8 @@ a<!DOCTYPE html>
           <p class="font-medium text-primary mb-6">Entreprise</p>
           <ul class="space-y-3 text-sm">
             <li><a href="index-fr.html" class="hover:text-emerald">Accueil</a></li>
-            <li><a href="/website-dev-fr.html" class="hover:text-emerald">Services</a></li>
-            <li><a href="/portfolio-fr.html" class="hover:text-emerald">Portfolio</a></li>
+            <li><a href="/about-fr.html" class="hover:text-emerald">À propos</a></li>
+            <li><a href="/blog-fr.html" class="hover:text-emerald">Blog</a></li>
           </ul>
         </div>
 
@@ -329,42 +329,31 @@ a<!DOCTYPE html>
     </div>
   </footer>
 
-  <!-- 🔥 Firebase SDKs (Newsletter uniquement) -->
-  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics-compat.js"></script>
-
   <!-- AOS -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
+  <!-- EMAILJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
   <!-- Main JS -->
   <script>
-    // ==================== FIREBASE CONFIG ====================
-    const firebaseConfig = {
-      apiKey: "AIzaSyDzByIV5lB8Fyx4NAYts-fksXusNRQzYIo",
-      authDomain: "goshenwebx.firebaseapp.com",
-      projectId: "goshenwebx",
-      storageBucket: "goshenwebx.firebasestorage.app",
-      messagingSenderId: "329698254304",
-      appId: "1:329698254304:web:df7fd2be15688fe0e79f85",
-      measurementId: "G-RBSLCPZFBV"
-    };
+    // ==================== EMAILJS INIT ====================
+    emailjs.init("zbD50mJqKf4E8Vjt6");
 
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-    const analytics = firebase.analytics();
+    // ==================== YOUR REAL SERVICE ID ====================
+    const SERVICE_ID = "service_qtuh04g";
 
-    console.log("✅ Goshen Web X Newsletter Backend Connected! (FR)");
-
-    // ==================== NEWSLETTER (French version) ====================
+    // ==================== NEWSLETTER – BOTH EMAILS (French) ====================
     const newsletterForm = document.getElementById('newsletter-form');
 
     if (newsletterForm) {
       newsletterForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
+
+        const submitBtn = newsletterForm.querySelector('button');
         const emailInput = newsletterForm.querySelector('input[type="email"]');
+        const originalText = submitBtn.textContent;
+
         const email = emailInput.value.trim().toLowerCase();
 
         if (!email || !email.includes('@')) {
@@ -372,20 +361,34 @@ a<!DOCTYPE html>
           return;
         }
 
+        // Loading state
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Abonnement en cours...";
+
         try {
-          await db.collection('subscribers').add({
-            email: email,
-            subscribedAt: firebase.firestore.FieldValue.serverTimestamp(),
-            source: "blog-fr-page"
+          // 1. AUTO-REPLY to subscriber
+          await emailjs.send(SERVICE_ID, "template_owp48l6", {
+            to_email: email,
+            user_email: email,
+            from_name: "Goshen Web X"
           });
 
-          alert("🎉 Merci ! Vous êtes maintenant sur la liste Goshen Web X.");
+          // 2. NOTIFICATION to you (info@goshenwebx.io)
+          await emailjs.send(SERVICE_ID, "template_6go6t3d", {
+            subscriber_email: email,
+            source: "Blog FR Page",
+            date: new Date().toLocaleDateString('fr-CA')
+          });
+
+          alert("🎉 Merci ! Vous êtes maintenant abonné. Un email de bienvenue est en route !");
           emailInput.value = '';
 
-          analytics.logEvent('newsletter_subscribe', { email_domain: email.split('@')[1] });
         } catch (error) {
-          console.error(error);
-          alert("Une erreur s’est produite. Veuillez réessayer ou écrire à info@goshenwebx.io");
+          console.error("EmailJS Error:", error);
+          alert("Une erreur s’est produite. Veuillez écrire à info@goshenwebx.io");
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
         }
       });
     }

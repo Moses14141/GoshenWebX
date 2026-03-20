@@ -329,33 +329,21 @@
     </div>
   </footer>
 
-  <!-- 🔥 Firebase SDKs -->
-  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics-compat.js"></script>
-
   <!-- AOS -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
+  <!-- EMAILJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
   <!-- Main JS -->
   <script>
-    // ==================== FIREBASE CONFIG ====================
-    const firebaseConfig = {
-      apiKey: "AIzaSyDzByIV5lB8Fyx4NAYts-fksXusNRQzYIo",
-      authDomain: "goshenwebx.firebaseapp.com",
-      projectId: "goshenwebx",
-      storageBucket: "goshenwebx.firebasestorage.app",
-      messagingSenderId: "329698254304",
-      appId: "1:329698254304:web:df7fd2be15688fe0e79f85",
-      measurementId: "G-RBSLCPZFBV"
-    };
+    // ==================== EMAILJS INIT ====================
+    emailjs.init("zbD50mJqKf4E8Vjt6");
 
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-    const analytics = firebase.analytics();
+    // ==================== YOUR REAL SERVICE ID ====================
+    const SERVICE_ID = "service_qtuh04g";
 
-    console.log("✅ Goshen Web X Newsletter Backend Connected!");
-        // ==================== NEWSLETTER – FINAL SECURE VERSION ====================
+    // ==================== NEWSLETTER – BOTH EMAILS WORKING ====================
     const newsletterForm = document.getElementById('newsletter-form');
 
     if (newsletterForm) {
@@ -378,30 +366,25 @@
         submitBtn.textContent = "Subscribing...";
 
         try {
-          const subscriberRef = db.collection('subscribers').doc(email);
-
-          // Check if already subscribed
-          const docSnap = await subscriberRef.get();
-          if (docSnap.exists) {
-            alert("✅ You are already subscribed to the Goshen Web X newsletter!");
-            emailInput.value = '';
-            return;
-          }
-
-          // Save new subscriber
-          await subscriberRef.set({
-            email: email,
-            subscribedAt: firebase.firestore.FieldValue.serverTimestamp(),
-            source: "blog-page"
+          // 1. AUTO-REPLY to subscriber
+          await emailjs.send(SERVICE_ID, "template_owp48l6", {
+            to_email: email,
+            user_email: email,
+            from_name: "Goshen Web X"
           });
 
-          alert("🎉 Thank you! You're now on the list.");
+          // 2. NOTIFICATION to you (info@goshenwebx.io)
+          await emailjs.send(SERVICE_ID, "template_6go6t3d", {
+            subscriber_email: email,
+            source: "Blog Page",
+            date: new Date().toLocaleDateString('en-CA')
+          });
+
+          alert("🎉 Thank you! You're now subscribed. A welcome email is on its way!");
           emailInput.value = '';
 
-          analytics.logEvent('newsletter_subscribe', { email_domain: email.split('@')[1] });
-
         } catch (error) {
-          console.error(error);
+          console.error("EmailJS Error:", error);
           alert("Something went wrong. Please email info@goshenwebx.io");
         } finally {
           submitBtn.disabled = false;
