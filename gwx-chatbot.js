@@ -284,7 +284,8 @@ We respond within <strong>24 hours</strong> — usually much faster! ⚡`;
     .gwx-sug:hover,.gwx-sug.active{background:${C.light};color:${C.primary};}
     .gwx-sug strong{color:${C.emerald};}
     .gwx-input-row{padding:10px 14px;border-top:1px solid ${C.border};display:flex;align-items:center;gap:8px;background:${C.white};flex-shrink:0;}
-    .gwx-input{flex:1;border:1px solid ${C.border};border-radius:30px;padding:9px 16px;font-size:13.5px;font-family:inherit;outline:none;color:${C.textDark};background:${C.light};transition:border-color .2s,box-shadow .2s;}
+    .gwx-input{flex:1;border:1px solid ${C.border};border-radius:30px;padding:9px 16px;font-size:16px;font-family:inherit;outline:none;color:${C.textDark};background:${C.light};transition:border-color .2s,box-shadow .2s;-webkit-text-size-adjust:100%;touch-action:manipulation;}
+    @media(min-width:481px){.gwx-input{font-size:13.5px;}}
     .gwx-input:focus{border-color:${C.emerald};box-shadow:0 0 0 3px rgba(16,185,129,.12);}
     .gwx-send{width:38px;height:38px;border-radius:50%;background:${C.primary};border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s;flex-shrink:0;}
     .gwx-send:hover{background:${C.emerald};transform:scale(1.08);}
