@@ -1,109 +1,174 @@
-# GoshenWebX
-Entreprise Solutions
+# Goshen Web X - Client Portal & Website Builder Platform
 
+**Official Repository for Goshen Web X**  
+A modern web development agency based in Québec, Canada, offering custom websites, optimization services, and a **self-service website builder** (Wix-style platform).
 
-# Goshen Web X - Leading Digital Solutions
-
-Goshen Web X is a web development and digital solutions agency that specializes in creating custom websites, web optimization services, and portfolio websites for small businesses and entrepreneurs. Our goal is to empower clients with innovative, cost-effective, and high-performing digital solutions.
-
----
-
-## Table of Contents
-
-- [Overview](#overview)  
-- [Features](#features)  
-- [Services](#services)  
-- [Tools & Technologies](#tools--technologies)  
-- [Portfolio](#portfolio)  
-- [Testimonials](#testimonials)  
-- [Contact](#contact)  
-- [How to Run](#how-to-run)  
-- [License](#license)  
+**Live Site:** [https://goshenwebx.io](https://goshenwebx.io)
 
 ---
 
-## Overview
-
-Goshen Web X delivers professional, responsive, and user-friendly websites designed to enhance your online presence. We focus on creativity, strategy, and cutting-edge web technologies to help businesses grow online.
+## 📁 Current Project Structure (Exact - March 2026)
 
 ---
 
-## Features
+## 🎯 Project Overview
 
-- Responsive design for mobile, tablet, and desktop  
-- Fast-loading pages with optimized performance  
-- SEO-friendly structure and best practices  
-- Interactive sections including hero, services, portfolio, testimonials, and contact forms  
-- Multi-language support (English & French)  
-- Integration with Firebase for forms and data handling  
-- Smooth animations using AOS  
-- Typewriter effect for dynamic hero section  
+Goshen Web X has two parts:
 
----
+1. **Public Marketing Site** (root folder)  
+   - Beautiful homepage, services, portfolio, blog, pricing, and contact pages  
+   - Bilingual (English + French)  
+   - Designed to attract new clients
 
-## Services
+2. **Client Portal** (`/portal/`)  
+   - Private self-service platform  
+   - Clients log in and can:  
+     - Choose a template  
+     - Edit their website in a **live editor**  
+     - Manage all their sites  
+     - Change password, view help, etc.
 
-### Website Development
-Custom, responsive websites tailored to your brand, built for performance and scalability.  
-[Learn more](./website-dev.html)
-
-### Web Optimization
-Enhance site speed, SEO, and user experience using advanced optimization techniques.  
-[Optimise Now](./web-optimisation.html)
-
-### Website Portfolio
-Showcase achievements and success stories with professional portfolio websites.  
-[View Portfolios](./portfolio.html)
+This is the foundation of our future **Wix-like builder**.
 
 ---
 
-## Tools & Technologies
+## ✨ Current Features (Completed)
 
-- **CSS3** – Modern styling for responsive, visually appealing designs  
-- **Node.js** – Backend runtime for scalable, high-performance apps  
-- **AWS** – Secure, reliable cloud infrastructure  
-- **Firebase** – Real-time database and authentication services  
-- **MySQL & MariaDB** – Relational databases for structured data  
-- **RESTful API** – Seamless front-end to back-end communication  
-- **Wix** – User-friendly CMS for quick website deployment  
+### Public Site
+- Fully responsive Tailwind CSS design
+- Bilingual support (EN/FR)
+- Smooth animations (AOS)
+- Contact form + quote modal
+- SEO-optimized pages
+- Netlify deployment ready (`netlify.toml`)
 
----
-
-## Portfolio
-
-Our portfolio highlights successful projects for clients, including:  
-
-- Sleek startup websites  
-- Optimized nonprofit websites  
-- Client portfolio showcase websites  
-
-A filterable portfolio section is available on the main site to browse projects by category.  
-
----
-
-## Testimonials
-
-> "Goshen Web X turned our vision into a stunning website in record time. Professional and affordable!" – Sarah K., Small Business Owner  
-
-> "Their web optimisation services boosted our site’s performance dramatically. Highly recommend!" – James T., Entrepreneur  
+### Client Portal (Fully Built)
+- Login / Signup / Forgot Password
+- Dashboard with "Start New Website" button
+- Template gallery (5 templates)
+- Live editor with real-time preview
+- My Sites management
+- My Account (profile + change password)
+- Help Center (FAQ)
+- Consistent header & mobile drawer across all portal pages
+- Terms & Privacy links everywhere
 
 ---
 
-## Contact
+## 🛠 Technologies & Stack
 
-Reach out for a free consultation:  
-
-- **Email:** [info@goshenwebx.io](mailto:info@goshenwebx.io)  
-- **Contact Form:** Available on the website  
-- **Social Media:**  
-  - [Twitter](https://x.com/goshenwebx?s=21)  
-  - [LinkedIn](https://www.linkedin.com/in/goshen-web-x-9b3246364?trk=contact-info)  
-  - [Instagram](https://www.instagram.com/gwx_technologies?igsh=MXBsNm1mNGpycW9uag%3D%3D&utm_source=qr)  
+- **Frontend:** HTML5, Tailwind CSS, Vanilla JavaScript
+- **Styling:** Tailwind CSS + custom config
+- **Icons:** Font Awesome 6
+- **Fonts:** Poppins (headings) + Plus Jakarta Sans (body)
+- **Deployment:** Netlify (`netlify.toml` + functions/)
+- **Future Backend:** Firebase (Auth + Firestore)
+- **Future Payments:** Stripe / PayPal (planned)
 
 ---
 
-## How to Run
+## 🚀 How to Run Locally
 
-1. Clone the repository:  
-   ```bash
-   git clone https://github.com/yourusername/goshenwebx.git
+1. Clone or open the folder in VS Code / any editor
+2. No installation needed for basic testing
+3. Double-click any `.html` file to open in browser
+4. For portal pages: start from `portal/login.html`
+
+**Note:** Login/signup are static for now. Firebase connection will be added next.
+
+---
+
+## 📋 Future Development Roadmap
+
+- Connect Firebase Authentication
+- Add Firestore to save user websites
+- Membership system (Free + Premium plans)
+- Payment integration (Stripe)
+- Advanced editor (drag-and-drop)
+- Custom domain support
+- Analytics dashboard
+
+---
+
+## 📌 Important Notes
+
+- All portal pages (`/portal/*`) have **portal-only navigation** (no public marketing links).
+- French versions of public pages end with `-fr.html`.
+- `functions/` folder is ready for Netlify serverless functions.
+- `js/` folder will hold shared scripts (auth.js, firestore.js, etc.) when we connect the backend.
+
+---
+
+## 🤝 Contributing / Development
+
+This is a private project for **Goshen Web X**.  
+For internal development:
+- Always keep the public site and portal header consistent.
+- Test on mobile (hamburger menu).
+- Use the exact color scheme (`primary: #14532d`, `emerald: #10b981`).
+
+---
+
+**Made with ❤️ in Québec, Canada**  
+**Last updated:** March 21, 2026
+
+For questions:  
+- Email: info@goshenwebx.io  
+- X (Twitter): [@goshenwebx](https://x.com/goshenwebx)
+
+---
+
+
+GOSHENWEBX-MAIN/
+├── articles/                          ← Blog articles (SEO content)
+├── functions/                         ← Netlify serverless functions (for future Firebase/Stripe)
+├── images/                            ← All images used on the site
+├── js/                                ← Custom JavaScript files
+├── node_modules/                      ← NPM dependencies (Tailwind, etc.)
+├── portal/                            ← 🔥 CLIENT PORTAL (Private area)
+│   ├── account.html                   ← My Account + Change Password
+│   ├── dashboard.html                 ← Main client dashboard
+│   ├── editor.html                    ← Live website editor (real-time preview)
+│   ├── forgot-password.html           ← Password reset page
+│   ├── help.html                      ← Help Center
+│   ├── login.html                     ← Login page
+│   ├── my-sites.html                  ← User's websites list
+│   ├── signup.html                    ← Create free account
+│   ├── templates.html                 ← Template gallery
+│   └── templates/                     ← Pre-built editable templates
+│       ├── business.html
+│       ├── church.html
+│       ├── clinic.html
+│       ├── portfolio.html
+│       └── restaurant.html
+│
+├── about-fr.html
+├── about.html
+├── blog-fr.html
+├── blog.html
+├── contact-fr.html
+├── contact.html
+├── custom-web-dev-fr.html
+├── custom-web-dev.html
+├── index-fr.html
+├── index.html
+├── netlify.toml                       ← Netlify deployment config
+├── package.json                       ← NPM dependencies & scripts
+├── package-lock.json
+├── portfolio-fr.html
+├── portfolio.html
+├── pricing_guide-fr.html
+├── pricing_guide.html
+├── privacy-policy-fr.html
+├── privacy-policy.html
+├── README.md                          ← This file
+├── service-fr.html
+├── service.html
+├── terms-fr.html
+├── terms.html
+├── web-optimisation-fr.html
+├── web-optimisation.html
+├── website-dev-fr.html
+├── website-dev.html
+└── (other language-specific pages)
+text

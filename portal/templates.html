@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browse Templates | Goshen Web X Client Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      content: [],
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            primary: '#14532d',
+            emerald: '#10b981',
+            'emerald-light': '#34d399',
+            light: '#f8faf5',
+            soft: '#f1f5f0',
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="icon" type="image/png" href="../images/goshen_webx_logo.png" />
+</head>
+
+<body class="bg-light text-gray-900 font-body overflow-x-hidden">
+
+  <!-- HEADER - EXACT SAME AS DASHBOARD -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-gray-100">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+      <div class="flex items-center justify-between h-20">
+        <a href="../index.html" class="flex items-center gap-3">
+          <img src="../images/logo_goshenwbeX.png" alt="Goshen Web X" class="h-14 w-auto" />
+          <div class="font-heading text-3xl font-semibold tracking-tighter text-primary">GOSHEN <span class="text-emerald">WEB X</span></div>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
+          <a href="dashboard.html" class="hover:text-primary transition-colors">Dashboard</a>
+          <a href="my-sites.html" class="hover:text-primary transition-colors">My Sites</a>
+          <a href="../contact.html" class="hover:text-primary transition-colors">Contact</a>
+        </nav>
+
+        <div class="hidden lg:flex items-center gap-6">
+          <div class="flex items-center text-sm font-medium">
+            <a href="#" class="text-emerald font-semibold px-2">EN</a>
+            <span class="text-gray-400 mx-1">/</span>
+            <a href="../index-fr.html" class="hover:text-primary transition-colors px-2">FR</a>
+          </div>
+          <a href="dashboard.html" class="flex items-center gap-2 bg-emerald hover:bg-primary text-white font-semibold px-6 py-3 rounded-3xl transition-all">
+            ← Back to Dashboard
+          </a>
+        </div>
+
+        <button id="hamburger" class="lg:hidden text-4xl p-4 -mr-3 text-primary">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Backdrop + Drawer -->
+  <div id="backdrop" class="hidden fixed inset-0 bg-black/60 z-[9998]"></div>
+  <div id="side-menu" class="fixed top-0 bottom-0 right-0 w-80 bg-white shadow-2xl translate-x-full transition-transform duration-300 z-[9999] overflow-y-auto">
+    <div class="p-6">
+      <button id="close-menu" class="float-right text-4xl text-gray-400 hover:text-primary">✕</button>
+      <nav class="flex flex-col text-2xl font-medium mt-12 text-gray-800">
+        <a href="dashboard.html" class="py-5 border-b border-gray-100">Dashboard</a>
+        <a href="my-sites.html" class="py-5 border-b border-gray-100">My Sites</a>
+        <a href="../contact.html" class="py-5 border-b border-gray-100">Contact Support</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- TEMPLATE GALLERY -->
+  <div class="pt-20 min-h-screen bg-soft">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 py-12">
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-2 bg-emerald/10 text-emerald px-6 py-2 rounded-3xl text-sm font-medium">STEP 1 OF 3</div>
+        <h1 class="text-5xl font-heading font-bold tracking-tighter text-primary mt-6">Choose your template</h1>
+        <p class="text-xl text-gray-600 mt-3 max-w-md mx-auto">Pick one of our professionally designed templates. You can customize everything later.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Church Template -->
+        <div class="bg-white rounded-3xl overflow-hidden shadow hover:shadow-2xl transition-all group">
+          <img src="../images/rcm.jpg" alt="Church Template" class="w-full h-64 object-cover">
+          <div class="p-8">
+            <h3 class="font-semibold text-2xl text-primary">Church Website</h3>
+            <p class="text-gray-600 mt-2">Events, sermons, live streaming & community pages</p>
+            <a href="editor.html?template=church" 
+               class="mt-8 block w-full bg-emerald hover:bg-primary text-white text-center py-4 rounded-3xl font-semibold transition-all">
+              Use this template →
+            </a>
+          </div>
+        </div>
+
+        <!-- Restaurant Template -->
+        <div class="bg-white rounded-3xl overflow-hidden shadow hover:shadow-2xl transition-all group">
+          <img src="../images/FOA.jpg" alt="Restaurant Template" class="w-full h-64 object-cover">
+          <div class="p-8">
+            <h3 class="font-semibold text-2xl text-primary">Restaurant Website</h3>
+            <p class="text-gray-600 mt-2">Menu, reservations, gallery & online ordering</p>
+            <a href="editor.html?template=restaurant" 
+               class="mt-8 block w-full bg-emerald hover:bg-primary text-white text-center py-4 rounded-3xl font-semibold transition-all">
+              Use this template →
+            </a>
+          </div>
+        </div>
+
+        <!-- Clinic Template -->
+        <div class="bg-white rounded-3xl overflow-hidden shadow hover:shadow-2xl transition-all group">
+          <img src="../images/clinic.jpg" alt="Clinic Template" class="w-full h-64 object-cover">
+          <div class="p-8">
+            <h3 class="font-semibold text-2xl text-primary">Clinic / Podology</h3>
+            <p class="text-gray-600 mt-2">Services, booking, patient info & contact form</p>
+            <a href="editor.html?template=clinic" 
+               class="mt-8 block w-full bg-emerald hover:bg-primary text-white text-center py-4 rounded-3xl font-semibold transition-all">
+              Use this template →
+            </a>
+          </div>
+        </div>
+
+        <!-- Business Template -->
+        <div class="bg-white rounded-3xl overflow-hidden shadow hover:shadow-2xl transition-all group">
+          <div class="w-full h-64 bg-gradient-to-br from-emerald/10 to-primary/10 flex items-center justify-center text-6xl">💼</div>
+          <div class="p-8">
+            <h3 class="font-semibold text-2xl text-primary">General Business</h3>
+            <p class="text-gray-600 mt-2">Services, about, contact & lead capture</p>
+            <a href="editor.html?template=business" 
+               class="mt-8 block w-full bg-emerald hover:bg-primary text-white text-center py-4 rounded-3xl font-semibold transition-all">
+              Use this template →
+            </a>
+          </div>
+        </div>
+
+        <!-- Portfolio Template -->
+        <div class="bg-white rounded-3xl overflow-hidden shadow hover:shadow-2xl transition-all group">
+          <div class="w-full h-64 bg-gradient-to-br from-emerald/10 to-primary/10 flex items-center justify-center text-6xl">🎨</div>
+          <div class="p-8">
+            <h3 class="font-semibold text-2xl text-primary">Creative Portfolio</h3>
+            <p class="text-gray-600 mt-2">Perfect for freelancers, photographers & artists</p>
+            <a href="editor.html?template=portfolio" 
+               class="mt-8 block w-full bg-emerald hover:bg-primary text-white text-center py-4 rounded-3xl font-semibold transition-all">
+              Use this template →
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Terms line (same as dashboard) -->
+      <div class="mt-16 pt-8 border-t border-gray-100 text-center text-xs text-gray-500">
+        By using any template, you agree to our 
+        <a href="../terms.html" target="_blank" class="text-emerald hover:underline">Terms of Service</a> 
+        and 
+        <a href="../privacy-policy.html" target="_blank" class="text-emerald hover:underline">Privacy Policy</a>.
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER SCRIPTS -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const sideMenu = document.getElementById('side-menu');
+    const backdrop = document.getElementById('backdrop');
+    const closeBtn = document.getElementById('close-menu');
+
+    hamburger.addEventListener('click', () => {
+      sideMenu.classList.remove('translate-x-full');
+      backdrop.classList.remove('hidden');
+    });
+
+    function closeMenu() {
+      sideMenu.classList.add('translate-x-full');
+      backdrop.classList.add('hidden');
+    }
+
+    closeBtn.addEventListener('click', closeMenu);
+    backdrop.addEventListener('click', closeMenu);
+  </script>
+</body>
+</html>

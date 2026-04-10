@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Living Faith Church | Where Faith Comes Alive</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap');
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1');
+            background-size: cover;
+            background-position: center;
+            transition: background-image 0.6s ease;
+        }
+        .tail-container {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        .logo-font {
+            font-family: 'Playfair Display', sans-serif;
+        }
+    </style>
+</head>
+<body class="tail-container text-gray-800 overflow-x-hidden">
+
+    <!-- ORIGINAL CHURCH NAV - RESTORED -->
+    <nav class="bg-white border-b border-gray-100 shadow-sm fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-x-3">
+                <div class="w-11 h-11 bg-amber-600 rounded-2xl flex items-center justify-center text-white text-3xl shadow-inner">
+                    ✝
+                </div>
+                <div>
+                    <h1 id="church-name" class="logo-font text-3xl font-bold tracking-tight text-amber-700">Living Faith</h1>
+                    <p class="text-[10px] text-gray-500 -mt-1 tracking-[2px]">CHURCH</p>
+                </div>
+            </div>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex items-center gap-x-9 text-sm font-medium">
+                <li><a href="#home" class="hover:text-amber-600 transition-colors">Home</a></li>
+                <li><a href="#services" class="hover:text-amber-600 transition-colors">Ministries</a></li>
+                <li><a href="#sermons" class="hover:text-amber-600 transition-colors">Sermons</a></li>
+                <li><a href="#pastor" class="hover:text-amber-600 transition-colors">Pastor</a></li>
+                <li><a href="#events" class="hover:text-amber-600 transition-colors">Events</a></li>
+                <li><a href="#give" class="hover:text-amber-600 transition-colors">Give</a></li>
+                <li><a href="#contact" class="hover:text-amber-600 transition-colors">Contact</a></li>
+            </ul>
+
+            <div class="hidden md:flex items-center gap-x-4">
+                <a href="#live" onclick="alert('Live stream coming soon! Join us this Sunday at 9 AM & 11 AM')" 
+                   class="px-6 py-2.5 bg-white border border-amber-600 text-amber-600 rounded-3xl text-sm font-semibold hover:bg-amber-50 transition-all flex items-center gap-x-2">
+                    <i class="fas fa-video"></i> WATCH LIVE
+                </a>
+            </div>
+
+            <!-- Hamburger -->
+            <button onclick="toggleMobileMenu()" class="md:hidden text-3xl text-gray-700">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t py-6 px-6">
+            <ul class="flex flex-col gap-y-6 text-lg font-medium">
+                <li><a href="#home" onclick="toggleMobileMenu()" class="block">Home</a></li>
+                <li><a href="#services" onclick="toggleMobileMenu()" class="block">Ministries</a></li>
+                <li><a href="#sermons" onclick="toggleMobileMenu()" class="block">Sermons</a></li>
+                <li><a href="#pastor" onclick="toggleMobileMenu()" class="block">Our Pastor</a></li>
+                <li><a href="#events" onclick="toggleMobileMenu()" class="block">Events</a></li>
+                <li><a href="#give" onclick="toggleMobileMenu()" class="block">Give Online</a></li>
+                <li><a href="#contact" onclick="toggleMobileMenu()" class="block">Contact Us</a></li>
+            </ul>
+            <div class="mt-8">
+                <a href="#live" onclick="toggleMobileMenu()" 
+                   class="block w-full text-center py-4 bg-amber-600 text-white rounded-3xl font-semibold text-lg">
+                    <i class="fas fa-video mr-2"></i> WATCH LIVE STREAM
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO (fully dynamic) -->
+    <header id="home" class="hero-bg h-screen flex items-center justify-center text-white relative">
+        <div class="max-w-4xl mx-auto text-center px-6 pt-20">
+            <div id="hero-badge" class="inline-flex items-center gap-x-2 bg-white/20 backdrop-blur-md text-white text-sm font-medium px-5 py-2 rounded-3xl mb-6">
+                <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                SUNDAY SERVICES • 9:00 AM & 11:00 AM
+            </div>
+            <h2 id="hero-title" class="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-6 logo-font">
+                A PLACE WHERE<br>FAITH COMES ALIVE
+            </h2>
+            <p id="hero-subtitle" class="text-xl md:text-2xl max-w-xl mx-auto opacity-90 mb-10">
+                Join a vibrant community of believers growing together in God's Word, worship, and mission.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#services" class="px-10 py-5 bg-amber-600 hover:bg-amber-700 transition-all rounded-3xl text-xl font-semibold shadow-xl shadow-amber-900/30 flex items-center gap-x-3">
+                    <i class="fas fa-door-open"></i>
+                    JOIN US THIS SUNDAY
+                </a>
+                <a href="#live" onclick="alert('Live stream coming soon! Join us this Sunday at 9 AM & 11 AM')" 
+                   class="px-10 py-5 bg-white/10 backdrop-blur-md hover:bg-white/20 border border-white transition-all rounded-3xl text-xl font-semibold flex items-center gap-x-3">
+                    <i class="fas fa-play-circle"></i>
+                    WATCH LIVE
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SERVICE TIMES BAR (static for now - can be made dynamic later) -->
+    <div class="bg-white py-6 border-b shadow-sm">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-3 md:grid-cols-6 gap-6 text-center text-sm">
+            <div>
+                <div class="font-semibold text-amber-600">SUNDAY WORSHIP</div>
+                <div class="text-gray-500">9:00 AM &amp; 11:00 AM</div>
+            </div>
+            <div>
+                <div class="font-semibold text-amber-600">WEDNESDAY BIBLE STUDY</div>
+                <div class="text-gray-500">7:00 PM</div>
+            </div>
+            <div>
+                <div class="font-semibold text-amber-600">YOUTH NIGHT</div>
+                <div class="text-gray-500">Friday 6:30 PM</div>
+            </div>
+            <div>
+                <div class="font-semibold text-amber-600">PRAYER MEETING</div>
+                <div class="text-gray-500">Tuesday 6:00 AM</div>
+            </div>
+            <div class="col-span-3 md:col-span-2 bg-amber-50 rounded-3xl px-8 py-4 flex items-center justify-center gap-x-4 text-amber-700">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="text-left text-xs leading-tight">
+                    <div class="font-semibold">123 GRACE AVENUE, YOUR CITY, ST 12345</div>
+                    <div class="text-amber-600">Free parking • Wheelchair accessible</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WELCOME / VISION (dynamic) -->
+    <section class="py-24 bg-gradient-to-b from-gray-50 to-white" id="home">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="uppercase tracking-[3px] text-amber-600 font-medium text-sm">Welcome Home</span>
+                    <h2 id="about-heading" class="text-5xl font-bold leading-none mt-3 mb-8 logo-font">Experience God's Love in Community</h2>
+                    <p id="about-text" class="text-lg text-gray-600 leading-relaxed max-w-lg">
+                        At Living Faith Church we believe every person is created for relationship — with God and with others. 
+                        Whether you're new to faith or have walked with Christ for decades, you belong here.
+                    </p>
+                    <div class="flex items-center gap-x-8 mt-12">
+                        <div class="flex -space-x-6">
+                            <img src="https://picsum.photos/id/64/64/64" class="w-9 h-9 object-cover rounded-2xl ring-2 ring-white" alt="">
+                            <img src="https://picsum.photos/id/201/64/64" class="w-9 h-9 object-cover rounded-2xl ring-2 ring-white" alt="">
+                            <img src="https://picsum.photos/id/29/64/64" class="w-9 h-9 object-cover rounded-2xl ring-2 ring-white" alt="">
+                        </div>
+                        <div class="text-sm">
+                            <div class="font-semibold">+1,200 members</div>
+                            <div class="text-emerald-600">growing weekly</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176" class="rounded-3xl shadow-2xl" alt="People praying together">
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-3xl shadow-xl max-w-[220px]">
+                        <div class="flex items-center gap-x-4">
+                            <div class="text-4xl">❤️</div>
+                            <div>
+                                <div class="font-semibold text-lg">“This is my home church now”</div>
+                                <div class="text-xs text-gray-500">— Sarah M., new member</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MINISTRIES (now dynamic - matches editor "services" section) -->
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="px-5 py-2 bg-amber-100 text-amber-700 rounded-full text-sm font-semibold">OUR MINISTRIES</span>
+                <h2 id="ministries-title" class="text-5xl font-bold mt-4 logo-font">Where Everyone Grows</h2>
+            </div>
+            
+            <div id="ministries-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Will be populated dynamically by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- PASTOR SPOTLIGHT (dynamic) -->
+    <section id="pastor" class="py-24 bg-gradient-to-b from-amber-50 to-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5">
+                    <img id="pastor-image" src="https://images.unsplash.com/photo-1556155092-490a1ba16284" class="w-full rounded-3xl shadow-2xl" alt="Pastor">
+                </div>
+                <div class="lg:col-span-7">
+                    <div class="max-w-lg">
+                        <div class="text-amber-600 font-medium">MEET OUR LEAD PASTOR</div>
+                        <h2 id="pastor-name" class="text-5xl font-bold logo-font leading-none mt-3">Pastor David Thompson</h2>
+                        <p id="pastor-bio" class="mt-8 text-lg leading-relaxed text-gray-600">
+                            With over 18 years of ministry experience, Pastor David's passion is to see lives transformed by the power of Jesus Christ. 
+                            He preaches with fire, leads with humility, and loves his people like family.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LATEST SERMONS + EVENTS + GIVE + FOOTER (kept as-is for now - can be extended later) -->
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // ====================== DYNAMIC DATA LOADER ======================
+        function loadEditorData() {
+            // 1. Try to get the latest saved site from localStorage (matches editor.html)
+            let siteData = null;
+            const keys = Object.keys(localStorage).filter(k => k.startsWith('currentSite_'));
+            if (keys.length > 0) {
+                const latestKey = keys[keys.length - 1];
+                siteData = JSON.parse(localStorage.getItem(latestKey));
+            }
+
+            // 2. If URL has ?site=xxx (future proof for publish/preview link)
+            const urlParams = new URLSearchParams(window.location.search);
+            const siteId = urlParams.get('site');
+            if (siteId && localStorage.getItem('currentSite_' + siteId)) {
+                siteData = JSON.parse(localStorage.getItem('currentSite_' + siteId));
+            }
+
+            if (!siteData || !siteData.sections) return;
+
+            // Apply data to template
+            siteData.sections.forEach(section => {
+                if (section.type === 'hero') {
+                    document.getElementById('hero-title').innerHTML = section.content.title || 'A PLACE WHERE<br>FAITH COMES ALIVE';
+                    document.getElementById('hero-subtitle').innerHTML = section.content.subtitle || 'Join a vibrant community of believers growing together in God\'s Word, worship, and mission.';
+                    if (section.content.bgImage) {
+                        const hero = document.querySelector('.hero-bg');
+                        hero.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('${section.content.bgImage}')`;
+                    }
+                    if (section.content.buttonText) {
+                        // You can add more buttons if needed
+                    }
+                }
+                else if (section.type === 'about') {
+                    document.getElementById('about-heading').textContent = section.content.title || 'Experience God\'s Love in Community';
+                    document.getElementById('about-text').innerHTML = section.content.text || 'At Living Faith Church we believe every person is created for relationship...';
+                }
+                else if (section.type === 'services' || section.type === 'menu') {
+                    document.getElementById('ministries-title').textContent = section.content.title || 'Where Everyone Grows';
+                    renderMinistries(section.content.items || ["Ministry 1", "Ministry 2", "Ministry 3"]);
+                }
+                else if (section.type === 'pastor') {
+                    // You can add a pastor section in editor later
+                    if (section.content.name) document.getElementById('pastor-name').textContent = section.content.name;
+                    if (section.content.bio) document.getElementById('pastor-bio').innerHTML = section.content.bio;
+                }
+            });
+
+            // Also update site name in header
+            if (siteData.name) {
+                document.getElementById('church-name').textContent = siteData.name;
+            }
+
+            console.log('✅ Living Faith Church loaded dynamic data from editor');
+        }
+
+        function renderMinistries(items) {
+            const grid = document.getElementById('ministries-grid');
+            grid.innerHTML = '';
+            const sampleImages = [
+                "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+                "https://images.unsplash.com/photo-1523240795612-9a054b0db644",
+                "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6"
+            ];
+            items.forEach((item, i) => {
+                const card = document.createElement('div');
+                card.className = "group bg-white border border-gray-100 hover:border-amber-200 transition-all rounded-3xl overflow-hidden shadow-sm hover:shadow-xl";
+                card.innerHTML = `
+                    <img src="${sampleImages[i % 3]}" class="w-full h-56 object-cover" alt="${item}">
+                    <div class="p-8">
+                        <div class="uppercase text-xs tracking-widest text-amber-500 font-medium">MINISTRY</div>
+                        <h3 class="text-2xl font-semibold mt-2">${item}</h3>
+                        <p class="text-gray-600 mt-3">Powerful worship, relevant teaching, and family atmosphere.</p>
+                        <div class="mt-6 text-amber-600 text-sm font-medium flex items-center gap-x-2 group-hover:gap-x-3 transition-all">
+                            JOIN NOW <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // ====================== LIVE UPDATE FROM EDITOR ======================
+        window.updateChurchTemplate = function(data) {
+            // This function can still be called directly by editor if needed
+            if (data.heroTitle) document.getElementById('hero-title').innerHTML = data.heroTitle;
+            if (data.heroSubtitle) document.getElementById('hero-subtitle').innerHTML = data.heroSubtitle;
+            if (data.churchName) document.getElementById('church-name').innerHTML = data.churchName;
+            if (data.aboutHeading) document.getElementById('about-heading').innerHTML = data.aboutHeading;
+            if (data.aboutText) document.getElementById('about-text').innerHTML = data.aboutText;
+            if (data.pastorName) document.getElementById('pastor-name').innerHTML = data.pastorName;
+            if (data.pastorBio) document.getElementById('pastor-bio').innerHTML = data.pastorBio;
+            console.log('✅ Church template updated live from editor');
+        };
+
+        // Auto-load when page opens (works with editor preview & published sites)
+        window.onload = function() {
+            loadEditorData();
+        };
+    </script>
+</body>
+</html>

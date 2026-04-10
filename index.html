@@ -6,7 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
     content="Goshen Web X — Premium custom websites, lightning-fast optimisation, and stunning portfolios for ambitious small businesses and entrepreneurs in Canada and beyond." />
-  <title>Goshen Web X | Websites That Help You Flourish</title>
+  <title>Goshen Web X | Websites Solutions That Help Your Business Grow</title>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5470312051046141"
+     crossorigin="anonymous"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -28,12 +31,397 @@
       }
     }
   </script>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-  <link rel="icon" type="image/png" href="/images/goshen_webx_logo.png" />
+  <link rel="icon" type="image/png" href="/images/transp-logo.png" />
+
+  <style>
+    /* =====================================================
+       BASE
+    ===================================================== */
+    html { scroll-behavior: smooth; }
+
+    body {
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    body.gwx-ready { opacity: 1; }
+
+    /* =====================================================
+       GRAIN OVERLAY
+    ===================================================== */
+    .grain-overlay::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* =====================================================
+       SECTION CURVE
+    ===================================================== */
+    .section-curve-top { position: relative; }
+    .section-curve-top::before {
+      content: '';
+      position: absolute;
+      top: -48px; left: 0; right: 0;
+      height: 48px;
+      background: inherit;
+      clip-path: ellipse(55% 100% at 50% 100%);
+      z-index: 1;
+    }
+
+    /* =====================================================
+       HERO — TYPEWRITER CURSOR
+    ===================================================== */
+    @keyframes gwx-blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0; }
+    }
+    .gwx-cursor {
+      display: inline-block;
+      width: 3px;
+      height: 0.85em;
+      background: #34d399;
+      border-radius: 2px;
+      margin-left: 3px;
+      vertical-align: middle;
+      animation: gwx-blink 0.65s step-start infinite;
+    }
+
+    /* HERO line-2 reveal */
+    .gwx-line2 {
+      display: block;
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.7s cubic-bezier(.25,.46,.45,.94),
+                  transform 0.7s cubic-bezier(.25,.46,.45,.94);
+    }
+    .gwx-line2.gwx-in { opacity: 1; transform: translateY(0); }
+
+    /* =====================================================
+       HERO — STAGGERED ENTRANCE ITEMS
+    ===================================================== */
+    .gwx-hero-item {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .gwx-hero-item.gwx-in { opacity: 1; transform: translateY(0); }
+
+    .gwx-slide-right {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .gwx-slide-right.gwx-in { opacity: 1; transform: translateX(0); }
+
+    /* =====================================================
+       SCROLL-TRIGGERED REVEALS
+    ===================================================== */
+    .gwx-fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s cubic-bezier(.25,.46,.45,.94),
+                  transform 0.65s cubic-bezier(.25,.46,.45,.94);
+    }
+    .gwx-fade-up.gwx-in { opacity: 1; transform: translateY(0); }
+
+    .gwx-fade-left {
+      opacity: 0;
+      transform: translateX(-18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .gwx-fade-left.gwx-in { opacity: 1; transform: translateX(0); }
+
+    /* =====================================================
+       SECTION H2 — WORD STAGGER
+    ===================================================== */
+    .gwx-word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .gwx-word.gwx-in { opacity: 1; transform: translateY(0); }
+
+    /* =====================================================
+       LABEL LINE
+    ===================================================== */
+    .label-line {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .label-line::after {
+      content: '';
+      display: inline-block;
+      width: 40px;
+      height: 2px;
+      background: #10b981;
+      border-radius: 1px;
+      transition: width 0.4s ease;
+    }
+    .label-line:hover::after { width: 64px; }
+
+    /* =====================================================
+       CARD HOVER — lift + shadow
+    ===================================================== */
+    .card-glow {
+      transition: transform 0.38s cubic-bezier(.25,.46,.45,.94),
+                  box-shadow 0.38s cubic-bezier(.25,.46,.45,.94);
+      will-change: transform;
+    }
+    .card-glow:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 24px 64px -12px rgba(16,185,129,.14),
+                  0 8px 24px -8px rgba(0,0,0,.07);
+    }
+
+    /* =====================================================
+       TECH ICON FLOAT
+    ===================================================== */
+    .tech-icon {
+      transition: transform 0.38s cubic-bezier(.34,1.56,.64,1);
+    }
+    .group:hover .tech-icon { transform: translateY(-6px); }
+
+    /* =====================================================
+       STEP CONNECTOR
+    ===================================================== */
+    .step-connector { position: relative; }
+    .step-connector::before {
+      content: '';
+      position: absolute;
+      left: 17px; top: 44px; bottom: -36px;
+      width: 1px;
+      background: linear-gradient(to bottom, #10b981 0%, transparent 100%);
+    }
+    .step-connector:last-child::before { display: none; }
+    .step-connector > div:first-child {
+      transition: transform 0.3s cubic-bezier(.34,1.56,.64,1), box-shadow 0.3s ease;
+    }
+    .step-connector:hover > div:first-child {
+      transform: scale(1.18);
+      box-shadow: 0 0 0 8px rgba(16,185,129,.12);
+    }
+
+    /* =====================================================
+       HERO CTA SHIMMER
+    ===================================================== */
+    .shimmer-btn { position: relative; overflow: hidden; }
+    .shimmer-btn::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent);
+      animation: gwx-shimmer 3.2s ease-in-out infinite;
+    }
+    @keyframes gwx-shimmer {
+      0%, 100% { left: -100%; }
+      50%       { left: 100%; }
+    }
+
+    /* =====================================================
+       PORTFOLIO OVERLAY
+    ===================================================== */
+    .portfolio-overlay { position: relative; overflow: hidden; }
+    .portfolio-overlay::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(20,83,45,.6) 100%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .group:hover .portfolio-overlay::after { opacity: 1; }
+
+    /* =====================================================
+       QUOTE ACCENT
+    ===================================================== */
+    .quote-accent::before {
+      content: '\201C';
+      position: absolute;
+      top: -8px; left: 24px;
+      font-size: 120px;
+      line-height: 1;
+      color: rgba(16,185,129,.06);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      pointer-events: none;
+      transition: transform 2.5s ease;
+    }
+    .quote-accent:hover::before {
+      animation: gwx-float 2.5s ease-in-out infinite;
+    }
+
+    /* =====================================================
+       BLOG DATE PILL
+    ===================================================== */
+    .date-pill {
+      background: linear-gradient(135deg, rgba(16,185,129,.08), rgba(20,83,45,.05));
+      backdrop-filter: blur(4px);
+    }
+
+    /* =====================================================
+       STAT RING
+    ===================================================== */
+    .stat-ring { position: relative; }
+    .stat-ring::before {
+      content: '';
+      position: absolute;
+      inset: -12px;
+      border-radius: 50%;
+      border: 1px solid rgba(16,185,129,.08);
+    }
+
+    /* =====================================================
+       COUNTER POP
+    ===================================================== */
+    @keyframes gwx-pop {
+      0%   { transform: scale(1); }
+      45%  { transform: scale(1.16); }
+      100% { transform: scale(1); }
+    }
+    .gwx-counter-pop { animation: gwx-pop 0.45s cubic-bezier(.34,1.56,.64,1) forwards; }
+
+    /* =====================================================
+       FLOAT (reusable)
+    ===================================================== */
+    @keyframes gwx-float {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-5px); }
+    }
+    .card-glow:hover .fa-briefcase,
+    .card-glow:hover .fa-heart {
+      animation: gwx-float 1.8s ease-in-out infinite;
+    }
+
+    /* =====================================================
+       HEADER — scroll shadow
+    ===================================================== */
+    header { transition: box-shadow 0.3s ease; }
+    header.gwx-scrolled { box-shadow: 0 4px 24px -4px rgba(0,0,0,.08); }
+
+    /* =====================================================
+       NAV UNDERLINE
+    ===================================================== */
+    header nav > a,
+    header nav .group > button {
+      position: relative;
+    }
+    header nav > a::after,
+    header nav .group > button::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0;
+      width: 0; height: 2px;
+      background: #10b981;
+      border-radius: 1px;
+      transition: width 0.25s cubic-bezier(.25,.46,.45,.94);
+    }
+    header nav > a:hover::after,
+    header nav .group:hover > button::after { width: 100%; }
+
+    /* =====================================================
+       WHATSAPP PULSE
+    ===================================================== */
+    @keyframes gwx-wa-ring {
+      0%  { box-shadow: 0 0 0 0   rgba(16,185,129,.5); }
+      60% { box-shadow: 0 0 0 16px rgba(16,185,129,0); }
+      100%{ box-shadow: 0 0 0 0   rgba(16,185,129,0); }
+    }
+    a[href*="wa.me"] { animation: gwx-wa-ring 2.6s ease-out infinite; }
+
+    /* =====================================================
+       MODAL — animated open/close
+    ===================================================== */
+    #quote-modal {
+      display: flex;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    #quote-modal.gwx-modal-open {
+      pointer-events: all;
+      opacity: 1;
+    }
+    #quote-modal > div {
+      transform: scale(0.94) translateY(14px);
+      transition: transform 0.35s cubic-bezier(.34,1.56,.64,1), opacity 0.3s ease;
+      opacity: 0;
+    }
+    #quote-modal.gwx-modal-open > div {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+
+    /* =====================================================
+       INPUT FOCUS GLOW
+    ===================================================== */
+    #quote-form input:focus,
+    #quote-form textarea:focus,
+    #quote-form select:focus {
+      border-color: #10b981 !important;
+      box-shadow: 0 0 0 3px rgba(16,185,129,.12);
+      outline: none;
+    }
+
+    /* =====================================================
+       SCROLL TO TOP
+    ===================================================== */
+    #gwx-top-btn {
+      position: fixed;
+      bottom: 100px; right: 32px;
+      width: 44px; height: 44px;
+      background: #14532d;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.35s ease, transform 0.35s ease, background 0.2s ease;
+      z-index: 49;
+      box-shadow: 0 4px 18px rgba(20,83,45,.25);
+    }
+    #gwx-top-btn.gwx-visible { opacity: 1; transform: translateY(0); }
+    #gwx-top-btn:hover { background: #10b981; }
+
+    /* =====================================================
+       PORTFOLIO PARALLAX — JS controlled via style attr
+    ===================================================== */
+    .portfolio-overlay img { will-change: transform; }
+
+    /* =====================================================
+       MOBILE MENU ITEM ENTRANCE
+    ===================================================== */
+    #side-menu nav > a,
+    #side-menu nav > div {
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    /* =====================================================
+       STATS SECTION ENTRANCE
+    ===================================================== */
+    #stats .text-center {
+      transition: transform 0.3s ease;
+    }
+    #stats .text-center:hover { transform: translateY(-4px); }
+
+    /* =====================================================
+       SMOOTH IMAGE REVEAL
+    ===================================================== */
+    [data-aos="fade-up"] img {
+      transition: transform 0.6s cubic-bezier(.25,.46,.45,.94);
+    }
+  </style>
 </head>
 
 <body class="bg-light text-gray-900 font-body overflow-x-hidden">
@@ -44,12 +432,10 @@
       <div class="flex items-center justify-between h-20">
         <a href="index.html" class="flex items-center gap-3">
           <img src="/images/logo_goshenwbeX.png" alt="Goshen Web X" class="h-14 w-auto" />
-          <div class="font-heading text-3xl font-semibold tracking-tighter text-primary">GOSHEN <span
-              class="text-emerald">WEB X</span></div>
+          <div class="font-heading text-3xl font-semibold tracking-tighter text-primary">GOSHEN <span class="text-emerald">WEB X</span></div>
         </a>
 
-        <!-- Desktop Nav -->
-        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
+        <nav class="hidden xl:flex items-center gap-8 text-sm font-medium">
           <a href="index.html" class="hover:text-primary transition-colors">Home</a>
           <div class="group relative">
             <button class="flex items-center gap-1 hover:text-primary transition-colors">
@@ -71,23 +457,20 @@
           <a href="/blog.html" class="hover:text-primary transition-colors">Blog</a>
         </nav>
 
-        <!-- Language Switcher + CTA -->
-        <div class="hidden lg:flex items-center gap-6">
+        <div class="hidden xl:flex items-center gap-6">
           <div class="flex items-center text-sm font-medium">
             <a href="#" class="text-emerald font-semibold px-2">EN</a>
             <span class="text-gray-400 mx-1">/</span>
             <a href="/index-fr.html" class="hover:text-primary transition-colors px-2">FR</a>
           </div>
-
           <button onclick="openQuoteModal()"
             class="flex items-center gap-3 bg-primary hover:bg-emerald text-white font-semibold px-8 py-3.5 rounded-3xl transition-all shadow-lg shadow-emerald/30">
             Request a Free Quote <i class="fas fa-arrow-right"></i>
           </button>
         </div>
 
-        <!-- Hamburger -->
         <button id="hamburger"
-          class="lg:hidden text-4xl p-4 -mr-3 text-primary focus:outline-none active:scale-90 transition-transform">
+          class="xl:hidden text-4xl p-4 -mr-3 text-primary focus:outline-none active:scale-90 transition-transform">
           <i class="fas fa-bars"></i>
         </button>
       </div>
@@ -97,35 +480,30 @@
   <!-- Backdrop -->
   <div id="backdrop" class="hidden fixed inset-0 bg-black/60 z-[9998]"></div>
 
-  <!-- Right Slide-In Drawer -->
+  <!-- Side Drawer -->
   <div id="side-menu"
     class="fixed top-0 bottom-0 right-0 w-80 bg-white shadow-2xl translate-x-full transition-transform duration-300 z-[9999] overflow-y-auto">
     <div class="p-6">
       <button id="close-menu" class="float-right text-4xl text-gray-400 hover:text-primary">✕</button>
       <nav class="flex flex-col text-2xl font-medium mt-12 text-gray-800">
         <a href="index.html" class="py-5 border-b border-gray-100">Home</a>
-        
         <div class="border-b border-gray-100">
           <button onclick="toggleServicesDrawer()"
             class="w-full py-5 flex items-center justify-between hover:text-emerald text-2xl font-medium">
             Our Services
             <i id="drawer-chevron" class="fas fa-chevron-down text-xl transition-transform duration-300"></i>
           </button>
-          
-          <div id="drawer-services-submenu"
-            class="max-h-0 overflow-hidden transition-all duration-300 ease-out pl-8 pt-1 pb-4">
+          <div id="drawer-services-submenu" class="max-h-0 overflow-hidden transition-all duration-300 ease-out pl-8 pt-1 pb-4">
             <a href="/website-dev.html" class="block py-5 text-2xl hover:text-emerald transition-colors">Website Development</a>
             <a href="/web-optimisation.html" class="block py-5 text-2xl hover:text-emerald transition-colors">Web Optimisation and SEO</a>
             <a href="/portfolio.html" class="block py-5 text-2xl hover:text-emerald transition-colors">Portfolio Websites</a>
           </div>
         </div>
-
         <a href="/about.html" class="py-5 border-b border-gray-100">About Us</a>
         <a href="/portfolio.html" class="py-5 border-b border-gray-100">Portfolio</a>
         <a href="/pricing_guide.html" class="py-5 border-b border-gray-100">Pricing</a>
         <a href="/contact.html" class="py-5 border-b border-gray-100">Contact</a>
         <a href="/blog.html" class="py-5 border-b border-gray-100">Blog</a>
-        
         <div class="pt-8 border-t border-gray-100">
           <div class="flex items-center gap-3 text-xl font-medium">
             <a href="#" class="text-emerald font-semibold">EN</a>
@@ -137,400 +515,424 @@
     </div>
   </div>
 
-  <!-- HERO -->
-  <section id="home" class="min-h-screen relative flex items-center pt-20 overflow-hidden">
+  <!-- ============================================================ -->
+  <!-- HERO                                                         -->
+  <!-- ============================================================ -->
+  <section id="home" class="min-h-screen relative flex items-center pt-20 overflow-hidden grain-overlay">
     <div class="absolute inset-0 bg-[url('/images/hedro.jpg')] bg-cover bg-center bg-no-repeat"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-transparent"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/20"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10"></div>
 
-    <div class="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-12">
-      <div class="max-w-2xl">
-        <div class="mt-8 inline-flex items-center gap-3 bg-white/10 backdrop-blur-2xl border border-white/20 px-7 py-3.5 rounded-3xl text-sm font-medium text-white mb-10">
-          <span class="relative flex h-3 w-3">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald"></span>
+    <div class="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-12 w-full">
+      <div class="max-w-2xl py-12 lg:py-0">
+
+        <!-- Badge -->
+        <div id="hero-badge"
+          class="gwx-hero-item inline-flex items-center gap-3 bg-white/10 backdrop-blur-2xl border border-white/15 px-6 py-3 rounded-full text-xs font-semibold text-white/90 tracking-wider mb-10 uppercase">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-light opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald"></span>
           </span>
-          PROFESSIONAL WEB SOLUTIONS • CANADA & BEYOND
+          Professional Web Solutions · Canada &amp; Beyond
         </div>
 
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tighter leading-none text-white mb-8">
-          We build websites that don't just look good.<br>
-          <span class="text-emerald">They help your business flourish.</span>
+        <!-- Headline — typewriter target -->
+        <h1 id="hero-h1"
+          class="text-[2.75rem] md:text-[3.5rem] lg:text-[4.25rem] font-heading font-bold tracking-[-0.04em] leading-[1.05] text-white mb-7">
+          We create web solutions that drive growth<br />
+          <span class="text-emerald-light">for small businesses.</span>
         </h1>
 
-        <p class="text-xl md:text-2xl text-white/90 mb-12 max-w-md">
-          Bespoke websites, lightning-fast optimisation, and captivating portfolios crafted with strategy and care for
-          ambitious small businesses and entrepreneurs.
+        <!-- Subhead -->
+        <p id="hero-sub" class="gwx-hero-item text-lg md:text-xl text-white/80 mb-14 max-w-[26rem] leading-relaxed font-normal">
+          Bespoke websites, powerful web apps, and smart digital tools—crafted with strategy and care for ambitious small businesses and entrepreneurs.
         </p>
 
-        <div class="flex flex-col sm:flex-row gap-5">
+        <!-- CTAs -->
+        <div id="hero-ctas" class="gwx-hero-item flex flex-col sm:flex-row gap-4">
           <a href="/portfolio.html"
-            class="bg-white text-primary font-semibold px-10 py-6 rounded-3xl flex items-center gap-3 hover:bg-emerald hover:text-white transition-all text-lg shadow-xl">
-            Explore Our Portfolio →
+            class="shimmer-btn bg-white text-primary font-semibold px-10 py-5 rounded-full flex items-center justify-center gap-3 hover:bg-emerald hover:text-white transition-all text-base shadow-xl shadow-black/20">
+            Explore Our Portfolio
+            <i class="fas fa-arrow-right text-sm"></i>
           </a>
           <button onclick="openQuoteModal()"
-            class="mb-8 inline-block border-2 border-white/70 text-white hover:bg-white/10 font-medium px-10 py-6 rounded-3xl transition-all text-lg backdrop-blur-sm">
+            class="border-2 border-white/40 text-white hover:bg-white/10 hover:border-white/60 font-medium px-10 py-5 rounded-full transition-all text-base backdrop-blur-sm">
             Request a Free Consultation
           </button>
         </div>
       </div>
     </div>
 
-    <div class="hidden xl:block absolute bottom-20 right-12 bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl px-8 py-6 shadow-2xl">
-      <div class="flex items-center gap-4">
-        <div class="text-5xl">🌱</div>
-        <div>
-          <div class="font-bold text-white text-2xl">17+ happy clients</div>
-          <div class="text-emerald text-sm">Average 340% conversion growth</div>
-        </div>
+    <!-- Social proof chip -->
+    <div id="hero-chip"
+      class="gwx-slide-right hidden xl:flex absolute bottom-16 right-16 items-center gap-5 bg-white/10 backdrop-blur-2xl border border-white/15 rounded-2xl px-7 py-5 shadow-2xl">
+      <div class="w-14 h-14 rounded-xl bg-emerald/20 flex items-center justify-center text-3xl">🌱</div>
+      <div>
+        <div class="font-bold text-white text-xl tracking-tight">25+ happy clients</div>
+        <div class="text-emerald-light text-sm mt-0.5 font-medium">Average 340% conversion growth</div>
       </div>
     </div>
   </section>
 
-  <!-- INTRODUCING GOSHEN WEB X -->
-  <section class="py-24 bg-white">
-    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
+  <!-- ============================================================ -->
+  <!-- INTRODUCING GOSHEN WEB X                                     -->
+  <!-- ============================================================ -->
+  <section class="py-28 lg:py-36 bg-white">
+    <div class="max-w-screen-xl mx-auto px-6 lg:px-12">
+      <div class="grid lg:grid-cols-2 gap-20 items-center">
         <div>
-          <span class="uppercase text-emerald tracking-[3px] text-sm font-medium">Introducing Goshen Web X</span>
-          <h2 class="text-5xl font-heading font-bold tracking-tighter mt-4 leading-none text-primary">Where Strategy
-            Meets Elegant Design & Real Growth</h2>
-          <p class="mt-8 text-lg text-gray-600 max-w-lg">We craft digital experiences that transcend aesthetics — they
-            deliver exceptional performance, speed, and measurable results for your business.</p>
+          <span class="label-line gwx-fade-left uppercase text-emerald tracking-[3px] text-xs font-semibold">Introducing Goshen Web X</span>
+          <h2 class="text-4xl lg:text-5xl font-heading font-bold tracking-[-0.035em] mt-5 leading-[1.1] text-primary">
+            Where Strategy Meets Elegant Design &amp; Real Growth</h2>
+          <p class="mt-7 text-lg text-gray-500 max-w-md leading-relaxed">We craft digital experiences that transcend aesthetics — they deliver exceptional performance, speed, and measurable results for your business.</p>
 
-          <div class="mt-12 space-y-10">
-            <div class="flex gap-6">
-              <div
-                class="w-9 h-9 rounded-2xl bg-emerald flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
-                01</div>
+          <div class="mt-14 space-y-0">
+            <div class="flex gap-6 step-connector pb-10 gwx-fade-up">
+              <div class="w-9 h-9 rounded-xl bg-emerald flex items-center justify-center text-white text-xs font-bold flex-shrink-0 shadow-md shadow-emerald/25">01</div>
               <div>
-                <h4 class="font-semibold text-xl">Discovery and Planning</h4>
-                <p class="text-gray-500">We thoroughly analyse your business objectives and develop a comprehensive
-                  strategy tailored to your specific needs.</p>
+                <h4 class="font-semibold text-lg text-primary">Discovery and Planning</h4>
+                <p class="text-gray-500 mt-1.5 leading-relaxed text-[0.95rem]">We thoroughly analyse your business objectives and develop a comprehensive strategy tailored to your specific needs.</p>
               </div>
             </div>
-            <div class="flex gap-6">
-              <div
-                class="w-9 h-9 rounded-2xl bg-emerald flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
-                02</div>
+            <div class="flex gap-6 step-connector pb-10 gwx-fade-up" style="transition-delay:.1s">
+              <div class="w-9 h-9 rounded-xl bg-emerald flex items-center justify-center text-white text-xs font-bold flex-shrink-0 shadow-md shadow-emerald/25">02</div>
               <div>
-                <h4 class="font-semibold text-xl">Design and Development</h4>
-                <p class="text-gray-500">Pixel-perfect designs combined with high-performance code, customised to
-                  reflect your brand identity and target audience.</p>
+                <h4 class="font-semibold text-lg text-primary">Design and Development</h4>
+                <p class="text-gray-500 mt-1.5 leading-relaxed text-[0.95rem]">Pixel-perfect designs combined with high-performance code, customised to reflect your brand identity and target audience.</p>
               </div>
             </div>
-            <div class="flex gap-6">
-              <div
-                class="w-9 h-9 rounded-2xl bg-emerald flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
-                03</div>
+            <div class="flex gap-6 step-connector gwx-fade-up" style="transition-delay:.2s">
+              <div class="w-9 h-9 rounded-xl bg-emerald flex items-center justify-center text-white text-xs font-bold flex-shrink-0 shadow-md shadow-emerald/25">03</div>
               <div>
-                <h4 class="font-semibold text-xl">Launch and Ongoing Support</h4>
-                <p class="text-gray-500">We deploy your website and provide continuous support to ensure seamless
-                  operation and long-term success.</p>
+                <h4 class="font-semibold text-lg text-primary">Launch and Ongoing Support</h4>
+                <p class="text-gray-500 mt-1.5 leading-relaxed text-[0.95rem]">We deploy your website and provide continuous support to ensure seamless operation and long-term success.</p>
               </div>
             </div>
           </div>
+
           <button onclick="openQuoteModal()"
-            class="mt-12 inline-block bg-emerald hover:bg-primary text-white font-semibold px-10 py-5 rounded-3xl transition-all">Request
-            Your Free Quote →</button>
+            class="mt-14 inline-flex items-center gap-3 bg-emerald hover:bg-primary text-white font-semibold px-10 py-4.5 rounded-full transition-all shadow-lg shadow-emerald/20 text-[0.95rem]">
+            Request Your Free Quote
+            <i class="fas fa-arrow-right text-sm"></i>
+          </button>
         </div>
-        <div class="relative"><img src="/images/creative2.png" alt="Studio" class="shadow-2xl" /></div>
-      </div>
-    </div>
-  </section>
 
-  <!-- SERVICES -->
-  <section class="py-24 bg-soft">
-    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 text-center">
-      <span class="uppercase text-emerald tracking-widest text-sm font-medium">Our Offerings</span>
-      <h2 class="text-5xl font-heading font-bold tracking-tighter mt-2 text-primary">Services designed to drive
-        sustainable growth</h2>
-    </div>
-    <div class="grid md:grid-cols-3 gap-8 max-w-screen-2xl mx-auto px-6 lg:px-12 mt-12">
-      <div
-        class="md:bg-white bg-transparent md:rounded-3xl rounded-none overflow-hidden md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100">
-        <img src="/images/web_ilustr.jpg" alt="" class="w-full h-80 object-cover" />
-        <div class="p-8">
-          <h3 class="text-3xl font-semibold mb-3 text-primary">Website Development</h3>
-          <p class="text-gray-600">Bespoke, fully responsive websites engineered to transform visitors into loyal
-            clients.</p>
-          <a href="/website-dev.html" class="mt-6 inline-block text-emerald font-medium hover:text-primary">Learn more
-            →</a>
-        </div>
-      </div>
-      <div
-        class="md:bg-white bg-transparent md:rounded-3xl rounded-none overflow-hidden md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100">
-        <img src="/images/web_opt.jpg" alt="" class="w-full h-80 object-cover" />
-        <div class="p-8">
-          <h3 class="text-3xl font-semibold mb-3 text-primary">Web Optimisation and SEO</h3>
-          <p class="text-gray-600">Superior speed, search engine optimisation, and performance that position you
-            prominently on Google.</p>
-          <a href="/web-optimisation.html" class="mt-6 inline-block text-emerald font-medium hover:text-primary">Learn
-            more →</a>
-        </div>
-      </div>
-      <div
-        class="md:bg-white bg-transparent md:rounded-3xl rounded-none overflow-hidden md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100">
-        <img src="/images/portfolio.jpg" alt="" class="w-full h-80 object-cover" />
-        <div class="p-8">
-          <h3 class="text-3xl font-semibold mb-3 text-primary">Portfolio Websites</h3>
-          <p class="text-gray-600">Captivating personal and corporate portfolios that leave a lasting impression.</p>
-          <a href="/portfolio.html" class="mt-6 inline-block text-emerald font-medium hover:text-primary">Learn more
-            →</a>
+        <div class="relative" data-aos="fade-up" data-aos-delay="100">
+          <div class="rounded-3xl overflow-hidden shadow-2xl shadow-primary/10">
+            <img src="/images/creative2.png" alt="Studio" class="w-full h-auto" />
+          </div>
+          <div class="absolute -bottom-6 -left-6 w-24 h-24 border-2 border-emerald/15 rounded-2xl -z-10"></div>
+          <div class="absolute -top-6 -right-6 w-16 h-16 bg-emerald/5 rounded-xl -z-10"></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- STATS -->
-  <section id="stats" class="py-24 bg-white">
-    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
-      <div>
-        <div class="text-6xl font-bold text-emerald flex items-baseline justify-center gap-1">
-          <span class="counter font-mono tabular-nums" data-target="98">0</span>
-          <span class="text-3xl font-normal">%</span>
-        </div>
-        <div class="mt-3 text-gray-500">Average Lighthouse Score</div>
-      </div>
-      <div>
-        <div class="text-6xl font-bold text-emerald flex items-baseline justify-center gap-1">
-          <span class="counter font-mono tabular-nums" data-target="340">0</span>
-          <span class="text-3xl font-normal">%</span>
-        </div>
-        <div class="mt-3 text-gray-500">Average Conversion Rate Improvement</div>
-      </div>
-      <div>
-        <div class="text-6xl font-bold text-emerald">
-          <span class="counter font-mono tabular-nums" data-target="47">0</span>
-        </div>
-        <div class="mt-3 text-gray-500">Satisfied Clients</div>
-      </div>
-      <div>
-        <div class="text-6xl font-bold text-emerald flex items-baseline justify-center gap-1">
-          <span class="counter font-mono tabular-nums" data-target="98">0</span>
-          <span class="text-3xl font-normal">%</span>
-        </div>
-        <div class="mt-3 text-gray-500">Client Satisfaction Rate</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DEVELOPMENT TOOLS -->
-  <section class="py-24 bg-soft">
-    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
-      <div class="text-center mb-16">
-        <span class="uppercase text-emerald tracking-widest text-sm font-medium">TECHNOLOGY STACK</span>
-        <h2 class="text-5xl font-heading font-bold tracking-tighter mt-3 text-primary">Development Tools We Master</h2>
-        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">We build with modern, powerful, and reliable technologies to
-          deliver exceptional performance and scalability.</p>
+  <!-- ============================================================ -->
+  <!-- SERVICES                                                     -->
+  <!-- ============================================================ -->
+  <section class="py-28 lg:py-36 bg-soft relative">
+    <div class="max-w-screen-xl mx-auto px-6 lg:px-12">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="label-line gwx-fade-left uppercase text-emerald tracking-[3px] text-xs font-semibold justify-center">Our Offerings</span>
+        <h2 class="text-4xl lg:text-5xl font-heading font-bold tracking-[-0.035em] mt-5 text-primary leading-[1.1]">Services designed to drive sustainable growth</h2>
+        <p class="mt-5 text-gray-500 text-lg leading-relaxed">From initial concept to ongoing success — we cover every angle of your digital presence.</p>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-        <div
-          class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-6 md:p-8 md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100 group">
-          <div class="text-5xl mb-6 text-[#1572B6]"><i class="fab fa-css3-alt"></i></div>
-          <h4 class="font-semibold text-2xl mb-3 text-primary">CSS3</h4>
-          <p class="text-gray-600 leading-relaxed text-sm md:text-base">Advanced styling for modern, responsive, and
-            visually stunning front-end designs.</p>
+      <div class="grid md:grid-cols-3 gap-7">
+        <div class="card-glow bg-white rounded-3xl overflow-hidden border border-gray-100/80 group" data-aos="fade-up">
+          <div class="overflow-hidden">
+            <img src="/images/web_ilustr.jpg" alt="Website Development" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105" />
+          </div>
+          <div class="p-7 pb-8">
+            <h3 class="text-2xl font-heading font-semibold mb-2.5 text-primary tracking-tight">Website Development</h3>
+            <p class="text-gray-500 leading-relaxed text-[0.95rem]">Bespoke, fully responsive websites engineered to transform visitors into loyal clients.</p>
+            <a href="/website-dev.html" class="mt-5 inline-flex items-center gap-2 text-emerald font-semibold text-sm hover:text-primary transition-colors group/link">
+              Learn more <i class="fas fa-arrow-right text-xs transition-transform group-hover/link:translate-x-1"></i>
+            </a>
+          </div>
         </div>
-        <div
-          class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-6 md:p-8 md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100 group">
-          <div class="text-5xl mb-6 text-[#787CB5]"><i class="fab fa-php"></i></div>
-          <h4 class="font-semibold text-2xl mb-3 text-primary">PHP 8</h4>
-          <p class="text-gray-600 leading-relaxed text-sm md:text-base">Powerful server-side scripting for fast, secure,
-            and scalable back-end applications.</p>
+        <div class="card-glow bg-white rounded-3xl overflow-hidden border border-gray-100/80 group" data-aos="fade-up" data-aos-delay="100">
+          <div class="overflow-hidden">
+            <img src="/images/web_opt.jpg" alt="Web Optimisation and SEO" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105" />
+          </div>
+          <div class="p-7 pb-8">
+            <h3 class="text-2xl font-heading font-semibold mb-2.5 text-primary tracking-tight">Web Optimisation &amp; SEO</h3>
+            <p class="text-gray-500 leading-relaxed text-[0.95rem]">Superior speed, search engine optimisation, and performance that position you prominently on Google.</p>
+            <a href="/web-optimisation.html" class="mt-5 inline-flex items-center gap-2 text-emerald font-semibold text-sm hover:text-primary transition-colors group/link">
+              Learn more <i class="fas fa-arrow-right text-xs transition-transform group-hover/link:translate-x-1"></i>
+            </a>
+          </div>
         </div>
-        <div
-          class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-6 md:p-8 md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100 group">
-          <div class="text-5xl mb-6 text-[#FF9900]"><i class="fab fa-aws"></i></div>
-          <h4 class="font-semibold text-2xl mb-3 text-primary">AWS</h4>
-          <p class="text-gray-600 leading-relaxed text-sm md:text-base">Cloud infrastructure for secure, reliable, and
-            scalable web hosting and services.</p>
-        </div>
-        <div
-          class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-6 md:p-8 md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100 group">
-          <div class="text-5xl mb-6 text-[#FFCA28]"><i class="fas fa-fire"></i></div>
-          <h4 class="font-semibold text-2xl mb-3 text-primary">Firebase</h4>
-          <p class="text-gray-600 leading-relaxed text-sm md:text-base">Real-time database and authentication for
-            dynamic, user-focused applications.</p>
-        </div>
-        <div
-          class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-6 md:p-8 md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100 group">
-          <div class="text-5xl mb-6 text-[#4479A1]"><i class="fas fa-database"></i></div>
-          <h4 class="font-semibold text-2xl mb-3 text-primary">MySQL</h4>
-          <p class="text-gray-600 leading-relaxed text-sm md:text-base">Reliable relational database for structured data
-            and high-performance queries.</p>
-        </div>
-        <div
-          class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-6 md:p-8 md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100 group">
-          <div class="text-5xl mb-6 text-[#F7DF1E]"><i class="fab fa-js"></i></div>
-          <h4 class="font-semibold text-2xl mb-3 text-primary">JavaScript</h4>
-          <p class="text-gray-600 leading-relaxed text-sm md:text-base">Modern client-side scripting for interactive,
-            dynamic, and responsive user interfaces.</p>
-        </div>
-        <div
-          class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-6 md:p-8 md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100 group">
-          <div class="text-5xl mb-6 text-emerald"><i class="fas fa-plug"></i></div>
-          <h4 class="font-semibold text-2xl mb-3 text-primary">RESTful API</h4>
-          <p class="text-gray-600 leading-relaxed text-sm md:text-base">Seamless communication between front-end and
-            back-end for dynamic functionality.</p>
-        </div>
-        <div
-          class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-6 md:p-8 md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100 group">
-          <div class="text-5xl mb-6 text-[#95BF46]"><i class="fab fa-shopify"></i></div>
-          <h4 class="font-semibold text-2xl mb-3 text-primary">Shopify</h4>
-          <p class="text-gray-600 leading-relaxed text-sm md:text-base">Powerful e-commerce platform for building,
-            customizing, and managing online stores with ease.</p>
+        <div class="card-glow bg-white rounded-3xl overflow-hidden border border-gray-100/80 group" data-aos="fade-up" data-aos-delay="200">
+          <div class="overflow-hidden">
+            <img src="/images/portfolio.jpg" alt="Portfolio Websites" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105" />
+          </div>
+          <div class="p-7 pb-8">
+            <h3 class="text-2xl font-heading font-semibold mb-2.5 text-primary tracking-tight">Portfolio Websites</h3>
+            <p class="text-gray-500 leading-relaxed text-[0.95rem]">Captivating personal and corporate portfolios that leave a lasting impression.</p>
+            <a href="/portfolio.html" class="mt-5 inline-flex items-center gap-2 text-emerald font-semibold text-sm hover:text-primary transition-colors group/link">
+              Learn more <i class="fas fa-arrow-right text-xs transition-transform group-hover/link:translate-x-1"></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PORTFOLIO -->
-  <section id="work" class="py-24 bg-white">
-    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
-      <div class="text-center mb-12">
-        <span class="text-emerald text-sm tracking-widest font-medium">TANGIBLE RESULTS</span>
-        <h2 class="text-5xl font-heading font-bold tracking-tighter mt-3 text-primary">Our Recent Projects</h2>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        <a href="https://rcmchurch.netlify.app/"
-          class="group block md:bg-white bg-transparent md:rounded-3xl rounded-none overflow-hidden md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100">
-          <img src="/images/rcm.jpg" class="w-full h-80 object-cover transition-transform group-hover:scale-105"
-            alt="RCM Church Website">
-          <div class="p-8">
-            <p class="font-semibold text-primary">RCM Church</p>
-            <p class="text-sm text-gray-500 mt-2">Modern church website • Events, sermons & community information</p>
+  <!-- ============================================================ -->
+  <!-- STATS                                                        -->
+  <!-- ============================================================ -->
+  <section id="stats" class="py-24 lg:py-28 bg-white">
+    <div class="max-w-screen-lg mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
+        <div class="text-center" data-aos="fade-up">
+          <div class="text-5xl lg:text-6xl font-bold text-emerald flex items-baseline justify-center gap-0.5 font-heading">
+            <span class="counter font-mono tabular-nums" data-target="98">0</span>
+            <span class="text-2xl lg:text-3xl font-normal text-emerald/60">%</span>
           </div>
-        </a>
-        <a href="https://feastofafrica.netlify.app/"
-          class="group block md:bg-white bg-transparent md:rounded-3xl rounded-none overflow-hidden md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100">
-          <img src="/images/FOA.jpg" class="w-full h-80 object-cover transition-transform group-hover:scale-105"
-            alt="Restaurant Project">
-          <div class="p-8">
-            <p class="font-semibold text-primary">Restaurant Brand Design & Experience Project</p>
+          <div class="mt-3 text-gray-400 text-sm font-medium tracking-wide uppercase">Lighthouse Score</div>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="80">
+          <div class="text-5xl lg:text-6xl font-bold text-emerald flex items-baseline justify-center gap-0.5 font-heading">
+            <span class="counter font-mono tabular-nums" data-target="340">0</span>
+            <span class="text-2xl lg:text-3xl font-normal text-emerald/60">%</span>
           </div>
-        </a>
-        <a href="http://cliniquedepodologielilibethhuertas.com/"
-          class="group block md:bg-white bg-transparent md:rounded-3xl rounded-none overflow-hidden md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100">
-          <img src="/images/clinic.jpg" class="w-full h-80 object-cover transition-transform group-hover:scale-105"
-            alt="Podology Clinic Website">
-          <div class="p-8">
-            <p class="font-semibold text-primary">Podology Clinic</p>
-            <p class="text-sm text-gray-500 mt-2">Professional clinic website • Services, appointments & patient
-              information</p>
+          <div class="mt-3 text-gray-400 text-sm font-medium tracking-wide uppercase">Conversion Growth</div>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="160">
+          <div class="text-5xl lg:text-6xl font-bold text-emerald font-heading">
+            <span class="counter font-mono tabular-nums" data-target="47">0</span>
           </div>
-        </a>
-      </div>
-      <div class="mt-12 text-center">
-        <a href="/portfolio.html"
-          class="bg-primary hover:bg-emerald text-white font-semibold px-10 py-5 rounded-3xl transition-all">View More
-          Projects →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CLIENT TESTIMONIALS -->
-  <section class="py-24 bg-soft">
-    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
-      <div class="flex justify-center mb-12">
-        <div class="inline-flex items-center gap-4">
-          <span class="text-emerald uppercase tracking-widest text-sm font-medium">Client Testimonials</span>
-          <div class="h-px w-12 bg-emerald/30"></div>
+          <div class="mt-3 text-gray-400 text-sm font-medium tracking-wide uppercase">Satisfied Clients</div>
         </div>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div
-          class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-8 md:shadow border-transparent md:border border-gray-100">
-          <h3 class="text-4xl font-bold tracking-tighter leading-none mb-6 text-primary">"Achieving Success Together"
-          </h3>
-          <p class="text-gray-600 text-lg">"Goshen Web X has proven to be the ideal partner for our business. We have
-            already observed remarkable results."</p>
-          <p class="mt-8 text-sm text-gray-500">- Issac A., Small Business Owner</p>
-        </div>
-        <div
-          class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-8 md:shadow border-transparent md:border border-gray-100">
-          <h3 class="text-4xl font-bold tracking-tighter leading-none mb-6 text-primary">"Transformative Service"</h3>
-          <p class="text-gray-600 text-lg">"Words cannot adequately express my gratitude for the exceptional web design
-            services provided. The results have been truly transformative. I highly recommend their expertise."</p>
-          <p class="mt-8 text-sm text-gray-500">- Daniel K., Entrepreneur</p>
-        </div>
-        <div
-          class="md:bg-white bg-transparent md:rounded-3xl rounded-none p-8 md:shadow border-transparent md:border border-gray-100">
-          <h3 class="text-4xl font-bold tracking-tighter leading-none mb-6 text-primary">"Superior Digital Presence"
-          </h3>
-          <p class="text-gray-600 text-lg">"The service provided by Goshen Web X is unparalleled. They deliver
-            exceptional design and measurable results. We are proud to collaborate with them."</p>
-          <p class="mt-8 text-sm text-gray-500">- Lilibeth H., Founder</p>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="240">
+          <div class="text-5xl lg:text-6xl font-bold text-emerald flex items-baseline justify-center gap-0.5 font-heading">
+            <span class="counter font-mono tabular-nums" data-target="98">0</span>
+            <span class="text-2xl lg:text-3xl font-normal text-emerald/60">%</span>
+          </div>
+          <div class="mt-3 text-gray-400 text-sm font-medium tracking-wide uppercase">Satisfaction Rate</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BLOG -->
-  <section class="py-24 bg-white">
-    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
-      <div class="text-center mb-12">
-        <span class="uppercase text-emerald tracking-widest text-sm font-medium">Our Latest Insights</span>
-        <h2 class="text-5xl font-heading font-bold tracking-tighter mt-3 text-primary">Blog & Insights</h2>
+  <!-- ============================================================ -->
+  <!-- TECHNOLOGY STACK                                             -->
+  <!-- ============================================================ -->
+  <section class="py-28 lg:py-36 bg-soft">
+    <div class="max-w-screen-xl mx-auto px-6 lg:px-12">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="label-line gwx-fade-left uppercase text-emerald tracking-[3px] text-xs font-semibold justify-center">Technology Stack</span>
+        <h2 class="text-4xl lg:text-5xl font-heading font-bold tracking-[-0.035em] mt-5 text-primary leading-[1.1]">Development Tools We Master</h2>
+        <p class="text-gray-500 mt-5 text-lg leading-relaxed">We build with modern, powerful, and reliable technologies to deliver exceptional performance and scalability.</p>
       </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <a href="/articles/SEO-strategies-for-small-business-growth-in-2026.html"
-          class="group block md:bg-white bg-transparent md:rounded-3xl rounded-none overflow-hidden md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100">
-          <img src="/images/web_opt.jpg" alt=""
-            class="w-full h-48 object-cover transition-transform group-hover:scale-105">
-          <div class="p-6">
-            <p class="text-xs text-gray-500 mb-2">07 Sep 2025</p>
-            <h4 class="font-semibold text-lg leading-tight mb-3 text-primary">SEO Strategies for Small Business Growth
-              in 2026</h4>
+
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="card-glow bg-white rounded-2xl p-7 border border-gray-100/80 group" data-aos="fade-up">
+          <div class="tech-icon text-4xl mb-5 text-[#1572B6]"><i class="fab fa-css3-alt"></i></div>
+          <h4 class="font-semibold text-lg mb-2 text-primary font-heading">CSS3</h4>
+          <p class="text-gray-500 leading-relaxed text-sm">Advanced styling for modern, responsive, and visually stunning front-end designs.</p>
+        </div>
+        <div class="card-glow bg-white rounded-2xl p-7 border border-gray-100/80 group" data-aos="fade-up" data-aos-delay="50">
+          <div class="tech-icon text-4xl mb-5 text-[#787CB5]"><i class="fab fa-php"></i></div>
+          <h4 class="font-semibold text-lg mb-2 text-primary font-heading">PHP 8</h4>
+          <p class="text-gray-500 leading-relaxed text-sm">Powerful server-side scripting for fast, secure, and scalable back-end applications.</p>
+        </div>
+        <div class="card-glow bg-white rounded-2xl p-7 border border-gray-100/80 group" data-aos="fade-up" data-aos-delay="100">
+          <div class="tech-icon text-4xl mb-5 text-[#FF9900]"><i class="fab fa-aws"></i></div>
+          <h4 class="font-semibold text-lg mb-2 text-primary font-heading">AWS</h4>
+          <p class="text-gray-500 leading-relaxed text-sm">Cloud infrastructure for secure, reliable, and scalable web hosting and services.</p>
+        </div>
+        <div class="card-glow bg-white rounded-2xl p-7 border border-gray-100/80 group" data-aos="fade-up" data-aos-delay="150">
+          <div class="tech-icon text-4xl mb-5 text-[#FFCA28]"><i class="fas fa-fire"></i></div>
+          <h4 class="font-semibold text-lg mb-2 text-primary font-heading">Firebase</h4>
+          <p class="text-gray-500 leading-relaxed text-sm">Real-time database and authentication for dynamic, user-focused applications.</p>
+        </div>
+        <div class="card-glow bg-white rounded-2xl p-7 border border-gray-100/80 group" data-aos="fade-up" data-aos-delay="200">
+          <div class="tech-icon text-4xl mb-5 text-[#4479A1]"><i class="fas fa-database"></i></div>
+          <h4 class="font-semibold text-lg mb-2 text-primary font-heading">MySQL</h4>
+          <p class="text-gray-500 leading-relaxed text-sm">Reliable relational database for structured data and high-performance queries.</p>
+        </div>
+        <div class="card-glow bg-white rounded-2xl p-7 border border-gray-100/80 group" data-aos="fade-up" data-aos-delay="250">
+          <div class="tech-icon text-4xl mb-5 text-[#F7DF1E]"><i class="fab fa-js"></i></div>
+          <h4 class="font-semibold text-lg mb-2 text-primary font-heading">JavaScript</h4>
+          <p class="text-gray-500 leading-relaxed text-sm">Modern client-side scripting for interactive, dynamic, and responsive user interfaces.</p>
+        </div>
+        <div class="card-glow bg-white rounded-2xl p-7 border border-gray-100/80 group" data-aos="fade-up" data-aos-delay="300">
+          <div class="tech-icon text-4xl mb-5 text-emerald"><i class="fas fa-plug"></i></div>
+          <h4 class="font-semibold text-lg mb-2 text-primary font-heading">RESTful API</h4>
+          <p class="text-gray-500 leading-relaxed text-sm">Seamless communication between front-end and back-end for dynamic functionality.</p>
+        </div>
+        <div class="card-glow bg-white rounded-2xl p-7 border border-gray-100/80 group" data-aos="fade-up" data-aos-delay="350">
+          <div class="tech-icon text-4xl mb-5 text-[#95BF46]"><i class="fab fa-shopify"></i></div>
+          <h4 class="font-semibold text-lg mb-2 text-primary font-heading">Shopify</h4>
+          <p class="text-gray-500 leading-relaxed text-sm">Powerful e-commerce platform for building, customizing, and managing online stores.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- PORTFOLIO                                                    -->
+  <!-- ============================================================ -->
+  <section id="work" class="py-28 lg:py-36 bg-white">
+    <div class="max-w-screen-xl mx-auto px-6 lg:px-12">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="label-line gwx-fade-left uppercase text-emerald tracking-[3px] text-xs font-semibold justify-center">Tangible Results</span>
+        <h2 class="text-4xl lg:text-5xl font-heading font-bold tracking-[-0.035em] mt-5 text-primary leading-[1.1]">Our Recent Projects</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-7">
+        <a href="https://rcmchurch.netlify.app/" class="card-glow group block bg-white rounded-3xl overflow-hidden border border-gray-100/80" data-aos="fade-up">
+          <div class="portfolio-overlay overflow-hidden">
+            <img src="/images/rcm.jpg" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105" alt="RCM Church Website">
+          </div>
+          <div class="p-7">
+            <p class="font-heading font-semibold text-lg text-primary tracking-tight">RCM Church</p>
+            <p class="text-sm text-gray-400 mt-1.5">Modern church website · Events, sermons &amp; community information</p>
           </div>
         </a>
-        <a href="/articles/how-to-choose-the-perfect-website-for-your-business.html"
-          class="group block md:bg-white bg-transparent md:rounded-3xl rounded-none overflow-hidden md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100">
-          <img src="/images/portfolio.jpg" alt=""
-            class="w-full h-48 object-cover transition-transform group-hover:scale-105">
-          <div class="p-6">
-            <p class="text-xs text-gray-500 mb-2">15 Sep 2025</p>
-            <h4 class="font-semibold text-lg leading-tight mb-3 text-primary">Top 5 Web Design Trends Every Small
-              Business Should Know</h4>
+        <a href="https://wokovuway.org/" class="card-glow group block bg-white rounded-3xl overflow-hidden border border-gray-100/80" data-aos="fade-up" data-aos-delay="100">
+          <div class="portfolio-overlay overflow-hidden">
+            <img src="/images/wokovu-way-org.png" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105" alt="Non-Profit Project">
+          </div>
+          <div class="p-7">
+            <p class="font-heading font-semibold text-lg text-primary tracking-tight">Non-Profit Organization Website</p>
+            <p class="text-sm text-gray-400 mt-1.5">Full branding and digital experience design for a non-profit organization</p>
           </div>
         </a>
-        <a href="/articles/how-to-choose-the-perfect-website-for-your-business.html"
-          class="group block md:bg-white bg-transparent md:rounded-3xl rounded-none overflow-hidden md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100">
-          <img src="/images/web_ilustr.jpg" alt=""
-            class="w-full h-48 object-cover transition-transform group-hover:scale-105">
-          <div class="p-6">
-            <p class="text-xs text-gray-500 mb-2">22 Sep 2025</p>
-            <h4 class="font-semibold text-lg leading-tight mb-3 text-primary">How to Choose the Perfect Website for Your
-              Business</h4>
+        <a href="http://cliniquedepodologielilibethhuertas.com/" class="card-glow group block bg-white rounded-3xl overflow-hidden border border-gray-100/80" data-aos="fade-up" data-aos-delay="200">
+          <div class="portfolio-overlay overflow-hidden">
+            <img src="/images/clinic.jpg" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105" alt="Podology Clinic Website">
+          </div>
+          <div class="p-7">
+            <p class="font-heading font-semibold text-lg text-primary tracking-tight">Podology Clinic</p>
+            <p class="text-sm text-gray-400 mt-1.5">Professional clinic website · Services, appointments &amp; patient information</p>
           </div>
         </a>
-        <a href="/articles/why-speed-matters.html"
-          class="group block md:bg-white bg-transparent md:rounded-3xl rounded-none overflow-hidden md:shadow hover:md:shadow-xl hover:-translate-y-2 transition-all md:border border-transparent md:border-gray-100">
-          <img src="/images/14622.jpg" alt=""
-            class="w-full h-48 object-cover transition-transform group-hover:scale-105">
-          <div class="p-6">
-            <p class="text-xs text-gray-500 mb-2">01 Oct 2025</p>
-            <h4 class="font-semibold text-lg leading-tight mb-3 text-primary">Why Speed Matters: Core Web Vitals
-              Explained</h4>
+      </div>
+
+      <div class="mt-14 text-center">
+        <a href="/portfolio.html" class="inline-flex items-center gap-3 bg-primary hover:bg-emerald text-white font-semibold px-10 py-4.5 rounded-full transition-all shadow-lg shadow-primary/15 text-[0.95rem]">
+          View More Projects <i class="fas fa-arrow-right text-sm"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- TESTIMONIALS                                                 -->
+  <!-- ============================================================ -->
+  <section class="py-28 lg:py-36 bg-soft">
+    <div class="max-w-screen-xl mx-auto px-6 lg:px-12">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="label-line gwx-fade-left uppercase text-emerald tracking-[3px] text-xs font-semibold justify-center">Client Testimonials</span>
+        <h2 class="text-4xl lg:text-5xl font-heading font-bold tracking-[-0.035em] mt-5 text-primary leading-[1.1]">What Our Clients Say</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-7">
+        <div class="card-glow bg-white rounded-3xl p-8 lg:p-9 border border-gray-100/80 relative quote-accent" data-aos="fade-up">
+          <div class="flex mb-4 text-emerald text-sm gap-0.5">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <h3 class="text-2xl font-bold tracking-tight leading-tight mb-5 text-primary font-heading">"Achieving Success Together"</h3>
+          <p class="text-gray-500 text-[0.95rem] leading-relaxed">"Goshen Web X has proven to be the ideal partner for our business. We have already observed remarkable results."</p>
+          <div class="mt-8 pt-6 border-t border-gray-100 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-emerald/10 flex items-center justify-center text-emerald font-bold text-sm">IA</div>
+            <div>
+              <p class="text-sm font-semibold text-primary">Issac A.</p>
+              <p class="text-xs text-gray-400">Small Business Owner</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-glow bg-white rounded-3xl p-8 lg:p-9 border border-gray-100/80 relative quote-accent" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex mb-4 text-emerald text-sm gap-0.5">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <h3 class="text-2xl font-bold tracking-tight leading-tight mb-5 text-primary font-heading">"Transformative Service"</h3>
+          <p class="text-gray-500 text-[0.95rem] leading-relaxed">"Words cannot adequately express my gratitude for the exceptional web design services provided. The results have been truly transformative."</p>
+          <div class="mt-8 pt-6 border-t border-gray-100 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-emerald/10 flex items-center justify-center text-emerald font-bold text-sm">DK</div>
+            <div>
+              <p class="text-sm font-semibold text-primary">Daniel K.</p>
+              <p class="text-xs text-gray-400">Entrepreneur</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-glow bg-white rounded-3xl p-8 lg:p-9 border border-gray-100/80 relative quote-accent" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex mb-4 text-emerald text-sm gap-0.5">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <h3 class="text-2xl font-bold tracking-tight leading-tight mb-5 text-primary font-heading">"Superior Digital Presence"</h3>
+          <p class="text-gray-500 text-[0.95rem] leading-relaxed">"The service provided by Goshen Web X is unparalleled. They deliver exceptional design and measurable results."</p>
+          <div class="mt-8 pt-6 border-t border-gray-100 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-emerald/10 flex items-center justify-center text-emerald font-bold text-sm">LH</div>
+            <div>
+              <p class="text-sm font-semibold text-primary">Lilibeth H.</p>
+              <p class="text-xs text-gray-400">Founder</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- BLOG                                                         -->
+  <!-- ============================================================ -->
+  <section class="py-28 lg:py-36 bg-white">
+    <div class="max-w-screen-xl mx-auto px-6 lg:px-12">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="label-line gwx-fade-left uppercase text-emerald tracking-[3px] text-xs font-semibold justify-center">Our Latest Insights</span>
+        <h2 class="text-4xl lg:text-5xl font-heading font-bold tracking-[-0.035em] mt-5 text-primary leading-[1.1]">Blog &amp; Insights</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <a href="/articles/SEO-strategies-for-small-business-growth-in-2026.html" class="card-glow group block bg-white rounded-2xl overflow-hidden border border-gray-100/80" data-aos="fade-up">
+          <div class="overflow-hidden relative">
+            <img src="/images/web_opt.jpg" alt="SEO Strategies" class="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-105">
+            <span class="date-pill absolute top-3 left-3 px-3 py-1 rounded-full text-[0.65rem] font-semibold text-primary/80 uppercase tracking-wider">07 Sep 2025</span>
+          </div>
+          <div class="p-5 pb-6">
+            <h4 class="font-heading font-semibold text-[0.95rem] leading-snug text-primary tracking-tight">SEO Strategies for Small Business Growth in 2026</h4>
+          </div>
+        </a>
+        <a href="/articles/how-to-choose-the-perfect-website-for-your-business.html" class="card-glow group block bg-white rounded-2xl overflow-hidden border border-gray-100/80" data-aos="fade-up" data-aos-delay="80">
+          <div class="overflow-hidden relative">
+            <img src="/images/portfolio.jpg" alt="Web Design Trends" class="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-105">
+            <span class="date-pill absolute top-3 left-3 px-3 py-1 rounded-full text-[0.65rem] font-semibold text-primary/80 uppercase tracking-wider">15 Sep 2025</span>
+          </div>
+          <div class="p-5 pb-6">
+            <h4 class="font-heading font-semibold text-[0.95rem] leading-snug text-primary tracking-tight">Top 5 Web Design Trends Every Small Business Should Know</h4>
+          </div>
+        </a>
+        <a href="/articles/how-to-choose-the-perfect-website-for-your-business.html" class="card-glow group block bg-white rounded-2xl overflow-hidden border border-gray-100/80" data-aos="fade-up" data-aos-delay="160">
+          <div class="overflow-hidden relative">
+            <img src="/images/web_ilustr.jpg" alt="Choosing Website" class="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-105">
+            <span class="date-pill absolute top-3 left-3 px-3 py-1 rounded-full text-[0.65rem] font-semibold text-primary/80 uppercase tracking-wider">22 Sep 2025</span>
+          </div>
+          <div class="p-5 pb-6">
+            <h4 class="font-heading font-semibold text-[0.95rem] leading-snug text-primary tracking-tight">How to Choose the Perfect Website for Your Business</h4>
+          </div>
+        </a>
+        <a href="/articles/why-speed-matters.html" class="card-glow group block bg-white rounded-2xl overflow-hidden border border-gray-100/80" data-aos="fade-up" data-aos-delay="240">
+          <div class="overflow-hidden relative">
+            <img src="/images/14622.jpg" alt="Speed Matters" class="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-105">
+            <span class="date-pill absolute top-3 left-3 px-3 py-1 rounded-full text-[0.65rem] font-semibold text-primary/80 uppercase tracking-wider">01 Oct 2025</span>
+          </div>
+          <div class="p-5 pb-6">
+            <h4 class="font-heading font-semibold text-[0.95rem] leading-snug text-primary tracking-tight">Why Speed Matters: Core Web Vitals Explained</h4>
           </div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- FLOATING WHATSAPP -->
-  <a href="https://wa.me/15811234567" target="_blank"
-    class="fixed bottom-8 right-8 w-16 h-16 bg-emerald hover:bg-primary rounded-full flex items-center justify-center shadow-2xl transition-all z-50">
-    <i class="fab fa-whatsapp text-4xl text-white"></i>
-  </a>
 
-  <!-- DYNAMIC FREE QUOTE MODAL - MOBILE OPTIMIZED (slightly smaller) -->
-  <div id="quote-modal" class="hidden fixed inset-0 z-[10000] flex items-center justify-center p-4 bg-black/70">
-    <div onclick="event.stopImmediatePropagation()" 
-         class="bg-white rounded-3xl max-w-md w-full shadow-2xl overflow-hidden">
-      
-      <!-- Modal Header - reduced top padding -->
+  <!-- QUOTE MODAL -->
+  <div id="quote-modal" class="fixed inset-0 z-[10000] items-center justify-center p-4 bg-black/70">
+    <div onclick="event.stopImmediatePropagation()" class="bg-white rounded-3xl max-w-md w-full shadow-2xl overflow-hidden">
       <div class="px-6 pt-6 pb-4 border-b flex items-center justify-between">
         <div>
           <div class="inline-flex items-center gap-2 bg-emerald/10 text-emerald px-4 py-1.5 rounded-3xl text-xs font-medium">FREE • NO OBLIGATION</div>
@@ -538,32 +940,25 @@
         </div>
         <button onclick="closeQuoteModal()" class="text-3xl leading-none text-gray-400 hover:text-gray-600">✕</button>
       </div>
-
-      <div class="p-6"> <!-- reduced from p-8 -->
+      <div class="p-6">
         <p class="text-gray-600 text-center mb-8">Share a few details about your project and get a personalized quote in under 24 hours.</p>
-        
-        <!-- FORM -->
         <form id="quote-form" class="space-y-6">
           <div class="grid grid-cols-1 gap-6">
             <div>
               <label class="block text-sm font-medium mb-2 text-gray-700">Your Full Name</label>
-              <input type="text" id="name" required 
-                     class="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:border-emerald focus:ring-0 outline-none transition-all">
+              <input type="text" id="name" required class="w-full px-6 py-4 border border-gray-200 rounded-2xl outline-none transition-all">
             </div>
             <div>
               <label class="block text-sm font-medium mb-2 text-gray-700">Business Email</label>
-              <input type="email" id="email" required 
-                     class="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:border-emerald focus:ring-0 outline-none transition-all">
+              <input type="email" id="email" required class="w-full px-6 py-4 border border-gray-200 rounded-2xl outline-none transition-all">
             </div>
             <div>
               <label class="block text-sm font-medium mb-2 text-gray-700">Phone Number (optional)</label>
-              <input type="tel" id="phone" 
-                     class="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:border-emerald focus:ring-0 outline-none transition-all">
+              <input type="tel" id="phone" class="w-full px-6 py-4 border border-gray-200 rounded-2xl outline-none transition-all">
             </div>
             <div>
               <label class="block text-sm font-medium mb-2 text-gray-700">Service You're Interested In</label>
-              <select id="service" required 
-                      class="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:border-emerald focus:ring-0 outline-none transition-all bg-white">
+              <select id="service" required class="w-full px-6 py-4 border border-gray-200 rounded-2xl outline-none transition-all bg-white">
                 <option value="">Select a service...</option>
                 <option value="Website Development">Website Development</option>
                 <option value="Web Optimisation & SEO">Web Optimisation & SEO</option>
@@ -573,31 +968,81 @@
             </div>
             <div>
               <label class="block text-sm font-medium mb-2 text-gray-700">Brief Project Description</label>
-              <textarea id="description" rows="4" required placeholder="E.g. I need a modern e-commerce site for my boutique in Québec..." 
-                        class="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:border-emerald focus:ring-0 outline-none transition-all resize-y"></textarea>
+              <textarea id="description" rows="4" required placeholder="E.g. I need a modern e-commerce site for my boutique in Québec..."
+                class="w-full px-6 py-4 border border-gray-200 rounded-2xl outline-none transition-all resize-y"></textarea>
             </div>
           </div>
-
-          <!-- SUBMIT BUTTON - slightly smaller -->
-          <button type="submit" 
-            class="w-full mt-4 bg-emerald hover:bg-primary transition-all text-white font-semibold py-4 rounded-3xl text-base flex items-center justify-center gap-3 shadow-lg shadow-emerald/30">
+          <button type="submit" class="w-full mt-4 bg-emerald hover:bg-primary transition-all text-white font-semibold py-4 rounded-3xl text-base flex items-center justify-center gap-3 shadow-lg shadow-emerald/30">
             Send My Free Quote Request <i class="fas fa-arrow-right"></i>
           </button>
         </form>
-
-        <!-- SUCCESS MESSAGE -->
         <div id="quote-success" class="hidden text-center py-12">
           <div class="mx-auto w-16 h-16 bg-emerald/10 rounded-2xl flex items-center justify-center text-5xl mb-6">🎉</div>
           <h4 class="font-heading text-3xl font-semibold text-primary">Thank You!</h4>
           <p class="text-gray-600 mt-3 max-w-xs mx-auto">Your request has been received. Our team will contact you shortly with a tailored quote.</p>
-          <button onclick="closeQuoteModal()" 
-            class="mt-8 px-10 py-3.5 bg-primary hover:bg-emerald text-white rounded-3xl font-medium transition-all">
-            Back to site
-          </button>
+          <button onclick="closeQuoteModal()" class="mt-8 px-10 py-3.5 bg-primary hover:bg-emerald text-white rounded-3xl font-medium transition-all">Back to site</button>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- ============================================================ -->
+  <!-- CAREERS                                                      -->
+  <!-- ============================================================ -->
+  <section id="careers" class="py-28 lg:py-36 bg-soft relative">
+    <div class="max-w-screen-xl mx-auto px-6 lg:px-12">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="label-line gwx-fade-left uppercase text-emerald tracking-[3px] text-xs font-semibold justify-center">Join Our Mission</span>
+        <h2 class="text-4xl lg:text-5xl font-heading font-bold tracking-[-0.035em] mt-5 text-primary leading-[1.1]">Careers &amp; Volunteer Opportunities</h2>
+        <p class="mt-5 text-gray-500 text-lg leading-relaxed">Grow with us. Whether you seek a career or wish to contribute your skills, we have a place for you.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="card-glow bg-white rounded-3xl overflow-hidden border border-gray-100/80 group transition-all hover:shadow-xl" data-aos="fade-up" data-aos-delay="0">
+          <div class="p-8 lg:p-10">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-emerald/10 flex items-center justify-center text-3xl"><i class="fas fa-briefcase text-emerald"></i></div>
+              <h3 class="text-3xl font-heading font-bold text-primary">Job Openings</h3>
+            </div>
+            <p class="text-gray-500 mb-8 leading-relaxed">Join our growing team and help small businesses succeed with powerful digital tools. We are looking for talented individuals in development and digital marketing.</p>
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-start gap-3"><i class="fas fa-code text-emerald mt-1 text-lg"></i><span class="text-gray-700"><span class="font-semibold text-primary">Front-End Developer:</span> Remote (Canada) – Build modern, responsive user interfaces.</span></li>
+              <li class="flex items-start gap-3"><i class="fas fa-server text-emerald mt-1 text-lg"></i><span class="text-gray-700"><span class="font-semibold text-primary">Backend Developer:</span> Remote – Develop scalable APIs and backend systems.</span></li>
+              <li class="flex items-start gap-3"><i class="fas fa-bullhorn text-emerald mt-1 text-lg"></i><span class="text-gray-700"><span class="font-semibold text-primary">Digital Marketing Specialist:</span> Remote / Hybrid – Manage campaigns, SEO, and growth strategies.</span></li>
+            </ul>
+            <a href="job-listings.html" class="inline-flex items-center gap-3 bg-primary hover:bg-emerald text-white font-semibold px-8 py-4 rounded-2xl transition-all shadow-md">
+              View All Jobs <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="card-glow bg-white rounded-3xl overflow-hidden border border-gray-100/80 group transition-all hover:shadow-xl" data-aos="fade-up" data-aos-delay="150">
+          <div class="p-8 lg:p-10">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-emerald/10 flex items-center justify-center text-3xl"><i class="fas fa-heart text-emerald"></i></div>
+              <h3 class="text-3xl font-heading font-bold text-primary">Volunteer</h3>
+            </div>
+            <p class="text-gray-500 mb-8 leading-relaxed">Share your expertise and make a difference. Volunteer with Goshen Web X to support non-profits and community tech initiatives.</p>
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-start gap-3"><i class="fas fa-laptop-code text-emerald mt-1 text-lg"></i><span class="text-gray-700"><span class="font-semibold text-primary">Web Mentor:</span> Guide aspiring developers through real projects.</span></li>
+              <li class="flex items-start gap-3"><i class="fas fa-globe text-emerald mt-1 text-lg"></i><span class="text-gray-700"><span class="font-semibold text-primary">Content Creator:</span> Help craft blog posts and tutorials for our community.</span></li>
+              <li class="flex items-start gap-3"><i class="fas fa-hands-helping text-emerald mt-1 text-lg"></i><span class="text-gray-700"><span class="font-semibold text-primary">Non-Profit Support:</span> Assist charities with pro-bono web solutions.</span></li>
+            </ul>
+            <a href="contact.html" class="inline-flex items-center gap-3 bg-white border-2 border-emerald text-emerald hover:bg-emerald hover:text-white font-semibold px-8 py-4 rounded-2xl transition-all shadow-sm">
+              Become a Volunteer <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-14" data-aos="fade-up" data-aos-delay="200">
+        <p class="text-gray-500 mb-4">Don't see a role that fits? We still want to hear from you.</p>
+        <button onclick="openQuoteModal()" class="inline-flex items-center gap-2 bg-transparent border border-primary/30 text-primary hover:bg-primary hover:text-white font-medium px-7 py-3 rounded-full transition-all">
+          Send Speculative Application <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer class="bg-white border-t border-gray-100 py-20">
@@ -608,45 +1053,36 @@
             <img src="/images/logo_goshenwbeX.png" alt="logo" class="h-14" />
             <span class="font-heading text-3xl font-bold tracking-tighter text-primary">GOSHEN WEB X</span>
           </div>
-          <p class="text-gray-500 max-w-xs">Professional web development company based in Canada. Helping businesses
-            grow online since 2024.</p>
+          <p class="text-gray-500 max-w-xs">Professional web development company based in Canada. Helping businesses grow online since 2024.</p>
         </div>
-
         <div class="md:col-span-2">
           <p class="font-medium text-primary mb-6">Company</p>
           <ul class="space-y-3 text-sm">
-            <li><a href="index.html" class="hover:text-emerald">Home</a></li>
-            <li><a href="/about.html" class="hover:text-emerald">About Us</a></li>
-            <li><a href="/blog.html" class="hover:text-emerald">Blog</a></li>
+            <li><a href="index.html" class="hover:text-emerald transition-colors">Home</a></li>
+            <li><a href="/about.html" class="hover:text-emerald transition-colors">About Us</a></li>
+            <li><a href="/blog.html" class="hover:text-emerald transition-colors">Blog</a></li>
           </ul>
         </div>
-
         <div class="md:col-span-2">
           <p class="font-medium text-primary mb-6">Services</p>
           <ul class="space-y-3 text-sm">
-            <li><a href="/website-dev.html" class="hover:text-emerald">Website Development</a></li>
-            <li><a href="/web-optimisation.html" class="hover:text-emerald">Optimisation & SEO</a></li>
-            <li><a href="/portfolio.html" class="hover:text-emerald">Portfolio Sites</a></li>
+            <li><a href="/website-dev.html" class="hover:text-emerald transition-colors">Website Development</a></li>
+            <li><a href="/web-optimisation.html" class="hover:text-emerald transition-colors">Optimisation & SEO</a></li>
+            <li><a href="/portfolio.html" class="hover:text-emerald transition-colors">Portfolio Sites</a></li>
           </ul>
         </div>
-
         <div class="md:col-span-4">
           <p class="font-medium text-primary mb-6">Say Hello</p>
           <p class="text-gray-500">info@goshenwebx.io</p>
           <p class="text-gray-500 mt-1">Quebec, Canada</p>
-
           <div class="flex gap-6 text-3xl mt-10">
-            <a href="https://x.com/goshenwebx" class="hover:text-emerald"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://www.linkedin.com/in/goshen-web-x-9b3246364" class="hover:text-emerald"><i
-                class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/gwx_technologies" class="hover:text-emerald"><i
-                class="fab fa-instagram"></i></a>
+            <a href="https://x.com/goshenwebx" class="hover:text-emerald transition-colors"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/goshen-web-x-9b3246364" class="hover:text-emerald transition-colors"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/gwx_technologies" class="hover:text-emerald transition-colors"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
       </div>
-
-      <div
-        class="border-t border-gray-100 mt-16 pt-8 text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="border-t border-gray-100 mt-16 pt-8 text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
         <p>© 2026 Goshen Web X. All Rights Reserved.</p>
         <p class="flex gap-6">
           <a href="/privacy-policy.html" class="hover:text-emerald">Privacy</a>
@@ -656,116 +1092,230 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Scroll to top -->
+  <button id="gwx-top-btn" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- ============================================================ -->
+  <!-- SCRIPTS                                                      -->
+  <!-- ============================================================ -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
   <script>
+    /* ── AOS ───────────────────────────────────────────────── */
+    AOS.init({ duration: 800, once: true, easing: 'ease-out-cubic' });
+
+    /* ── MOBILE MENU ───────────────────────────────────────── */
     const hamburger = document.getElementById('hamburger');
-    const sideMenu = document.getElementById('side-menu');
-    const backdrop = document.getElementById('backdrop');
-    const closeBtn = document.getElementById('close-menu');
+    const sideMenu  = document.getElementById('side-menu');
+    const backdrop  = document.getElementById('backdrop');
+    const closeBtn  = document.getElementById('close-menu');
 
     hamburger.addEventListener('click', () => {
       sideMenu.classList.remove('translate-x-full');
       backdrop.classList.remove('hidden');
+      // Stagger nav items in
+      sideMenu.querySelectorAll('nav > a, nav > div').forEach((el, i) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateX(18px)';
+        setTimeout(() => {
+          el.style.opacity = '1';
+          el.style.transform = 'translateX(0)';
+        }, 60 + i * 55);
+      });
     });
 
     function closeMenu() {
       sideMenu.classList.add('translate-x-full');
       backdrop.classList.add('hidden');
     }
-
     closeBtn.addEventListener('click', closeMenu);
     backdrop.addEventListener('click', closeMenu);
 
     window.toggleServicesDrawer = function () {
       const submenu = document.getElementById('drawer-services-submenu');
       const chevron = document.getElementById('drawer-chevron');
-
-      if (submenu.style.maxHeight && submenu.style.maxHeight !== "0px") {
-        submenu.style.maxHeight = "0px";
-      } else {
-        submenu.style.maxHeight = submenu.scrollHeight + "px";
-      }
+      submenu.style.maxHeight = (submenu.style.maxHeight && submenu.style.maxHeight !== '0px') ? '0px' : submenu.scrollHeight + 'px';
       chevron.classList.toggle('rotate-180');
     };
 
-    AOS.init({ duration: 1000, once: true });
-  </script>
+    /* ── PAGE FADE IN ──────────────────────────────────────── */
+    requestAnimationFrame(() => document.body.classList.add('gwx-ready'));
 
-  <script>
-    function animateCounter(counter) {
-      const target = parseInt(counter.getAttribute('data-target'));
-      const duration = 2000;
-      let startTime = null;
+    /* ── HEADER SCROLL SHADOW ──────────────────────────────── */
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('gwx-scrolled', window.scrollY > 12);
+    }, { passive: true });
 
-      function update(timestamp) {
-        if (!startTime) startTime = timestamp;
-        const elapsed = timestamp - startTime;
-        let progress = Math.min(elapsed / duration, 1);
-        const ease = 1 - Math.pow(1 - progress, 4);
-        counter.textContent = Math.floor(target * ease);
+    /* ── SCROLL TO TOP ─────────────────────────────────────── */
+    const topBtn = document.getElementById('gwx-top-btn');
+    topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    window.addEventListener('scroll', () => {
+      topBtn.classList.toggle('gwx-visible', window.scrollY > 400);
+    }, { passive: true });
 
-        if (progress < 1) {
-          requestAnimationFrame(update);
-        } else {
-          counter.textContent = target;
+    /* ── HERO ANIMATIONS ───────────────────────────────────── */
+    (function () {
+      // Badge
+      const badge = document.getElementById('hero-badge');
+      setTimeout(() => badge && badge.classList.add('gwx-in'), 200);
+
+      // Typewriter
+      const h1 = document.getElementById('hero-h1');
+      if (h1) {
+        const line1 = "We create web solutions that drive growth";
+        const line2Html = '<span class="text-emerald-light">for small businesses.</span>';
+        h1.innerHTML = '';
+        const span1  = document.createElement('span');
+        const cursor = document.createElement('span');
+        cursor.className = 'gwx-cursor';
+        h1.appendChild(span1);
+        h1.appendChild(cursor);
+        let i = 0;
+        function type() {
+          if (i < line1.length) {
+            span1.textContent += line1[i++];
+            setTimeout(type, 36);
+          } else {
+            setTimeout(() => {
+              cursor.remove();
+              const line2 = document.createElement('span');
+              line2.className = 'gwx-line2';
+              line2.innerHTML = line2Html;
+              h1.appendChild(document.createElement('br'));
+              h1.appendChild(line2);
+              requestAnimationFrame(() => requestAnimationFrame(() => line2.classList.add('gwx-in')));
+            }, 380);
+          }
         }
+        setTimeout(type, 480);
       }
-      requestAnimationFrame(update);
+
+      // Subhead + CTAs stagger after typewriter
+      const sub  = document.getElementById('hero-sub');
+      const ctas = document.getElementById('hero-ctas');
+      setTimeout(() => sub  && sub.classList.add('gwx-in'), 1900);
+      setTimeout(() => ctas && ctas.classList.add('gwx-in'), 2100);
+
+      // Chip slide in
+      const chip = document.getElementById('hero-chip');
+      setTimeout(() => chip && chip.classList.add('gwx-in'), 2600);
+    })();
+
+    /* ── SECTION LABELS — scroll fade-left ────────────────── */
+    const labelObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('gwx-in'); labelObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.7 });
+    document.querySelectorAll('.gwx-fade-left').forEach(el => labelObs.observe(el));
+
+    /* ── PROCESS STEPS — scroll fade-up ───────────────────── */
+    const stepObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('gwx-in'); stepObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.gwx-fade-up').forEach(el => stepObs.observe(el));
+
+    /* ── SECTION H2 — word stagger ─────────────────────────── */
+    const h2Obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.querySelectorAll('.gwx-word').forEach((w, i) => {
+          setTimeout(() => w.classList.add('gwx-in'), i * 65);
+        });
+        h2Obs.unobserve(e.target);
+      });
+    }, { threshold: 0.35 });
+
+    document.querySelectorAll('section h2').forEach(h2 => {
+      h2.innerHTML = h2.innerHTML
+        .split(/(<[^>]+>|[^<\s]+|\s+)/)
+        .filter(Boolean)
+        .map(t => /^</.test(t) || /^\s+$/.test(t) ? t : `<span class="gwx-word">${t}</span>`)
+        .join('');
+      const sec = h2.closest('section');
+      if (sec) h2Obs.observe(sec);
+    });
+
+    /* ── COUNTERS ──────────────────────────────────────────── */
+    const statObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.querySelectorAll('.counter').forEach((counter, i) => {
+          setTimeout(() => {
+            const target = parseInt(counter.dataset.target);
+            let start = null;
+            function step(ts) {
+              if (!start) start = ts;
+              const p = Math.min((ts - start) / 1800, 1);
+              counter.textContent = Math.floor(target * (1 - Math.pow(1 - p, 4)));
+              if (p < 1) requestAnimationFrame(step);
+              else {
+                counter.textContent = target;
+                counter.classList.add('gwx-counter-pop');
+                counter.addEventListener('animationend', () => counter.classList.remove('gwx-counter-pop'), { once: true });
+              }
+            }
+            requestAnimationFrame(step);
+          }, i * 90);
+        });
+        statObs.unobserve(e.target);
+      });
+    }, { threshold: 0.4 });
+    const stats = document.getElementById('stats');
+    if (stats) statObs.observe(stats);
+
+    /* ── PORTFOLIO PARALLAX ────────────────────────────────── */
+    const portImgs = document.querySelectorAll('#work .portfolio-overlay img');
+    if (portImgs.length) {
+      window.addEventListener('scroll', () => {
+        portImgs.forEach(img => {
+          const rect = img.closest('a').getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom > 0) {
+            const p = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+            img.style.transform = `translateY(${(p - 0.5) * -18}px) scale(1.05)`;
+          }
+        });
+      }, { passive: true });
     }
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const counters = entry.target.querySelectorAll('.counter');
-          counters.forEach((counter, i) => {
-            setTimeout(() => animateCounter(counter), i * 80);
-          });
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.35, rootMargin: "0px 0px -50px 0px" });
-
-    const statsSection = document.getElementById('stats');
-    if (statsSection) observer.observe(statsSection);
-  </script>
-
-  <!-- DYNAMIC QUOTE MODAL JAVASCRIPT -->
-  <script>
+    /* ── MODAL ─────────────────────────────────────────────── */
     window.openQuoteModal = function () {
-      const modal = document.getElementById('quote-modal');
-      const form = document.getElementById('quote-form');
+      const modal   = document.getElementById('quote-modal');
+      const form    = document.getElementById('quote-form');
       const success = document.getElementById('quote-success');
-      
-      modal.classList.remove('hidden');
-      form.classList.remove('hidden');
-      success.classList.add('hidden');
-      form.reset();
+      modal.classList.add('gwx-modal-open');
+      if (form)    form.classList.remove('hidden');
+      if (success) success.classList.add('hidden');
+      if (form)    form.reset();
     };
-
     window.closeQuoteModal = function () {
-      const modal = document.getElementById('quote-modal');
-      modal.classList.add('hidden');
+      document.getElementById('quote-modal').classList.remove('gwx-modal-open');
     };
+    document.getElementById('quote-modal').addEventListener('click', function (e) {
+      if (e.target === this) closeQuoteModal();
+    });
+    document.getElementById('quote-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      this.classList.add('hidden');
+      document.getElementById('quote-success').classList.remove('hidden');
+    });
 
-    document.addEventListener('DOMContentLoaded', function () {
-      const modal = document.getElementById('quote-modal');
-      const form = document.getElementById('quote-form');
-      const success = document.getElementById('quote-success');
-
-      modal.addEventListener('click', function (e) {
-        if (e.target === modal) {
-          closeQuoteModal();
-        }
-      });
-
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        form.classList.add('hidden');
-        success.classList.remove('hidden');
-      });
+    /* ── INPUT FOCUS GLOW ──────────────────────────────────── */
+    document.querySelectorAll('#quote-form input, #quote-form textarea, #quote-form select').forEach(el => {
+      el.addEventListener('focus', () => { el.style.borderColor = '#10b981'; el.style.boxShadow = '0 0 0 3px rgba(16,185,129,.12)'; });
+      el.addEventListener('blur',  () => { el.style.borderColor = ''; el.style.boxShadow = ''; });
     });
   </script>
+
+
+<script src="/gwx-chatbot.js"></script>
+
 </body>
+
+
+
 
 </html>

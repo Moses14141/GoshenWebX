@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | Goshen Web X Client Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      content: [],
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            primary: '#14532d',
+            emerald: '#10b981',
+            'emerald-light': '#34d399',
+            light: '#f8faf5',
+            soft: '#f1f5f0',
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="icon" type="image/png" href="../images/goshen_webx_logo.png" />
+</head>
+
+<body class="bg-light text-gray-900 font-body overflow-x-hidden">
+
+  <!-- HEADER - PORTAL-ONLY NAV (no public marketing links) -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-gray-100">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+      <div class="flex items-center justify-between h-20">
+        <a href="dashboard.html" class="flex items-center gap-3">
+          <img src="../images/logo_goshenwbeX.png" alt="Goshen Web X" class="h-14 w-auto" />
+          <div class="font-heading text-3xl font-semibold tracking-tighter text-primary">GOSHEN <span class="text-emerald">WEB X</span></div>
+        </a>
+
+        <!-- Desktop Nav - ONLY PORTAL LINKS -->
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
+       
+          <a href="dashboard.html" class="hover:text-primary transition-colors">Dashboard</a>
+          <a href="my-sites.html" class="hover:text-primary transition-colors">My Sites</a>
+          <a href="templates.html" class="hover:text-primary transition-colors">Templates</a>
+        </nav>
+
+        <!-- Right side: Language + My Sites + My Account -->
+        <div class="hidden lg:flex items-center gap-6">
+          <div class="flex items-center text-sm font-medium">
+            <a href="#" class="text-emerald font-semibold px-2">EN</a>
+            <span class="text-gray-400 mx-1">/</span>
+            <a href="../index-fr.html" class="hover:text-primary transition-colors px-2">FR</a>
+          </div>
+          
+          <a href="my-sites.html" class="flex items-center gap-2 bg-emerald hover:bg-primary text-white font-semibold px-6 py-3 rounded-3xl transition-all">
+            <i class="fas fa-folder"></i> My Sites
+          </a>
+
+          <a href="account.html" class="flex items-center gap-2 text-gray-700 hover:text-primary font-medium">
+            <i class="fas fa-user"></i> My Account
+          </a>
+        </div>
+
+        <button id="hamburger" class="lg:hidden text-4xl p-4 -mr-3 text-primary">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Backdrop + Drawer - PORTAL-ONLY LINKS -->
+  <div id="backdrop" class="hidden fixed inset-0 bg-black/60 z-[9998]"></div>
+  <div id="side-menu" class="fixed top-0 bottom-0 right-0 w-80 bg-white shadow-2xl translate-x-full transition-transform duration-300 z-[9999] overflow-y-auto">
+    <div class="p-6">
+      <button id="close-menu" class="float-right text-4xl text-gray-400 hover:text-primary">✕</button>
+      <nav class="flex flex-col text-2xl font-medium mt-12 text-gray-800">
+        <a href="dashboard.html" class="py-5 border-b border-gray-100">Dashboard</a>
+        <a href="my-sites.html" class="py-5 border-b border-gray-100">My Sites</a>
+        <a href="templates.html" class="py-5 border-b border-gray-100">Templates</a>
+        <a href="account.html" class="py-5 border-b border-gray-100">My Account</a>
+        <a href="../contact.html" class="py-5 border-b border-gray-100">Contact Support</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- DASHBOARD CONTENT (kept exactly as you had) -->
+  <div class="pt-20 min-h-screen bg-soft">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 py-12">
+      
+      <!-- Welcome -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-12">
+        <div>
+          <h1 class="text-5xl font-heading font-bold tracking-tighter text-primary">Welcome back, Moïse!</h1>
+          <p class="text-xl text-gray-600 mt-2">Ready to build something amazing today?</p>
+        </div>
+        <button onclick="window.location='templates.html'" 
+                class="mt-6 lg:mt-0 bg-emerald hover:bg-primary text-white font-semibold px-10 py-5 rounded-3xl flex items-center gap-3 text-lg shadow-lg shadow-emerald/30">
+          <i class="fas fa-plus"></i> Start a New Website
+        </button>
+      </div>
+
+      <!-- My Websites Section -->
+      <div class="mb-16">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-3xl font-semibold text-primary">My Websites</h2>
+          <a href="my-sites.html" class="text-emerald font-medium flex items-center gap-2 hover:underline">
+            View all <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white rounded-3xl p-8 text-center border border-dashed border-gray-200">
+            <div class="text-6xl mb-4">🌱</div>
+            <p class="font-medium text-gray-400">No websites yet</p>
+            <p class="text-sm text-gray-500 mt-2">Your first site will appear here</p>
+            <button onclick="window.location='templates.html'" 
+                    class="mt-6 text-emerald font-semibold flex items-center gap-2 mx-auto">
+              Browse templates →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="bg-white rounded-3xl p-10 shadow">
+        <h3 class="text-2xl font-semibold mb-8">What would you like to do?</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <a href="templates.html" class="group bg-soft hover:bg-emerald/10 border border-transparent hover:border-emerald rounded-3xl p-8 transition-all">
+            <div class="text-4xl mb-4">📋</div>
+            <h4 class="font-semibold text-xl">Browse Templates</h4>
+            <p class="text-gray-600 mt-2">Choose from church, restaurant, clinic, business & more</p>
+          </a>
+          
+          <a href="my-sites.html" class="group bg-soft hover:bg-emerald/10 border border-transparent hover:border-emerald rounded-3xl p-8 transition-all">
+            <div class="text-4xl mb-4">📂</div>
+            <h4 class="font-semibold text-xl">Manage My Sites</h4>
+            <p class="text-gray-600 mt-2">Edit, publish, or delete your websites</p>
+          </a>
+          
+          <a href="../contact.html" class="group bg-soft hover:bg-emerald/10 border border-transparent hover:border-emerald rounded-3xl p-8 transition-all">
+            <div class="text-4xl mb-4">💬</div>
+            <h4 class="font-semibold text-xl">Need Help?</h4>
+            <p class="text-gray-600 mt-2">Talk to our support team</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- TERMS & CONDITIONS -->
+      <div class="mt-16 pt-8 border-t border-gray-100 text-center text-xs text-gray-500">
+        By using the Goshen Web X Client Portal, you agree to our 
+        <a href="../terms.html" target="_blank" class="text-emerald hover:underline">Terms of Service</a> 
+        and acknowledge that you have read our 
+        <a href="../privacy-policy.html" target="_blank" class="text-emerald hover:underline">Privacy Policy</a>.
+      </div>
+
+    </div>
+  </div>
+
+  <!-- HEADER SCRIPTS -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const sideMenu = document.getElementById('side-menu');
+    const backdrop = document.getElementById('backdrop');
+    const closeBtn = document.getElementById('close-menu');
+
+    hamburger.addEventListener('click', () => {
+      sideMenu.classList.remove('translate-x-full');
+      backdrop.classList.remove('hidden');
+    });
+
+    function closeMenu() {
+      sideMenu.classList.add('translate-x-full');
+      backdrop.classList.add('hidden');
+    }
+
+    closeBtn.addEventListener('click', closeMenu);
+    backdrop.addEventListener('click', closeMenu);
+  </script>
+</body>
+</html>

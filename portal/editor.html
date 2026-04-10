@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editor - Goshen Web X</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { content: [], theme: { extend: { fontFamily: { heading: ['Poppins', 'sans-serif'], body: ['Plus Jakarta Sans', 'sans-serif'] }, colors: { primary: '#14532d', emerald: '#10b981', 'emerald-light': '#34d399', light: '#f8faf5', soft: '#f1f5f0' } } } };
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="icon" type="image/png" href="../images/goshen_webx_logo.png" />
+</head>
+<body class="bg-light text-gray-900 font-body overflow-hidden h-screen flex flex-col">
+
+  <!-- TOP BAR -->
+  <header class="bg-white border-b border-gray-200 h-16 flex items-center px-6 z-50 shadow-sm">
+    <div class="flex-1 flex items-center gap-4">
+      <a href="dashboard.html" class="text-emerald hover:text-primary"><i class="fas fa-arrow-left text-xl"></i></a>
+      <div class="flex items-center gap-3">
+        <input id="site-name" value="My Church Website" class="font-semibold text-xl bg-transparent focus:outline-none border-b focus:border-emerald w-80 px-1">
+        <span id="template-name" class="text-xs px-4 py-1 bg-emerald/10 text-emerald rounded-full font-medium uppercase"></span>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <button onclick="addNewElement()" class="px-6 py-2 text-sm font-medium bg-emerald text-white rounded-3xl flex items-center gap-2">
+        <i class="fas fa-plus"></i> Add Element
+      </button>
+      <button onclick="saveSite()" class="px-6 py-2 text-sm font-medium border border-gray-300 rounded-3xl hover:bg-gray-50 flex items-center gap-2">
+        <i class="fas fa-save"></i> Save Draft
+      </button>
+      <button onclick="previewLive()" class="px-6 py-2 text-sm font-medium border border-gray-300 rounded-3xl hover:bg-gray-50 flex items-center gap-2">
+        <i class="fas fa-eye"></i> Preview
+      </button>
+      <button onclick="publishSite()" class="bg-emerald hover:bg-primary text-white px-8 py-2 rounded-3xl font-semibold flex items-center gap-2">
+        <i class="fas fa-rocket"></i> Publish
+      </button>
+    </div>
+  </header>
+
+  <div class="flex flex-1 overflow-hidden">
+    <!-- LEFT - SECTIONS -->
+    <div class="w-72 bg-white border-r border-gray-200 p-6 overflow-y-auto">
+      <h3 class="uppercase text-xs font-medium text-gray-500 mb-6">Sections</h3>
+      <div id="sections-list" class="space-y-2"></div>
+    </div>
+
+    <!-- CENTER - IFRAME -->
+    <div class="flex-1 bg-[#f8f9f7] p-8 flex items-center justify-center relative">
+      <iframe id="live-iframe" class="w-full max-w-5xl h-full shadow-2xl rounded-3xl border border-gray-200 bg-white" style="min-height: 720px;"></iframe>
+    </div>
+
+    <!-- RIGHT - ADVANCED PROPERTIES -->
+    <div class="w-80 bg-white border-l border-gray-200 p-6 overflow-y-auto" id="properties-panel">
+      <div id="properties-placeholder" class="text-center py-12">
+        <div class="mx-auto w-16 h-16 bg-emerald/10 rounded-2xl flex items-center justify-center text-4xl mb-4">✏️</div>
+        <h3 class="font-semibold">Click any element to customize</h3>
+      </div>
+      <div id="properties-editor" class="hidden space-y-6"></div>
+    </div>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const templateName = urlParams.get('template') || 'church';
+    document.getElementById('template-name').textContent = templateName;
+
+    const iframe = document.getElementById('live-iframe');
+    iframe.src = `templates/${templateName}.html`;
+
+    let currentSelectedElement = null;
+
+    iframe.onload = function() {
+      setTimeout(() => {
+        const doc = iframe.contentDocument || iframe.contentWindow.document;
+
+        // Auto-detect sections
+        const sections = [];
+        doc.querySelectorAll('section, header, #home, #services, #pastor, [id]').forEach(el => {
+          const name = (el.id || 'Section').replace(/-/g, ' ').toUpperCase();
+          sections.push({el, name});
+        });
+
+        const list = document.getElementById('sections-list');
+        list.innerHTML = '';
+        sections.forEach(s => {
+          const div = document.createElement('div');
+          div.className = "px-5 py-4 rounded-2xl hover:bg-gray-50 cursor-pointer flex items-center gap-3";
+          div.innerHTML = `<i class="fas fa-layer-group text-emerald"></i><span>${s.name}</span>`;
+          div.onclick = () => s.el.scrollIntoView({behavior:'smooth'});
+          list.appendChild(div);
+        });
+
+        // Make everything clickable & editable
+        doc.querySelectorAll('h1,h2,h3,p,button,span,img,.logo-font').forEach(el => {
+          el.style.cursor = 'pointer';
+          el.contentEditable = true;
+          el.addEventListener('click', (e) => {
+            e.stopImmediatePropagation();
+            selectElement(el);
+          });
+        });
+      }, 600);
+    };
+
+    function selectElement(el) {
+      if (currentSelectedElement) currentSelectedElement.style.outline = '';
+      currentSelectedElement = el;
+      el.style.outline = '4px solid #10b981';
+
+      const placeholder = document.getElementById('properties-placeholder');
+      const editor = document.getElementById('properties-editor');
+      placeholder.classList.add('hidden');
+      editor.classList.remove('hidden');
+      editor.innerHTML = '';
+
+      if (el.tagName === 'IMG') {
+        editor.innerHTML = `
+          <h3 class="font-semibold mb-4">Image</h3>
+          <input type="text" value="${el.src}" class="w-full px-5 py-4 border rounded-2xl mb-4" oninput="currentSelectedElement.src=this.value">
+          <label class="block text-xs font-medium text-gray-500 mb-2">Alt Text</label>
+          <input type="text" value="${el.alt}" class="w-full px-5 py-4 border rounded-2xl" oninput="currentSelectedElement.alt=this.value">
+        `;
+      } else {
+        editor.innerHTML = `
+          <h3 class="font-semibold mb-4">Text Style</h3>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-medium text-gray-500 mb-1">Text Color</label>
+              <input type="color" value="#14532d" class="w-full h-10 rounded-2xl" onchange="currentSelectedElement.style.color=this.value">
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-gray-500 mb-1">Font Size (px)</label>
+              <input type="number" value="32" class="w-full px-5 py-4 border rounded-2xl" onchange="currentSelectedElement.style.fontSize=this.value+'px'">
+            </div>
+          </div>
+          <div class="flex gap-2 mt-6">
+            <button onclick="currentSelectedElement.style.fontWeight='bold'" class="flex-1 py-3 border rounded-2xl">Bold</button>
+            <button onclick="currentSelectedElement.style.fontStyle='italic'" class="flex-1 py-3 border rounded-2xl">Italic</button>
+            <button onclick="currentSelectedElement.style.textAlign='center'" class="flex-1 py-3 border rounded-2xl">Center</button>
+          </div>
+          <textarea class="w-full h-40 px-5 py-4 border rounded-2xl mt-6">${el.innerHTML}</textarea>
+        `;
+        const ta = editor.querySelector('textarea');
+        ta.addEventListener('input', () => currentSelectedElement.innerHTML = ta.value);
+      }
+    }
+
+    function addNewElement() {
+      const type = prompt("What do you want to add?\n1 = Text\n2 = Image\n3 = Button", "1");
+      const doc = iframe.contentDocument;
+      let newEl;
+      if (type === "2") {
+        newEl = doc.createElement('img');
+        newEl.src = "https://picsum.photos/800/400";
+        newEl.style.width = "100%";
+      } else if (type === "3") {
+        newEl = doc.createElement('button');
+        newEl.textContent = "New Button";
+        newEl.className = "bg-emerald text-white px-8 py-4 rounded-3xl";
+      } else {
+        newEl = doc.createElement('p');
+        newEl.textContent = "New text here...";
+      }
+      doc.body.appendChild(newEl);
+      selectElement(newEl);
+    }
+
+    function saveSite() {
+      const fullHTML = iframe.contentDocument.documentElement.outerHTML;
+      const siteData = { name: document.getElementById('site-name').value, template: templateName, html: fullHTML };
+      localStorage.setItem('currentSite_' + Date.now(), JSON.stringify(siteData));
+      alert('✅ Saved! (your church.html will read this via localStorage)');
+    }
+
+    function previewLive() { window.open(`templates/${templateName}.html`, '_blank'); }
+    function publishSite() { alert('🎉 Published! (Firebase ready later)'); }
+  </script>
+</body>
+</html>
