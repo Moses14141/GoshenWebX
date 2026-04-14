@@ -8,7 +8,8 @@
     content="Explore Goshen Web X portfolio — premium custom websites, lightning-fast optimisation projects, and stunning portfolio sites built for ambitious businesses worldwide." />
   <title>Goshen Web X | Our Portfolio</title>
 
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5470312051046141" crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5470312051046141"
+    crossorigin="anonymous"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -31,7 +32,9 @@
     }
   </script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
   <link rel="icon" type="image/png" href="/images/transp-logo.png" />
@@ -40,13 +43,18 @@
     /* =====================================================
        BASE
     ===================================================== */
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       opacity: 0;
       transition: opacity 0.4s ease;
     }
-    body.gwx-ready { opacity: 1; }
+
+    body.gwx-ready {
+      opacity: 1;
+    }
 
     /* =====================================================
        GRAIN OVERLAY
@@ -63,10 +71,27 @@
     /* =====================================================
        MASONRY
     ===================================================== */
-    .masonry { column-count: 1; column-gap: 1.5rem; }
-    @media (min-width: 768px)  { .masonry { column-count: 2; } }
-    @media (min-width: 1024px) { .masonry { column-count: 3; } }
-    .masonry-item { break-inside: avoid; margin-bottom: 1.5rem; }
+    .masonry {
+      column-count: 1;
+      column-gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .masonry {
+        column-count: 2;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .masonry {
+        column-count: 3;
+      }
+    }
+
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 1.5rem;
+    }
 
     /* =====================================================
        LABEL LINE
@@ -76,28 +101,34 @@
       align-items: center;
       gap: 12px;
     }
+
     .label-line::after {
       content: '';
       display: inline-block;
-      width: 40px; height: 2px;
+      width: 40px;
+      height: 2px;
       background: #10b981;
       border-radius: 1px;
       transition: width 0.4s ease;
     }
-    .label-line:hover::after { width: 64px; }
+
+    .label-line:hover::after {
+      width: 64px;
+    }
 
     /* =====================================================
        CARD HOVER — lift + shadow
     ===================================================== */
     .card-glow {
-      transition: transform 0.38s cubic-bezier(.25,.46,.45,.94),
-                  box-shadow 0.38s cubic-bezier(.25,.46,.45,.94);
+      transition: transform 0.38s cubic-bezier(.25, .46, .45, .94),
+        box-shadow 0.38s cubic-bezier(.25, .46, .45, .94);
       will-change: transform;
     }
+
     .card-glow:hover {
       transform: translateY(-7px);
-      box-shadow: 0 24px 64px -12px rgba(16,185,129,.14),
-                  0 8px 24px -8px rgba(0,0,0,.07);
+      box-shadow: 0 24px 64px -12px rgba(16, 185, 129, .14),
+        0 8px 24px -8px rgba(0, 0, 0, .07);
     }
 
     /* =====================================================
@@ -107,31 +138,40 @@
       position: relative;
       overflow: hidden;
     }
+
     .portfolio-overlay::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, transparent 40%, rgba(20,83,45,.55) 100%);
+      background: linear-gradient(180deg, transparent 40%, rgba(20, 83, 45, .55) 100%);
       opacity: 0;
       transition: opacity 0.4s ease;
     }
-    .group:hover .portfolio-overlay::after { opacity: 1; }
+
+    .group:hover .portfolio-overlay::after {
+      opacity: 1;
+    }
 
     /* External link icon */
     .portfolio-overlay .ext-icon {
       position: absolute;
-      bottom: 16px; right: 16px;
-      width: 40px; height: 40px;
+      bottom: 16px;
+      right: 16px;
+      width: 40px;
+      height: 40px;
       border-radius: 12px;
-      background: rgba(255,255,255,.15);
+      background: rgba(255, 255, 255, .15);
       backdrop-filter: blur(8px);
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: white;
       opacity: 0;
       transform: translateY(8px);
-      transition: all 0.38s cubic-bezier(.25,.46,.45,.94);
+      transition: all 0.38s cubic-bezier(.25, .46, .45, .94);
       z-index: 2;
     }
+
     .group:hover .portfolio-overlay .ext-icon {
       opacity: 1;
       transform: translateY(0);
@@ -141,49 +181,76 @@
        CATEGORY PILL
     ===================================================== */
     .cat-pill {
-      background: linear-gradient(135deg, rgba(16,185,129,.08), rgba(20,83,45,.04));
+      background: linear-gradient(135deg, rgba(16, 185, 129, .08), rgba(20, 83, 45, .04));
     }
 
     /* =====================================================
        SHIMMER CTA
     ===================================================== */
-    .shimmer-btn { position: relative; overflow: hidden; }
+    .shimmer-btn {
+      position: relative;
+      overflow: hidden;
+    }
+
     .shimmer-btn::after {
       content: '';
       position: absolute;
-      top: 0; left: -100%;
-      width: 100%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent);
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .12), transparent);
       animation: gwx-shimmer 3.2s ease-in-out infinite;
     }
+
     @keyframes gwx-shimmer {
-      0%, 100% { left: -100%; }
-      50%       { left: 100%; }
+
+      0%,
+      100% {
+        left: -100%;
+      }
+
+      50% {
+        left: 100%;
+      }
     }
 
     /* =====================================================
        HEADER — scroll shadow
     ===================================================== */
-    header { transition: box-shadow 0.3s ease; }
-    header.gwx-scrolled { box-shadow: 0 4px 24px -4px rgba(0,0,0,.08); }
+    header {
+      transition: box-shadow 0.3s ease;
+    }
+
+    header.gwx-scrolled {
+      box-shadow: 0 4px 24px -4px rgba(0, 0, 0, .08);
+    }
 
     /* =====================================================
        NAV UNDERLINE
     ===================================================== */
-    header nav > a,
-    header nav .group > button { position: relative; }
-    header nav > a::after,
-    header nav .group > button::after {
+    header nav>a,
+    header nav .group>button {
+      position: relative;
+    }
+
+    header nav>a::after,
+    header nav .group>button::after {
       content: '';
       position: absolute;
-      bottom: -3px; left: 0;
-      width: 0; height: 2px;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 2px;
       background: #10b981;
       border-radius: 1px;
-      transition: width 0.25s cubic-bezier(.25,.46,.45,.94);
+      transition: width 0.25s cubic-bezier(.25, .46, .45, .94);
     }
-    header nav > a:hover::after,
-    header nav .group:hover > button::after { width: 100%; }
+
+    header nav>a:hover::after,
+    header nav .group:hover>button::after {
+      width: 100%;
+    }
 
     /* =====================================================
        HERO ENTRANCE ITEMS
@@ -193,7 +260,11 @@
       transform: translateY(18px);
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
-    .gwx-hero-item.gwx-in { opacity: 1; transform: translateY(0); }
+
+    .gwx-hero-item.gwx-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* =====================================================
        HERO H1 — WORD STAGGER
@@ -204,7 +275,11 @@
       transform: translateY(20px);
       transition: opacity 0.5s ease, transform 0.5s ease;
     }
-    .gwx-word.gwx-in { opacity: 1; transform: translateY(0); }
+
+    .gwx-word.gwx-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* =====================================================
        SECTION LABEL FADE LEFT
@@ -214,45 +289,72 @@
       transform: translateX(-18px);
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
-    .gwx-fade-left.gwx-in { opacity: 1; transform: translateX(0); }
+
+    .gwx-fade-left.gwx-in {
+      opacity: 1;
+      transform: translateX(0);
+    }
 
     /* =====================================================
        WHATSAPP PULSE
     ===================================================== */
     @keyframes gwx-wa-ring {
-      0%  { box-shadow: 0 0 0 0    rgba(16,185,129,.5); }
-      60% { box-shadow: 0 0 0 16px rgba(16,185,129,0); }
-      100%{ box-shadow: 0 0 0 0    rgba(16,185,129,0); }
+      0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, .5);
+      }
+
+      60% {
+        box-shadow: 0 0 0 16px rgba(16, 185, 129, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+      }
     }
-    a[href*="wa.me"] { animation: gwx-wa-ring 2.6s ease-out infinite; }
+
+    a[href*="wa.me"] {
+      animation: gwx-wa-ring 2.6s ease-out infinite;
+    }
 
     /* =====================================================
        SCROLL TO TOP
     ===================================================== */
     #gwx-top-btn {
       position: fixed;
-      bottom: 100px; right: 32px;
-      width: 44px; height: 44px;
+      bottom: 100px;
+      right: 32px;
+      width: 44px;
+      height: 44px;
       background: #14532d;
       color: #fff;
-      border: none; border-radius: 50%;
+      border: none;
+      border-radius: 50%;
       cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 16px;
       opacity: 0;
       transform: translateY(12px);
       transition: opacity 0.35s ease, transform 0.35s ease, background 0.2s ease;
       z-index: 49;
-      box-shadow: 0 4px 18px rgba(20,83,45,.25);
+      box-shadow: 0 4px 18px rgba(20, 83, 45, .25);
     }
-    #gwx-top-btn.gwx-visible { opacity: 1; transform: translateY(0); }
-    #gwx-top-btn:hover { background: #10b981; }
+
+    #gwx-top-btn.gwx-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #gwx-top-btn:hover {
+      background: #10b981;
+    }
 
     /* =====================================================
        MOBILE MENU ITEM ENTRANCE
     ===================================================== */
-    #side-menu nav > a,
-    #side-menu nav > div {
+    #side-menu nav>a,
+    #side-menu nav>div {
       transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
@@ -260,51 +362,113 @@
        DECORATIVE BLOBS — gentle float
     ===================================================== */
     @keyframes gwx-blob {
-      0%, 100% { transform: translateY(0) scale(1); }
-      50%       { transform: translateY(-14px) scale(1.04); }
+
+      0%,
+      100% {
+        transform: translateY(0) scale(1);
+      }
+
+      50% {
+        transform: translateY(-14px) scale(1.04);
+      }
     }
-    .gwx-blob-1 { animation: gwx-blob 7s ease-in-out infinite; }
-    .gwx-blob-2 { animation: gwx-blob 9s ease-in-out infinite 1.5s; }
-    .gwx-blob-3 { animation: gwx-blob 11s ease-in-out infinite 3s; }
+
+    .gwx-blob-1 {
+      animation: gwx-blob 7s ease-in-out infinite;
+    }
+
+    .gwx-blob-2 {
+      animation: gwx-blob 9s ease-in-out infinite 1.5s;
+    }
+
+    .gwx-blob-3 {
+      animation: gwx-blob 11s ease-in-out infinite 3s;
+    }
 
     /* =====================================================
        SCROLL INDICATOR
     ===================================================== */
     @keyframes gwx-scroll-bounce {
-      0%, 100% { transform: translateY(0); opacity: .9; }
-      50%       { transform: translateY(9px); opacity: .4; }
+
+      0%,
+      100% {
+        transform: translateY(0);
+        opacity: .9;
+      }
+
+      50% {
+        transform: translateY(9px);
+        opacity: .4;
+      }
     }
-    .gwx-scroll-indicator { animation: gwx-scroll-bounce 1.8s ease-in-out infinite; }
+
+    .gwx-scroll-indicator {
+      animation: gwx-scroll-bounce 1.8s ease-in-out infinite;
+    }
 
     /* =====================================================
        FLOATING PROJECT PREVIEW CARDS
     ===================================================== */
     @keyframes gwx-card-float-a {
-      0%, 100% { transform: translateY(0) rotate(-2deg); }
-      50%       { transform: translateY(-12px) rotate(-2deg); }
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(-2deg);
+      }
+
+      50% {
+        transform: translateY(-12px) rotate(-2deg);
+      }
     }
+
     @keyframes gwx-card-float-b {
-      0%, 100% { transform: translateY(0) rotate(2deg); }
-      50%       { transform: translateY(-9px) rotate(2deg); }
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(2deg);
+      }
+
+      50% {
+        transform: translateY(-9px) rotate(2deg);
+      }
     }
-    .gwx-float-a { animation: gwx-card-float-a 5s ease-in-out infinite; }
-    .gwx-float-b { animation: gwx-card-float-b 6.5s ease-in-out infinite 1s; }
+
+    .gwx-float-a {
+      animation: gwx-card-float-a 5s ease-in-out infinite;
+    }
+
+    .gwx-float-b {
+      animation: gwx-card-float-b 6.5s ease-in-out infinite 1s;
+    }
 
     /* =====================================================
        STAT CHIPS
     ===================================================== */
     @keyframes gwx-chip-in {
-      from { opacity: 0; transform: translateY(14px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    .gwx-chip { opacity: 0; }
-    .gwx-chip.gwx-in { animation: gwx-chip-in .6s ease forwards; }
+
+    .gwx-chip {
+      opacity: 0;
+    }
+
+    .gwx-chip.gwx-in {
+      animation: gwx-chip-in .6s ease forwards;
+    }
 
     /* =====================================================
        GRID DOT PATTERN
     ===================================================== */
     .gwx-dot-grid {
-      background-image: radial-gradient(circle, rgba(16,185,129,.18) 1px, transparent 1px);
+      background-image: radial-gradient(circle, rgba(16, 185, 129, .18) 1px, transparent 1px);
       background-size: 28px 28px;
     }
   </style>
@@ -318,7 +482,8 @@
       <div class="flex items-center justify-between h-20">
         <a href="index.html" class="flex items-center gap-3">
           <img src="/images/logo_goshenwbeX.png" alt="Goshen Web X" class="h-14 w-auto" />
-          <div class="font-heading text-3xl font-semibold tracking-tighter text-primary">GOSHEN <span class="text-emerald">WEB X</span></div>
+          <div class="font-heading text-3xl font-semibold tracking-tighter text-primary">GOSHEN <span
+              class="text-emerald">WEB X</span></div>
         </a>
 
         <nav class="hidden xl:flex items-center gap-8 text-sm font-medium">
@@ -367,20 +532,26 @@
   <div id="backdrop" class="hidden fixed inset-0 bg-black/60 z-[9998]"></div>
 
   <!-- Drawer -->
-  <div id="side-menu" class="fixed top-0 bottom-0 right-0 w-80 bg-white shadow-2xl translate-x-full transition-transform duration-300 z-[9999] overflow-y-auto">
+  <div id="side-menu"
+    class="fixed top-0 bottom-0 right-0 w-80 bg-white shadow-2xl translate-x-full transition-transform duration-300 z-[9999] overflow-y-auto">
     <div class="p-6">
       <button id="close-menu" class="float-right text-4xl text-gray-400 hover:text-primary">✕</button>
       <nav class="flex flex-col text-2xl font-medium mt-12 text-gray-800">
         <a href="index.html" class="py-5 border-b border-gray-100">Home</a>
         <div class="border-b border-gray-100">
-          <button onclick="toggleServicesDrawer()" class="w-full py-5 flex items-center justify-between hover:text-emerald text-2xl font-medium">
+          <button onclick="toggleServicesDrawer()"
+            class="w-full py-5 flex items-center justify-between hover:text-emerald text-2xl font-medium">
             Our Services
             <i id="drawer-chevron" class="fas fa-chevron-down text-xl transition-transform duration-300"></i>
           </button>
-          <div id="drawer-services-submenu" class="max-h-0 overflow-hidden transition-all duration-300 ease-out pl-8 pt-1 pb-4">
-            <a href="/website-dev.html" class="block py-5 text-2xl hover:text-emerald transition-colors">Website Development</a>
-            <a href="/web-optimisation.html" class="block py-5 text-2xl hover:text-emerald transition-colors">Web Optimisation and SEO</a>
-            <a href="/portfolio.html" class="block py-5 text-2xl hover:text-emerald transition-colors">Portfolio Websites</a>
+          <div id="drawer-services-submenu"
+            class="max-h-0 overflow-hidden transition-all duration-300 ease-out pl-8 pt-1 pb-4">
+            <a href="/website-dev.html" class="block py-5 text-2xl hover:text-emerald transition-colors">Website
+              Development</a>
+            <a href="/web-optimisation.html" class="block py-5 text-2xl hover:text-emerald transition-colors">Web
+              Optimisation and SEO</a>
+            <a href="/portfolio.html" class="block py-5 text-2xl hover:text-emerald transition-colors">Portfolio
+              Websites</a>
           </div>
         </div>
         <a href="/about.html" class="py-5 border-b border-gray-100">About Us</a>
@@ -409,12 +580,20 @@
     <div class="absolute inset-0 bg-gradient-to-b from-light/60 via-light/80 to-light pointer-events-none"></div>
 
     <!-- Large decorative blobs -->
-    <div class="gwx-blob-1 absolute top-16 right-[-80px] w-[520px] h-[520px] bg-emerald/[0.07] rounded-full blur-3xl pointer-events-none"></div>
-    <div class="gwx-blob-2 absolute bottom-0 left-[-60px] w-[400px] h-[400px] bg-primary/[0.05] rounded-full blur-3xl pointer-events-none"></div>
-    <div class="gwx-blob-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-emerald/[0.03] rounded-full blur-3xl pointer-events-none"></div>
+    <div
+      class="gwx-blob-1 absolute top-16 right-[-80px] w-[520px] h-[520px] bg-emerald/[0.07] rounded-full blur-3xl pointer-events-none">
+    </div>
+    <div
+      class="gwx-blob-2 absolute bottom-0 left-[-60px] w-[400px] h-[400px] bg-primary/[0.05] rounded-full blur-3xl pointer-events-none">
+    </div>
+    <div
+      class="gwx-blob-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-emerald/[0.03] rounded-full blur-3xl pointer-events-none">
+    </div>
 
     <!-- Floating project preview cards — LEFT -->
-    <div class="gwx-float-a hidden lg:block absolute left-8 xl:left-16 top-1/2 -translate-y-1/2 w-52 pointer-events-none" style="opacity:0;transition:opacity .8s ease 1.4s;" id="float-card-left">
+    <div
+      class="gwx-float-a hidden lg:block absolute left-8 xl:left-16 top-1/2 -translate-y-1/2 w-52 pointer-events-none"
+      style="opacity:0;transition:opacity .8s ease 1.4s;" id="float-card-left">
       <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
         <div class="h-28 bg-gradient-to-br from-emerald/10 to-primary/10 flex items-center justify-center">
           <div class="w-10 h-10 rounded-xl bg-emerald/20 flex items-center justify-center">
@@ -433,7 +612,9 @@
     </div>
 
     <!-- Floating project preview cards — RIGHT -->
-    <div class="gwx-float-b hidden lg:block absolute right-8 xl:right-16 top-1/2 -translate-y-1/2 w-52 pointer-events-none" style="opacity:0;transition:opacity .8s ease 1.6s;translate: 0 -20px;" id="float-card-right">
+    <div
+      class="gwx-float-b hidden lg:block absolute right-8 xl:right-16 top-1/2 -translate-y-1/2 w-52 pointer-events-none"
+      style="opacity:0;transition:opacity .8s ease 1.6s;translate: 0 -20px;" id="float-card-right">
       <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
         <div class="h-28 bg-gradient-to-br from-primary/10 to-emerald/10 flex items-center justify-center">
           <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
@@ -455,7 +636,8 @@
     <div class="relative z-10 max-w-3xl mx-auto px-6 text-center py-16">
 
       <!-- Badge -->
-      <div id="port-badge" class="gwx-hero-item inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm border border-emerald/10 px-6 py-3 rounded-full text-xs font-semibold tracking-wider uppercase shadow-sm mb-10">
+      <div id="port-badge"
+        class="gwx-hero-item inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm border border-emerald/10 px-6 py-3 rounded-full text-xs font-semibold tracking-wider uppercase shadow-sm mb-10">
         <span class="relative flex h-2.5 w-2.5">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald opacity-75"></span>
           <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald"></span>
@@ -464,7 +646,8 @@
       </div>
 
       <!-- H1 — word stagger target -->
-      <h1 id="port-h1" class="text-[2.75rem] md:text-[3.5rem] lg:text-[4.75rem] font-heading font-bold tracking-[-0.04em] leading-[1.02] text-primary mb-7">
+      <h1 id="port-h1"
+        class="text-[2.75rem] md:text-[3.5rem] lg:text-[4.75rem] font-heading font-bold tracking-[-0.04em] leading-[1.02] text-primary mb-7">
         Real work.<br />
         <span class="text-emerald">Real results.</span>
       </h1>
@@ -476,13 +659,19 @@
 
       <!-- Stat chips row -->
       <div class="gwx-hero-item flex flex-wrap items-center justify-center gap-3" id="port-chips">
-        <div class="gwx-chip flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-gray-100 px-5 py-2.5 rounded-full shadow-sm text-sm font-medium text-primary" style="animation-delay:.1s">
+        <div
+          class="gwx-chip flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-gray-100 px-5 py-2.5 rounded-full shadow-sm text-sm font-medium text-primary"
+          style="animation-delay:.1s">
           <i class="fas fa-trophy text-emerald text-xs"></i> 6+ Live Projects
         </div>
-        <div class="gwx-chip flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-gray-100 px-5 py-2.5 rounded-full shadow-sm text-sm font-medium text-primary" style="animation-delay:.22s">
+        <div
+          class="gwx-chip flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-gray-100 px-5 py-2.5 rounded-full shadow-sm text-sm font-medium text-primary"
+          style="animation-delay:.22s">
           <i class="fas fa-star text-emerald text-xs"></i> 98% Satisfaction
         </div>
-        <div class="gwx-chip flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-gray-100 px-5 py-2.5 rounded-full shadow-sm text-sm font-medium text-primary" style="animation-delay:.34s">
+        <div
+          class="gwx-chip flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-gray-100 px-5 py-2.5 rounded-full shadow-sm text-sm font-medium text-primary"
+          style="animation-delay:.34s">
           <i class="fas fa-bolt text-emerald text-xs"></i> 340% Avg. Growth
         </div>
       </div>
@@ -490,7 +679,8 @@
 
     <!-- Scroll indicator -->
     <div class="absolute bottom-8 left-0 right-0 flex justify-center z-10">
-      <div class="gwx-scroll-indicator flex flex-col items-center gap-2 cursor-pointer" onclick="document.querySelector('.py-28').scrollIntoView({behavior:'smooth'})">
+      <div class="gwx-scroll-indicator flex flex-col items-center gap-2 cursor-pointer"
+        onclick="document.querySelector('.py-28').scrollIntoView({behavior:'smooth'})">
         <span class="text-[0.65rem] uppercase tracking-[3px] text-gray-400 font-semibold">View Projects</span>
         <div class="w-8 h-8 rounded-full border-2 border-emerald/30 flex items-center justify-center">
           <i class="fas fa-chevron-down text-emerald text-xs"></i>
@@ -505,91 +695,123 @@
   <section class="py-28 lg:py-36 bg-soft">
     <div class="max-w-screen-xl mx-auto px-6 lg:px-12">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="label-line gwx-fade-left uppercase text-emerald tracking-[3px] text-xs font-semibold justify-center">Featured Work</span>
-        <h2 class="text-4xl lg:text-5xl font-heading font-bold tracking-[-0.035em] mt-5 text-primary leading-[1.1]">Our Latest Projects</h2>
+        <span
+          class="label-line gwx-fade-left uppercase text-emerald tracking-[3px] text-xs font-semibold justify-center">Featured
+          Work</span>
+        <h2 class="text-4xl lg:text-5xl font-heading font-bold tracking-[-0.035em] mt-5 text-primary leading-[1.1]">Our
+          Latest Projects</h2>
       </div>
 
       <div class="masonry">
 
         <!-- Project 1 -->
         <a href="https://rcmchurch.netlify.app/" target="_blank"
-          class="masonry-item card-glow group block bg-white border border-gray-100/80 rounded-3xl overflow-hidden" data-aos="fade-up">
+          class="masonry-item card-glow group block bg-white border border-gray-100/80 rounded-3xl overflow-hidden"
+          data-aos="fade-up">
           <div class="portfolio-overlay">
-            <img src="/images/rcm.jpg" alt="RCM Church Website" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105" />
+            <img src="/images/rcm.jpg" alt="RCM Church Website"
+              class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105" />
             <div class="ext-icon"><i class="fas fa-arrow-up-right-from-square text-sm"></i></div>
           </div>
           <div class="p-7">
-            <span class="cat-pill inline-block px-3.5 py-1 text-[0.65rem] uppercase tracking-widest text-emerald rounded-full font-semibold">Church Website</span>
+            <span
+              class="cat-pill inline-block px-3.5 py-1 text-[0.65rem] uppercase tracking-widest text-emerald rounded-full font-semibold">Church
+              Website</span>
             <h3 class="font-heading font-semibold text-xl mt-3 text-primary tracking-tight">RCM Church</h3>
-            <p class="text-gray-400 mt-1.5 text-sm">Modern church website · Events, sermons &amp; community information</p>
+            <p class="text-gray-400 mt-1.5 text-sm">Modern church website · Events, sermons &amp; community information
+            </p>
           </div>
         </a>
 
         <!-- Project 2 -->
         <a href="https://cliniquedepodologielilibethhuertas.com/" target="_blank"
-          class="masonry-item card-glow group block bg-white border border-gray-100/80 rounded-3xl overflow-hidden" data-aos="fade-up" data-aos-delay="80">
+          class="masonry-item card-glow group block bg-white border border-gray-100/80 rounded-3xl overflow-hidden"
+          data-aos="fade-up" data-aos-delay="80">
           <div class="portfolio-overlay">
-            <img src="./images/clinic.jpg" alt="Podology Clinic Website" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105" />
+            <img src="./images/clinic.jpg" alt="Podology Clinic Website"
+              class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105" />
             <div class="ext-icon"><i class="fas fa-arrow-up-right-from-square text-sm"></i></div>
           </div>
           <div class="p-7">
-            <span class="cat-pill inline-block px-3.5 py-1 text-[0.65rem] uppercase tracking-widest text-emerald rounded-full font-semibold">Medical Website</span>
+            <span
+              class="cat-pill inline-block px-3.5 py-1 text-[0.65rem] uppercase tracking-widest text-emerald rounded-full font-semibold">Medical
+              Website</span>
             <h3 class="font-heading font-semibold text-xl mt-3 text-primary tracking-tight">Podology Clinic</h3>
-            <p class="text-gray-400 mt-1.5 text-sm">Professional clinic website · Services, appointments &amp; patient information</p>
+            <p class="text-gray-400 mt-1.5 text-sm">Professional clinic website · Services, appointments &amp; patient
+              information</p>
           </div>
         </a>
 
         <!-- Project 3 -->
         <a href="https://wokovuway.org/" target="_blank"
-          class="masonry-item card-glow group block bg-white border border-gray-100/80 rounded-3xl overflow-hidden" data-aos="fade-up" data-aos-delay="160">
+          class="masonry-item card-glow group block bg-white border border-gray-100/80 rounded-3xl overflow-hidden"
+          data-aos="fade-up" data-aos-delay="160">
           <div class="portfolio-overlay">
-            <img src="images/wokovu-way-org.png" alt="Non-Profit Project" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105" />
+            <img src="images/wokovu-way-org.png" alt="Non-Profit Project"
+              class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105" />
             <div class="ext-icon"><i class="fas fa-arrow-up-right-from-square text-sm"></i></div>
           </div>
           <div class="p-7">
-            <span class="cat-pill inline-block px-3.5 py-1 text-[0.65rem] uppercase tracking-widest text-emerald rounded-full font-semibold">Non-Profit Website</span>
+            <span
+              class="cat-pill inline-block px-3.5 py-1 text-[0.65rem] uppercase tracking-widest text-emerald rounded-full font-semibold">Non-Profit
+              Website</span>
             <h3 class="font-heading font-semibold text-xl mt-3 text-primary tracking-tight">Wokovuway</h3>
-            <p class="text-gray-400 mt-1.5 text-sm">Full branding and digital experience design for a non-profit organization</p>
+            <p class="text-gray-400 mt-1.5 text-sm">Full branding and digital experience design for a non-profit
+              organization</p>
           </div>
         </a>
 
         <!-- Project 4 -->
         <a href="https://grillade-okapi-v1r6.vercel.app/" target="_blank"
-          class="masonry-item card-glow group block bg-white border border-gray-100/80 rounded-3xl overflow-hidden" data-aos="fade-up">
+          class="masonry-item card-glow group block bg-white border border-gray-100/80 rounded-3xl overflow-hidden"
+          data-aos="fade-up">
           <div class="portfolio-overlay">
-            <img src="images/grillade-oapi.png" alt="Grillade Okapi" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105" />
+            <img src="images/grillade-oapi.png" alt="Grillade Okapi"
+              class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105" />
             <div class="ext-icon"><i class="fas fa-arrow-up-right-from-square text-sm"></i></div>
           </div>
           <div class="p-7">
-            <span class="cat-pill inline-block px-3.5 py-1 text-[0.65rem] uppercase tracking-widest text-emerald rounded-full font-semibold">Restaurant Website</span>
+            <span
+              class="cat-pill inline-block px-3.5 py-1 text-[0.65rem] uppercase tracking-widest text-emerald rounded-full font-semibold">Restaurant
+              Website</span>
             <h3 class="font-heading font-semibold text-xl mt-3 text-primary tracking-tight">Grillade Okapi</h3>
-            <p class="text-gray-400 mt-1.5 text-sm">Modern restaurant website · Menu, reservations &amp; brand presentation</p>
+            <p class="text-gray-400 mt-1.5 text-sm">Modern restaurant website · Menu, reservations &amp; brand
+              presentation</p>
           </div>
         </a>
 
         <!-- Project 5 -->
         <a href="https://salonjohnjack.ca/" target="_blank"
-          class="masonry-item card-glow group block bg-white border border-gray-100/80 rounded-3xl overflow-hidden" data-aos="fade-up" data-aos-delay="80">
+          class="masonry-item card-glow group block bg-white border border-gray-100/80 rounded-3xl overflow-hidden"
+          data-aos="fade-up" data-aos-delay="80">
           <div class="portfolio-overlay">
-            <img src="images/salonjck.jpg" alt="Salon Jhon Jack" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105" />
+            <img src="images/salonjck.jpg" alt="Salon Jhon Jack"
+              class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105" />
             <div class="ext-icon"><i class="fas fa-arrow-up-right-from-square text-sm"></i></div>
           </div>
           <div class="p-7">
-            <span class="cat-pill inline-block px-3.5 py-1 text-[0.65rem] uppercase tracking-widest text-emerald rounded-full font-semibold">Hair Salon Website</span>
+            <span
+              class="cat-pill inline-block px-3.5 py-1 text-[0.65rem] uppercase tracking-widest text-emerald rounded-full font-semibold">Hair
+              Salon Website</span>
             <h3 class="font-heading font-semibold text-xl mt-3 text-primary tracking-tight">Salon Jhon Jack</h3>
-            <p class="text-gray-400 mt-1.5 text-sm">Modern salon website · Services, booking &amp; brand presentation</p>
+            <p class="text-gray-400 mt-1.5 text-sm">Modern salon website · Services, booking &amp; brand presentation
+            </p>
           </div>
         </a>
 
         <!-- Project 6 -->
         <a href="https://bmcultureglobal.com/" target="_blank"
-          class="masonry-item card-glow group block bg-white border border-gray-100/80 rounded-3xl overflow-hidden" data-aos="fade-up" data-aos-delay="160">
+          class="masonry-item card-glow group block bg-white border border-gray-100/80 rounded-3xl overflow-hidden"
+          data-aos="fade-up" data-aos-delay="160">
           <div class="portfolio-overlay">
-            <img src="/images/bm.jpg" alt="B&M Global Culture" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105" />
+            <img src="/images/bm.jpg" alt="B&M Global Culture"
+              class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105" />
             <div class="ext-icon"><i class="fas fa-arrow-up-right-from-square text-sm"></i></div>
           </div>
           <div class="p-7">
-            <span class="cat-pill inline-block px-3.5 py-1 text-[0.65rem] uppercase tracking-widest text-emerald rounded-full font-semibold">Web Optimisation</span>
+            <span
+              class="cat-pill inline-block px-3.5 py-1 text-[0.65rem] uppercase tracking-widest text-emerald rounded-full font-semibold">Web
+              Optimisation</span>
             <h3 class="font-heading font-semibold text-xl mt-3 text-primary tracking-tight">B&amp;M Fashion</h3>
             <p class="text-gray-400 mt-1.5 text-sm">Complete performance and SEO overhaul</p>
           </div>
@@ -608,6 +830,182 @@
     </div>
   </section>
 
+
+  <!-- ============================================================ -->
+  <!-- WORK IN PROGRESS                                             -->
+  <!-- ============================================================ -->
+  <section class="py-28 lg:py-36 bg-white">
+    <div class="max-w-screen-xl mx-auto px-6 lg:px-12">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span
+          class="label-line gwx-fade-left uppercase text-emerald tracking-[3px] text-xs font-semibold justify-center">Coming
+          Soon</span>
+        <h2 class="text-4xl lg:text-5xl font-heading font-bold tracking-[-0.035em] mt-5 text-primary leading-[1.1]">
+          Projects in Progress</h2>
+      </div>
+
+      <div class="masonry">
+
+        <!-- WIP Project 1 -->
+        <a href="https://barbier-luxe.vercel.app/" target="_blank"
+          class="masonry-item card-glow group block bg-white border border-gray-100/80 rounded-3xl overflow-hidden"
+          data-aos="fade-up">
+          <div class="portfolio-overlay relative">
+            <img src="images/barbierluxe.png" alt="Barbier Luxe"
+              class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105" />
+            <span
+              class="absolute top-4 left-4 inline-flex items-center gap-2 bg-white border border-emerald/20 text-emerald text-[0.6rem] font-bold uppercase tracking-[1.5px] px-3.5 py-1.5 rounded-full z-10">
+              <span class="relative flex h-2 w-2"><span
+                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald opacity-75"></span><span
+                  class="relative inline-flex rounded-full h-2 w-2 bg-emerald"></span></span>
+              In Progress
+            </span>
+            <div class="ext-icon"><i class="fas fa-arrow-up-right-from-square text-sm"></i></div>
+          </div>
+          <div class="p-7">
+            <span
+              class="cat-pill inline-block px-3.5 py-1 text-[0.65rem] uppercase tracking-widest text-emerald rounded-full font-semibold">Barbershop
+              Website</span>
+            <h3 class="font-heading font-semibold text-xl mt-3 text-primary tracking-tight">Barbier Luxe</h3>
+            <p class="text-gray-400 mt-1.5 text-sm">Premium barbershop website · Services, booking &amp; brand
+              presentation</p>
+          </div>
+        </a>
+
+        <!-- WIP Project 2 -->
+        <a href="https://el-shadai-african-restaurant.netlify.app/" target="_blank"
+          class="masonry-item card-glow group block bg-white border border-gray-100/80 rounded-3xl overflow-hidden"
+          data-aos="fade-up" data-aos-delay="80">
+          <div class="portfolio-overlay relative">
+            <img src="images/elsh-cuisine.png" alt="El Shaddai Cuisine"
+              class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105" />
+            <span
+              class="absolute top-4 left-4 inline-flex items-center gap-2 bg-white border border-emerald/20 text-emerald text-[0.6rem] font-bold uppercase tracking-[1.5px] px-3.5 py-1.5 rounded-full z-10">
+              <span class="relative flex h-2 w-2"><span
+                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald opacity-75"></span><span
+                  class="relative inline-flex rounded-full h-2 w-2 bg-emerald"></span></span>
+              In Progress
+            </span>
+            <div class="ext-icon"><i class="fas fa-arrow-up-right-from-square text-sm"></i></div>
+          </div>
+          <div class="p-7">
+            <span
+              class="cat-pill inline-block px-3.5 py-1 text-[0.65rem] uppercase tracking-widests text-emerald rounded-full font-semibold">Restaurant
+              Website</span>
+            <h3 class="font-heading font-semibold text-xl mt-3 text-primary tracking-tight">El Shaddai Cuisine</h3>
+            <p class="text-gray-400 mt-1.5 text-sm">Modern restaurant website · Menu, reservations &amp; brand
+              presentation</p>
+          </div>
+        </a>
+
+        <!-- WIP Project 3 -->
+        <a href="https://liitleafrica.netlify.app/" target="_blank"
+          class="masonry-item card-glow group block bg-white border border-gray-100/80 rounded-3xl overflow-hidden"
+          data-aos="fade-up" data-aos-delay="160">
+          <div class="portfolio-overlay relative">
+            <img src="images/little-africa.png" alt="Little Africa"
+              class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105" />
+            <span
+              class="absolute top-4 left-4 inline-flex items-center gap-2 bg-white border border-emerald/20 text-emerald text-[0.6rem] font-bold uppercase tracking-[1.5px] px-3.5 py-1.5 rounded-full z-10">
+              <span class="relative flex h-2 w-2"><span
+                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald opacity-75"></span><span
+                  class="relative inline-flex rounded-full h-2 w-2 bg-emerald"></span></span>
+              In Progress
+            </span>
+            <div class="ext-icon"><i class="fas fa-arrow-up-right-from-square text-sm"></i></div>
+          </div>
+          <div class="p-7">
+            <span
+              class="cat-pill inline-block px-3.5 py-1 text-[0.65rem] uppercase tracking-widest text-emerald rounded-full font-semibold">Cultural
+              Website</span>
+            <h3 class="font-heading font-semibold text-xl mt-3 text-primary tracking-tight">Little Africa</h3>
+            <p class="text-gray-400 mt-1.5 text-sm">Cultural platform · Community, events &amp; brand experience</p>
+          </div>
+        </a>
+
+        <!-- WIP Project 4 -->
+        <a href="https://shiloh-baptist-church.vercel.app/" target="_blank"
+          class="masonry-item card-glow group block bg-white border border-gray-100/80 rounded-3xl overflow-hidden"
+          data-aos="fade-up">
+          <div class="portfolio-overlay relative">
+            <img src="images/Shiloh-bc.png" alt="Shiloh Baptist Church"
+              class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105" />
+            <span
+              class="absolute top-4 left-4 inline-flex items-center gap-2 bg-white border border-emerald/20 text-emerald text-[0.6rem] font-bold uppercase tracking-[1.5px] px-3.5 py-1.5 rounded-full z-10">
+              <span class="relative flex h-2 w-2"><span
+                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald opacity-75"></span><span
+                  class="relative inline-flex rounded-full h-2 w-2 bg-emerald"></span></span>
+              In Progress
+            </span>
+            <div class="ext-icon"><i class="fas fa-arrow-up-right-from-square text-sm"></i></div>
+          </div>
+          <div class="p-7">
+            <span
+              class="cat-pill inline-block px-3.5 py-1 text-[0.65rem] uppercase tracking-widest text-emerald rounded-full font-semibold">Church
+              Website</span>
+            <h3 class="font-heading font-semibold text-xl mt-3 text-primary tracking-tight">Shiloh Baptist Church</h3>
+            <p class="text-gray-400 mt-1.5 text-sm">Modern church website · Events, sermons &amp; community information
+            </p>
+          </div>
+        </a>
+
+        <!-- WIP Project 5 -->
+        <a href="https://the-deliverance-churchof-god-7th-da.vercel.app/" target="_blank"
+          class="masonry-item card-glow group block bg-white border border-gray-100/80 rounded-3xl overflow-hidden"
+          data-aos="fade-up" data-aos-delay="80">
+          <div class="portfolio-overlay relative">
+            <img src="images/deliv-church.png" alt="The Deliverance Church of God"
+              class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105" />
+            <span
+              class="absolute top-4 left-4 inline-flex items-center gap-2 bg-white border border-emerald/20 text-emerald text-[0.6rem] font-bold uppercase tracking-[1.5px] px-3.5 py-1.5 rounded-full z-10">
+              <span class="relative flex h-2 w-2"><span
+                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald opacity-75"></span><span
+                  class="relative inline-flex rounded-full h-2 w-2 bg-emerald"></span></span>
+              In Progress
+            </span>
+            <div class="ext-icon"><i class="fas fa-arrow-up-right-from-square text-sm"></i></div>
+          </div>
+          <div class="p-7">
+            <span
+              class="cat-pill inline-block px-3.5 py-1 text-[0.65rem] uppercase tracking-widest text-emerald rounded-full font-semibold">Church
+              Website</span>
+            <h3 class="font-heading font-semibold text-xl mt-3 text-primary tracking-tight">The Deliverance Church of
+              God</h3>
+            <p class="text-gray-400 mt-1.5 text-sm">Church website · Services, ministry &amp; community outreach</p>
+          </div>
+        </a>
+
+        <!-- WIP Project 6 -->
+        <a href="https://olivier-three.vercel.app/" target="_blank"
+          class="masonry-item card-glow group block bg-white border border-gray-100/80 rounded-3xl overflow-hidden"
+          data-aos="fade-up" data-aos-delay="160">
+          <div class="portfolio-overlay relative">
+            <img src="images/olive-portfolio.png" alt="Olivier"
+              class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105" />
+            <span
+              class="absolute top-4 left-4 inline-flex items-center gap-2 bg-white border border-emerald/20 text-emerald text-[0.6rem] font-bold uppercase tracking-[1.5px] px-3.5 py-1.5 rounded-full z-10">
+              <span class="relative flex h-2 w-2"><span
+                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald opacity-75"></span><span
+                  class="relative inline-flex rounded-full h-2 w-2 bg-emerald"></span></span>
+              In Progress
+            </span>
+            <div class="ext-icon"><i class="fas fa-arrow-up-right-from-square text-sm"></i></div>
+          </div>
+          <div class="p-7">
+            <span
+              class="cat-pill inline-block px-3.5 py-1 text-[0.65rem] uppercase tracking-widest text-emerald rounded-full font-semibold">Portfolio
+              Website</span>
+            <h3 class="font-heading font-semibold text-xl mt-3 text-primary tracking-tight">Olivier</h3>
+            <p class="text-gray-400 mt-1.5 text-sm">Personal portfolio website · Projects, skills &amp; professional
+              profile</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
   <!-- Scroll to top -->
   <button id="gwx-top-btn" title="Back to top"><i class="fas fa-arrow-up"></i></button>
 
@@ -620,7 +1018,8 @@
             <img src="/images/logo_goshenwbeX.png" alt="Logo" class="h-14" />
             <span class="font-heading text-3xl font-bold tracking-tighter text-primary">GOSHEN WEB X</span>
           </div>
-          <p class="text-gray-500 max-w-xs">Premium web development studio based in Canada, serving clients worldwide.</p>
+          <p class="text-gray-500 max-w-xs">Premium web development studio based in Canada, serving clients worldwide.
+          </p>
         </div>
         <div class="md:col-span-2">
           <p class="font-medium text-primary mb-6">Company</p>
@@ -634,7 +1033,8 @@
           <p class="font-medium text-primary mb-6">Services</p>
           <ul class="space-y-3 text-sm">
             <li><a href="/website-dev.html" class="hover:text-emerald transition-colors">Website Development</a></li>
-            <li><a href="/web-optimisation.html" class="hover:text-emerald transition-colors">Optimisation & SEO</a></li>
+            <li><a href="/web-optimisation.html" class="hover:text-emerald transition-colors">Optimisation & SEO</a>
+            </li>
             <li><a href="/portfolio.html" class="hover:text-emerald transition-colors">Portfolio Sites</a></li>
           </ul>
         </div>
@@ -643,13 +1043,17 @@
           <p class="text-gray-500">info@goshenwebx.io</p>
           <p class="text-gray-500 mt-1">Quebec, Canada</p>
           <div class="flex gap-6 text-3xl mt-10">
-            <a href="https://x.com/goshenwebx" class="hover:text-emerald transition-colors"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://www.linkedin.com/in/goshen-web-x-9b3246364" class="hover:text-emerald transition-colors"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/gwx_technologies" class="hover:text-emerald transition-colors"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/goshenwebx" class="hover:text-emerald transition-colors"><i
+                class="fab fa-x-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/goshen-web-x-9b3246364" class="hover:text-emerald transition-colors"><i
+                class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/gwx_technologies" class="hover:text-emerald transition-colors"><i
+                class="fab fa-instagram"></i></a>
           </div>
         </div>
       </div>
-      <div class="border-t border-gray-100 mt-16 pt-8 text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div
+        class="border-t border-gray-100 mt-16 pt-8 text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
         <p>© 2026 Goshen Web X. All Rights Reserved.</p>
         <p class="flex gap-6">
           <a href="/privacy-policy.html" class="hover:text-emerald">Privacy</a>
@@ -673,9 +1077,9 @@
 
     /* ── MOBILE MENU ───────────────────────────────────────── */
     const hamburger = document.getElementById('hamburger');
-    const sideMenu  = document.getElementById('side-menu');
-    const backdrop  = document.getElementById('backdrop');
-    const closeBtn  = document.getElementById('close-menu');
+    const sideMenu = document.getElementById('side-menu');
+    const backdrop = document.getElementById('backdrop');
+    const closeBtn = document.getElementById('close-menu');
 
     hamburger.addEventListener('click', () => {
       sideMenu.classList.remove('translate-x-full');
@@ -803,4 +1207,5 @@
   <script src="/gwx-chatbot.js"></script>
 
 </body>
+
 </html>

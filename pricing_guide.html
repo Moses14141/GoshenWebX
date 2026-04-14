@@ -107,6 +107,7 @@
       border-radius: 1.5rem;
       border: 2px solid rgba(16, 185, 129, 0.15);
       animation: ringPulse 3s ease-in-out infinite;
+      pointer-events: none;
     }
     @keyframes ringPulse {
       0%, 100% { opacity: 0; transform: scale(1); }
@@ -145,7 +146,7 @@
 
 <body class="bg-light text-gray-900 font-body overflow-x-hidden">
 
-  <!-- HEADER (UNTOUCHED) -->
+  <!-- HEADER -->
 <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-gray-100">
   <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
     <div class="flex items-center justify-between h-20">
@@ -154,7 +155,7 @@
         <div class="font-heading text-3xl font-semibold tracking-tighter text-primary">GOSHEN <span class="text-emerald">WEB X</span></div>
       </a>
 
-      <!-- Desktop Nav — NOW xl: instead of lg: -->
+      <!-- Desktop Nav -->
       <nav class="hidden xl:flex items-center gap-8 text-sm font-medium">
         <a href="index.html" class="hover:text-primary transition-colors">Home</a>
         <div class="group relative">
@@ -177,12 +178,12 @@
         <a href="/blog.html" class="hover:text-primary transition-colors">Blog</a>
       </nav>
 
-      <!-- Lang + CTA — NOW xl: instead of lg: -->
+      <!-- Lang + CTA -->
       <div class="hidden xl:flex items-center gap-6">
         <div class="flex items-center text-sm font-medium">
-          <a href="#" class="text-emerald font-semibold px-2">EN</a>
+          <a href="pricing_guide.html" class="text-emerald font-semibold px-2">EN</a>
           <span class="text-gray-400 mx-1">/</span>
-          <a href="/index-fr.html" class="hover:text-primary transition-colors px-2">FR</a>
+          <a href="pricing_guide-fr.html" class="hover:text-primary transition-colors px-2">FR</a>
         </div>
         <button onclick="openQuoteModal()"
           class="flex items-center gap-3 bg-primary hover:bg-emerald text-white font-semibold px-8 py-3.5 rounded-3xl transition-all shadow-lg shadow-emerald/30">
@@ -190,7 +191,7 @@
         </button>
       </div>
 
-      <!-- Hamburger — NOW xl:hidden instead of lg:hidden -->
+      <!-- Hamburger -->
       <button id="hamburger"
         class="xl:hidden text-4xl p-4 -mr-3 text-primary focus:outline-none active:scale-90 transition-transform">
         <i class="fas fa-bars"></i>
@@ -228,22 +229,19 @@
         <a href="/blog.html" class="py-5 border-b border-gray-100">Blog</a>
         <div class="pt-8 border-t border-gray-100">
           <div class="flex items-center gap-3 text-xl font-medium">
-            <a href="/pricing_guide.html" class="text-emerald font-semibold">EN</a>
+            <a href="pricing_guide.html" class="text-emerald font-semibold">EN</a>
             <span class="text-gray-400">/</span>
-            <a href="/pricing_guide-fr.html" class="hover:text-primary">FR</a>
+            <a href="pricing_guide-fr.html" class="hover:text-primary">FR</a>
           </div>
         </div>
       </nav>
     </div>
   </div>
 
-  <!-- ============================================================ -->
   <!-- HERO -->
-  <!-- ============================================================ -->
   <section class="min-h-[85vh] relative flex items-center pt-20 overflow-hidden grain-overlay">
     <div class="absolute inset-0 bg-[url('https://picsum.photos/id/1015/1920/1080')] bg-cover bg-center opacity-[0.06]"></div>
     <div class="absolute inset-0 bg-gradient-to-br from-light via-light/95 to-soft/80"></div>
-    <!-- Decorative shapes -->
     <div class="absolute top-32 right-20 w-72 h-72 bg-emerald/[0.03] rounded-full blur-3xl"></div>
     <div class="absolute bottom-20 left-10 w-48 h-48 bg-primary/[0.03] rounded-full blur-3xl"></div>
 
@@ -276,9 +274,7 @@
     </div>
   </section>
 
-  <!-- ============================================================ -->
   <!-- PRICING PLANS -->
-  <!-- ============================================================ -->
   <section id="pricing" class="py-28 lg:py-36 bg-soft">
     <div class="max-w-screen-xl mx-auto px-6 lg:px-12">
       <div class="text-center max-w-2xl mx-auto mb-16">
@@ -287,6 +283,7 @@
       </div>
 
       <div class="grid md:grid-cols-3 gap-7 items-start">
+
         <!-- Starter -->
         <div class="card-glow bg-white border border-gray-100/80 rounded-3xl p-9 lg:p-10" data-aos="fade-up">
           <div class="mb-7">
@@ -295,7 +292,7 @@
           </div>
 
           <div class="mb-2">
-            <span class="text-4xl lg:text-5xl font-bold text-primary font-heading tracking-tight">$270</span>
+            <span class="text-4xl lg:text-5xl font-bold text-primary font-heading tracking-tight">$499</span>
             <span class="text-gray-400 text-lg"> – $1,125</span>
           </div>
           <p class="text-emerald text-sm font-semibold mb-8">One-time payment</p>
@@ -319,7 +316,7 @@
             </li>
           </ul>
 
-          <a href="https://buy.stripe.com/test_eVq8wPeUf6jC99nc1GgnK00"
+          <a href="https://buy.stripe.com/5kQcN5fhN5a5b4Cgfo3VC08"
             class="block text-center bg-primary hover:bg-emerald text-white font-semibold py-4 rounded-full transition-all text-[0.95rem]">
             Get Started
           </a>
@@ -365,7 +362,7 @@
             </li>
           </ul>
 
-          <a href="https://buy.stripe.com/test_eVq8wPeUf6jC99nc1GgnK00"
+          <a href="https://buy.stripe.com/fZu9ATedJ1XTc8G6EO3VC0a"
             class="block text-center bg-emerald hover:bg-primary text-white font-semibold py-4 rounded-full transition-all text-[0.95rem] shadow-md shadow-emerald/20">
             Get Started
           </a>
@@ -407,14 +404,14 @@
             </li>
           </ul>
 
-          <a href="https://buy.stripe.com/test_eVq8wPeUf6jC99nc1GgnK00"
+          <a href="https://buy.stripe.com/6oU00j9Xt31XdcK1ku3VC0b"
             class="block text-center bg-primary hover:bg-emerald text-white font-semibold py-4 rounded-full transition-all text-[0.95rem]">
             Get Started
           </a>
         </div>
       </div>
 
-      <!-- Additional Services — now properly inside the section -->
+      <!-- Additional Services -->
       <div class="mt-20 max-w-2xl mx-auto">
         <div class="text-center mb-8">
           <span class="label-line uppercase text-emerald tracking-[3px] text-xs font-semibold justify-center">Add-Ons</span>
@@ -423,24 +420,22 @@
 
         <div class="grid md:grid-cols-2 gap-6">
           <div class="card-glow bg-white border border-gray-100/80 rounded-2xl p-7" data-aos="fade-up">
-            <p class="font-semibold text-primary text-[0.95rem]">Monthly Maintenance</p>
+            <p class="font-semibold text-primary text-[0.95rem]">Annual maintenance</p>
             <p class="text-xs text-gray-400 mt-0.5">Optional</p>
-            <p class="text-3xl font-bold text-emerald mt-3 font-heading tracking-tight">$15 <span class="text-lg font-normal text-gray-400">– $120</span></p>
+            <p class="text-3xl font-bold text-emerald mt-2">15 $ – 120+ $ </p>
           </div>
 
           <div class="card-glow bg-white border border-gray-100/80 rounded-2xl p-7" data-aos="fade-up" data-aos-delay="80">
             <p class="font-semibold text-primary text-[0.95rem]">SEO Optimisation Package</p>
             <p class="text-xs text-gray-400 mt-0.5">Optional</p>
-            <p class="text-3xl font-bold text-emerald mt-3 font-heading tracking-tight">$150 <span class="text-lg font-normal text-gray-400">– $900</span></p>
+            <p class="text-3xl font-bold text-emerald mt-2">150 $ – 900 $</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================ -->
   <!-- WHY US -->
-  <!-- ============================================================ -->
   <section class="py-28 lg:py-36 bg-white">
     <div class="max-w-screen-xl mx-auto px-6 lg:px-12">
       <div class="text-center max-w-2xl mx-auto mb-16">
@@ -481,11 +476,8 @@
     </div>
   </section>
 
-  <!-- ============================================================ -->
   <!-- CONTACT CTA -->
-  <!-- ============================================================ -->
   <section id="contact" class="py-28 lg:py-36 bg-soft relative overflow-hidden">
-    <!-- Decorative shapes -->
     <div class="absolute top-10 left-10 w-64 h-64 bg-emerald/[0.04] rounded-full blur-3xl"></div>
     <div class="absolute bottom-10 right-10 w-48 h-48 bg-primary/[0.04] rounded-full blur-3xl"></div>
 
@@ -504,9 +496,7 @@
     </div>
   </section>
 
-
-
-  <!-- FOOTER (UNTOUCHED) -->
+  <!-- FOOTER -->
   <footer class="bg-white border-t border-gray-100 py-20">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
       <div class="grid md:grid-cols-12 gap-12">
@@ -515,8 +505,7 @@
             <img src="/images/logo_goshenwbeX.png" alt="Logo" class="h-14" />
             <span class="font-heading text-3xl font-bold tracking-tighter text-primary">GOSHEN WEB X</span>
           </div>
-          <p class="text-gray-500 max-w-xs">Premium web development studio based in Quebec, serving clients around the
-            world.</p>
+          <p class="text-gray-500 max-w-xs">Premium web development studio based in Quebec, serving clients around the world.</p>
         </div>
 
         <div class="md:col-span-2">
@@ -544,16 +533,13 @@
 
           <div class="flex gap-6 text-3xl mt-10">
             <a href="https://x.com/goshenwebx" class="hover:text-emerald"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://www.linkedin.com/in/goshen-web-x-9b3246364" class="hover:text-emerald"><i
-                class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/gwx_technologies" class="hover:text-emerald"><i
-                class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/goshen-web-x-9b3246364" class="hover:text-emerald"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/gwx_technologies" class="hover:text-emerald"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
       </div>
 
-      <div
-        class="border-t border-gray-100 mt-16 pt-8 text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="border-t border-gray-100 mt-16 pt-8 text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
         <p>© 2026 Goshen Web X. All rights reserved.</p>
         <p class="flex gap-6">
           <a href="/privacy-policy.html" class="hover:text-emerald">Privacy</a>

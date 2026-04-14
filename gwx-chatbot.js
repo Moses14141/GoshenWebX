@@ -18,6 +18,9 @@
     light:'#f8faf5',white:'#ffffff',textGray:'#6b7280',textDark:'#111827',border:'#e5e7eb',
   };
 
+  const LOGO_IMG = `<img src="/images/ h" alt="Goshen Web X" style="width:100%;height:100%;object-fit:contain;border-radius:50%;">`;
+  const LOGO_SMALL = `<img src="/images/logo_goshenwbeX.png" alt="GWX" style="width:100%;height:100%;object-fit:contain;border-radius:50%;">`;
+
   /* ── Pricing (accurate) ─────────────────────────────────── */
   const PLANS = [
     { icon:'🌱', name:'Starter',      price:499,   mo:false, desc:'Up to 5 pages, mobile-ready, contact form, basic SEO, Google Analytics.' },
@@ -243,16 +246,17 @@ We respond within <strong>24 hours</strong> — usually much faster! ⚡`;
   /* ── CSS ────────────────────────────────────────────────── */
   const style = document.createElement('style');
   style.textContent = `
-    #gwx-chat-toggle{position:fixed;bottom:88px;right:88px;width:60px;height:60px;background:${C.primary};border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(20,83,45,.35);transition:background .25s,transform .25s;z-index:10001;}
+    #gwx-chat-toggle{position:fixed;bottom:88px;right:88px;width:60px;height:60px;background:${C.primary};border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(20,83,45,.35);transition:background .25s,transform .25s;z-index:10001;padding:0;overflow:hidden;}
     #gwx-chat-toggle:hover{background:${C.emerald};transform:scale(1.08);}
-    #gwx-chat-toggle svg{width:28px;height:28px;fill:#fff;}
-    #gwx-chat-toggle .gwx-close-icon{display:none;}
-    #gwx-chat-toggle.open .gwx-open-icon{display:none;}
+    #gwx-chat-toggle .gwx-toggle-logo{width:38px;height:38px;object-fit:contain;border-radius:50%;display:block;}
+    #gwx-chat-toggle .gwx-close-icon{display:none;width:28px;height:28px;fill:#fff;}
+    #gwx-chat-toggle.open .gwx-toggle-logo{display:none;}
     #gwx-chat-toggle.open .gwx-close-icon{display:block;}
     #gwx-chat-window{position:fixed;bottom:164px;right:88px;width:390px;max-height:640px;background:${C.white};border-radius:24px;box-shadow:0 24px 64px rgba(20,83,45,.18),0 4px 16px rgba(0,0,0,.08);display:flex;flex-direction:column;overflow:hidden;z-index:10000;transition:opacity .3s,transform .3s;font-family:'Plus Jakarta Sans','Poppins',system-ui,sans-serif;font-size:14px;}
     #gwx-chat-window.gwx-hidden{opacity:0;transform:translateY(16px) scale(0.97);pointer-events:none;}
     .gwx-header{background:${C.primary};padding:16px 20px;display:flex;align-items:center;gap:12px;flex-shrink:0;}
-    .gwx-avatar{width:42px;height:42px;border-radius:50%;background:${C.emerald};display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+    .gwx-avatar{width:42px;height:42px;border-radius:50%;background:${C.white};display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;padding:3px;}
+    .gwx-avatar img{width:100%;height:100%;object-fit:contain;border-radius:50%;}
     .gwx-header-info{flex:1;}
     .gwx-header-name{font-weight:700;color:#fff;font-size:15px;line-height:1.2;font-family:'Poppins',sans-serif;}
     .gwx-header-status{font-size:12px;color:${C.emeraldLt};display:flex;align-items:center;gap:5px;margin-top:2px;}
@@ -264,7 +268,8 @@ We respond within <strong>24 hours</strong> — usually much faster! ⚡`;
     .gwx-msg{display:flex;align-items:flex-end;gap:8px;max-width:100%;}
     .gwx-msg.bot{justify-content:flex-start;}
     .gwx-msg.user{justify-content:flex-end;}
-    .gwx-bot-av{width:28px;height:28px;border-radius:50%;background:${C.primary};color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;}
+    .gwx-bot-av{width:28px;height:28px;border-radius:50%;background:${C.white};border:1px solid ${C.border};display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;padding:2px;}
+    .gwx-bot-av img{width:100%;height:100%;object-fit:contain;}
     .gwx-bubble{padding:10px 14px;border-radius:18px;line-height:1.6;max-width:86%;word-break:break-word;}
     .gwx-msg.bot .gwx-bubble{background:${C.white};color:${C.textDark};border-bottom-left-radius:5px;border:1px solid ${C.border};}
     .gwx-msg.user .gwx-bubble{background:${C.primary};color:#fff;border-bottom-right-radius:5px;}
@@ -300,14 +305,14 @@ We respond within <strong>24 hours</strong> — usually much faster! ⚡`;
   const toggle = document.createElement('button');
   toggle.id = 'gwx-chat-toggle';
   toggle.setAttribute('aria-label','Open chat');
-  toggle.innerHTML = `<svg class="gwx-open-icon" viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2zm-2 10H6V10h12v2zm0-3H6V7h12v2z"/></svg><svg class="gwx-close-icon" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>`;
+  toggle.innerHTML = `<img class="gwx-toggle-logo" src="/images/logo_goshenwbeX.png" alt="Goshen Web X"><svg class="gwx-close-icon" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>`;
 
   const win = document.createElement('div');
   win.id = 'gwx-chat-window'; win.className = 'gwx-hidden';
   win.setAttribute('role','dialog'); win.setAttribute('aria-label','Goshen Web X Chat');
   win.innerHTML = `
     <div class="gwx-header">
-      <div class="gwx-avatar">🌱</div>
+      <div class="gwx-avatar"><img src="/images/logo_goshenwbeX.png" alt="Goshen Web X"></div>
       <div class="gwx-header-info">
         <div class="gwx-header-name">Goshen Web X</div>
         <div class="gwx-header-status"><span class="gwx-status-dot"></span> Online — usually replies instantly</div>
@@ -337,13 +342,15 @@ We respond within <strong>24 hours</strong> — usually much faster! ⚡`;
   function addMsg(html, who) {
     const w = document.createElement('div');
     w.className = `gwx-msg ${who}`;
-    w.innerHTML = who==='bot' ? `<div class="gwx-bot-av">🌱</div><div class="gwx-bubble">${html}</div>` : `<div class="gwx-bubble">${html}</div>`;
+    w.innerHTML = who==='bot'
+      ? `<div class="gwx-bot-av"><img src="/images/logo_goshenwbeX.png" alt="GWX"></div><div class="gwx-bubble">${html}</div>`
+      : `<div class="gwx-bubble">${html}</div>`;
     msgBox.appendChild(w); scrollBot();
   }
 
   function showTyping() {
     const t=document.createElement('div'); t.className='gwx-msg bot gwx-typing'; t.id='gwx-typ';
-    t.innerHTML=`<div class="gwx-bot-av">🌱</div><div class="gwx-bubble"><span class="gwx-dot"></span><span class="gwx-dot"></span><span class="gwx-dot"></span></div>`;
+    t.innerHTML=`<div class="gwx-bot-av"><img src="/images/logo_goshenwbeX.png" alt="GWX"></div><div class="gwx-bubble"><span class="gwx-dot"></span><span class="gwx-dot"></span><span class="gwx-dot"></span></div>`;
     msgBox.appendChild(t); scrollBot();
   }
   const removeTyping = () => { const t=document.getElementById('gwx-typ'); if(t) t.remove(); };
